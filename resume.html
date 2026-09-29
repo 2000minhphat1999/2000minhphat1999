@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tran Viet Minh Phat — Resume</title>
+  <meta name="description" content="Resume of Tran Viet Minh Phat, Python Backend Developer (Flask, PostgreSQL, business systems).">
+  <meta name="author" content="Tran Viet Minh Phat">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <style>
+    /* Single-column, ATS-safe resume. Screen: readable page. Print: A4, 2 pages max. */
+    :root { --text:#16181a; --muted:#50555b; --rule:#d7d9dc; --accent:#0f6b5c; --bg:#eef0ee; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 10.5pt/1.45 "Calibri", "Segoe UI", "Helvetica Neue", Arial, sans-serif; }
+    .toolbar { max-width: 210mm; margin: 16px auto 0; padding: 0 16px; display: flex; gap: 8px; justify-content: space-between; align-items: center; font-size: 14px; }
+    .toolbar a, .toolbar button { color: var(--text); background: #fff; border: 1px solid var(--rule); border-radius: 6px; padding: 6px 12px; text-decoration: none; font: inherit; cursor: pointer; }
+    .page { max-width: 210mm; margin: 12px auto 32px; background: #fff; padding: 16mm 16mm 14mm; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+    @media (max-width: 640px) { .page { padding: 20px 16px; margin: 8px 0 24px; } body { font-size: 15px; } }
+    h1 { font-size: 20pt; line-height: 1.1; margin: 0; letter-spacing: -.01em; }
+    .title { font-size: 12pt; color: var(--accent); font-weight: 600; margin: 2px 0 6px; }
+    .contact { color: var(--muted); margin: 0; }
+    .contact a { color: inherit; }
+    h2 { font-size: 10.5pt; text-transform: uppercase; letter-spacing: .06em; margin: 14px 0 6px; padding-bottom: 3px; border-bottom: 1px solid var(--rule); }
+    h3 { font-size: 10.5pt; margin: 8px 0 0; }
+    .meta { color: var(--muted); margin: 0 0 2px; }
+    p { margin: 0 0 4px; }
+    ul { margin: 2px 0 6px; padding-left: 16px; }
+    li { margin: 1px 0; }
+    .skills p { margin: 0 0 2px; }
+    .skills b { display: inline-block; min-width: 0; }
+    a { color: var(--accent); overflow-wrap: anywhere; }
+    @page { size: A4; margin: 12mm 13mm; }
+    @media print {
+      body { background: #fff; font-size: 10pt; }
+      .toolbar { display: none; }
+      .page { box-shadow: none; margin: 0; padding: 0; max-width: none; }
+      a { color: inherit; text-decoration: none; }
+      h2 { break-after: avoid; }
+      .job { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <a href="./">← Portfolio</a>
+    <span><a href="Tran_Viet_Minh_Phat_Resume.pdf" download>Download PDF</a> <button type="button" onclick="window.print()">Print</button></span>
+  </div>
+
+  <main class="page">
+    <header>
+      <h1>Tran Viet Minh Phat</h1>
+      <p class="title">Python Backend Developer</p>
+      <p class="contact">
+        Da Nang, Vietnam · <a href="mailto:tranvietminhphat@gmail.com">tranvietminhphat@gmail.com</a> ·
+        <a href="https://www.linkedin.com/in/minhphat-ai/">linkedin.com/in/minhphat-ai</a> ·
+        <a href="https://github.com/2000minhphat1999">github.com/2000minhphat1999</a> ·
+        <a href="https://2000minhphat1999.github.io/2000minhphat1999/">2000minhphat1999.github.io/2000minhphat1999</a>
+      </p>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <p>Python backend developer building business systems on Flask and PostgreSQL. I develop and maintain an in-house warehouse management system for a manufacturing plant: purchase-order intake, an append-only inventory ledger, FIFO costing in USD, monthly period closing and reporting, running as 14 Flask services on one PostgreSQL database. My focus is data integrity, SQL and transaction safety, and verifying changes against real data. Earlier background in mechatronics, IoT and computer vision.</p>
+    </section>
+
+    <section class="skills">
+      <h2>Technical Skills</h2>
+      <p><b>Languages:</b> Python, SQL (PostgreSQL), JavaScript, HTML/CSS; C/C++ (embedded)</p>
+      <p><b>Backend:</b> Flask, Hypercorn (ASGI), REST/JSON APIs, session authentication and permissions, Jinja2, htmx</p>
+      <p><b>Databases:</b> PostgreSQL (transactions, row-level locking), psycopg2, Alembic, SQLite, MongoDB, SQLAlchemy</p>
+      <p><b>Automation &amp; Data:</b> orchestration workers, scheduled validation jobs, Excel ingestion, ReportLab PDF reports, pandas</p>
+      <p><b>Infrastructure &amp; Tools:</b> nginx, Linux, Windows, Git, Claude Code (AI-assisted development)</p>
+      <p><b>Computer Vision / ML:</b> OpenCV, YOLOv5, DeepSORT/SORT, TensorFlow, PyTorch, Tesseract OCR</p>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+
+      <div class="job">
+        <h3>Software Developer (Python Backend)</h3>
+        <p class="meta">Manufacturing company (name withheld) · Vietnam · 2025 – Present</p>
+        <ul>
+          <li>Develop and maintain an in-house warehouse management system (14 Flask services, one PostgreSQL database, Hypercorn behind nginx) used by warehouse staff and production lines for receiving, FIFO issue, returns, stocktake, period closing and cost reporting.</li>
+          <li>Built a four-stage purchase-order intake pipeline (Excel upload → material sync → ID linking → receiving). Receiving is blocked on a missing monthly exchange rate, a closed period, over-receipt or open data-quality warnings.</li>
+          <li>Implemented FIFO batch allocation with <i>SELECT … FOR UPDATE</i> and all-or-nothing issue. Returns are traced to the originating line's batches and capped at the quantity that line received.</li>
+          <li>Kept all stock and cost figures derivable from an append-only transaction ledger. Batch and material snapshots are recomputed by a replay engine, never edited by hand.</li>
+          <li>Fixed a validation blind spot where the receiving gate reported "clean" while invalid rows remained: normalization now happens only at ingress, and upload no longer drops unparseable rows.</li>
+          <li>Removed rounding from assembly costing after a simulation showed quantization lost value (−0.0000086 USD over 20 units). Costs are now compared as Decimal.</li>
+          <li>Verified 24 stock and cost formulas read-only against live data (23 exact; 1 caveat caused by incomplete source records). Write paths are tested by rollback simulation on a cloned database.</li>
+          <li>Documented 11 data invariants with check queries, plus the architecture and decision and failure logs.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <h3>Research Engineer</h3>
+        <p class="meta">University of Technology and Education – The University of Danang · Da Nang · 03/2024 – 08/2024</p>
+        <ul>
+          <li>Built educational websites for online learning programmes.</li>
+          <li>Designed and assembled robot systems for project-based STEAM courses.</li>
+          <li>Researched business models for digital-transformation platforms.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <h3>Computer Vision Engineer (Freelance)</h3>
+        <p class="meta">Da Nang · 06/2023 – 12/2023</p>
+        <ul>
+          <li>Built a two-camera train passenger counter for Halovi Software. Each camera runs detection and SORT tracking in its own process, with local MongoDB persistence, scheduled REST API sync, date-based video retention and USB export.</li>
+          <li>Developed YOLOv5 + DeepSORT object detection and tracking for industrial scenes with difficult lighting.</li>
+          <li>Built a Kivy desktop application with a PyTorch detection backend for shipment checking at a supermarket.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <h3>Kaizen Engineer Intern</h3>
+        <p class="meta">Premo Vietnam · Quang Nam · 05/2022 – 07/2022</p>
+        <ul>
+          <li>Extracted machine performance data from industrial sensors over Modbus RTU with Python, as groundwork for IoT monitoring.</li>
+          <li>Analysed mechanical assembly and machine structure for process improvement.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Selected Projects</h2>
+      <div class="job">
+        <h3>Warehouse Management System — case study</h3>
+        <p class="meta">Python, Flask, PostgreSQL, Alembic, nginx · <a href="https://2000minhphat1999.github.io/2000minhphat1999/projects/warehouse-system.html">2000minhphat1999.github.io/2000minhphat1999/projects/warehouse-system.html</a></p>
+        <ul>
+          <li>Architecture, data model, technical decisions, difficult problems and known limitations of the system above, with no confidential data.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <h3>OCR Data-Entry Automation</h3>
+        <p class="meta">Python, Tesseract, OpenCV · <a href="https://github.com/2000minhphat1999/OCR_python">github.com/2000minhphat1999/OCR_python</a></p>
+        <ul>
+          <li>Reads Vietnamese text from scanned paper forms (OpenCV preprocessing + Tesseract), so the data does not have to be retyped into a web system.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <h3>Service Booking System (scaffold)</h3>
+        <p class="meta">Flask, SQLAlchemy, Flask-Login, Flask-Migrate, APScheduler · <a href="https://github.com/2000minhphat1999/SERVICE_PPOINTMENT_BOOKING_SYSTEM">github.com/2000minhphat1999/SERVICE_PPOINTMENT_BOOKING_SYSTEM</a></p>
+        <ul>
+          <li>Role-based users, service catalog, bookings with staff assignment and scheduled reminders, with the code split into auth, booking, catalog and notification services.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <h3>B.Eng., Mechatronics Engineering Technology</h3>
+      <p class="meta">University of Technology and Education – The University of Danang · 09/2018 – 06/2023 · Classification: Good</p>
+    </section>
+
+    <section>
+      <h2>Publication &amp; Awards</h2>
+      <ul>
+        <li>Tran Viet Minh Phat et al. "Building an IoT-Based Waste Management System for Hazardous Waste." REC-ECIT 2023, pp. 193–198.</li>
+        <li>Encouragement Prize, Science &amp; Technology Award for Students — Ministry of Education and Training (2023); Encouragement Prize — VIFOTEC (2023).</li>
+        <li>Second Prize, Da Nang City Student Scientific Research Competition (2022).</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Languages</h2>
+      <p>Vietnamese (native) · English (B2, IELTS 5.5)</p>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Warehouse Management System — Case Study · Tran Viet Minh Phat</title>
+  <meta name="description" content="Case study: an in-house warehouse management system on Flask and PostgreSQL with an append-only inventory ledger, FIFO costing in USD, validation gates and rollback-based verification.">
+  <meta name="author" content="Tran Viet Minh Phat">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Warehouse Management System — Case Study">
+  <meta property="og:description" content="Append-only inventory ledger, FIFO costing, validation gates and verification against live data.">
+  <meta name="theme-color" content="#0f6b5c">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/theme.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <nav class="container nav" aria-label="Primary">
+    <a class="brand" href="../">minhphat</a>
+    <ul class="nav-links">
+      <li><a href="../#work" aria-current="page">Work</a></li>
+      <li><a class="hide-sm" href="../#experience">Experience</a></li>
+      <li><a href="../resume.html">Resume</a></li>
+      <li><a href="../#contact">Contact</a></li>
+      <li><button class="theme-toggle" type="button" aria-label="Toggle theme">☾</button></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+  <div class="container">
+
+    <header class="cs-header">
+      <p class="eyebrow"><a href="../#work">← Work</a> · Case study</p>
+      <h1>Warehouse management system</h1>
+      <p class="lede">An internal system for a manufacturing plant's production-engineering warehouse. It covers purchase-order intake, receiving, FIFO issue to production lines, returns, material classification, stocktake, monthly period closing and USD cost reporting.</p>
+      <dl class="kv" style="max-width:60ch">
+        <dt>Role</dt><dd>Developer: backend, PostgreSQL schema and SQL, data pipeline, web UI</dd>
+        <dt>Period</dt><dd>2025 – present (running in production, still being developed)</dd>
+        <dt>Users</dt><dd>Warehouse staff and production-line operators (not developers)</dd>
+        <dt>Stack</dt><dd>Python · Flask · PostgreSQL · psycopg2 · Alembic · Hypercorn · nginx · Jinja2 · htmx · SQLite · ReportLab</dd>
+      </dl>
+      <div class="callout warn">
+        <span class="label">Confidentiality</span>
+        <p>The employer is not named. No business data, server addresses or material codes are shown. Table and module names are generalized, and the numbers below describe the system, not company figures.</p>
+      </div>
+    </header>
+
+    <nav class="card toc" aria-label="Contents">
+      <p class="eyebrow" style="margin-bottom:.6rem">Contents</p>
+      <ol>
+        <li><a href="#problem">Problem &amp; constraints</a></li>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#data-model">Data model</a></li>
+        <li><a href="#decisions">Technical decisions</a></li>
+        <li><a href="#implementation">Implementation</a></li>
+        <li><a href="#hard-problems">Difficult problems</a></li>
+        <li><a href="#verification">Verification</a></li>
+        <li><a href="#limitations">Limitations &amp; next steps</a></li>
+        <li><a href="#lessons">Lessons learned</a></li>
+      </ol>
+    </nav>
+
+    <article class="cs-body prose" style="max-width:none">
+
+      <!-- 1 -->
+      <h2 id="problem">1 · Problem &amp; constraints</h2>
+      <div class="prose">
+        <p>The warehouse buys tooling, consumables, spare parts and safety equipment for several production lines. Purchase orders arrive as Excel files with prices in several currencies. Management needs <b>stock and cost in USD</b>, per material and per production line, with a clean month-end close.</p>
+        <p>The hard part is not CRUD. The same numbers are read by purchasing, the warehouse, line leaders and accounting, and a wrong number costs real money or real stock.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="data">
+          <thead><tr><th>Constraint</th><th>Consequence for design</th></tr></thead>
+          <tbody>
+            <tr><td>Users are warehouse staff, not engineers</td><td>Errors must be shown in business language, next to the row that caused them, and fixable in place</td></tr>
+            <tr><td>Multi-currency purchase prices, USD reporting</td><td>Exchange rates stored per month; receiving is blocked when that month's rate is missing</td></tr>
+            <tr><td>Monthly and yearly closing</td><td>Closing stock rolls into the next period's opening stock without double counting</td></tr>
+            <tr><td>Several people issuing and receiving at the same time</td><td>Batch allocation must be race-free</td></tr>
+            <tr><td>Offline plant network</td><td>No CDNs: frontend libraries are vendored and Python packages are installed from local wheels</td></tr>
+            <tr><td>Business rules change often (e.g. a classification split mid-year)</td><td>Rules must be written down once and imported, not copied</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 2 -->
+      <h2 id="architecture">2 · Architecture</h2>
+      <p class="prose">The system is a set of independent Flask applications, one per business module. Each runs as its own Hypercorn process on its own port, behind nginx, and they all share one PostgreSQL database. A long-running orchestration worker runs the intake pipeline and period-closing steps.</p>
+
+      <figure class="diagram">
+        <svg viewBox="0 0 760 300" role="img" aria-labelledby="arch-title arch-desc">
+          <title id="arch-title">Deployment topology</title>
+          <desc id="arch-desc">Browser to nginx, nginx routes to fourteen Flask services, all services and an orchestration worker read and write one PostgreSQL database.</desc>
+          <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="d-arrow"/></marker></defs>
+          <rect x="300" y="10" width="160" height="40" rx="8" class="d-box"/>
+          <text x="380" y="35" text-anchor="middle" class="d-text">Browser (LAN)</text>
+          <line x1="380" y1="50" x2="380" y2="72" class="d-line" marker-end="url(#ah)"/>
+          <rect x="300" y="74" width="160" height="40" rx="8" class="d-box"/>
+          <text x="380" y="93" text-anchor="middle" class="d-text">nginx</text>
+          <text x="380" y="107" text-anchor="middle" class="d-sub">reverse proxy · static cache</text>
+          <line x1="380" y1="114" x2="380" y2="132" class="d-line"/>
+          <line x1="70" y1="132" x2="690" y2="132" class="d-line"/>
+          <g>
+            <line x1="70" y1="132" x2="70" y2="148" class="d-line" marker-end="url(#ah)"/>
+            <line x1="194" y1="132" x2="194" y2="148" class="d-line" marker-end="url(#ah)"/>
+            <line x1="318" y1="132" x2="318" y2="148" class="d-line" marker-end="url(#ah)"/>
+            <line x1="442" y1="132" x2="442" y2="148" class="d-line" marker-end="url(#ah)"/>
+            <line x1="566" y1="132" x2="566" y2="148" class="d-line" marker-end="url(#ah)"/>
+            <line x1="690" y1="132" x2="690" y2="148" class="d-line" marker-end="url(#ah)"/>
+          </g>
+          <rect x="15" y="150" width="110" height="48" rx="8" class="d-box"/><text x="70" y="172" text-anchor="middle" class="d-text">purchasing</text><text x="70" y="188" text-anchor="middle" class="d-sub">intake · gates</text>
+          <rect x="139" y="150" width="110" height="48" rx="8" class="d-box"/><text x="194" y="172" text-anchor="middle" class="d-text">issue</text><text x="194" y="188" text-anchor="middle" class="d-sub">FIFO · returns</text>
+          <rect x="263" y="150" width="110" height="48" rx="8" class="d-box"/><text x="318" y="172" text-anchor="middle" class="d-text">reports</text><text x="318" y="188" text-anchor="middle" class="d-sub">cost · PDF/Excel</text>
+          <rect x="387" y="150" width="110" height="48" rx="8" class="d-box"/><text x="442" y="172" text-anchor="middle" class="d-text">stocktake</text><text x="442" y="188" text-anchor="middle" class="d-sub">count · adjust</text>
+          <rect x="511" y="150" width="110" height="48" rx="8" class="d-box"/><text x="566" y="172" text-anchor="middle" class="d-text">classification</text><text x="566" y="188" text-anchor="middle" class="d-sub">new/used/repair</text>
+          <rect x="635" y="150" width="110" height="48" rx="8" class="d-box"/><text x="690" y="172" text-anchor="middle" class="d-text">+ 8 more</text><text x="690" y="188" text-anchor="middle" class="d-sub">rates · staff · …</text>
+          <line x1="70" y1="198" x2="70" y2="226" class="d-line"/>
+          <line x1="690" y1="198" x2="690" y2="226" class="d-line"/>
+          <line x1="70" y1="226" x2="690" y2="226" class="d-line"/>
+          <line x1="380" y1="226" x2="380" y2="244" class="d-line" marker-end="url(#ah)"/>
+          <rect x="280" y="246" width="200" height="44" rx="8" class="d-box-accent"/>
+          <text x="380" y="266" text-anchor="middle" class="d-text">PostgreSQL</text>
+          <text x="380" y="281" text-anchor="middle" class="d-sub">single shared database</text>
+          <rect x="560" y="246" width="185" height="44" rx="8" class="d-box"/>
+          <text x="652" y="266" text-anchor="middle" class="d-text">orchestration worker</text>
+          <text x="652" y="281" text-anchor="middle" class="d-sub">intake · convert · close</text>
+          <line x1="560" y1="268" x2="482" y2="268" class="d-line" marker-end="url(#ah)"/>
+        </svg>
+        <figcaption>Deployment topology (simplified). Module links are built from the request's forwarded host, so pages work both through nginx and on direct IP access.</figcaption>
+      </figure>
+
+      <div class="prose">
+        <p><b>Trade-off of separate apps.</b> Each module runs in its own process, so one module can be restarted without stopping the others. The cost is business logic duplicated across modules, covered in <a href="#limitations">Limitations</a>.</p>
+      </div>
+
+      <!-- 3 -->
+      <h2 id="data-model">3 · Data model: four layers that must not mix</h2>
+      <p class="prose">Most early bugs came from treating a derived number as if it were a stored fact. The model is now written down as four layers, and each layer may only be written by specific code.</p>
+
+      <figure class="diagram">
+        <svg viewBox="0 0 760 170" role="img" aria-labelledby="dm-title dm-desc">
+          <title id="dm-title">Data derivation chain</title>
+          <desc id="dm-desc">Purchase orders and material master feed an append-only ledger; batches, per-material snapshots, monthly and yearly tables and statistics are recomputed from the ledger.</desc>
+          <defs><marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="d-arrow"/></marker></defs>
+          <rect x="10" y="20" width="150" height="52" rx="8" class="d-box"/><text x="85" y="42" text-anchor="middle" class="d-text">Documents</text><text x="85" y="60" text-anchor="middle" class="d-sub">purchase orders</text>
+          <rect x="10" y="96" width="150" height="52" rx="8" class="d-box"/><text x="85" y="118" text-anchor="middle" class="d-text">Master data</text><text x="85" y="136" text-anchor="middle" class="d-sub">material (class, code)</text>
+          <line x1="160" y1="46" x2="208" y2="74" class="d-line" marker-end="url(#ah2)"/>
+          <line x1="160" y1="122" x2="208" y2="96" class="d-line" marker-end="url(#ah2)"/>
+          <rect x="210" y="56" width="160" height="58" rx="8" class="d-box-accent"/><text x="290" y="80" text-anchor="middle" class="d-text">Ledger</text><text x="290" y="98" text-anchor="middle" class="d-sub">append-only · truth</text>
+          <line x1="370" y1="85" x2="408" y2="85" class="d-line" marker-end="url(#ah2)"/>
+          <rect x="410" y="56" width="100" height="58" rx="8" class="d-box"/><text x="460" y="80" text-anchor="middle" class="d-text">Batches</text><text x="460" y="98" text-anchor="middle" class="d-sub">replayed</text>
+          <line x1="510" y1="85" x2="538" y2="85" class="d-line" marker-end="url(#ah2)"/>
+          <rect x="540" y="56" width="100" height="58" rx="8" class="d-box"/><text x="590" y="80" text-anchor="middle" class="d-text">Material</text><text x="590" y="98" text-anchor="middle" class="d-sub">snapshot</text>
+          <line x1="640" y1="85" x2="668" y2="85" class="d-line" marker-end="url(#ah2)"/>
+          <rect x="670" y="56" width="80" height="58" rx="8" class="d-box"/><text x="710" y="80" text-anchor="middle" class="d-text">Reports</text><text x="710" y="98" text-anchor="middle" class="d-sub">month/year</text>
+          <text x="580" y="140" text-anchor="middle" class="d-sub">← derived: recomputed, never edited by hand →</text>
+        </svg>
+        <figcaption>Data derivation chain. Everything to the right of the ledger is a cache that can be rebuilt.</figcaption>
+      </figure>
+
+      <div class="table-wrap">
+        <table class="data">
+          <thead><tr><th>Layer</th><th>Question it answers</th><th>Written by</th></tr></thead>
+          <tbody>
+            <tr><td>Master data</td><td>Which material is this?</td><td>Sync worker, keyed on <code>(class, part_code)</code></td></tr>
+            <tr><td>Documents</td><td>What was ordered, from whom, at what price?</td><td>Excel upload</td></tr>
+            <tr><td>Ledger</td><td>What happened? (receive, issue, return, scrap, transfer, stocktake, reclassify)</td><td>Business routes, <b>INSERT only</b></td></tr>
+            <tr><td>Derived</td><td>Batch balances, per-material stock and cost, period tables</td><td>Replay/recompute functions only</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout">
+        <span class="label">The main trap</span>
+        <p>The material table is both master data (code, class, unit) and a derived snapshot (closing stock, average cost). Editing a stock number there by hand does nothing useful: the next recompute overwrites it. To change a result, you change the ledger.</p>
+      </div>
+
+      <!-- 4 -->
+      <h2 id="decisions">4 · Key technical decisions</h2>
+      <div class="table-wrap">
+        <table class="data">
+          <thead><tr><th>Decision</th><th>Alternative</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td>Append-only ledger; batches and snapshots recomputed by a replay engine</td><td>Increment counters in place</td><td>Every number can be rebuilt and audited. A bug in derived data is fixed by re-running replay, not by patching rows.</td></tr>
+            <tr><td>FIFO batch allocation under <code>SELECT … FOR UPDATE</code>; all-or-nothing issue</td><td>Allocate without locks; allow partial issue</td><td>Two people issuing the same material cannot draw from the same batch. A short issue fails cleanly instead of leaving half a transaction.</td></tr>
+            <tr><td>Returns traced to the batches the <i>same line</i> took, capped at what that line received</td><td>Return into the newest batch</td><td>The refund equals the original batch cost, and one line cannot return another line's stock.</td></tr>
+            <tr><td>Provisional issues staged in SQLite; batch allocation deferred to month-end</td><td>Derive batches from full history ("Route B"); a pending table in PostgreSQL</td><td>Route B was built and tested, then switched off behind a feature flag in favour of the existing route plus deferred allocation. The decision and its reason are recorded, so it is not re-enabled by accident.</td></tr>
+            <tr><td>Upload accepts every non-empty row; validation happens downstream</td><td>Reject invalid rows at upload</td><td>A rejected row is invisible to the warning popup and the receiving gate. The bad data disappears instead of getting fixed.</td></tr>
+            <tr><td><code>converted_price</code> is always USD; <code>NULL</code> plus a block when no rate exists</td><td>Fall back to the original currency</td><td>Cost rollups multiply price × quantity as USD. One VND price in that column skews totals without any visible error.</td></tr>
+            <tr><td>Costs kept unrounded (<code>numeric</code> without scale, <code>Decimal</code> comparisons)</td><td>Quantize to 6 decimal places</td><td>A measured rounding loss; see <a href="#p-rounding">problem 3</a>.</td></tr>
+            <tr><td>Over-issue: hard block for line accounts, warning only for the central warehouse account</td><td>Hard block for everyone</td><td>The central account already has extra privileges (issuing on behalf of lines, adjusting dates). A hard block was considered and rejected. The warning and the block use the same availability function, so they always agree.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 5 -->
+      <h2 id="implementation">5 · Implementation</h2>
+      <h3>Intake pipeline</h3>
+      <div class="prose">
+        <p>Goods do not enter stock through a single API. There are four stages, each with one owner:</p>
+        <ol>
+          <li><b>Upload</b> — a 16-column Excel file goes into the purchase table. Values are cleaned on the way in (whitespace, Unicode). Each column is parsed in its own <code>try</code>, and unreadable numbers are stored as <code>NULL</code> with a note.</li>
+          <li><b>Sync</b> — the worker upserts materials keyed on <code>(class, part_code)</code> and validates classification, code and specification here, not at upload.</li>
+          <li><b>Link</b> — material IDs are written back to purchase rows, along with the pending-receipt quantity.</li>
+          <li><b>Receive</b> — the only step that creates batches and ledger rows. It sits behind four gates: a missing monthly exchange rate, a date outside the open period, open data-quality warnings, or receiving more than was ordered.</li>
+        </ol>
+        <p>The orchestration worker runs stages 2–3 in a loop, detects when users have stopped entering data (20-second idle window on the ledger), then converts prices to USD and recomputes stock and cost.</p>
+      </div>
+
+      <h3>Period closing</h3>
+      <p class="prose">Month close recomputes the closing period, rolls each batch's remaining quantity into the next period's opening stock (assigned, not added, so nothing is counted twice), settles staged provisional issues, then recomputes both months again. Tooling tracked per user rolls over by <i>year</i>, and the yearly carry-forward does not depend on stocktake counts.</p>
+
+      <h3>Supporting pieces</h3>
+      <ul class="prose">
+        <li>Session auth middleware shared by all modules, with per-account page permissions.</li>
+        <li>Four-state classification for production tooling (new / used / awaiting repair / awaiting scrap), rebuilt by replay from ledger rows and note labels.</li>
+        <li>Reorder quantity from lead time × safety stock − open orders − stock on hand.</li>
+        <li>A monitoring job that flags unusual daily receive/issue volumes against recent history. It is a warning tool only and never changes stock or cost.</li>
+        <li>PDF and Excel exports (ReportLab) that use the same labels as the UI.</li>
+      </ul>
+
+      <!-- 6 -->
+      <h2 id="hard-problems">6 · Difficult problems</h2>
+
+      <section class="problem" style="padding:1.25rem 1.3rem;border-top:1px solid var(--border)">
+        <h3>1. The receiving gate said “clean” while bad rows were still there</h3>
+        <dl>
+          <dt>Symptom</dt><dd>The warning flag flickered, warning files were deleted, and the logs kept reporting errors while the popup was empty. In the worst case, receiving was unlocked while invalid rows remained. This happened twice.</dd>
+          <dt>Root cause</dt><dd>Two blind spots. The detector trimmed and case-folded values before comparing, so it cleaned away the very errors it was meant to catch. And upload rejected rows it could not parse, so the detector never saw them.</dd>
+          <dt>Fix</dt><dd>Normalize only at the entrance (upload) and compare raw values everywhere after that. Upload never drops a row. The gate and the popup now scan the same scope with the same conditions.</dd>
+          <dt>Check</dt><dd>Deliberately leave one bad row that creates no duplicate. The gate must still report dirty and must not delete the warning file.</dd>
+        </dl>
+      </section>
+
+      <section class="problem" style="padding:1.25rem 1.3rem;border-top:1px solid var(--border)">
+        <h3>2. Changing a material's class reset its stock to zero</h3>
+        <dl>
+          <dt>Context</dt><dd>The business split one classification into two, so existing materials had to change class without losing stock.</dd>
+          <dt>Root cause</dt><dd>Class is part of the business key <code>(class, part_code)</code>, not a descriptive attribute. Changing it in only one table makes the sync worker create a new material ID with zero stock.</dd>
+          <dt>Fix</dt><dd>Reclassify across all six dependent tables in a single transaction.</dd>
+          <dt>Check</dt><dd>Simulated on a cloned database: <code>COUNT(DISTINCT material_id)</code> and total closing stock are identical before and after.</dd>
+        </dl>
+      </section>
+
+      <section class="problem" id="p-rounding" style="padding:1.25rem 1.3rem;border-top:1px solid var(--border)">
+        <h3>3. Rounding unit cost lost money</h3>
+        <dl>
+          <dt>Context</dt><dd>Assembling a fixture issues its components by FIFO and receives the fixture at their combined cost. The fixture's cost must equal the sum of its parts exactly.</dd>
+          <dt>Root cause</dt><dd>When FIFO cuts across two batches at different prices and the quantity does not divide evenly, unit cost is a repeating decimal. Quantizing to 6 places lost <b>−0.0000086 USD over 20 fixtures</b> in simulation.</dd>
+          <dt>Fix</dt><dd>No rounding in cost paths. The <code>numeric</code> column has no scale limit, and totals are compared as <code>Decimal</code>, never float.</dd>
+          <dt>Check</dt><dd>Total cost before equals total cost after. The difference went from −0.0000086 to 0.</dd>
+        </dl>
+      </section>
+
+      <section class="problem" style="padding:1.25rem 1.3rem;border-top:1px solid var(--border)">
+        <h3>4. A “data loss” bug that was a misreading</h3>
+        <dl>
+          <dt>Symptom</dt><dd>A batch showed Issued = −8 and Scrap = 0 even though items had been scrapped. It was reported as lost data.</dd>
+          <dt>Root cause</dt><dd>The four quantity columns on a batch cover the <i>open period only</i>. Issued is net of returns and can be negative. They are not lifetime totals.</dd>
+          <dt>Fix</dt><dd>No code change was needed. I documented the column semantics and added a diagnostic rule: find the open period before calling a batch wrong.</dd>
+          <dt>Lesson</dt><dd>Check the meaning of a number before “fixing” it. A fix here would have created a real bug.</dd>
+        </dl>
+      </section>
+
+      <section class="problem" style="padding:1.25rem 1.3rem;border-top:1px solid var(--border)">
+        <h3>5. Concurrent inline edits vs. receiving and issue <span class="badge neutral">design analysis</span></h3>
+        <dl>
+          <dt>Finding</dt><dd>Stock issue already locks batch rows, but the admin inline-edit endpoint committed single cells with no version or staleness check. It could change a batch between a user opening a form and submitting it. Presence tracking (20-second heartbeat, 5-second polling) only warns and is not enforced by the backend.</dd>
+          <dt>Proposal</dt><dd>Stale-data warnings instead of auto-refreshing open forms. A <code>row_version</code> optimistic lock on purchase and batch rows (the material table can reuse <code>updated_at</code>). Backend guards that refuse edits while issue or receiving is active. Treat the ledger as non-editable.</dd>
+          <dt>Fallback</dt><dd>If migrations must wait, return a row fingerprint with each read and reject the update when it no longer matches. This is weaker than a version column but needs no schema change.</dd>
+        </dl>
+      </section>
+
+      <h3>Algorithm check: specification history</h3>
+      <p class="prose">One part code can map to several materials as its specification changes over time. Before adding a history table, I simulated 120 renames of one part code: a naive scan needs <b>214,320</b> comparisons, an indexed scan <b>3,750</b>, and a compressed lineage <b>478</b>. The conclusion: any long-term spec history must be index-first. The rule was documented before the runtime was changed.</p>
+
+      <!-- 7 -->
+      <h2 id="verification">7 · Verification</h2>
+      <div class="prose">
+        <p>The codebase has no automated test suite yet, so every write path is verified in two ways:</p>
+        <ul>
+          <li><b>Rollback simulation.</b> Clone the database (<code>CREATE DATABASE … TEMPLATE</code>), open a transaction, call the <i>real</i> function, read the results inside the transaction, then roll back. Row counts of the target tables must match before and after, and the report states those counts.</li>
+          <li><b>Formula audit.</b> Each stock and cost formula was written in business language and checked read-only against live data.</li>
+        </ul>
+      </div>
+      <div class="table-wrap">
+        <table class="data">
+          <thead><tr><th>Formula group</th><th>Rows checked</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td>Closing stock — material / month / year tables</td><td class="num">26 · 52 · 52</td><td>exact</td></tr>
+            <tr><td>Batch remaining = in − out − scrap − transfer</td><td class="num">53</td><td>exact</td></tr>
+            <tr><td>Issue cost = source batch USD price</td><td class="num">134</td><td>exact</td></tr>
+            <tr><td>Non-receipt rows reuse batch USD price</td><td class="num">138</td><td>exact</td></tr>
+            <tr><td>USD = original price × monthly rate</td><td class="num">45</td><td>exact</td></tr>
+            <tr><td>Per-line issue quantity and cost</td><td class="num">72 · 72</td><td>exact</td></tr>
+            <tr><td>Tooling: new + used = issued in year</td><td class="num">44</td><td>33 match; 11 source rows missing a new/used label</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="prose small muted">Overall: 23 of 24 formulas match exactly. The one caveat comes from incomplete input data, not from the formula.</p>
+
+      <!-- 8 -->
+      <h2 id="limitations">8 · Limitations &amp; next steps</h2>
+      <div class="prose">
+        <p>These are known limitations, listed because a reviewer would find them anyway:</p>
+        <ul>
+          <li><b>Large route files.</b> Some modules are a single file of up to ~180 KB with SQL inside the route handlers. There is no service or repository layer, so one business change can touch several modules.</li>
+          <li><b>Mirrored utilities.</b> 13 helper modules exist in two locations and must be kept identical by hand.</li>
+          <li><b>Two migration systems</b> (Alembic and hand-run SQL files).</li>
+          <li><b>No automated test suite.</b> Verification relies on simulation scripts and compile checks.</li>
+          <li><b>One currency gap.</b> The USD-only rule is not fully enforced yet: some conversion workers still fall back to the original price when a rate is missing. This needs a fix at the source.</li>
+        </ul>
+        <p><b>What I would do next:</b> extract ledger, FIFO and replay into one service module; wrap it in a <code>pytest</code> suite whose assertions are the written invariants; move to a single migration path; add <code>row_version</code> columns; and replace dynamic SQL identifiers with whitelisted <code>psycopg2.sql</code> composition.</p>
+      </div>
+
+      <!-- 9 -->
+      <h2 id="lessons">9 · Lessons learned</h2>
+      <ul class="prose">
+        <li><b>Name the source of truth first.</b> Once the ledger was the only writable fact, most “sync” bugs became replay calls.</li>
+        <li><b>Clean at the entrance, compare exactly inside.</b> A validator that normalizes its input hides its own failures.</li>
+        <li><b>Business keys are not attributes.</b> Know which columns form identity before letting users edit them.</li>
+        <li><b>Check comments against the query.</b> Docstrings and old docs described a FastAPI/ORM architecture and a costing method that the code did not use. Only the executed query tells you what the code does.</li>
+        <li><b>Record decisions and failures.</b> A rejected option such as Route B stays rejected because the reason is written down.</li>
+      </ul>
+
+      <hr>
+      <p class="actions"><a class="btn" href="../#work">← Back to work</a><a class="btn btn-primary" href="../resume.html">Resume</a></p>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container row">
+    <span>© 2026 Tran Viet Minh Phat</span>
+    <span><a href="../">Home</a> · <a href="../resume.html">Resume</a></span>
+  </div>
+</footer>
+</body>
+</html>

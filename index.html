@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tran Viet Minh Phat — Python Backend Developer</title>
+  <meta name="description" content="Python backend developer building business systems on Flask and PostgreSQL: an in-house warehouse management system with an append-only inventory ledger, FIFO costing and period closing.">
+  <meta name="author" content="Tran Viet Minh Phat">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tran Viet Minh Phat — Python Backend Developer">
+  <meta property="og:description" content="Business systems on Python and PostgreSQL: inventory ledger, FIFO costing, data-integrity gates, verification against live data.">
+  <meta name="theme-color" content="#0f6b5c">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/theme.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Tran Viet Minh Phat",
+    "jobTitle": "Python Backend Developer",
+    "address": {"@type": "PostalAddress", "addressLocality": "Da Nang", "addressCountry": "VN"},
+    "alumniOf": "University of Technology and Education – The University of Danang",
+    "sameAs": ["https://github.com/2000minhphat1999", "https://www.linkedin.com/in/minhphat-ai/"]
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <nav class="container nav" aria-label="Primary">
+    <a class="brand" href="./">minhphat</a>
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a class="hide-sm" href="#experience">Experience</a></li>
+      <li><a class="hide-sm" href="#about">About</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><button class="theme-toggle" type="button" aria-label="Toggle theme">☾</button></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- HERO: who → what → evidence -->
+  <section class="hero">
+    <div class="container">
+      <p class="role">Python Backend Developer · Da Nang, Vietnam</p>
+      <h1>Tran Viet Minh Phat</h1>
+      <p class="lede">
+        I build and maintain business systems on Python and PostgreSQL. My current work is an in-house
+        warehouse management system for a manufacturing plant: purchase-order intake, an append-only inventory
+        ledger, FIFO costing in USD, monthly period closing and reporting.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="projects/warehouse-system.html">Read the case study →</a>
+        <a class="btn" href="resume.html">Resume</a>
+        <a class="btn" href="https://github.com/2000minhphat1999" rel="me">GitHub</a>
+      </div>
+
+      <div class="facts" aria-label="Key facts about the warehouse system">
+        <div class="fact"><b>14 Flask services</b><span>One PostgreSQL database, served by Hypercorn behind nginx</span></div>
+        <div class="fact"><b>1 source of truth</b><span>Stock and cost figures are derived from one append-only transaction ledger</span></div>
+        <div class="fact"><b>24 formulas checked</b><span>Stock/cost formulas verified read-only against live data: 23 exact, 1 explained caveat</span></div>
+        <div class="fact"><b>11 invariants</b><span>Written data-integrity rules, each with a query that checks it</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED WORK -->
+  <section id="work">
+    <div class="container">
+      <p class="eyebrow">Featured work</p>
+      <h2>Warehouse management system</h2>
+      <p class="muted prose">An internal system for a production-engineering warehouse. The employer is not named and no internal data is shown.</p>
+
+      <article class="feature">
+        <div>
+          <dl class="kv">
+            <dt>Problem</dt><dd>Purchase data arrives as Excel files. Stock, USD cost and material classification must stay consistent across purchasing, the warehouse and production lines, and bad rows must not reach inventory.</dd>
+            <dt>Role</dt><dd>Developer: backend, database, data pipeline and web UI.</dd>
+            <dt>Stack</dt><dd>Python, Flask, PostgreSQL (psycopg2, hand-written SQL), Alembic, Hypercorn, nginx, Jinja2 + htmx, ReportLab</dd>
+            <dt>Status</dt><dd>Running on the plant's internal server and still being developed (2025 to present).</dd>
+          </dl>
+          <a class="btn btn-primary" href="projects/warehouse-system.html">Full case study →</a>
+        </div>
+        <div>
+          <h3>Engineering highlights</h3>
+          <ul>
+            <li><b>Ledger-first data model.</b> Batches, per-material stock and reports are all recomputed from <code>stock_transaction</code> rows. No derived number is edited by hand.</li>
+            <li><b>FIFO issue with row locks.</b> Stock issue picks batches oldest-first under <code>SELECT … FOR UPDATE</code>. Returns are traced back to the batches that production line originally took.</li>
+            <li><b>Validation gates.</b> Receiving is blocked on missing monthly exchange rates, a closed period, over-receipt or open data-quality warnings.</li>
+            <li><b>Safe verification.</b> Changes are simulated inside a transaction on a cloned database and rolled back. Row counts before and after are compared before anything is applied.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- OTHER PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <p class="eyebrow">Other projects</p>
+      <h2>Earlier and supporting work</h2>
+      <div class="grid-3">
+        <article class="card">
+          <p class="card-meta">2023 · Computer vision · Production</p>
+          <h3>Train passenger counter</h3>
+          <p>Counts passengers boarding and leaving through two cameras. Each camera runs detection and SORT tracking in its own process. Counts go to local MongoDB and are pushed to a REST API on a schedule. Recordings are kept or deleted by date and can be exported to USB.</p>
+          <ul class="tags"><li>Python</li><li>OpenCV</li><li>TensorFlow</li><li>SORT</li><li>multiprocessing</li><li>MongoDB</li><li>REST</li></ul>
+          <p class="small"><a href="https://github.com/2000minhphat1999/people_counter">Source →</a></p>
+        </article>
+        <article class="card">
+          <p class="card-meta">2023–2024 · Automation</p>
+          <h3>OCR data-entry automation</h3>
+          <p>Reads Vietnamese text from scanned paper forms with Tesseract after OpenCV preprocessing (thresholding, denoising), so the data does not have to be typed into a web system by hand.</p>
+          <ul class="tags"><li>Python</li><li>Tesseract</li><li>OpenCV</li><li>Pillow</li></ul>
+          <p class="small"><a href="https://github.com/2000minhphat1999/OCR_python">Source →</a></p>
+        </article>
+        <article class="card">
+          <p class="card-meta">2023 · IoT · Published</p>
+          <h3>IoT hazardous-waste management</h3>
+          <p>A research project on an IoT-based system for monitoring hazardous waste. Presented at REC-ECIT 2023 (pp. 193–198) and awarded at university, city and national level.</p>
+          <ul class="tags"><li>IoT</li><li>Embedded</li><li>Research</li></ul>
+          <p class="small"><a href="#publications">Publication →</a></p>
+        </article>
+        <article class="card">
+          <p class="card-meta">2025 · Web backend · Scaffold</p>
+          <h3>Service booking system</h3>
+          <p>A starter Flask app with role-based users, a service catalog, bookings with staff assignment and scheduled reminders. The code is split into auth, booking, catalog and notification services.</p>
+          <ul class="tags"><li>Flask</li><li>SQLAlchemy</li><li>Flask-Login</li><li>Flask-Migrate</li><li>APScheduler</li></ul>
+          <p class="small"><a href="https://github.com/2000minhphat1999/SERVICE_PPOINTMENT_BOOKING_SYSTEM">Source →</a></p>
+        </article>
+        <article class="card">
+          <p class="card-meta">2026 · Web backend · Practice</p>
+          <h3>HR management app</h3>
+          <p>A Flask + SQLite app with separate route, data-access and business-logic layers. Covers employee CRUD, payroll with progressive income tax and a KPI dashboard.</p>
+          <ul class="tags"><li>Flask</li><li>SQLite</li><li>Jinja2</li></ul>
+          <p class="small"><a href="https://github.com/2000minhphat1999/hocpython/tree/main/hr_system">Source →</a></p>
+        </article>
+        <article class="card">
+          <p class="card-meta">2026 · ML · Kaggle</p>
+          <h3>BirdCLEF 2026 baseline</h3>
+          <p>An audio-classification pipeline (mel-spectrograms, EfficientNet-B0, mixed precision, mixup, early stopping) tuned to fit a 4 GB-VRAM laptop GPU.</p>
+          <ul class="tags"><li>PyTorch</li><li>timm</li><li>librosa</li><li>pandas</li></ul>
+          <p class="small"><a href="https://github.com/2000minhphat1999/data-bird">Source →</a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENGINEERING FOCUS -->
+  <section id="skills">
+    <div class="container">
+      <p class="eyebrow">Engineering focus</p>
+      <h2>What I work with, and where it was used</h2>
+      <table class="skills">
+        <tbody>
+          <tr><th scope="row">Languages</th><td>Python, SQL (PostgreSQL), JavaScript, HTML/CSS<span class="ev">Daily in the warehouse system. C/C++ from earlier embedded work.</span></td></tr>
+          <tr><th scope="row">Backend</th><td>Flask, Hypercorn (ASGI), REST/JSON endpoints, session auth with per-account permissions, Jinja2, htmx<span class="ev">14-service warehouse system; booking and HR projects</span></td></tr>
+          <tr><th scope="row">Data</th><td>PostgreSQL, psycopg2 with hand-written SQL, transactions and row locking, Alembic migrations, SQLite, MongoDB<span class="ev">Inventory ledger, FIFO allocation, period closing, staging store</span></td></tr>
+          <tr><th scope="row">Automation</th><td>Orchestration workers, scheduled validation jobs, Excel ingestion, PDF reports (ReportLab)<span class="ev">Purchase-order pipeline and data-quality gates</span></td></tr>
+          <tr><th scope="row">Operations</th><td>nginx reverse proxy, Linux and Windows servers, Git<span class="ev">Internal deployment of the warehouse system</span></td></tr>
+          <tr><th scope="row">Computer vision / ML</th><td>OpenCV, YOLOv5, DeepSORT/SORT, TensorFlow, PyTorch, Tesseract OCR<span class="ev">Passenger counter, detection freelance work, OCR, Kaggle</span></td></tr>
+          <tr><th scope="row">Ways of working</th><td>Invariant-driven changes, rollback simulation before writes, decision and failure logs, AI-assisted development (Claude Code) with repo-level context docs</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <p class="eyebrow">Experience</p>
+      <h2>Where I've worked</h2>
+      <ol class="timeline">
+        <li>
+          <div class="when">2025 – Present</div>
+          <div>
+            <h3>Software Developer (Python Backend)</h3>
+            <p class="org">Manufacturing company (name withheld) · Production-engineering warehouse</p>
+            <ul>
+              <li>Develop and maintain the warehouse management system: purchase intake, receiving, FIFO issue and returns, classification, stocktake, period closing, reporting.</li>
+              <li>Introduced written data invariants, validation gates and rollback-based verification so stock and cost figures can be recomputed and checked against live data.</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="when">03/2024 – 08/2024</div>
+          <div>
+            <h3>Research Engineer</h3>
+            <p class="org">University of Technology and Education – The University of Danang</p>
+            <ul>
+              <li>Built educational websites for online learning programmes.</li>
+              <li>Designed and assembled robot kits for project-based STEAM courses.</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="when">06/2023 – 12/2023</div>
+          <div>
+            <h3>Computer Vision Engineer (Freelance)</h3>
+            <p class="org">Da Nang · incl. Halovi Software</p>
+            <ul>
+              <li>Built YOLOv5 object detection with DeepSORT tracking for industrial scenes and a Kivy desktop app for shipment checking.</li>
+              <li>Built the two-camera train passenger counter with local persistence and API sync.</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="when">05/2022 – 07/2022</div>
+          <div>
+            <h3>Kaizen Engineer Intern</h3>
+            <p class="org">Premo Vietnam · Quang Nam</p>
+            <ul>
+              <li>Read machine performance data over Modbus RTU with Python as groundwork for IoT monitoring.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container grid-2">
+      <div class="prose">
+        <p class="eyebrow">About</p>
+        <h2>From mechatronics to backend systems</h2>
+        <p>I studied Mechatronics Engineering Technology at the University of Technology and Education, University of Danang (2018–2023). My first software work was close to hardware: Modbus data collection, IoT prototypes and computer vision on camera feeds.</p>
+        <p>Since 2025 I have worked mostly on backend and data: business rules for inventory and cost, how data moves between tables, and how to prove a change did not break stock or money. I want to keep doing that as a Python backend developer on business systems such as ERP, WMS and internal platforms.</p>
+      </div>
+      <div id="publications">
+        <p class="eyebrow">Publication &amp; recognition</p>
+        <ul>
+          <li><b>Tran Viet Minh Phat</b>, Phan Tuan Nhat, Nguyen Van Truc, Le Ngoc Quy Van, Tran Hoang Vu. “Building an IoT-Based Waste Management System for Hazardous Waste.” <i>REC-ECIT 2023</i>, pp. 193–198.</li>
+          <li>Encouragement Prize, Science &amp; Technology Award for students — Ministry of Education and Training, 2023</li>
+          <li>Encouragement Prize — VIFOTEC, 2023</li>
+          <li>Second Prize, Da Nang City Student Scientific Research Competition, 2022</li>
+        </ul>
+        <p class="small muted">English: B2 (IELTS 5.5)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container grid-2">
+      <div class="prose">
+        <p class="eyebrow">Contact</p>
+        <h2>Open to Python backend roles</h2>
+        <p class="muted">Python Backend Developer, Software Developer (business systems, ERP/WMS), or backend and automation roles. Based in Da Nang; open to on-site, hybrid or remote.</p>
+      </div>
+      <ul class="contact-list">
+        <li><span>Email</span><a href="mailto:tranvietminhphat@gmail.com">tranvietminhphat@gmail.com</a></li>
+        <li><span>GitHub</span><a href="https://github.com/2000minhphat1999" rel="me">github.com/2000minhphat1999</a></li>
+        <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/minhphat-ai/" rel="me">linkedin.com/in/minhphat-ai</a></li>
+        <li><span>Resume</span><span><a href="resume.html">View online</a> · <a href="Tran_Viet_Minh_Phat_Resume.pdf" download>Download PDF</a></span></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container row">
+    <span>© 2026 Tran Viet Minh Phat</span>
+    <span>Static HTML/CSS, no tracking. <a href="https://github.com/2000minhphat1999/2000minhphat1999">Source</a></span>
+  </div>
+</footer>
+</body>
+</html>
