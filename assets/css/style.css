@@ -258,3 +258,23 @@ figure.diagram figcaption { font-size: .85rem; color: var(--text-3); margin-top:
   .nav-links a { padding: .4rem .45rem; font-size: .88rem; }
   .theme-toggle { width: 32px; height: 32px; margin-left: .15rem; }
 }
+
+/* ---------- print: portfolio pages as clean A4 documents ---------- */
+@media print {
+  :root, :root[data-theme="dark"] {
+    --bg: #fff; --surface: #fff; --surface-2: #f4f5f3; --text: #16181a; --text-2: #3f444a; --text-3: #5f656c;
+    --border: #d9dbd8; --accent: #0f6b5c; --accent-soft: #e4f1ee; color-scheme: light;
+  }
+  @page { size: A4; margin: 14mm 13mm; }
+  body { font-size: 10pt; }
+  .site-header, .skip-link, .theme-toggle, .actions, .site-footer { display: none !important; }
+  section { padding: 1.4rem 0; }
+  .hero { padding: 0 0 1rem; }
+  .container { padding: 0; max-width: none; }
+  a { color: inherit; text-decoration: none; }
+  .card, .feature, .problem, .fact, .callout, .table-wrap, figure.diagram, .timeline > li { break-inside: avoid; }
+  h2, h3 { break-after: avoid; }
+  .table-wrap, figure.diagram { overflow: visible; }
+  .data { min-width: 0; }
+  figure.diagram svg { min-width: 0; }
+}

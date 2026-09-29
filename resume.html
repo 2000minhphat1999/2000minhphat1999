@@ -28,7 +28,7 @@
     li { margin: 1px 0; }
     .skills p { margin: 0 0 2px; }
     .skills b { display: inline-block; min-width: 0; }
-    a { color: var(--accent); }
+    a { color: var(--accent); overflow-wrap: anywhere; }
     @page { size: A4; margin: 12mm 13mm; }
     @media print {
       body { background: #fff; font-size: 10pt; }
@@ -43,7 +43,7 @@
 <body>
   <div class="toolbar">
     <a href="./">← Portfolio</a>
-    <button type="button" onclick="window.print()">Print / Save as PDF</button>
+    <span><a href="Tran_Viet_Minh_Phat_Resume.pdf" download>Download PDF</a> <button type="button" onclick="window.print()">Print</button></span>
   </div>
 
   <main class="page">
