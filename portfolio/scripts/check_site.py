@@ -49,10 +49,10 @@ def main():
     unresolved = sorted(set(parser.anchors) - set(parser.ids))
     if unresolved:
         errors.append("unresolved in-page links: " + ", ".join(unresolved))
-    for section in ("projects", "experience", "skills", "education", "contact"):
+    for section in ("projects", "video", "experience", "skills", "education", "contact"):
         if section not in parser.ids:
             errors.append(f"missing section: #{section}")
-    for text in ("tranvietminhphat@gmail.com", "RackFlow", "Fabric Defect Inspection"):
+    for text in ("tranvietminhphat@gmail.com", "RackFlow", "Fabric Defect Inspection", "https://www.youtube.com/embed/tUJHJBcuKA0", "<iframe"):
         if text not in source:
             errors.append(f"required content missing: {text}")
     if not (ROOT / "favicon.svg").is_file():
