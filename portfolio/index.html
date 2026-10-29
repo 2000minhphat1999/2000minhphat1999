@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="vi">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -614,7 +614,7 @@ h1 em{display:inline;color:var(--accent);font-family:Georgia,"Times New Roman",s
       langVI.setAttribute("aria-pressed",String(isVietnamese));
     }
     translateAttributes(language);
-    try{window.localStorage.setItem("portfolio-language",language);}catch(e){}
+    try{window.localStorage.setItem("portfolio-language-v2",language);}catch(e){}
   }
   if(year){year.textContent=String(new Date().getFullYear());}
   if(langEN) langEN.addEventListener("click",function(){setLanguage("en");});
@@ -632,8 +632,12 @@ h1 em{display:inline;color:var(--accent);font-family:Georgia,"Times New Roman",s
       });
     });
   }
-  var initialLanguage="en";
-  try{if(window.localStorage.getItem("portfolio-language")==="vi") initialLanguage="vi";}catch(e){}
+  // Default new visits to Vietnamese; use the versioned key so an old saved English preference cannot force mixed-language first impressions.
+  var initialLanguage="vi";
+  try{
+    var savedLanguage=window.localStorage.getItem("portfolio-language-v2");
+    if(savedLanguage==="en"||savedLanguage==="vi") initialLanguage=savedLanguage;
+  }catch(e){}
   setLanguage(initialLanguage);
 })();
 </script>
