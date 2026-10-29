@@ -6,330 +6,22 @@
 <meta name="theme-color" content="#f4f1ea">
 <meta name="description" content="Tran Viet Minh Phat — Python application engineering for ERP/WMS, operational workflows and backend applications.">
 <meta property="og:title" content="Tran Viet Minh Phat | Python Application Engineer">
-<meta property="og:description" content="Python applications, ERP/WMS workflows, operational software and applied Computer Vision project work.">
+<meta property="og:description" content="Tran Viet Minh Phat — Python application engineering for ERP/WMS, operational workflows and backend applications.">
 <meta property="og:type" content="website">
 <title>Tran Viet Minh Phat | Python Application Engineer</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<style>
-:root{
-  --ink:#1c1917;--ink-soft:#44403c;--muted:#78716c;--faint:#78716c;
-  --line:#e7e2d9;--paper:#fbf9f3;--canvas:#f4f1ea;
-  --accent:#0f4c5c;--accent-dark:#0a3945;--accent-pale:#dce9e8;
-  --highlight:#b45309;--highlight-pale:#f7ebd7;
-  --max:1080px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:88px}
-body{margin:0;background:var(--canvas);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.72;-webkit-font-smoothing:auto}
-a{color:inherit}
-a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-button{font:inherit}
-.wrap{width:min(var(--max),calc(100% - 48px));margin-inline:auto}
-.skip-link{position:absolute;left:-9999px;top:8px;z-index:100;background:var(--paper);padding:10px 14px;border:1px solid var(--line);border-radius:4px}
-.skip-link:focus{left:12px}
-.topbar{position:sticky;top:0;z-index:50;background:rgba(244,241,234,.97);border-bottom:1px solid var(--line)}
-.nav{min-height:76px;display:flex;align-items:center;gap:22px;position:relative}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0;flex:none}
-.brand-mark{display:inline-block;width:auto;height:auto;background:transparent;color:var(--accent);font-family:Georgia,"Times New Roman",serif;font-size:27px;line-height:1;font-weight:700;letter-spacing:-.12em;border:0;border-radius:0}
-.brand-mark span{color:var(--ink)}
-.brand-copy{line-height:1.22}
-.brand-copy strong{display:block;font-size:14px;font-weight:750;letter-spacing:-.02em}
-.brand-copy small{display:block;margin-top:5px;color:var(--muted);font-size:11px}
-.navlinks{display:flex;align-items:center;gap:clamp(12px,1.6vw,22px);margin-left:auto}
-.navlinks a{font-size:13px;font-weight:600;color:var(--muted);text-decoration:none}
-.navlinks a:hover{color:var(--accent)}
-.navlinks .contact-link{padding:0 0 3px;border-radius:0;color:var(--accent);background:transparent;border-bottom:1px solid var(--accent)}
-.nav-tools{display:flex;align-items:center;gap:8px;flex:none}
-.language-switch{display:inline-flex;align-items:center;gap:2px;border:1px solid var(--line);padding:3px;border-radius:4px;background:transparent}
-.lang-button{min-width:31px;padding:5px 6px;border:0;border-radius:2px;background:transparent;color:var(--muted);font:700 11px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;cursor:pointer}
-.lang-button.is-active{background:var(--ink);color:var(--paper)}
-
-h1,h2,h3,h4,p{margin-top:0}
-.eyebrow,.kicker,.mini-label,.case-index,.project-number,.record-index,.sketch-heading,.workflow-step span{
-  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:600;letter-spacing:0;text-transform:none
-}
-.eyebrow{display:flex;align-items:center;gap:9px;color:var(--accent);font-size:12px;margin-bottom:19px}
-.eyebrow:before{content:"";width:23px;height:2px;background:var(--accent)}
-.hero{padding:66px 0 0;background:var(--paper);border-bottom:1px solid var(--line)}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(275px,.75fr);gap:70px;align-items:center}
-h1{max-width:730px;margin:0 0 24px;font-size:clamp(44px,6.2vw,75px);font-weight:790;line-height:1.02;letter-spacing:-.065em}
-h1 em{display:inline;color:var(--accent);font-family:Georgia,"Times New Roman",serif;font-weight:500;font-style:italic;letter-spacing:-.055em}
-.hero-copy{max-width:690px;color:var(--ink-soft);font-size:16px;line-height:1.82;margin:0}
-.hero-actions{display:flex;gap:15px;align-items:center;flex-wrap:wrap;margin:26px 0 18px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:10px 14px;border:1px solid var(--ink);border-radius:3px;background:transparent;color:var(--ink);text-decoration:none;font-size:13px;font-weight:650;transition:background .15s,color .15s}
-.btn:hover{background:#eae6dc}
-.btn-primary{background:var(--accent);border-color:var(--accent);color:#fff}
-.btn-primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff}
-.social-links{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:30px}
-.social-links a{font-size:12px;color:var(--muted);text-decoration:underline;text-decoration-color:#bdb7a8;text-underline-offset:4px}
-.social-links a:hover{color:var(--accent)}
-.profile-note{position:relative;border:0;border-left:2px solid var(--accent);border-radius:0;background:transparent;padding:6px 0 6px 26px}
-.profile-note .mini-label{font-size:11px;color:var(--accent);margin-bottom:15px}
-.profile-note h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(24px,2.3vw,30px);font-weight:500;line-height:1.23;letter-spacing:-.035em;margin-bottom:14px}
-.profile-note p{font-size:13px;line-height:1.7;color:var(--muted);margin-bottom:14px}
-.approach-list{list-style:none;padding:0;margin:0;display:grid;gap:0}
-.approach-list li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;border-top:1px solid var(--line);padding:10px 0;font-size:13px;line-height:1.5}
-.approach-list li>span:first-child{font:600 11px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--accent);padding-top:2px}
-.track-record{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;margin-top:48px;padding:18px 0 20px;border-top:1px solid var(--line)}
-.record-item{display:grid;grid-template-columns:28px minmax(0,1fr);align-items:start;gap:9px;min-width:0}
-.record-index{font-size:12px;color:var(--accent);padding-top:2px}
-.record-item strong{display:block;font-size:14px;line-height:1.45;font-weight:700}
-.record-item div>span{display:block;font-size:12px;line-height:1.5;color:var(--muted);margin-top:3px}
-.section{padding:72px 0 76px}
-.section-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.7fr);align-items:end;gap:40px;margin-bottom:31px}
-.kicker{color:var(--accent);font-size:12px;margin-bottom:12px}
-.section-title{max-width:720px;font-size:clamp(32px,4vw,47px);font-weight:760;letter-spacing:-.055em;line-height:1.08;margin:0}
-.section-intro{max-width:430px;margin:0;color:var(--muted);font-size:14px;line-height:1.8}
-.case-study{background:var(--paper);border:0;border-left:3px solid var(--accent);border-radius:0;overflow:hidden}
-.case-header{display:flex;justify-content:space-between;align-items:flex-start;gap:25px;padding:27px 30px 24px;border-bottom:1px solid var(--line)}
-.case-title-wrap{min-width:0}
-.case-index{font-size:11px;color:var(--accent);margin-bottom:10px}
-.case-header h3{font-size:clamp(26px,3vw,36px);line-height:1.1;letter-spacing:-.05em;margin:0 0 10px}
-.case-summary{max-width:740px;color:var(--muted);font-size:15px;line-height:1.8;margin:0}
-.status{flex:none;border:1px solid #c7c0b2;border-radius:3px;padding:5px 9px;color:#625f53;font-size:11px;font-weight:650;white-space:nowrap}
-.status:before{content:"";display:inline-block;width:6px;height:6px;background:currentColor;border-radius:50%;margin-right:7px;vertical-align:middle}
-.status-progress{background:var(--highlight-pale);color:#8a5a10;border-color:#e6d3b5}
-.status-past{background:#edf0e8;color:#4d6042;border-color:#d6ddce}
-.status-planned{background:#f1eee7;color:#6a665c;border-color:#dfd8cb}
-.workflow-sketch{padding:19px 30px 21px;background:#f1eee5;border-bottom:1px solid var(--line)}
-.sketch-heading{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-bottom:13px;font-size:11px;color:var(--muted)}
-.sketch-heading span:first-child{color:var(--ink);font-weight:700}
-.workflow-steps{display:grid;grid-template-columns:minmax(0,1fr) 16px minmax(0,1fr) 16px minmax(0,1fr) 16px minmax(0,1fr);gap:8px;align-items:center}
-.workflow-step{display:flex;flex-direction:column;gap:5px;min-width:0}
-.workflow-step span{font-size:11px;color:var(--accent)}
-.workflow-step strong{font-size:13px;font-weight:650;line-height:1.35}
-.workflow-arrow{text-align:center;color:#a69c8a;font-size:17px}
-.case-content{padding:27px 30px 29px}
-.case-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 40px}
-.case-part h4,.project-field h4{font-size:13px;font-weight:750;letter-spacing:-.01em;color:var(--accent);margin:0 0 7px}
-.case-part p,.case-part li{font-size:14px;line-height:1.8;color:var(--ink-soft)}
-.case-part p{margin:0}
-.case-part ul{margin:0;padding-left:18px}
-.case-part li+li{margin-top:3px}
-.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
-.tag{padding:3px 0;border:0;background:transparent;color:var(--muted);font-size:12px;font-weight:600}
-.tag+.tag:before{content:"·";margin-right:8px;color:var(--accent)}
-.case-footer{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding:15px 30px;background:#f1eee5;border-top:1px solid var(--line)}
-.case-footer p{margin:0;font-size:12px;color:var(--muted);line-height:1.7}
-.case-footer strong{color:var(--ink)}
-.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 36px;margin-top:38px}
-.project-card{display:flex;flex-direction:column;position:relative;background:transparent;border:0;border-top:1px solid #cfc9bb;border-radius:0;padding:21px 0 23px;min-width:0}
-.project-card .project-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
-.project-number{font-size:11px;color:var(--accent)}
-.project-card h3{font-size:22px;letter-spacing:-.04em;line-height:1.2;margin:0 0 10px}
-.project-card .lead{font-size:14px;line-height:1.8;color:var(--muted);margin-bottom:16px}
-.project-fields{display:grid;gap:14px;margin-top:auto}
-.project-field{padding-top:11px;border-top:1px solid #e5e0d5}
-.project-field h4{font-size:12px;color:var(--ink);margin-bottom:5px}
-.project-field p{margin:0;font-size:13px;line-height:1.8;color:var(--ink-soft)}
-.project-card .tags{margin-top:18px}
-.concept-panel{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:center;margin-top:28px;padding:21px 0;border-top:1px solid #cfc9bb;border-bottom:1px solid #cfc9bb;background:transparent;border-radius:0}
-.concept-panel h3{font-family:Georgia,"Times New Roman",serif;font-size:24px;font-weight:500;letter-spacing:-.025em;margin:6px 0}
-.concept-panel p{font-size:13px;line-height:1.8;color:var(--muted);margin:0;max-width:760px}
-.concept-panel .concept-state{padding:5px 0;color:var(--muted);font-size:11px;font-weight:650;white-space:nowrap}
-.media-note{display:grid;grid-template-columns:1fr minmax(220px,.45fr);gap:26px;align-items:center;margin-top:29px;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:transparent}
-.media-copy h3{font-size:17px;margin:0 0 6px}
-.media-copy p{font-size:13px;color:var(--muted);line-height:1.8;margin:0}
-.media-frame{position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:3px;background:#2a2a25}
-.media-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.media-fallback{display:block;margin-top:8px;font-size:12px;color:var(--accent);font-weight:650}
-.experience-section{background:#eae6dc;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.experience-section .wrap{max-width:1010px}
-.timeline{display:grid;grid-template-columns:185px minmax(0,1fr);border-top:1px solid #d1cbbd}
-.timeline-meta{padding:22px 20px 23px 0;border-bottom:1px solid #d1cbbd}
-.timeline-meta time{display:block;font-size:13px;font-weight:750;color:var(--ink)}
-.timeline-meta .kind{display:inline-block;margin-top:8px;font-size:11px;color:var(--muted)}
-.timeline-content{padding:21px 0 23px 27px;border-left:1px solid #d1cbbd;border-bottom:1px solid #d1cbbd}
-.timeline-content h3{font-size:19px;letter-spacing:-.03em;margin:0 0 5px}
-.timeline-content .org{font-size:12px;font-weight:750;color:var(--accent);margin-bottom:9px}
-.timeline-content p{font-size:14px;line-height:1.8;color:var(--ink-soft);max-width:790px;margin:0}
-.timeline-content ul{margin:7px 0 0;padding-left:18px}
-.timeline-content li{font-size:13px;line-height:1.8;color:var(--ink-soft)}
-.timeline-content li+li{margin-top:3px}
-.experience-subhead{font-size:13px;font-weight:750;color:var(--muted);padding:0 0 13px}
-.secondary-subhead{margin-top:36px}
-.experience-extra{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
-.history-card{padding:21px 0 22px;border:0;border-top:1px solid #d1cbbd;background:transparent;min-width:0}
-.history-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:13px}
-.history-top .kind{font-size:11px;color:var(--muted)}
-.history-top time{font-size:12px;font-weight:750;color:var(--ink);white-space:nowrap}
-.history-card h3{font-size:18px;line-height:1.3;letter-spacing:-.025em;margin:0 0 7px}
-.history-card .org{font-size:12px;font-weight:750;color:var(--accent);margin-bottom:9px}
-.history-card p,.history-card li{font-size:13px;line-height:1.8;color:var(--ink-soft)}
-.history-card p{margin:0}
-.history-card ul{padding-left:17px;margin:10px 0 0}
-.history-card li+li{margin-top:4px}
-.prior-history{display:grid;gap:0}
-.timeline-note{font-size:12px!important;color:var(--muted)!important;margin-top:7px!important}
-.capability-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
-.capability{padding:19px 0 16px;border:0;border-top:1px solid #cfc9bb;background:transparent;border-radius:0;min-width:0}
-.capability-num{font-size:11px;color:var(--accent)}
-.capability h3{font-size:19px;letter-spacing:-.025em;margin:11px 0 7px}
-.capability p{font-size:14px;line-height:1.8;color:var(--muted);margin:0 0 14px}
-.capability .tags{margin-top:0}
-.skills-note{margin-top:22px;padding-left:14px;border-left:2px solid var(--line);font-size:12px;line-height:1.8;color:var(--muted)}
-.education-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:36px}
-.education-card{padding:21px 0 0;border:0;border-top:1px solid #cfc9bb;background:transparent;border-radius:0}
-.education-card .mini-label{color:var(--accent);font-size:11px;margin-bottom:13px}
-.education-card h3{font-size:20px;line-height:1.35;letter-spacing:-.03em;margin:0 0 9px}
-.education-card p{font-size:13px;line-height:1.8;color:var(--muted);margin:0}
-.education-card p+p{margin-top:10px}
-.education-card .award-line{padding-top:13px;border-top:1px solid var(--line);margin-top:15px}
-.contact-section{background:#dfd8ca;color:var(--ink);padding:60px 0 50px;border-top:1px solid #d2cabb}
-.contact-section .kicker{color:var(--accent)}
-.contact-section h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(35px,4.5vw,51px);font-weight:500;letter-spacing:-.045em;line-height:1.1;margin:0 0 15px}
-.contact-section p{max-width:650px;color:var(--ink-soft);font-size:14px;line-height:1.85;margin:0}
-.contact-grid{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center}
-.contact-actions{display:flex;flex-direction:column;gap:10px;min-width:165px}
-.contact-section .btn{justify-content:center}
-.contact-section .btn-primary{background:var(--accent);color:#fff;border-color:var(--accent)}
-.contact-section .btn-primary:hover{background:var(--accent-dark);border-color:var(--accent-dark)}
-.contact-section .btn-ghost{background:transparent;color:var(--ink);border-color:#a7a08e}
-.contact-section .btn-ghost:hover{background:#d1c9b8;border-color:#8a836f}
-.footer{background:#dfd8ca;color:var(--muted);padding:16px 0;border-top:1px solid #d2cabb}
-.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px}
-.footer p{font-size:11px;margin:0}
-.footer a{font-size:11px;text-decoration:none;color:var(--ink-soft)}
-.footer-links{display:flex;gap:16px}
-@media(max-width:850px){
- .nav{justify-content:space-between;gap:12px}
- .navlinks{display:flex;position:static;order:3;flex:1 0 100%;flex-wrap:wrap;justify-content:flex-start;align-items:center;gap:8px 18px;margin:0;padding:12px 0 4px;border-top:1px solid var(--line)}
- .navlinks a{padding:3px 0;border-bottom:0}
- .navlinks .contact-link{margin:0;text-align:left;border-bottom:1px solid var(--accent)}
- .nav-tools{margin-left:auto}
- .hero-grid{gap:36px;grid-template-columns:minmax(0,1fr) minmax(230px,.8fr)}
- .section-head{grid-template-columns:1fr;gap:14px}
- .section-intro{max-width:630px}
- .workflow-sketch,.case-header,.case-content,.case-footer{padding-left:22px;padding-right:22px}
-}
-@media(max-width:640px){
- .wrap{width:calc(100% - 36px)}
- .nav{min-height:66px}
- .brand-mark{font-size:24px}
- .brand-copy strong{font-size:13px}
- .brand-copy small{font-size:10px}
- .nav-tools{gap:6px}
-
- .hero{padding-top:43px}
- .hero-grid{grid-template-columns:1fr;gap:28px}
- h1{font-size:clamp(39px,11.6vw,54px);line-height:1.04;letter-spacing:-.05em}
- .hero-copy{font-size:15px;line-height:1.78}
- .profile-note{padding:5px 0 5px 18px}
- .profile-note h2{font-size:26px}
- .track-record{grid-template-columns:1fr;gap:0;margin-top:34px;padding:8px 0 10px}
- .record-item{padding:12px 0;border-bottom:1px solid var(--line)}
- .record-item:last-child{border-bottom:0}
- .section{padding:51px 0 55px}
- .section-title{font-size:32px;line-height:1.12}
- .section-intro{font-size:14px}
- .case-study{border-left-width:2px}
- .case-header{padding:21px 17px 20px;flex-direction:column;gap:12px}
- .case-header h3{font-size:29px}
- .case-content{padding:22px 17px}
- .workflow-sketch{padding:17px}
- .sketch-heading{align-items:flex-start;flex-direction:column;gap:4px}
- .workflow-steps{grid-template-columns:1fr;gap:0}
- .workflow-step{display:grid;grid-template-columns:24px minmax(0,1fr);gap:8px;padding:9px 0;border-top:1px solid #d9d3c5}
- .workflow-arrow{display:none}
- .workflow-step strong{font-size:13px}
- .case-grid{grid-template-columns:1fr;gap:20px}
- .case-footer{padding:14px 17px;flex-direction:column;gap:5px}
- .project-grid{grid-template-columns:1fr;gap:0;margin-top:30px}
- .project-card{padding:20px 0 22px}
- .concept-panel{grid-template-columns:1fr;gap:11px;padding:21px 0}
- .media-note{grid-template-columns:1fr;gap:16px;padding:19px 0}
- .media-frame{aspect-ratio:16/9}
- .timeline{grid-template-columns:1fr}
- .timeline-meta{padding:19px 0 6px;border-bottom:0}
- .timeline-meta time{display:inline-block;margin-right:9px}
- .timeline-meta .kind{margin-top:0}
- .timeline-content{padding:0 0 20px;border-left:0}
- .experience-extra,.education-grid{grid-template-columns:1fr;gap:0}
- .history-card{padding:19px 0}
- .secondary-subhead{margin-top:27px}
- .capability-grid{grid-template-columns:1fr;gap:0}
- .capability{padding:18px 0}
- .education-grid{gap:23px}
- .contact-grid{grid-template-columns:1fr;gap:21px}
- .contact-actions{flex-direction:row;flex-wrap:wrap}
- .footer-inner{align-items:flex-start;flex-direction:column;gap:9px}
-}
-@media(prefers-reduced-motion:reduce){
- html{scroll-behavior:auto}
- *,*:before,*:after{transition:none!important;animation:none!important}
-}
-
-/* Make the candidate's name and professional direction unmissable. */
-.hero h1{max-width:100%;font-family:Georgia,"Times New Roman",serif;font-size:clamp(42px,5.8vw,68px);font-weight:500;line-height:1.04;letter-spacing:-.045em;overflow-wrap:normal}
-.hero-role{margin:-8px 0 18px;color:var(--accent);font-size:clamp(17px,1.9vw,21px);font-weight:700;line-height:1.45;letter-spacing:-.02em}
-@media(max-width:640px){.hero h1{font-size:clamp(39px,10.5vw,49px);line-height:1.07}.hero-role{font-size:17px;line-height:1.5;margin:-4px 0 15px}}
-
-/* Systems Ledger — technical editorial finish */
-.section-title,.case-header h3,.concept-panel h3,.contact-section h2{
-  font-family:Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:-.035em
-}
-.workflow-sketch,.case-footer,.experience-section{background:#ece8df}
-.contact-section,.footer{background:#eae5da}
-.concept-panel .concept-state{color:var(--highlight)}
-
-/* Clear project taxonomy: Full-Stack systems + three AI sub-branches */
-.project-branch-heading{display:grid;grid-template-columns:190px minmax(0,1fr) auto;gap:22px;align-items:center;margin:24px 0 18px;padding:20px 22px;background:#e9e4d9;border-block:1px solid #d7cdbd}
-.branch-label{font:700 11px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--accent);letter-spacing:.035em}
-.project-branch-heading h3,.ai-subsection-heading h3{font:500 clamp(22px,2.7vw,30px)/1.2 Georgia,"Times New Roman",serif;letter-spacing:-.03em;margin:0 0 5px}
-.project-branch-heading p,.ai-subsection-heading p{font-size:13px;line-height:1.7;color:var(--muted);margin:0}
-.branch-state{font:700 10px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:#8a5a10;text-align:right}
-.ai-section{background:#e9e4d9;border-block:1px solid var(--line)}
-.ai-section .section-head{margin-bottom:25px}
-.ai-branch-map{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:0 0 27px}
-.ai-branch-map a{display:grid;gap:6px;align-content:start;min-height:112px;padding:17px 18px;background:var(--paper);border:1px solid #d6d0c3;border-top:3px solid var(--accent);text-decoration:none}
-.ai-branch-map a:hover{border-top-color:var(--highlight);background:#fffefa}
-.ai-branch-map span{font:700 10px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--accent)}
-.ai-branch-map strong{font:500 18px/1.25 Georgia,"Times New Roman",serif}.ai-branch-map small{font-size:12px;color:var(--muted)}
-.ai-subsection-heading{display:grid;grid-template-columns:95px minmax(0,1fr);gap:18px;align-items:start;margin:29px 0 14px;padding-top:20px;border-top:1px solid #cfc6b7}
-.ai-subsection-heading>span{font:700 11px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--accent)}
-.ai-subsection-heading h3{font-size:25px;margin:0 0 5px}.ai-subsection-heading p{margin:0}
-.ai-section .project-card{background:var(--paper);border:1px solid #d7d0c3;border-top:3px solid var(--accent);padding:24px}
-.ai-section .project-fields{gap:13px}.ai-section .project-field{padding-top:11px;border-top:1px solid var(--line)}
-.ai-section .project-field h4{font-size:12px}.ai-section .project-field p{font-size:13px;line-height:1.75}
-.ai-section .project-number{font-size:10px;line-height:1.5}
-.pipeline-block{margin:14px 0 18px;padding:13px 14px;background:#edf2ef;border-left:3px solid var(--accent)}
-.pipeline-title{font:700 10px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--accent);letter-spacing:.045em;margin-bottom:9px}
-.pipeline-steps{display:flex;align-items:center;gap:6px;flex-wrap:wrap}.pipeline-steps span{font-size:11px;font-weight:650;color:var(--ink-soft)}.pipeline-steps b{font-size:14px;color:var(--highlight)}
-.ai-section .evidence-plan{margin-top:14px}.ai-section .concept-panel{background:var(--paper);border:1px solid #d6d0c3;border-left:4px solid var(--highlight);padding:22px 24px}
-.planned-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-top:17px;padding-top:16px;border-top:1px solid var(--line)}
-.planned-steps>div{display:grid;grid-template-columns:24px 1fr;column-gap:7px;align-items:start}
-.planned-steps span{font:700 11px ui-monospace,SFMono-Regular,Menlo,monospace;color:#a85b12;padding-top:2px}
-.planned-steps strong{font-size:12px}.planned-steps small{grid-column:2;font-size:11px;line-height:1.6;color:var(--muted);margin-top:3px}
-@media(max-width:850px){.navlinks{display:flex;position:static;order:3;flex:1 0 100%;flex-wrap:wrap;justify-content:flex-start;align-items:center;gap:9px 16px;margin:0;padding:11px 0 4px;border-top:1px solid var(--line)}.navlinks a{padding:3px 0;border-bottom:0}.navlinks .contact-link{margin:0}.project-branch-heading{grid-template-columns:150px minmax(0,1fr) auto;gap:14px}.ai-branch-map{gap:10px}}
-@media(max-width:640px){.navlinks{gap:7px 13px}.navlinks a{font-size:12px}.project-branch-heading{grid-template-columns:1fr auto;gap:8px 13px;padding:16px 15px}.project-branch-heading .branch-label{grid-column:1/-1}.project-branch-heading h3{font-size:24px}.branch-state{font-size:9px}.ai-branch-map{grid-template-columns:1fr;gap:8px}.ai-branch-map a{min-height:0;padding:14px 15px}.ai-subsection-heading{grid-template-columns:55px minmax(0,1fr);gap:10px;margin-top:24px}.ai-subsection-heading h3{font-size:22px}.ai-section .project-card{padding:18px}.pipeline-steps{gap:5px}.pipeline-steps span{font-size:10px}.planned-steps{grid-template-columns:1fr;gap:11px}.planned-steps small{grid-column:2}}
-
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-page-title-en="Tran Viet Minh Phat | Python Application Engineer" data-page-title-vi="Trần Việt Minh Phát | Kỹ sư phát triển ứng dụng Python" data-page-description-en="Tran Viet Minh Phat — Python application engineering for ERP/WMS, operational workflows and backend applications." data-page-description-vi="Trần Việt Minh Phát — phát triển ứng dụng Python cho quy trình ERP/WMS, hệ thống nghiệp vụ và hỗ trợ ứng dụng.">
 <a class="skip-link" href="#main-content">Skip to content</a>
-<header class="topbar">
-  <div class="wrap nav">
-    <a class="brand" href="#top" aria-label="Tran Viet Minh Phat, home">
-      <span class="brand-mark" aria-hidden="true">mp<span>.</span></span>
-      <span class="brand-copy"><strong>Tran Viet Minh Phat</strong><small>Python applications · ERP/WMS</small></span>
-    </a>
-    <nav class="navlinks" id="navLinks" aria-label="Main navigation">
-      <a href="#work">Full-Stack</a>
-      <a href="#ai-projects">AI Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#capabilities">Capabilities</a>
-      <a href="#education">Education</a>
-      <a class="contact-link" href="#contact">Contact ↗</a>
-    </nav>
-    <div class="nav-tools">
-      <div class="language-switch" role="group" aria-label="Choose language">
-        <button type="button" class="lang-button is-active" id="langEN" aria-pressed="true">EN</button>
-        <button type="button" class="lang-button" id="langVI" aria-pressed="false">VI</button>
-      </div>
-    </div>
+<header class="topbar"><div class="wrap nav-shell">
+  <div class="nav-main-row">
+   <a class="brand" href="index.html#top" aria-label="Tran Viet Minh Phat, home"><span class="brand-mark" aria-hidden="true">mp<span>.</span></span><span class="brand-copy"><strong>Tran Viet Minh Phat</strong><small>Python applications · ERP/WMS</small></span></a>
+   <div class="nav-tools"><div class="language-switch" role="group" aria-label="Choose language"><button type="button" class="lang-button is-active" id="langEN" aria-pressed="true">EN</button><button type="button" class="lang-button" id="langVI" aria-pressed="false">VI</button></div></div>
   </div>
-</header>
-<main id="main-content">
+  <nav class="navlinks" id="navLinks" aria-label="Main navigation"><a class="home-link" href="index.html#top" aria-current="page">Home</a><a href="fullstack.html" >Full-Stack Systems</a><a href="ai-projects.html" >AI Projects</a><a class="experience-link" href="index.html#experience" >Experience</a><a class="capabilities-link" href="index.html#capabilities" >Skills</a><a class="contact-link" href="index.html#contact" >Contact ↗</a></nav>
+ </div></header>
+<main id="main-content" class="">
 <section class="hero" id="top">
   <div class="wrap">
     <div class="hero-grid">
@@ -340,7 +32,7 @@ h1 em{display:inline;color:var(--accent);font-family:Georgia,"Times New Roman",s
         <p class="hero-copy">My experience includes 1 year 10 months at Sumida contributing to WMS and FEMS functions, a five-month Computer Vision contract at Halovi, and two main freelance projects completed at different times.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#work">See what I’ve built <span aria-hidden="true">↘</span></a>
+          <a class="btn btn-primary" href="#projects">See what I’ve built <span aria-hidden="true">↘</span></a>
           <a class="btn" href="mailto:tranvietminhphat@gmail.com">Contact me <span aria-hidden="true">↗</span></a>
         </div>
         <div class="social-links">
@@ -368,122 +60,19 @@ h1 em{display:inline;color:var(--accent);font-family:Georgia,"Times New Roman",s
   </div>
 </section>
 
-<section class="section" id="work">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">BRANCH 01 / FULL-STACK SYSTEMS</div><h2 class="section-title">Systems built around operational workflows.</h2></div>
-      <p class="section-intro">This branch focuses on backend logic, data persistence and business rules. RackFlow is a personal project in development, not a deployed customer system.</p>
-    </div>
-
-    <div class="project-branch-heading" id="fullstack-projects"><span class="branch-label">FULL-STACK / CASE 01</span><div><h3>Business systems &amp; ERP/WMS</h3><p>Operational workflows, inventory state and traceable business events.</p></div><span class="branch-state">01 PROJECT · IN DEVELOPMENT</span></div>
-
-    <article class="case-study" id="rackflow">
-      <header class="case-header">
-        <div class="case-title-wrap">
-          <div class="case-index">FULL-STACK / CASE 01 · PERSONAL PROJECT</div>
-          <h3>RackFlow — Mini ERP / WMS</h3>
-          <p class="case-summary">A warehouse operations application focused on receiving, inventory visibility, order lookup, stock reservation and traceable state changes.</p>
-        </div>
-        <span class="status status-progress">In development</span>
-      </header>
-      <div class="workflow-sketch" aria-label="RackFlow workflow model">
-        <div class="sketch-heading"><span>Workflow sketch</span><span>Illustrative model · not a product screenshot</span></div>
-        <div class="workflow-steps">
-          <div class="workflow-step"><span>01</span><strong>Receive stock</strong></div>
-          <span class="workflow-arrow" aria-hidden="true">→</span>
-          <div class="workflow-step"><span>02</span><strong>Check inventory</strong></div>
-          <span class="workflow-arrow" aria-hidden="true">→</span>
-          <div class="workflow-step"><span>03</span><strong>Reserve stock</strong></div>
-          <span class="workflow-arrow" aria-hidden="true">→</span>
-          <div class="workflow-step"><span>04</span><strong>Trace changes</strong></div>
-        </div>
-      </div>
-      <div class="case-content">
-        <div class="case-grid">
-          <div class="case-part"><h4>Problem & objective</h4><p>Warehouse workflows need consistent stock information and clear records of operational actions. RackFlow models these flows in a small ERP/WMS portfolio application.</p></div>
-          <div class="case-part"><h4>My role</h4><p>Personal project. I define the scope and implement the application incrementally; this is not represented as a deployed customer system or a production warehouse platform.</p></div>
-          <div class="case-part"><h4>Current scope</h4><ul><li>Inbound receiving and inventory lookup</li><li>Order lookup and stock reservation</li><li>Event history for operational traceability</li></ul></div>
-          <div class="case-part"><h4>Implementation</h4><p>Python services using FastAPI and Flask, SQLAlchemy and PostgreSQL. The project focuses on business rules, data persistence, workflow behavior and explicit state changes.</p></div>
-          <div class="case-part"><h4>Evidence & limitations</h4><p>The features listed above define the current portfolio scope. Outbound workflows and AI-assisted operations remain under development; no production deployment or business KPI is claimed here.</p></div>
-          <div class="case-part"><h4>Next step</h4><p>Complete and verify manual outbound first, then add AI-assisted operations with validation, human confirmation and traceable events. Public source/demo links will be added only when ready to share.</p></div>
-        </div>
-        <div class="tags" aria-label="Technologies"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Flask</span><span class="tag">SQLAlchemy</span><span class="tag">PostgreSQL</span></div>
-      </div>
-      <footer class="case-footer"><p><strong>Status:</strong> actively being developed as a portfolio project.</p><p>Scope is intentionally limited to verified features.</p></footer>
-    </article>
-  </div>
-</section>
-
-<section class="section ai-section" id="ai-projects">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">BRANCH 02 / AI &amp; COMPUTER VISION</div><h2 class="section-title">Three AI sub-branches, three different problem types.</h2></div>
-      <p class="section-intro">Separate video perception, document automation and planned industrial inspection. Each case distinguishes the problem, method, contribution and evidence limits.</p>
-    </div>
-    <div class="ai-branch-map" aria-label="AI project categories">
-      <a href="#supermarket-delivery-monitoring"><span>AI / 01</span><strong>Computer Vision</strong><small>Detection &amp; tracking</small></a>
-      <a href="#ocr-assisted-data-entry"><span>AI / 02</span><strong>OCR &amp; Document Automation</strong><small>Extract &amp; enter data</small></a>
-      <a href="#fabric-defect-inspection"><span>AI / 03</span><strong>Industrial Visual Inspection</strong><small>Planned experiment</small></a>
-    </div>
-    <div class="ai-subsection-heading"><span>AI / 01</span><div><h3>Computer Vision · Detection and tracking</h3><p>Past project-based freelance work.</p></div></div>
-    <div class="project-grid">
-      <article class="project-card" id="supermarket-delivery-monitoring">
-        <div class="project-top"><span class="project-number">CASE 02 / COMPUTER VISION</span><span class="status status-past">Past project</span></div>
-        <h3>Supermarket Delivery Monitoring</h3>
-        <p class="lead">A project-based freelance Computer Vision workflow using video to detect and track activity related to supermarket deliveries.</p>
-        <div class="pipeline-block"><div class="pipeline-title">WORKFLOW SUMMARY · CONCEPTUAL</div><div class="pipeline-steps"><span>Video frames</span><b>→</b><span>YOLOv5 detection</span><b>→</b><span>DeepSORT tracking</span><b>→</b><span>Track results</span></div></div>
-        <div class="project-fields">
-          <div class="project-field"><h4>Problem & objective</h4><p>Support delivery monitoring by identifying and following relevant objects through video.</p></div>
-          <div class="project-field"><h4>Contribution & solution</h4><p>Implemented a Computer Vision workflow using YOLOv5 for object detection and DeepSORT for object tracking.</p></div>
-          <div class="project-field"><h4>Evidence & limitations</h4><p>Past freelance project, delivered in a project-based engagement. This portfolio does not claim a verified accuracy, throughput or time-saving metric.</p></div>
-        </div>
-        <div class="project-field evidence-plan"><h4>Evaluation plan for a reproducible demo</h4><p>Report detector precision/recall and representative failure cases; for tracking, document identity switches and occlusion behavior. These are recommended measurements, not claimed results.</p></div>
-        <div class="tags"><span class="tag">Python</span><span class="tag">YOLOv5</span><span class="tag">DeepSORT</span><span class="tag">Video tracking</span></div>
-      </article>
-
-      <article class="project-card" id="ocr-assisted-data-entry">
-        <div class="project-top"><span class="project-number">CASE 03 / AUTOMATION</span><span class="status status-past">Past project</span></div>
-        <h3>OCR-assisted Data Entry</h3>
-        <p class="lead">A project-based automation workflow for extracting information from vehicle-inspection documents and entering data into a website.</p>
-        <div class="pipeline-block"><div class="pipeline-title">WORKFLOW SUMMARY · CONCEPTUAL</div><div class="pipeline-steps"><span>Document image</span><b>→</b><span>Image processing / OCR</span><b>→</b><span>Extracted data</span><b>→</b><span>Web entry</span></div></div>
-        <div class="project-fields">
-          <div class="project-field"><h4>Problem & objective</h4><p>Reduce repetitive manual entry from paper vehicle-inspection records into the Da Nang Port website.</p></div>
-          <div class="project-field"><h4>Contribution & solution</h4><p>Used image processing and OCR as part of a workflow that extracted document information and automated website data entry.</p></div>
-          <div class="project-field"><h4>Evidence & limitations</h4><p>Past project-based freelance work. Document samples, field-level accuracy and time-saved measurements are not published as verified evidence here.</p></div>
-        </div>
-        <div class="project-field evidence-plan"><h4>Evaluation plan for a reproducible demo</h4><p>Measure field-level exact match, correction rate and failure handling on labelled documents. No accuracy or time-saving figure is claimed because verified measurements are unavailable.</p></div>
-        <div class="tags"><span class="tag">Python</span><span class="tag">OCR</span><span class="tag">Image processing</span><span class="tag">Automation</span></div>
-      </article>
-    </div>
-
-    <div class="ai-subsection-heading planned-heading"><span>AI / 03</span><div><h3>Industrial Computer Vision · Defect Inspection</h3><p>A proposed portfolio experiment, not a completed or evaluated model.</p></div></div>
-    <aside class="concept-panel" id="fabric-defect-inspection">
-      <div>
-        <div class="kicker">AI / 03 · PLANNED EXPERIMENT — NOT COMPLETED</div>
-        <h3>Fabric Defect Inspection</h3>
-        <p>A planned Computer Vision portfolio experiment for fabric inspection. It is not presented as implemented, trained or validated. The aim is to test whether fabric defects can be detected consistently before considering any factory integration.</p>
-        <div class="planned-steps">
-          <div><span>01</span><strong>Dataset</strong><small>Find a suitably licensed dataset and inspect class balance.</small></div>
-          <div><span>02</span><strong>Baseline</strong><small>Define defect classes and train a repeatable baseline.</small></div>
-          <div><span>03</span><strong>Evaluation</strong><small>Report precision/recall, failure cases and limits before any integration claim.</small></div>
-        </div>
-      </div>
-      <span class="concept-state">Planning stage</span>
-    </aside>
-
-    <div class="media-note" id="video">
-      <div class="media-copy">
-        <div class="kicker">Supplementary media</div>
-        <h3>Video shared for the portfolio</h3>
-        <p>This video is kept as optional supporting material rather than a separate primary portfolio section. If the embedded player is unavailable, the source can be opened on YouTube.</p>
-        <a class="media-fallback" href="https://youtube.com/shorts/tUJHJBcuKA0" target="_blank" rel="noopener noreferrer">Open video on YouTube ↗</a>
-      </div>
-      <div class="media-frame"><iframe src="https://www.youtube.com/embed/tUJHJBcuKA0" title="Supplementary portfolio video" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-    </div>
-  </div>
-</section>
-
-<section class="section experience-section" id="experience">
+<section class="section" id="projects"><div class="wrap">
+ <div class="section-head"><div><div class="kicker">01 / Project index</div><h2 class="section-title">Explore projects by engineering domain.</h2></div><p class="section-intro">The portfolio is organised by problem type so each project has its own page for scope, engineering choices, evidence and limitations.</p></div>
+ <div class="project-directory-grid">
+  <article class="directory-card"><div class="directory-label">BRANCH 01 / FULL-STACK SYSTEMS</div><h2>Full-Stack Systems</h2><p>Software systems and backend rules for operational workflows. Focus areas include warehouse processes, state transitions, data persistence and traceability.</p><div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">ERP/WMS</span></div><div class="directory-foot"><span class="status status-progress">RackFlow · In development</span><a class="text-link" href="fullstack.html">Explore Full-Stack ↗</a></div></article>
+  <article class="directory-card"><div class="directory-label">BRANCH 02 / AI &amp; COMPUTER VISION</div><h2>AI Projects</h2><p>Detection, tracking, document automation and a clearly labeled planned experiment. Past projects and future experiments have separate status labels.</p><div class="tags"><span class="tag">YOLOv5</span><span class="tag">DeepSORT</span><span class="tag">OCR</span><span class="tag">Visual inspection</span></div><div class="directory-foot"><span class="status status-past">2 past project engagements</span><a class="text-link" href="ai-projects.html">Explore AI projects ↗</a></div></article>
+ </div>
+ <div class="kicker">Project pages</div><div class="mini-project-links">
+ <a href="rackflow.html"><span class="mini-index">FULL-STACK / 01</span><span><strong>RackFlow — Mini ERP / WMS</strong><small>Personal project · in development</small></span><span class="mini-arrow">↗</span></a>
+ <a href="supermarket-delivery-monitoring.html"><span class="mini-index">AI / 01</span><span><strong>Supermarket Delivery Monitoring</strong><small>Past project-based Computer Vision work</small></span><span class="mini-arrow">↗</span></a>
+ <a href="ocr-assisted-data-entry.html"><span class="mini-index">AI / 02</span><span><strong>OCR-assisted Data Entry</strong><small>Past project-based document automation</small></span><span class="mini-arrow">↗</span></a>
+ <a href="fabric-defect-inspection.html"><span class="mini-index">AI / 03</span><span><strong>Fabric Defect Inspection</strong><small>Planned experiment · not implemented or evaluated</small></span><span class="mini-arrow">↗</span></a>
+ </div>
+</div></section><section class="section experience-section" id="experience">
   <div class="wrap">
     <div class="section-head">
       <div><div class="kicker">02 / Experience</div><h2 class="section-title">Where I’ve worked and what I’ve learned.</h2></div>
@@ -589,6 +178,7 @@ h1 em{display:inline;color:var(--accent);font-family:Georgia,"Times New Roman",s
     </div>
   </div>
 </section>
+
 </main>
 <footer class="footer">
   <div class="wrap footer-inner">
@@ -596,107 +186,6 @@ h1 em{display:inline;color:var(--accent);font-family:Georgia,"Times New Roman",s
     <div class="footer-links"><a href="#top">Back to top ↑</a><a href="https://github.com/2000minhphat1999" target="_blank" rel="noopener noreferrer">GitHub</a></div>
   </div>
 </footer>
-<script>
-(function(){
-  var navLinks=document.getElementById("navLinks");
-  var year=document.getElementById("year");
-  var htmlRoot=document.documentElement;
-  var langEN=document.getElementById("langEN");
-  var langVI=document.getElementById("langVI");
-  var translations={"Tran Viet Minh Phat | Python Application Engineer":"Trần Việt Minh Phát | Kỹ sư phát triển ứng dụng Python","Skip to content":"Bỏ qua đến nội dung","Python applications · ERP/WMS":"Ứng dụng Python · ERP/WMS","Menu":"Danh mục","Selected work":"Dự án tiêu biểu","Experience":"Kinh nghiệm","Capabilities":"Kỹ năng","Education":"Học vấn","Contact ↗":"Liên hệ ↗","Python application engineering · ERP/WMS":"Phát triển ứng dụng Python · ERP/WMS","I’m Tran Viet Minh Phat, a Python-focused engineer with experience developing WMS and FEMS functions at Sumida. My work centers on understanding business processes, translating them into application logic, debugging behavior and validating results. I also have contract Computer Vision experience and project-based OCR automation work.":"Tôi là Trần Việt Minh Phát, kỹ sư tập trung vào Python, từng phát triển các chức năng WMS và FEMS tại Sumida. Tôi chú trọng tìm hiểu quy trình nghiệp vụ, chuyển yêu cầu thành logic ứng dụng, gỡ lỗi và kiểm chứng kết quả. Tôi cũng từng làm thị giác máy tính theo hợp đồng và tham gia các dự án tự động hóa nhập liệu bằng OCR.","Explore selected work":"Xem dự án tiêu biểu","Contact me":"Liên hệ","LinkedIn ↗":"LinkedIn ↗","GitHub profile ↗":"Trang GitHub ↗","Email ↗":"Email ↗","Professional focus":"Định hướng chuyên môn","Applications that support daily operations.":"Ứng dụng phục vụ hoạt động vận hành hằng ngày.","Primary direction: Python applications, ERP/WMS workflows and application support. Computer Vision and OCR are supporting project experience, not claims of broad production AI expertise.":"Định hướng chính: phát triển ứng dụng Python, quy trình ERP/WMS và hỗ trợ ứng dụng. Thị giác máy tính và OCR là kinh nghiệm dự án bổ trợ; tôi không khẳng định đã triển khai AI trên diện rộng trong môi trường vận hành thực tế.","Business workflows":"Quy trình nghiệp vụ","WMS · FEMS":"WMS · FEMS","Application stack":"Nền tảng ứng dụng","Python · SQL":"Python · SQL","Engineering habits":"Phương pháp kỹ thuật","Debug · Test · Trace":"Gỡ lỗi · Kiểm thử · Truy vết","Sumida":"Sumida","1 yr 10 mo":"1 năm 10 tháng","Software development":"Phát triển phần mềm","Factory applications":"Ứng dụng nhà máy","WMS + FEMS":"WMS + FEMS","Workflow and energy data":"Quy trình và dữ liệu năng lượng","Primary stack":"Công nghệ chính","Python / SQL":"Python / SQL","Backend and business logic":"Phía máy chủ và logic nghiệp vụ","Additional experience":"Kinh nghiệm bổ sung","5-month contract":"Hợp đồng 5 tháng","Computer Vision · Halovi":"Thị giác máy tính · Halovi","01 / Selected work":"01 / Dự án tiêu biểu","Clear problem, defined scope, honest status.":"Bài toán rõ ràng, phạm vi cụ thể, trạng thái trung thực.","The projects below separate a portfolio application in development from past project-based work. Visuals are not used as substitutes for working features or test evidence.":"Các mục dưới đây phân biệt ứng dụng đang phát triển cho hồ sơ năng lực với những dự án đã thực hiện trước đây. Hình ảnh không thay thế cho tính năng hoạt động hoặc bằng chứng kiểm thử.","Case 01 · Personal portfolio project":"Dự án 01 · Dự án cá nhân cho hồ sơ năng lực","RackFlow — Mini ERP / WMS":"RackFlow — Mini ERP / WMS","A warehouse operations application focused on receiving, inventory visibility, order lookup, stock reservation and traceable state changes.":"Ứng dụng vận hành kho tập trung vào nhập kho, tra cứu tồn kho, tra cứu đơn hàng, giữ chỗ tồn kho và truy vết các thay đổi trạng thái.","In development":"Đang phát triển","Problem & objective":"Bài toán và mục tiêu","Warehouse workflows need consistent stock information and clear records of operational actions. RackFlow models these flows in a small ERP/WMS portfolio application.":"Quy trình kho cần dữ liệu tồn kho nhất quán và nhật ký thao tác rõ ràng. RackFlow mô phỏng các quy trình này trong một ứng dụng ERP/WMS quy mô nhỏ phục vụ hồ sơ năng lực.","My role":"Vai trò cá nhân","Personal project. I define the scope and implement the application incrementally; this is not represented as a deployed customer system or a production warehouse platform.":"Đây là dự án cá nhân. Tôi xác định phạm vi và triển khai ứng dụng theo từng phần; hệ thống chưa được giới thiệu như sản phẩm đã triển khai cho khách hàng hoặc nền tảng kho đang vận hành thực tế.","Current scope":"Phạm vi hiện tại","Inbound receiving and inventory lookup":"Nhập kho và tra cứu tồn kho","Order lookup and stock reservation":"Tra cứu đơn hàng và giữ chỗ tồn kho","Event history for operational traceability":"Lịch sử sự kiện để truy vết vận hành","Implementation":"Triển khai kỹ thuật","Python services using FastAPI and Flask, SQLAlchemy and PostgreSQL. The project focuses on business rules, data persistence, workflow behavior and explicit state changes.":"Các dịch vụ Python sử dụng FastAPI, Flask, SQLAlchemy và PostgreSQL. Dự án tập trung vào quy tắc nghiệp vụ, lưu trữ dữ liệu, hành vi quy trình và các thay đổi trạng thái rõ ràng.","Evidence & limitations":"Bằng chứng và giới hạn","The features listed above define the current portfolio scope. Outbound workflows and AI-assisted operations remain under development; no production deployment or business KPI is claimed here.":"Các tính năng nêu trên xác định phạm vi hiện tại của dự án. Quy trình xuất kho và thao tác có AI hỗ trợ vẫn đang phát triển; tôi không tuyên bố hệ thống đã vận hành thực tế hoặc đạt chỉ số kinh doanh nào.","Next step":"Bước tiếp theo","Complete and verify manual outbound first, then add AI-assisted operations with validation, human confirmation and traceable events. Public source/demo links will be added only when ready to share.":"Hoàn thiện và kiểm chứng quy trình xuất kho thủ công trước, sau đó mới bổ sung thao tác có AI hỗ trợ cùng bước kiểm tra, xác nhận của người dùng và nhật ký truy vết. Chỉ công khai liên kết mã nguồn hoặc bản chạy thử khi đã sẵn sàng chia sẻ.","Technologies":"Công nghệ","Status:":"Trạng thái:","actively being developed as a portfolio project.":"đang được phát triển như một dự án cá nhân phục vụ hồ sơ năng lực.","Scope is intentionally limited to verified features.":"Phạm vi được giới hạn có chủ đích ở những tính năng đã xác minh.","CASE 02 / COMPUTER VISION":"DỰ ÁN 02 / THỊ GIÁC MÁY TÍNH","Past project":"Dự án đã thực hiện","Supermarket Delivery Monitoring":"Giám sát giao nhận tại siêu thị","A project-based freelance workflow using video to detect and track activity related to supermarket deliveries.":"Quy trình thị giác máy tính được thực hiện theo dự án tự do, sử dụng video để phát hiện và theo dõi hoạt động giao nhận tại siêu thị.","Support delivery monitoring by identifying and following relevant objects through video.":"Hỗ trợ giám sát giao nhận bằng cách nhận diện và theo dõi các đối tượng liên quan trong video.","Contribution & solution":"Đóng góp và giải pháp","Implemented a Computer Vision workflow using YOLOv5 for object detection and DeepSORT for object tracking.":"Triển khai quy trình thị giác máy tính, sử dụng YOLOv5 để phát hiện đối tượng và DeepSORT để theo dõi đối tượng.","Past freelance project, delivered in a project-based engagement. This portfolio does not claim a verified accuracy, throughput or time-saving metric.":"Dự án tự do đã thực hiện theo từng đợt. Hồ sơ này không đưa ra số liệu về độ chính xác, tốc độ xử lý hoặc thời gian tiết kiệm khi chưa có bằng chứng xác minh.","Video tracking":"Theo dõi video","CASE 03 / AUTOMATION":"DỰ ÁN 03 / TỰ ĐỘNG HÓA","OCR-assisted Data Entry":"Nhập liệu có hỗ trợ OCR","A freelance automation workflow for extracting information from vehicle-inspection documents and entering data into a website.":"Quy trình tự động hóa theo dự án tự do, trích xuất thông tin từ giấy tờ kiểm định phương tiện và nhập dữ liệu lên website.","Reduce repetitive manual entry from paper vehicle-inspection records into the Da Nang Port website.":"Giảm thao tác nhập liệu thủ công lặp lại từ hồ sơ kiểm định phương tiện bằng giấy lên website Cảng Đà Nẵng.","Used image processing and OCR as part of a workflow that extracted document information and automated website data entry.":"Sử dụng xử lý ảnh và OCR trong quy trình trích xuất thông tin từ tài liệu và tự động nhập dữ liệu lên website.","Past project-based freelance work. Document samples, field-level accuracy and time-saved measurements are not published as verified evidence here.":"Dự án tự do thực hiện theo từng đợt. Mẫu tài liệu, độ chính xác theo từng trường dữ liệu và số liệu thời gian tiết kiệm chưa được xác minh để công bố.","Image processing":"Xử lý ảnh","Automation":"Tự động hóa","Future build / not yet a completed project":"Dự án dự kiến / chưa hoàn thành","Fabric Defect Inspection":"Kiểm tra lỗi bề mặt vải","A planned Computer Vision portfolio experiment for fabric inspection. The next steps are to source a suitable dataset, define defect classes, establish a baseline and report reproducible evaluation results before considering any factory integration.":"Ý tưởng thử nghiệm thị giác máy tính cho bài toán kiểm tra lỗi vải trong hồ sơ năng lực. Các bước tiếp theo là tìm bộ dữ liệu phù hợp, xác định nhóm lỗi, xây dựng mô hình cơ sở và báo cáo kết quả đánh giá có thể tái lập trước khi cân nhắc tích hợp tại nhà máy.","Planning stage":"Giai đoạn lên kế hoạch","Supplementary media":"Tư liệu bổ trợ","Video shared for the portfolio":"Video bổ trợ cho hồ sơ năng lực","This video is kept as optional supporting material rather than a separate primary portfolio section. If the embedded player is unavailable, the source can be opened on YouTube.":"Video này chỉ là tư liệu tham khảo, không phải một dự án chính độc lập. Nếu trình phát nhúng không hoạt động, bạn có thể mở video trực tiếp trên YouTube.","Open video on YouTube ↗":"Mở video trên YouTube ↗","02 / Experience":"02 / Kinh nghiệm","Professional roles and project work, kept distinct.":"Phân biệt rõ công việc chuyên môn và dự án.","Employment, fixed-term contract, freelance engagements and earlier experience are separated so that the timeline does not imply continuous full-time freelance work.":"Kinh nghiệm làm việc, hợp đồng có thời hạn, các dự án tự do và công việc trước đây được tách riêng để không tạo cảm giác rằng tôi làm tự do toàn thời gian liên tục.","Employment & fixed-term contract":"Việc làm và hợp đồng có thời hạn","Employment":"Việc làm","Software Development Technical Team Lead":"Trưởng nhóm kỹ thuật phát triển phần mềm","WMS:":"WMS:","clarified requirements with warehouse users, analyzed workflows, implemented application logic, tested features, fixed defects and supported trial deployment.":"làm rõ yêu cầu với người dùng kho, phân tích quy trình, triển khai logic ứng dụng, kiểm thử tính năng, sửa lỗi và hỗ trợ triển khai thử.","FEMS:":"FEMS:","contributed to data-processing functions, an electricity-monitoring dashboard and electricity-cost calculations.":"tham gia phát triển chức năng xử lý dữ liệu, bảng điều khiển giám sát điện năng và tính toán chi phí điện.","Computer Vision Engineer":"Kỹ sư thị giác máy tính","Worked on Computer Vision components during a five-month contract. The scope described here is intentionally limited to the confirmed contract and field; unverified production responsibilities are not added.":"Tham gia công việc về thị giác máy tính trong hợp đồng 5 tháng. Mô tả chỉ giới hạn ở lĩnh vực và thời hạn hợp đồng đã xác nhận; không thêm trách nhiệm vận hành thực tế chưa được kiểm chứng.","Project-based and earlier experience":"Dự án tự do và kinh nghiệm trước đây","Intermittent freelance engagements":"Các đợt làm dự án tự do không liên tục","Freelance Software Projects":"Các dự án phần mềm tự do","Two main engagements carried out in separate project periods, with gaps between them; this was not continuous full-time employment.":"Hai dự án chính được thực hiện ở những giai đoạn riêng biệt, có khoảng trống giữa các đợt; đây không phải công việc toàn thời gian liên tục.","Supermarket Delivery Monitoring:":"Giám sát giao nhận tại siêu thị:","Computer Vision workflow using YOLOv5 and DeepSORT.":"Quy trình thị giác máy tính sử dụng YOLOv5 và DeepSORT.","OCR-assisted data entry:":"Nhập liệu có hỗ trợ OCR:","extracted information from vehicle-inspection records and automated entry into the Da Nang Port website.":"trích xuất thông tin từ hồ sơ kiểm định phương tiện và tự động nhập lên website Cảng Đà Nẵng.","Research / education":"Nghiên cứu / giáo dục","Research Engineer":"Kỹ sư nghiên cứu","The University of Technology and Education — The University of Danang":"Trường Đại học Sư phạm Kỹ thuật — Đại học Đà Nẵng","Developed educational websites, designed and assembled STEAM robot systems, and contributed to project-based learning activities.":"Phát triển website giáo dục, thiết kế và lắp ráp hệ thống robot STEAM, đồng thời tham gia các hoạt động học tập theo dự án.","Internship":"Thực tập","Kaizen Engineer Intern":"Thực tập sinh kỹ sư Kaizen","Supported assembly-process analysis and continuous-improvement activities during an engineering internship. This is not presented as professional OT/IT systems engineering.":"Hỗ trợ phân tích quy trình lắp ráp và các hoạt động cải tiến liên tục trong kỳ thực tập kỹ thuật. Kinh nghiệm này không được trình bày như kinh nghiệm chuyên môn về hệ thống OT/IT.","03 / Capabilities":"03 / Năng lực","Skills grouped by how I use them.":"Nhóm kỹ năng theo cách tôi ứng dụng.","The primary strength is Python-based application work. Computer Vision and OCR are supporting project experience; depth is described without unsupported proficiency scores.":"Thế mạnh chính là phát triển ứng dụng bằng Python. Thị giác máy tính và OCR là kinh nghiệm dự án bổ trợ; mức độ năng lực được mô tả mà không dùng điểm thành thạo thiếu căn cứ.","01 / CORE":"01 / CỐT LÕI","Python applications":"Ứng dụng Python","Application logic, workflow implementation, debugging and incremental validation.":"Logic ứng dụng, triển khai quy trình, gỡ lỗi và kiểm chứng theo từng bước.","REST APIs":"REST API","02 / DATA":"02 / DỮ LIỆU","ERP/WMS workflows":"Quy trình ERP/WMS","Business requirements, SQL-backed workflows, inventory concepts, data checking and traceable state changes.":"Yêu cầu nghiệp vụ, quy trình dùng SQL, khái niệm tồn kho, kiểm tra dữ liệu và truy vết thay đổi trạng thái.","SQL":"SQL","WMS / FEMS":"WMS / FEMS","03 / SUPPORTING":"03 / BỔ TRỢ","Computer Vision & OCR":"Thị giác máy tính và OCR","Prior project use for object detection, tracking and document data extraction. Model evaluation remains a developing area.":"Đã sử dụng trong các dự án phát hiện đối tượng, theo dõi và trích xuất dữ liệu tài liệu. Năng lực đánh giá mô hình vẫn đang được phát triển.","Technologies such as Siemens S7, SCADA, MQTT and OPC UA are not presented as hands-on professional experience. No claim is made that YOLO or VLM has been used extensively in production.":"Các công nghệ như Siemens S7, SCADA, MQTT và OPC UA không được trình bày như kinh nghiệm thực chiến chuyên môn. Tôi cũng không khẳng định đã sử dụng YOLO hoặc VLM trên diện rộng trong môi trường vận hành thực tế.","04 / Education":"04 / Học vấn","Engineering foundation and research work.":"Nền tảng kỹ thuật và hoạt động nghiên cứu.","B.Eng. in Mechatronics Engineering Technology":"Kỹ sư Công nghệ Kỹ thuật Cơ điện tử","09/2018 – 06/2023 · Degree classification: Good":"09/2018 – 06/2023 · Xếp loại: Khá","Research & recognition":"Nghiên cứu và thành tích","IoT-Based Waste Management System for Hazardous Waste":"Hệ thống quản lý chất thải nguy hại dựa trên IoT","Published in the Proceedings of the 26th National Conference on Electronics, Communications and Information Technology (REC-ECIT 2023), pp. 193–198.":"Được công bố trong Kỷ yếu Hội nghị Quốc gia lần thứ 26 về Điện tử, Truyền thông và Công nghệ Thông tin (REC-ECIT 2023), trang 193–198.","Student research recognition in 2022–2023, including a second prize at the Da Nang City Student Scientific Research Competition in 2022.":"Đạt ghi nhận nghiên cứu khoa học sinh viên giai đoạn 2022–2023, trong đó có giải Nhì tại Cuộc thi Sinh viên nghiên cứu khoa học thành phố Đà Nẵng năm 2022.","05 / Contact":"05 / Liên hệ","Let’s talk about applications that help work get done.":"Cùng trao đổi về những ứng dụng giải quyết công việc thực tế.","Open to relevant opportunities in Python applications, ERP/WMS, backend development and application support. Computer Vision remains a supplementary direction.":"Tôi quan tâm đến cơ hội phù hợp trong phát triển ứng dụng Python, ERP/WMS, lập trình phía máy chủ và hỗ trợ ứng dụng. Thị giác máy tính vẫn là hướng bổ trợ.","Email me ↗":"Gửi email ↗","©":"©","Tran Viet Minh Phat · Python applications · ERP/WMS":"Trần Việt Minh Phát · Ứng dụng Python · ERP/WMS","Back to top ↑":"Về đầu trang ↑","GitHub":"GitHub","Tran Viet Minh Phat":"Trần Việt Minh Phát","See what I’ve built":"Xem các dự án tôi đã thực hiện","How I approach a workflow":"Cách tôi tiếp cận quy trình","Before I write code, I want to understand what actually happens.":"Trước khi lập trình, tôi muốn hiểu công việc thực tế diễn ra như thế nào.","A few habits that guide my work:":"Một vài nguyên tắc tôi theo đuổi:","Understand the process, not only the request":"Hiểu quy trình, không chỉ yêu cầu","Make business rules and state changes explicit":"Làm rõ quy tắc nghiệp vụ và thay đổi trạng thái","Test the behavior; trace what fails":"Kiểm thử hành vi và truy vết lỗi","Experience at a glance":"Tóm tắt kinh nghiệm","1 yr 10 mo at Sumida":"1 năm 10 tháng tại Sumida","WMS + FEMS functions":"Các chức năng WMS + FEMS","5-month contract at Halovi":"Hợp đồng 5 tháng tại Halovi","Computer Vision":"Thị giác máy tính","Two freelance projects":"Hai dự án tự do","Separate project periods":"Thực hiện theo từng đợt riêng biệt","01 / Projects":"01 / Dự án","Things I’ve built — and what still needs proof.":"Những gì tôi đã làm — và những gì cần thêm bằng chứng.","RackFlow is my current build. The earlier projects show practical Computer Vision and OCR work; each item is labeled by its actual status.":"RackFlow là dự án tôi đang phát triển. Các dự án trước đây thể hiện công việc thực tế với thị giác máy tính và OCR; trạng thái từng mục được ghi rõ.","Workflow sketch":"Phác thảo quy trình","Illustrative model · not a product screenshot":"Mô hình minh họa · không phải ảnh chụp sản phẩm","Receive stock":"Tiếp nhận hàng","Check inventory":"Kiểm tra tồn kho","Reserve stock":"Giữ chỗ tồn kho","Trace changes":"Truy vết thay đổi","Where I’ve worked and what I’ve learned.":"Nơi tôi đã làm việc và những gì đã học được.","Employment and project-based work are listed separately, with the scope and duration kept clear.":"Công việc theo hợp đồng và dự án được trình bày riêng, với phạm vi và thời lượng rõ ràng.","03 / Skills":"03 / Kỹ năng","Tools I use to get the work done.":"Những công cụ tôi dùng để giải quyết công việc.","Python application work is my main direction. Computer Vision and OCR are supporting experience, described at the level I can substantiate.":"Phát triển ứng dụng Python là hướng chính của tôi. Thị giác máy tính và OCR là kinh nghiệm bổ trợ, được mô tả trong phạm vi tôi có thể xác thực.","Have a workflow problem worth solving?":"Có quy trình nào cần được giải quyết tốt hơn?","Projects":"Dự án","Python application development · ERP/WMS":"Phát triển ứng dụng Python · ERP/WMS","Python Application Engineer · ERP/WMS & Factory Applications":"Kỹ sư phát triển ứng dụng Python · ERP/WMS và ứng dụng nhà máy","My experience includes 1 year 10 months at Sumida contributing to WMS and FEMS functions, a five-month Computer Vision contract at Halovi, and two main freelance projects completed at different times.":"Kinh nghiệm của tôi gồm 1 năm 10 tháng tại Sumida, tham gia phát triển các chức năng WMS và FEMS; hợp đồng thị giác máy tính 5 tháng tại Halovi; và hai dự án tự do chính được thực hiện ở những thời điểm riêng biệt.","Full-Stack":"Full-Stack","AI Projects":"Dự án AI","BRANCH 01 / FULL-STACK SYSTEMS":"NHÁNH 01 / HỆ THỐNG FULL-STACK","Systems built around operational workflows.":"Hệ thống phần mềm cho quy trình vận hành.","This branch focuses on backend logic, data persistence and business rules. RackFlow is a personal project in development, not a deployed customer system.":"Nhánh này tập trung vào logic backend, lưu trữ dữ liệu và quy tắc nghiệp vụ. RackFlow là dự án cá nhân đang phát triển, chưa phải hệ thống đã triển khai cho khách hàng.","FULL-STACK / CASE 01":"FULL-STACK / DỰ ÁN 01","Business systems & ERP/WMS":"Hệ thống nghiệp vụ & ERP/WMS","Operational workflows, inventory state and traceable business events.":"Quy trình vận hành, trạng thái tồn kho và sự kiện nghiệp vụ có thể truy vết.","01 PROJECT · IN DEVELOPMENT":"01 DỰ ÁN · ĐANG PHÁT TRIỂN","FULL-STACK / CASE 01 · PERSONAL PROJECT":"FULL-STACK / DỰ ÁN 01 · DỰ ÁN CÁ NHÂN","BRANCH 02 / AI & COMPUTER VISION":"NHÁNH 02 / AI & THỊ GIÁC MÁY TÍNH","Three AI sub-branches, three different problem types.":"Ba nhánh AI, ba dạng bài toán khác nhau.","Separate video perception, document automation and planned industrial inspection. Each case distinguishes the problem, method, contribution and evidence limits.":"Tách riêng nhận diện video, tự động hóa tài liệu và thử nghiệm kiểm tra công nghiệp đang lên kế hoạch. Mỗi case phân biệt bài toán, phương pháp, đóng góp và giới hạn bằng chứng.","Detection & tracking":"Phát hiện & theo dõi","OCR & Document Automation":"OCR & Tự động hóa tài liệu","Extract & enter data":"Trích xuất & nhập dữ liệu","Industrial Visual Inspection":"Kiểm tra hình ảnh công nghiệp","Planned experiment":"Thử nghiệm dự kiến","WORKFLOW SUMMARY · CONCEPTUAL":"TÓM TẮT LUỒNG · MINH HỌA","Video frames":"Khung hình video","YOLOv5 detection":"Phát hiện YOLOv5","DeepSORT tracking":"Theo dõi DeepSORT","Track results":"Kết quả theo dõi","Document image":"Ảnh tài liệu","Image processing / OCR":"Xử lý ảnh / OCR","Extracted data":"Dữ liệu trích xuất","Web entry":"Nhập dữ liệu web","Evaluation plan for a reproducible demo":"Kế hoạch đánh giá cho bản demo có thể tái lập","Report detector precision/recall and representative failure cases; for tracking, document identity switches and occlusion behavior. These are recommended measurements, not claimed results.":"Báo cáo precision/recall của bộ phát hiện và các trường hợp lỗi điển hình; với tracking, ghi nhận lỗi đổi ID và tình huống che khuất. Đây là phép đo khuyến nghị, không phải kết quả đã xác nhận.","Measure field-level exact match, correction rate and failure handling on labelled documents. No accuracy or time-saving figure is claimed because verified measurements are unavailable.":"Đo độ khớp chính xác theo trường dữ liệu, tỷ lệ cần sửa và xử lý lỗi trên tài liệu đã gán nhãn. Chưa công bố độ chính xác hay thời gian tiết kiệm vì chưa có phép đo được xác minh.","Dataset":"Bộ dữ liệu","Find a suitably licensed dataset and inspect class balance.":"Tìm bộ dữ liệu có giấy phép phù hợp và kiểm tra độ cân bằng lớp.","Baseline":"Mô hình cơ sở","Define defect classes and train a repeatable baseline.":"Xác định nhóm lỗi và huấn luyện mô hình cơ sở có thể tái lập.","Report precision/recall, failure cases and limits before any integration claim.":"Báo cáo precision/recall, trường hợp lỗi và giới hạn trước khi tuyên bố tích hợp."};
-  // Translate matching phrases within each text node so inline markup cannot leave stale English fragments.
-  var textRecords=[];
-  var walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
-  var node;
-  while((node=walker.nextNode())){
-    var parent=node.parentElement;
-    if(!parent || /^(SCRIPT|STYLE|NOSCRIPT|TEMPLATE)$/.test(parent.tagName)) continue;
-    var source=node.nodeValue;
-    if(source && source.trim()) textRecords.push({node:node,source:source});
-  }
-  var translationKeys=Object.keys(translations).sort(function(a,b){return b.length-a.length;});
-  var translationPattern=new RegExp(translationKeys.map(function(key){
-    return key.replace(/[\\^$.*+?()[\]{}|]/g, "\\$&");
-  }).join("|"),"g");
-  function translateText(source,language){
-    if(language!=="vi") return source;
-    return source.replace(translationPattern,function(key){return translations[key]||key;});
-  }
-  function translateAttributes(language){
-    document.title=language==="vi"?"Trần Việt Minh Phát | Kỹ sư phát triển ứng dụng Python":"Tran Viet Minh Phat | Python Application Engineer";
-    var description=document.querySelector('meta[name="description"]');
-    var ogDescription=document.querySelector('meta[property="og:description"]');
-    if(description) description.setAttribute("content",language==="vi"
-      ?"Trần Việt Minh Phát — phát triển ứng dụng Python cho quy trình ERP/WMS, hệ thống nghiệp vụ và hỗ trợ ứng dụng."
-      :"Tran Viet Minh Phat — Python application engineering for ERP/WMS, operational workflows and backend applications.");
-    if(ogDescription) ogDescription.setAttribute("content",language==="vi"
-      ?"Ứng dụng Python, quy trình ERP/WMS, phần mềm vận hành và kinh nghiệm dự án Computer Vision."
-      :"Python applications, ERP/WMS workflows, operational software and applied Computer Vision project work.");
-    var nav=document.querySelector('nav[aria-label="Main navigation"]');
-    if(nav) nav.setAttribute("aria-label",language==="vi"?"Điều hướng chính":"Main navigation");
-    var summary=document.querySelector('[aria-label="Professional summary"]');
-    if(summary) summary.setAttribute("aria-label",language==="vi"?"Tóm tắt chuyên môn":"Professional summary");
-    var tech=document.querySelector('[aria-label="Technologies"]');
-    if(tech) tech.setAttribute("aria-label",language==="vi"?"Công nghệ":"Technologies");
-    var focus=document.querySelector(".profile-note");
-    if(focus) focus.setAttribute("aria-label",language==="vi"?"Cách tôi tiếp cận quy trình":"How I approach a workflow");
-    var sketch=document.querySelector(".workflow-sketch");
-    if(sketch) sketch.setAttribute("aria-label",language==="vi"?"Mô hình quy trình RackFlow":"RackFlow workflow model");
-    var records=document.querySelector(".track-record");
-    if(records) records.setAttribute("aria-label",language==="vi"?"Tóm tắt kinh nghiệm":"Experience at a glance");
-    var languageGroup=document.querySelector('.language-switch');
-    if(languageGroup) languageGroup.setAttribute("aria-label",language==="vi"?"Chọn ngôn ngữ":"Choose language");
-    var skip=document.querySelector('.skip-link');
-    if(skip) skip.setAttribute("aria-label",language==="vi"?"Bỏ qua đến nội dung chính":"Skip to main content");
-    var iframe=document.querySelector('iframe');
-    if(iframe) iframe.setAttribute("title",language==="vi"?"Video bổ trợ cho hồ sơ năng lực":"Supplementary portfolio video");
-  }
-  function setLanguage(language){
-    var isVietnamese=language==="vi";
-    textRecords.forEach(function(record){
-      record.node.nodeValue=translateText(record.source,language);
-    });
-    // Localize controls as complete units; nested arrows/icons must not leave stale English text.
-    function setControlLabel(selector,english,vietnamese){
-      var control=document.querySelector(selector);
-      if(control) control.innerHTML=isVietnamese?vietnamese:english;
-    }
-    setControlLabel('.navlinks a[href="#work"]',"Full-Stack","Full-Stack");
-    setControlLabel('.navlinks a[href="#ai-projects"]',"AI Projects","Dự án AI");
-    setControlLabel('.navlinks .contact-link',"Contact ↗","Liên hệ ↗");
-    setControlLabel('.hero-actions a.btn-primary[href="#work"]',
-      'See what I’ve built <span aria-hidden="true">↘</span>',
-      'Xem các dự án tôi đã thực hiện <span aria-hidden="true">↘</span>');
-    setControlLabel('.hero-actions a.btn[href^="mailto:"]',
-      'Contact me <span aria-hidden="true">↗</span>',
-      'Liên hệ <span aria-hidden="true">↗</span>');
-    setControlLabel('.media-fallback',"Open video on YouTube ↗","Mở video trên YouTube ↗");
-    setControlLabel('.contact-actions a.btn-primary',"Email me ↗","Gửi email ↗");
-    setControlLabel('.contact-actions a.btn-ghost',"LinkedIn ↗","LinkedIn ↗");
-    setControlLabel('.footer-links a[href="#top"]',"Back to top ↑","Về đầu trang ↑");
-    htmlRoot.setAttribute("lang",isVietnamese?"vi":"en");
-    if(langEN){
-      langEN.classList.toggle("is-active",!isVietnamese);
-      langEN.setAttribute("aria-pressed",String(!isVietnamese));
-    }
-    if(langVI){
-      langVI.classList.toggle("is-active",isVietnamese);
-      langVI.setAttribute("aria-pressed",String(isVietnamese));
-    }
-    translateAttributes(language);
-    try{window.localStorage.setItem("portfolio-language-v2",language);}catch(e){}
-  }
-  if(year){year.textContent=String(new Date().getFullYear());}
-  if(langEN) langEN.addEventListener("click",function(){setLanguage("en");});
-  if(langVI) langVI.addEventListener("click",function(){setLanguage("vi");});
-  // Default new visits to Vietnamese; use the versioned key so an old saved English preference cannot force mixed-language first impressions.
-  var initialLanguage="vi";
-  try{
-    var savedLanguage=window.localStorage.getItem("portfolio-language-v2");
-    if(savedLanguage==="en"||savedLanguage==="vi") initialLanguage=savedLanguage;
-  }catch(e){}
-  setLanguage(initialLanguage);
-})();
-</script>
+<script src="site.js"></script>
 </body>
 </html>
