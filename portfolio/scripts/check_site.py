@@ -71,9 +71,9 @@ def main():
             errors.append(f"bilingual switch marker missing: {marker}")
     # Catch regressions in desktop alignment and responsive navigation.
     for marker in (
-        "justify-content:flex-start;gap:22px;position:relative",
-        "margin-left:auto}",
-        "margin-left:6px",
+        ".nav{min-height:76px;display:flex;align-items:center;gap:22px;position:relative}",
+        ".navlinks{display:flex;align-items:center;gap:clamp(12px,1.6vw,22px);margin-left:auto}",
+        ".nav-tools{display:flex;align-items:center;gap:8px;flex:none}",
         "@media(max-width:850px)",
         ".navlinks.is-open{display:flex}",
         "aria-controls=\"navLinks\"",
