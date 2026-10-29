@@ -57,14 +57,15 @@ def main():
     for text in ("tranvietminhphat@gmail.com", "Python application engineering", "RackFlow — Mini ERP / WMS", "Fabric Defect Inspection", "Freelance Software Projects", "https://www.youtube.com/embed/tUJHJBcuKA0", "<iframe", "Planning stage"):
         if text not in source:
             errors.append(f"required content missing: {text}")
-    # Keep the hero headline localized as one unit so EN and VI fragments cannot mix.
+    # Put the candidate's identity and professional direction above the fold.
     for marker in (
-        'id="heroHeadline"',
-        'Tôi phát triển phần mềm phục vụ <em>quy trình vận hành thực tế.</em>',
-        'I build software for <em>real operational workflows.</em>',
+        '<h1 id="heroHeadline">Trần Việt Minh Phát</h1>',
+        'id="heroRole"',
+        "Python Application Engineer · ERP/WMS &amp; Factory Applications",
+        "My experience includes 1 year 10 months at Sumida",
     ):
         if marker not in source:
-            errors.append(f"hero headline localization marker missing: {marker}")
+            errors.append(f"candidate identity marker missing: {marker}")
     # Ensure the website offers a real English/Vietnamese language switch.
     for marker in ('id="langEN"', 'id="langVI"', 'function setLanguage(language)', 'portfolio-language'):
         if marker not in source:
@@ -89,6 +90,8 @@ def main():
             if len(translations) < 100:
                 errors.append(f"translation dictionary unexpectedly small: {len(translations)} entries")
             for key, value in {
+                "Python application development · ERP/WMS": "Phát triển ứng dụng Python · ERP/WMS",
+                "Python Application Engineer · ERP/WMS & Factory Applications": "Kỹ sư phát triển ứng dụng Python · ERP/WMS và ứng dụng nhà máy",
                 "Problem & objective": "Bài toán và mục tiêu",
                 "Employment & fixed-term contract": "Việc làm và hợp đồng có thời hạn",
                 "Open to relevant opportunities in Python applications, ERP/WMS, backend development and application support. Computer Vision remains a supplementary direction.": "Tôi quan tâm đến cơ hội phù hợp trong phát triển ứng dụng Python, ERP/WMS, lập trình phía máy chủ và hỗ trợ ứng dụng. Thị giác máy tính vẫn là hướng bổ trợ.",
@@ -96,7 +99,7 @@ def main():
                 if translations.get(key) != value:
                     errors.append(f"missing/incorrect Vietnamese translation: {key}")
             for key, value in {
-                "Personal portfolio / Python / operational software": "Hồ sơ năng lực cá nhân / Python / phần mềm vận hành",
+                "Python application development · ERP/WMS": "Phát triển ứng dụng Python · ERP/WMS",
                 "How I approach a workflow": "Cách tôi tiếp cận quy trình",
                 "Workflow sketch": "Phác thảo quy trình",
                 "Things I’ve built — and what still needs proof.": "Những gì tôi đã làm — và những gì cần thêm bằng chứng.",
@@ -131,7 +134,7 @@ def main():
     # Protect the personal portfolio identity and readability-focused style.
     for marker in (
         "--accent:#b94e32",
-        "Personal portfolio / Python / operational software",
+        "Python application development · ERP/WMS",
         "How I approach a workflow",
         "Things I’ve built — and what still needs proof.",
         "workflow-sketch",
