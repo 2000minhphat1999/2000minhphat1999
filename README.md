@@ -2,7 +2,7 @@
 
 # Tran Viet Minh Phat
 
-### Python Application Engineer · Backend · ERP/WMS · Applied Computer Vision
+### Python Application Engineer · ERP/WMS · Application Support
 
 I build practical software for operational workflows — from business rules and APIs to data handling, automation, and testable features.
 
@@ -14,12 +14,12 @@ I build practical software for operational workflows — from business rules and
 
 ## About
 
-My main direction is **Python-based application engineering**, especially backend systems and operational software. I also have project-based experience in Computer Vision and OCR automation, and I am developing a more rigorous portfolio around warehouse workflows and visual inspection.
+My main direction is **Python-based application engineering for ERP/WMS and operational workflows**. Computer Vision and OCR are supporting experience from a fixed-term contract and project-based engagements. Fabric defect inspection is a planned portfolio direction, not a completed system.
 
 - **Primary:** Python, application logic, REST APIs, SQL, debugging and testing
-- **Systems:** FastAPI, Flask, PostgreSQL, SQLAlchemy
-- **Applied AI:** OpenCV, OCR, YOLO-based Computer Vision workflows
-- **Engineering focus:** clear scope, explicit business rules, traceable state changes, and honest reporting of limitations
+- **Operational systems:** FastAPI, Flask, PostgreSQL, SQLAlchemy, WMS/FEMS workflows
+- **Supporting project experience:** OCR, YOLOv5 and DeepSORT for Computer Vision workflows
+- **Engineering focus:** clear scope, explicit business rules, traceable state changes and verifiable results
 
 > I distinguish professional experience, past project work, and portfolio experiments. Technologies are not presented as production experience unless that use is verified.
 
