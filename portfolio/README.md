@@ -7,7 +7,7 @@ A recruiter-first, responsive static portfolio with a working **English / Vietna
 - Use the **EN / VI** selector in the top navigation to switch the entire page between English and Vietnamese.
 - The switch updates visible copy, page language metadata and title/description; the selected language is remembered in the browser when local storage is available.
 - Technical names, company names, dates and technology identifiers remain unchanged where translating them would reduce clarity.
-- The default language is English for an international recruiter audience; Vietnamese can be selected at any time.
+- The default language is Vietnamese. Recruiters can select EN for the complete English version; the choice is remembered for later visits.
 
 ## Information architecture
 
