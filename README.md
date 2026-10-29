@@ -1,23 +1,113 @@
-# 👋 Hi, I'm Minh Phat
+<div align="center">
 
-## 🚀 Smart Factory Engineer | Industrial Digital Systems Architect
+# Tran Viet Minh Phat
 
-I design and build **industrial data systems**, combining:
-- 🏭 IIoT / Smart Factory
-- 🧠 AI & Computer Vision
-- 🐍 Python Backend & Data Engineering
+### Python Application Engineer · Backend · ERP/WMS · Applied Computer Vision
 
-### 🔧 Tech Stack
-- Python, Flask, FastAPI
-- OpenCV, Deep Learning
-- Modbus TCP/IP, MQTT
-- PostgreSQL, InfluxDB
-- Docker, Linux
+I build practical software for operational workflows — from business rules and APIs to data handling, automation, and testable features.
 
-### 📌 Featured Projects
-- 🔹 **People Counter (Computer Vision)**
-- 🔹 **Industrial Energy Monitoring System**
-- 🔹 **OCR System for Industrial Documents**
+[**View Portfolio**](./portfolio/) · [LinkedIn](https://www.linkedin.com/in/minhphat-ai/) · [Email](mailto:tranvietminhphat@gmail.com)
 
-📫 Contact:  
-- GitHub: https://github.com/2000minhphat1999
+</div>
+
+---
+
+## About
+
+My main direction is **Python-based application engineering**, especially backend systems and operational software. I also have project-based experience in Computer Vision and OCR automation, and I am developing a more rigorous portfolio around warehouse workflows and visual inspection.
+
+- **Primary:** Python, application logic, REST APIs, SQL, debugging and testing
+- **Systems:** FastAPI, Flask, PostgreSQL, SQLAlchemy
+- **Applied AI:** OpenCV, OCR, YOLO-based Computer Vision workflows
+- **Engineering focus:** clear scope, explicit business rules, traceable state changes, and honest reporting of limitations
+
+> I distinguish professional experience, past project work, and portfolio experiments. Technologies are not presented as production experience unless that use is verified.
+
+## Featured Work
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+
+### RackFlow — Mini ERP/WMS
+
+**Status: In development**
+
+A warehouse operations project focused on inventory workflows, inbound receiving, stock reservations, order handling, and traceability.
+
+- Python backend and relational data
+- Explicit workflow rules and state transitions
+- Automated tests and incremental verification
+
+[Explore the portfolio case study →](./portfolio/)
+
+    </td>
+    <td width="50%" valign="top">
+
+### Fabric Defect Inspection
+
+**Status: Portfolio concept / planning**
+
+A proposed Computer Vision project for fabric inspection, with emphasis on dataset quality, defect classes, reproducible evaluation, and clear limits before any factory deployment.
+
+- Python and OpenCV
+- Model evaluation as a measurable experiment
+- No unverified accuracy claims
+
+[Explore the portfolio case study →](./portfolio/)
+
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+
+### Supermarket Delivery Monitoring
+
+**Status: Past project-based freelance work**
+
+A Computer Vision workflow using YOLOv5 for object detection and DeepSORT for object tracking in video.
+
+[Explore the portfolio case study →](./portfolio/)
+
+    </td>
+    <td width="50%" valign="top">
+
+### OCR-assisted Data Entry
+
+**Status: Past project-based freelance work**
+
+A document workflow that extracted information from vehicle-inspection documents and automated data entry into a website.
+
+[Explore the portfolio case study →](./portfolio/)
+
+    </td>
+  </tr>
+</table>
+
+## How I Approach Engineering
+
+1. **Understand the workflow** — users, constraints, business rules, and failure cases.
+2. **Model the behavior** — data, state transitions, validation, and error handling.
+3. **Implement in small steps** — keep changes understandable and maintainable.
+4. **Verify the result** — test the behavior, document evidence, and state what remains incomplete.
+
+## Background
+
+- **Software and operational applications:** Sumida — 1 year 10 months
+- **Computer Vision:** Halovi — 5-month contract
+- **Freelance:** project-based engagements from 09/2022 to 12/2024, with gaps between projects
+- **Education:** B.Eng. in Mechatronics Engineering Technology, The University of Technology and Education — The University of Danang
+
+## Contact
+
+For opportunities involving Python applications, backend development, ERP/WMS, application support, or applied Computer Vision:
+
+- **LinkedIn:** [minhphat-ai](https://www.linkedin.com/in/minhphat-ai/)
+- **Email:** [tranvietminhphat@gmail.com](mailto:tranvietminhphat@gmail.com)
+- **Portfolio source:** [portfolio/](./portfolio/)
+
+<div align="center">
+
+*Practical systems. Clear scope. Verifiable work.*
+
+</div>
