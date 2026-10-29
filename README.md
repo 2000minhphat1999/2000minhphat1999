@@ -4,7 +4,7 @@
 
 ### Python Application Engineer · ERP/WMS · Application Support
 
-I build Python applications around operational workflows: requirements, business logic, database-backed features, debugging and validation.
+I build Python applications around operational workflows: requirements, business logic, database-backed features, debugging and validation. The live portfolio supports **English and Vietnamese** through the EN / VI selector.
 
 [**Live Portfolio**](https://2000minhphat1999-portfolio.vercel.app/) · [LinkedIn](https://www.linkedin.com/in/minhphat-ai/) · [Email](mailto:tranvietminhphat@gmail.com)
 
