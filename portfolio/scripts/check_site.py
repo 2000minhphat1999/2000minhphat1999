@@ -4,7 +4,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED = {
-    "index.html", "fullstack.html", "ai-projects.html", "rackflow.html",
+    "index.html", "backend.html", "ai-projects.html", "rackflow.html",
     "supermarket-delivery-monitoring.html", "ocr-assisted-data-entry.html",
     "fabric-defect-inspection.html",
 }
@@ -74,7 +74,7 @@ def main():
             errors.append(f"{name}: does not load shared styles.css")
         if "site.js" not in parser.scripts:
             errors.append(f"{name}: does not load shared site.js")
-        for link in ("index.html#top", "fullstack.html", "ai-projects.html",
+        for link in ("index.html#top", "backend.html", "ai-projects.html",
                      "index.html#experience", "index.html#capabilities", "index.html#contact"):
             if link not in parser.links:
                 errors.append(f"{name}: common navigation link missing: {link}")
@@ -96,9 +96,9 @@ def main():
                 errors.append(f"{name}: local fragment target missing: {href}")
 
     required = {
-        "index.html": ["Trần Việt Minh Phát", "BRANCH 01 / FULL-STACK SYSTEMS",
+        "index.html": ["Trần Việt Minh Phát", "BRANCH 01 / BACKEND DEVELOPMENT",
                        "BRANCH 02 / AI &amp; COMPUTER VISION", 'id="experience"', 'id="contact"'],
-        "fullstack.html": ["RackFlow — Mini ERP / WMS", "In development", "rackflow.html"],
+        "backend.html": ["RackFlow — Mini ERP / WMS", "In development", "rackflow.html"],
         "ai-projects.html": ["supermarket-delivery-monitoring.html", "ocr-assisted-data-entry.html",
                              "fabric-defect-inspection.html", "PLANNING STAGE"],
         "rackflow.html": ["Problem &amp; objective", "FastAPI", "PostgreSQL", "personal project"],
@@ -123,7 +123,7 @@ def main():
     if js_path.is_file():
         js = js_path.read_text(encoding="utf-8")
         for marker in ("function setLanguage(language)", "portfolio-language-v2",
-                       "pageBody.dataset.pageTitleEn", 'href="fullstack.html"', 'href="ai-projects.html"'):
+                       "pageBody.dataset.pageTitleEn", 'href="backend.html"', 'href="ai-projects.html"'):
             if marker not in js:
                 errors.append(f"site.js: missing language/navigation behavior: {marker}")
 
