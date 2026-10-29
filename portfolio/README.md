@@ -9,6 +9,16 @@ A recruiter-first, responsive static portfolio with a working **English / Vietna
 - Technical names, company names, dates and technology identifiers remain unchanged where translating them would reduce clarity.
 - The default language is Vietnamese. Recruiters can select EN for the complete English version; the choice is remembered for later visits.
 
+## Visual system — Systems Ledger
+
+The portfolio uses a **technical editorial** visual identity: a warm paper canvas, strong serif display headings, quiet sans-serif body copy, monospaced section labels, thin rules and case-study layouts that prioritize evidence over decoration.
+
+- **Canvas:** `#F4F1EA`; paper surface: `#FBF9F3`; primary text: `#1C1917`.
+- **Primary accent:** deep teal `#0F4C5C`; **highlight/status accent:** amber `#B45309`.
+- **Typography:** Georgia / system sans-serif / system monospace, with no remote font dependency.
+- **Project presentation:** numbered case studies, a clearly labelled workflow illustration, explicit project status and visible limitations. Illustrative diagrams are not represented as product screenshots.
+- **Interaction and accessibility:** the EN / VI switch remains functional; mobile navigation, keyboard focus, skip link and reduced-motion preferences are preserved.
+
 ## Information architecture
 
 1. **Positioning** — target direction, professional summary and contact paths.
