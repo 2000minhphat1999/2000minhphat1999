@@ -90,7 +90,7 @@ def main():
     ):
         if marker not in source:
             errors.append(f"navigation layout marker missing: {marker}")
-    match = re.search(r"var translations=(\{[\s\S]*?\});\n  var textRecords", source)
+    match = re.search(r"var translations=(\{[\s\S]*?\});\s*(?://[^\n]*\s*)?var textRecords", source)
     if not match:
         errors.append("translation dictionary is missing or malformed")
     else:
@@ -142,7 +142,9 @@ def main():
             errors.append(f"localized control marker missing: {marker}")
     # Protect the personal portfolio identity and readability-focused style.
     for marker in (
-        "--accent:#b94e32",
+        "--accent:#0f4c5c",
+        "--highlight:#b45309",
+        ".hero h1{max-width:100%;font-family:Georgia,\"Times New Roman\",serif",
         "Python application development · ERP/WMS",
         "How I approach a workflow",
         "Things I’ve built — and what still needs proof.",
