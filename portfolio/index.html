@@ -567,6 +567,7 @@ h1 em{display:inline;color:var(--accent);font-family:Georgia,"Times New Roman",s
     if(records) records.setAttribute("aria-label",language==="vi"?"Tóm tắt kinh nghiệm":"Experience at a glance");
     var languageGroup=document.querySelector('.language-switch');
     if(languageGroup) languageGroup.setAttribute("aria-label",language==="vi"?"Chọn ngôn ngữ":"Choose language");
+    if(menuButton) menuButton.setAttribute("aria-label",language==="vi"?"Mở danh mục":"Open menu");
     var skip=document.querySelector('.skip-link');
     if(skip) skip.setAttribute("aria-label",language==="vi"?"Bỏ qua đến nội dung chính":"Skip to main content");
     var iframe=document.querySelector('iframe');
@@ -578,6 +579,24 @@ h1 em{display:inline;color:var(--accent);font-family:Georgia,"Times New Roman",s
       var value=isVietnamese?translations[record.key]:record.source;
       record.node.nodeValue=record.source.replace(record.key,value);
     });
+    // Localize controls as complete units; nested arrows/icons must not leave stale English text.
+    function setControlLabel(selector,english,vietnamese){
+      var control=document.querySelector(selector);
+      if(control) control.innerHTML=isVietnamese?vietnamese:english;
+    }
+    setControlLabel('.navlinks a[href="#work"]',"Selected work","Dự án");
+    setControlLabel('.navlinks .contact-link',"Contact ↗","Liên hệ ↗");
+    setControlLabel('.menu-button',"Menu","Danh mục");
+    setControlLabel('.hero-actions a.btn-primary[href="#work"]',
+      'See what I’ve built <span aria-hidden="true">↘</span>',
+      'Xem các dự án tôi đã thực hiện <span aria-hidden="true">↘</span>');
+    setControlLabel('.hero-actions a.btn[href^="mailto:"]',
+      'Contact me <span aria-hidden="true">↗</span>',
+      'Liên hệ <span aria-hidden="true">↗</span>');
+    setControlLabel('.media-fallback',"Open video on YouTube ↗","Mở video trên YouTube ↗");
+    setControlLabel('.contact-actions a.btn-primary',"Email me ↗","Gửi email ↗");
+    setControlLabel('.contact-actions a.btn-ghost',"LinkedIn ↗","LinkedIn ↗");
+    setControlLabel('.footer-links a[href="#top"]',"Back to top ↑","Về đầu trang ↑");
     // Localize the complete headline as one unit to prevent mixed-language fragments.
     var heroHeadline=document.getElementById("heroHeadline");
     if(heroHeadline) heroHeadline.innerHTML=isVietnamese
