@@ -1,4 +1,6 @@
 from html.parser import HTMLParser
+import json
+import re
 from pathlib import Path
 import sys
 
@@ -55,6 +57,28 @@ def main():
     for text in ("tranvietminhphat@gmail.com", "Python application engineering", "RackFlow — Mini ERP / WMS", "Fabric Defect Inspection", "Freelance Software Projects", "https://www.youtube.com/embed/tUJHJBcuKA0", "<iframe", "Planning stage"):
         if text not in source:
             errors.append(f"required content missing: {text}")
+    # Ensure the website offers a real English/Vietnamese language switch.
+    for marker in ('id="langEN"', 'id="langVI"', 'function setLanguage(language)', 'portfolio-language'):
+        if marker not in source:
+            errors.append(f"bilingual switch marker missing: {marker}")
+    match = re.search(r"var translations=(\\{[\\s\\S]*?\\});\\n  var textRecords", source)
+    if not match:
+        errors.append("translation dictionary is missing or malformed")
+    else:
+        try:
+            translations = json.loads(match.group(1))
+            if len(translations) < 100:
+                errors.append(f"translation dictionary unexpectedly small: {len(translations)} entries")
+            for key, value in {
+                "I build software for": "Tôi xây dựng phần mềm cho",
+                "Problem & objective": "Bài toán và mục tiêu",
+                "Employment & fixed-term contract": "Việc làm và hợp đồng có thời hạn",
+                "Open to relevant opportunities in Python applications, ERP/WMS, backend development and application support. Computer Vision remains a supplementary direction.": "Quan tâm đến cơ hội phù hợp trong phát triển ứng dụng Python, ERP/WMS, backend và hỗ trợ ứng dụng. Computer Vision vẫn là hướng bổ trợ.",
+            }.items():
+                if translations.get(key) != value:
+                    errors.append(f"missing/incorrect Vietnamese translation: {key}")
+        except json.JSONDecodeError:
+            errors.append("translation dictionary is not valid JSON")
     if not (ROOT / "favicon.svg").is_file():
         errors.append("favicon.svg is missing")
     if errors:
