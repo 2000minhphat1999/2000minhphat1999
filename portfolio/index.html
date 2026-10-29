@@ -559,14 +559,18 @@ h1 em{display:inline;color:var(--accent);font-family:Georgia,"Times New Roman",s
     if(summary) summary.setAttribute("aria-label",language==="vi"?"Tóm tắt chuyên môn":"Professional summary");
     var tech=document.querySelector('[aria-label="Technologies"]');
     if(tech) tech.setAttribute("aria-label",language==="vi"?"Công nghệ":"Technologies");
-    var focus=document.querySelector('[aria-label="Professional focus"]');
-    if(focus) focus.setAttribute("aria-label",language==="vi"?"Định hướng chuyên môn":"Professional focus");
+    var focus=document.querySelector(".profile-note");
+    if(focus) focus.setAttribute("aria-label",language==="vi"?"Cách tôi tiếp cận quy trình":"How I approach a workflow");
+    var sketch=document.querySelector(".workflow-sketch");
+    if(sketch) sketch.setAttribute("aria-label",language==="vi"?"Mô hình quy trình RackFlow":"RackFlow workflow model");
+    var records=document.querySelector(".track-record");
+    if(records) records.setAttribute("aria-label",language==="vi"?"Tóm tắt kinh nghiệm":"Experience at a glance");
     var languageGroup=document.querySelector('.language-switch');
     if(languageGroup) languageGroup.setAttribute("aria-label",language==="vi"?"Chọn ngôn ngữ":"Choose language");
     var skip=document.querySelector('.skip-link');
     if(skip) skip.setAttribute("aria-label",language==="vi"?"Bỏ qua đến nội dung chính":"Skip to main content");
     var iframe=document.querySelector('iframe');
-    if(iframe) iframe.setAttribute("title",language==="vi"?"Video bổ trợ cho portfolio":"Supplementary portfolio video");
+    if(iframe) iframe.setAttribute("title",language==="vi"?"Video bổ trợ cho hồ sơ năng lực":"Supplementary portfolio video");
   }
   function setLanguage(language){
     var isVietnamese=language==="vi";
