@@ -70,6 +70,13 @@ h1 em{font-style:normal;color:var(--blue)}
 .timeline-meta{padding:22px 20px 23px 0;border-bottom:1px solid var(--line)}.timeline-meta time{display:block;font-size:11px;font-weight:800;color:var(--ink)}.timeline-meta .kind{display:inline-block;margin-top:8px;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .timeline-content{padding:21px 0 23px 27px;border-left:1px solid var(--line);border-bottom:1px solid var(--line)}
 .timeline-content h3{font-size:17px;letter-spacing:-.035em;margin:0 0 4px}.timeline-content .org{font-size:11px;font-weight:750;color:var(--blue);margin-bottom:9px}.timeline-content p{font-size:12px;line-height:1.85;color:var(--ink-soft);max-width:790px;margin:0}.timeline-content ul{margin:7px 0 0;padding-left:17px}.timeline-content li{font-size:11px;line-height:1.8;color:var(--ink-soft)}.timeline-content li+li{margin-top:3px}
+.experience-subhead{font-size:10px;font-weight:850;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:0 0 12px}.secondary-subhead{margin-top:34px}
+.experience-extra{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
+.history-card{padding:20px 21px;background:#fff;border:1px solid var(--line);border-radius:10px;min-width:0}
+.history-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:13px}.history-top .kind{font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:750}.history-top time{font-size:10px;font-weight:800;color:var(--ink);white-space:nowrap}
+.history-card h3{font-size:16px;line-height:1.3;letter-spacing:-.03em;margin:0 0 7px}.history-card .org{font-size:10px;font-weight:750;color:var(--blue);margin-bottom:8px}.history-card p,.history-card li{font-size:11px;line-height:1.85;color:var(--ink-soft)}.history-card p{margin:0}.history-card ul{padding-left:16px;margin:10px 0 0}.history-card li+li{margin-top:5px}.prior-history{display:grid;gap:14px}
+@media(max-width:640px){.experience-extra{grid-template-columns:1fr}.history-top{flex-wrap:wrap}.secondary-subhead{margin-top:27px}}
+
 .timeline-note{font-size:10px!important;color:var(--muted)!important;margin-top:6px!important}
 .capability-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .capability{padding:20px 20px 18px;border:1px solid var(--line);background:#fff;border-radius:10px}.capability-num{font:800 10px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;color:var(--blue)}.capability h3{font-size:16px;letter-spacing:-.03em;margin:13px 0 7px}.capability p{font-size:11px;line-height:1.8;color:var(--muted);margin:0 0 13px}.capability .tags{margin-top:0}
@@ -224,35 +231,39 @@ h1 em{font-style:normal;color:var(--blue)}
       <div><div class="kicker">02 / Experience</div><h2 class="section-title">Professional roles and project work, kept distinct.</h2></div>
       <p class="section-intro">Employment, fixed-term contract, freelance engagements and earlier experience are separated so that the timeline does not imply continuous full-time freelance work.</p>
     </div>
+    <div class="experience-subhead">Employment & fixed-term contract</div>
     <div class="timeline">
       <div class="timeline-meta"><time datetime="2025-02">02/2025 – 11/2026</time><span class="kind">Employment</span></div>
       <div class="timeline-content">
         <h3>Software Development Technical Team Lead</h3><div class="org">Sumida</div>
         <ul><li><strong>WMS:</strong> clarified requirements with warehouse users, analyzed workflows, implemented application logic, tested features, fixed defects and supported trial deployment.</li><li><strong>FEMS:</strong> contributed to data-processing functions, an electricity-monitoring dashboard and electricity-cost calculations.</li></ul>
       </div>
-
       <div class="timeline-meta"><time datetime="2023-11">11/2023 – 03/2024</time><span class="kind">5-month contract</span></div>
       <div class="timeline-content">
         <h3>Computer Vision Engineer</h3><div class="org">Halovi</div>
         <p>Worked on Computer Vision components during a five-month contract. The scope described here is intentionally limited to the confirmed contract and field; unverified production responsibilities are not added.</p>
       </div>
+    </div>
 
-      <div class="timeline-meta"><time datetime="2022-09">09/2022 – 12/2024</time><span class="kind">Project-based</span></div>
-      <div class="timeline-content">
-        <h3>Freelance Software Projects</h3><div class="org">Independent · intermittent engagements</div>
-        <p>Two main engagements: Supermarket Delivery Monitoring using YOLOv5 and DeepSORT, and OCR-assisted data entry for vehicle-inspection records. There were gaps between projects; this was not continuous full-time employment.</p>
-      </div>
-
-      <div class="timeline-meta"><time datetime="2024-03">03/2024 – 08/2024</time><span class="kind">Research / education</span></div>
-      <div class="timeline-content">
-        <h3>Research Engineer</h3><div class="org">The University of Technology and Education — The University of Danang</div>
-        <p>Developed educational websites, designed and assembled STEAM robot systems, and contributed to project-based learning activities.</p>
-      </div>
-
-      <div class="timeline-meta"><time datetime="2022-05">05/2022 – 07/2022</time><span class="kind">Internship</span></div>
-      <div class="timeline-content">
-        <h3>Kaizen Engineer Intern</h3><div class="org">Premo Vietnam</div>
-        <p>Supported assembly-process analysis and continuous-improvement activities during an engineering internship. This experience is not presented as professional OT/IT systems engineering.</p>
+    <div class="experience-subhead secondary-subhead">Project-based and earlier experience</div>
+    <div class="experience-extra">
+      <article class="history-card freelance-history">
+        <div class="history-top"><span class="kind">Intermittent freelance engagements</span><time datetime="2022-09">09/2022 – 12/2024</time></div>
+        <h3>Freelance Software Projects</h3>
+        <p>Two main engagements carried out in separate project periods, with gaps between them; this was not continuous full-time employment.</p>
+        <ul><li><strong>Supermarket Delivery Monitoring:</strong> Computer Vision workflow using YOLOv5 and DeepSORT.</li><li><strong>OCR-assisted data entry:</strong> extracted information from vehicle-inspection records and automated entry into the Da Nang Port website.</li></ul>
+      </article>
+      <div class="prior-history">
+        <article class="history-card">
+          <div class="history-top"><span class="kind">Research / education</span><time datetime="2024-03">03/2024 – 08/2024</time></div>
+          <h3>Research Engineer</h3><div class="org">The University of Technology and Education — The University of Danang</div>
+          <p>Developed educational websites, designed and assembled STEAM robot systems, and contributed to project-based learning activities.</p>
+        </article>
+        <article class="history-card">
+          <div class="history-top"><span class="kind">Internship</span><time datetime="2022-05">05/2022 – 07/2022</time></div>
+          <h3>Kaizen Engineer Intern</h3><div class="org">Premo Vietnam</div>
+          <p>Supported assembly-process analysis and continuous-improvement activities during an engineering internship. This is not presented as professional OT/IT systems engineering.</p>
+        </article>
       </div>
     </div>
   </div>
