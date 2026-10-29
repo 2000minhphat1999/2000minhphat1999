@@ -108,6 +108,15 @@ def main():
                     errors.append(f"English prose remains in Vietnamese translation for: {key}")
         except json.JSONDecodeError:
             errors.append("translation dictionary is not valid JSON")
+    # Protect the calmer visual hierarchy from regressions.
+    for marker in (
+        "Calmer redesign: fewer competing accents",
+        "font-size:14px;line-height:1.78",
+        "text-transform:none",
+        "prefers-reduced-motion:reduce",
+    ):
+        if marker not in source:
+            errors.append(f"calmer UI marker missing: {marker}")
     if not (ROOT / "favicon.svg").is_file():
         errors.append("favicon.svg is missing")
     if errors:
