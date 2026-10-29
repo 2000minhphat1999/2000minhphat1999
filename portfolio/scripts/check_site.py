@@ -61,6 +61,17 @@ def main():
     for marker in ('id="langEN"', 'id="langVI"', 'function setLanguage(language)', 'portfolio-language'):
         if marker not in source:
             errors.append(f"bilingual switch marker missing: {marker}")
+    # Catch regressions in desktop alignment and responsive navigation.
+    for marker in (
+        "justify-content:flex-start;gap:22px;position:relative",
+        "margin-left:auto}",
+        "margin-left:6px",
+        "@media(max-width:850px)",
+        ".navlinks.is-open{display:flex}",
+        "aria-controls=\"navLinks\"",
+    ):
+        if marker not in source:
+            errors.append(f"navigation layout marker missing: {marker}")
     match = re.search(r"var translations=(\{[\s\S]*?\});\n  var textRecords", source)
     if not match:
         errors.append("translation dictionary is missing or malformed")
