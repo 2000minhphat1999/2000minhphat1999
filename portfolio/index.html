@@ -40,6 +40,76 @@ footer{background:#fff;border-top:1px solid var(--line);padding:23px 0;color:#74
 .video-copy{min-width:0}.video-label{display:inline-block;margin-bottom:14px;padding:5px 8px;border:1px solid var(--line);border-radius:5px;color:var(--muted);font-size:9px;font-weight:850;letter-spacing:.12em}.video-copy h3{margin:0 0 12px;font-size:clamp(23px,3vw,32px);line-height:1.2;letter-spacing:-.045em}.video-copy p{max-width:510px;margin:0 0 22px;color:var(--muted);font-size:13px;line-height:1.9}.video-frame{width:100%;max-width:320px;aspect-ratio:9/16;margin-left:auto;overflow:hidden;border-radius:11px;background:#101318;box-shadow:0 14px 30px rgba(17,28,46,.16)}.video-frame iframe{display:block;width:100%;height:100%;border:0}
 @media(max-width:700px){.video-demo-grid{grid-template-columns:1fr;gap:24px;padding:21px}.video-frame{max-width:280px;margin-inline:auto}.video-copy .btn{max-width:100%;white-space:normal}}
 
+
+/* Portfolio visual refresh — editorial engineering direction */
+:root{
+ --ink:#101a2a;--ink2:#1e2c42;--muted:#58677b;--faint:#7a8799;
+ --line:#d9e0e8;--line2:#bfcbd8;--paper:#fff;--bg:#f4f6f8;
+ --blue:#1456d9;--blue2:#0d3fae;--bluewash:#eaf0ff;
+ --teal:#087f78;--tealwash:#e5f5f1;--green:#23714f;
+ --width:1200px;--shadow:0 18px 42px rgba(16,32,55,.09)
+}
+body{background:var(--bg);color:var(--ink)}
+.topbar{background:rgba(244,246,248,.94);border-bottom-color:#d7dfe8}
+.brand-mark{border-radius:4px;background:var(--ink);color:#b9f3d4}
+.brand-name{letter-spacing:.04em}
+.navlinks{gap:clamp(12px,2vw,26px)}
+.navlinks a{font-size:11px;letter-spacing:.01em}
+.navlinks .nav-cta{border-radius:4px;background:var(--ink);color:#fff}
+.hero{padding:86px 0 58px;background:#f4f6f8;border-bottom:1px solid #d7dfe8}
+.hero:after{width:540px;height:540px;border-color:#d6e0ee;box-shadow:0 0 0 45px #edf1f5,0 0 0 92px #f0f3f6;right:-270px;top:-245px}
+.hero-grid{grid-template-columns:1.08fr .92fr;gap:clamp(30px,5vw,70px)}
+.eyebrow,.kicker{color:var(--blue);letter-spacing:.16em}
+.eyebrow:before{background:#16a36e;box-shadow:0 0 0 4px #d9f4e7}
+h1{font-size:clamp(44px,6.1vw,76px);letter-spacing:-.078em;line-height:.99;max-width:700px}
+h1 span{color:var(--blue)}
+.hero-copy{font-size:14px;max-width:560px;color:#4f6076}
+.btn{border-radius:5px;padding:12px 16px}
+.btn-primary{background:var(--blue);border-color:var(--blue);box-shadow:0 8px 20px #1456d926}
+.btn-secondary{background:transparent;border-color:#bfcbd8}
+.hero-art{border-radius:7px;background:linear-gradient(145deg,#e7eef8,#fbfcff 65%,#e4f4ee);border-color:#cbd7e6;min-height:370px}
+.art-orbit{border-color:#b5c8e8}
+.section{padding:82px 0 86px}
+.section-head{margin-bottom:34px;gap:44px}
+.section-title{font-size:clamp(32px,4vw,47px);letter-spacing:-.065em;line-height:1.05}
+.section-intro{font-size:12px;max-width:390px}
+.project-grid{gap:18px}
+.project{border-radius:7px;box-shadow:0 2px 0 rgba(16,32,55,.02);transition:transform .2s,border-color .2s,box-shadow .2s}
+.project:hover{transform:translateY(-4px);box-shadow:0 20px 42px rgba(16,32,55,.1);border-color:#9fb6d5}
+.project-visual{border-radius:0}
+.project-body{padding:24px}
+.status{border-radius:3px}
+.tags span{border-radius:3px}
+.approach{background:#101a2a;color:#f6f8fb}
+.approach .kicker{color:#9dc0ff}
+.approach .approach-copy,.approach .step p{color:#bdc8d7}
+.approach .step{border-color:#334156}
+.approach .step-num{color:#9dc0ff}
+.experience-layout{gap:46px}
+.experience-card,.skill-card,.education-card{border-radius:7px}
+.skill-card{border-top:3px solid var(--blue)}
+.education-card{border-radius:7px}
+.contact-panel{border-radius:7px;background:#101a2a;color:#fff}
+.contact-panel .kicker{color:#9dc0ff}
+.contact-panel p{color:#c5d0df}
+.contact-panel .btn-secondary{color:#fff;border-color:#61718a}
+footer{background:#101a2a;color:#d8e0ea;border-top:1px solid #27354a}
+.footer-links a{color:#d8e0ea}
+.video-demo-grid{border-radius:7px;box-shadow:0 14px 35px rgba(16,32,55,.06)}
+.video-frame{border-radius:5px}
+@media(max-width:950px){
+ .hero{padding-top:62px}
+ .hero-grid{grid-template-columns:1fr;gap:34px}
+ .hero-art{max-width:680px}
+}
+@media(max-width:700px){
+ .wrap{width:min(var(--width),calc(100% - 32px))}
+ .hero{padding:50px 0 38px}
+ .section{padding:60px 0 64px}
+ .section-head{align-items:flex-start;gap:14px;flex-direction:column}
+ .project-body{padding:20px}
+}
+
 </style>
 </head>
 <body>
