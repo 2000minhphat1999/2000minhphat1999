@@ -96,7 +96,7 @@ def main():
                 errors.append(f"{name}: local fragment target missing: {href}")
 
     required = {
-        "index.html": ["Trần Việt Minh Phát", "BRANCH 01 / BACKEND DEVELOPMENT",
+        "index.html": ["Trần Viết Minh Phát", "BRANCH 01 / BACKEND DEVELOPMENT",
                        "BRANCH 02 / AI &amp; COMPUTER VISION", 'id="experience"', 'id="contact"'],
         "backend.html": ["RackFlow — Mini ERP / WMS", "In development", "rackflow.html"],
         "ai-projects.html": ["supermarket-delivery-monitoring.html", "ocr-assisted-data-entry.html",
