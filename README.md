@@ -6,7 +6,7 @@
 
 I build practical software for operational workflows — from business rules and APIs to data handling, automation, and testable features.
 
-[**View Portfolio**](./portfolio/) · [LinkedIn](https://www.linkedin.com/in/minhphat-ai/) · [Email](mailto:tranvietminhphat@gmail.com)
+[**Live Portfolio**](https://2000minhphat1999-portfolio.vercel.app/) · [Portfolio source](./portfolio/index.html) · [LinkedIn](https://www.linkedin.com/in/minhphat-ai/) · [Email](mailto:tranvietminhphat@gmail.com)
 
 </div>
 
@@ -39,7 +39,7 @@ A warehouse operations project focused on inventory workflows, inbound receiving
 - Explicit workflow rules and state transitions
 - Automated tests and incremental verification
 
-[Explore the portfolio case study →](./portfolio/)
+[View live case study →](https://2000minhphat1999-portfolio.vercel.app/#rackflow)
 
     </td>
     <td width="50%" valign="top">
@@ -54,7 +54,7 @@ A proposed Computer Vision project for fabric inspection, with emphasis on datas
 - Model evaluation as a measurable experiment
 - No unverified accuracy claims
 
-[Explore the portfolio case study →](./portfolio/)
+[View live case study →](https://2000minhphat1999-portfolio.vercel.app/#fabric-defect-inspection)
 
     </td>
   </tr>
@@ -67,7 +67,7 @@ A proposed Computer Vision project for fabric inspection, with emphasis on datas
 
 A Computer Vision workflow using YOLOv5 for object detection and DeepSORT for object tracking in video.
 
-[Explore the portfolio case study →](./portfolio/)
+[View live case study →](https://2000minhphat1999-portfolio.vercel.app/#supermarket-delivery-monitoring)
 
     </td>
     <td width="50%" valign="top">
@@ -78,7 +78,7 @@ A Computer Vision workflow using YOLOv5 for object detection and DeepSORT for ob
 
 A document workflow that extracted information from vehicle-inspection documents and automated data entry into a website.
 
-[Explore the portfolio case study →](./portfolio/)
+[View live case study →](https://2000minhphat1999-portfolio.vercel.app/#ocr-assisted-data-entry)
 
     </td>
   </tr>
