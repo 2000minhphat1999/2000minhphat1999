@@ -1,6 +1,13 @@
 # Minh Phat — Professional Portfolio
 
-A recruiter-first, responsive static portfolio focused on **Python application engineering, ERP/WMS workflows and application support**. Computer Vision and OCR are shown as supporting contract/project experience, not as the primary positioning.
+A recruiter-first, responsive static portfolio with a working **English / Vietnamese (EN / VI) language switch**. It focuses on **Python application engineering, ERP/WMS workflows and application support**. Computer Vision and OCR are shown as supporting contract/project experience, not as the primary positioning.
+
+## Language support
+
+- Use the **EN / VI** selector in the top navigation to switch the entire page between English and Vietnamese.
+- The switch updates visible copy, page language metadata and title/description; the selected language is remembered in the browser when local storage is available.
+- Technical names, company names, dates and technology identifiers remain unchanged where translating them would reduce clarity.
+- The default language is English for an international recruiter audience; Vietnamese can be selected at any time.
 
 ## Information architecture
 
@@ -46,4 +53,4 @@ Do not move `index.html` to the repository root unless the Vercel Root Directory
 
 ## Validation
 
-The repository workflow runs `python portfolio/scripts/check_site.py` on changes to the portfolio. It checks the HTML title, single H1, unique IDs, internal navigation targets, required sections, project case-study anchors, video fallback and favicon.
+The repository workflow runs `python portfolio/scripts/check_site.py` on changes to the portfolio. It checks the HTML title, single H1, unique IDs, internal navigation targets, required sections, project case-study anchors, video fallback, favicon, language controls and key Vietnamese translation entries.
