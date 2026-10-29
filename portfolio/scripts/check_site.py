@@ -49,7 +49,7 @@ def main():
     unresolved = sorted(set(parser.anchors) - set(parser.ids))
     if unresolved:
         errors.append("unresolved in-page links: " + ", ".join(unresolved))
-    for section in ("projects", "video", "experience", "skills", "education", "contact"):
+    for section in ("projects", "rackflow", "fabric-defect-inspection", "supermarket-delivery-monitoring", "ocr-assisted-data-entry", "video", "experience", "skills", "education", "contact"):
         if section not in parser.ids:
             errors.append(f"missing section: #{section}")
     for text in ("tranvietminhphat@gmail.com", "RackFlow", "Fabric Defect Inspection", "https://www.youtube.com/embed/tUJHJBcuKA0", "<iframe"):
