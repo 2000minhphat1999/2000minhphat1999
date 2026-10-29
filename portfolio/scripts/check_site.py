@@ -116,14 +116,18 @@ def main():
                     errors.append(f"English prose remains in Vietnamese translation for: {key}")
         except json.JSONDecodeError:
             errors.append("translation dictionary is not valid JSON")
-    # Verify accessible labels are localized when the language changes.
+    # Verify button and CTA labels are localized as complete units in both languages.
     for marker in (
+        "setControlLabel('.navlinks a[href=\"#work\"]',\"Selected work\",\"Dự án\")",
+        "setControlLabel('.menu-button',\"Menu\",\"Danh mục\")",
+        "Xem các dự án tôi đã thực hiện <span aria-hidden=\"true\">↘</span>",
+        "setControlLabel('.contact-actions a.btn-primary',\"Email me ↗\",\"Gửi email ↗\")",
+        "setControlLabel('.footer-links a[href=\"#top\"]',\"Back to top ↑\",\"Về đầu trang ↑\")",
         'if(focus) focus.setAttribute("aria-label",language==="vi"?"Cách tôi tiếp cận quy trình"',
         'if(sketch) sketch.setAttribute("aria-label",language==="vi"?"Mô hình quy trình RackFlow"',
-        'Video bổ trợ cho hồ sơ năng lực',
     ):
         if marker not in source:
-            errors.append(f"localized accessibility marker missing: {marker}")
+            errors.append(f"localized control marker missing: {marker}")
     # Protect the personal portfolio identity and readability-focused style.
     for marker in (
         "--accent:#b94e32",
