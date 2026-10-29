@@ -1,33 +1,49 @@
 # Minh Phat — Professional Portfolio
 
-Responsive static portfolio for Python application engineering, backend systems, ERP/WMS workflows and applied computer vision.
+A recruiter-first, responsive static portfolio focused on **Python application engineering, ERP/WMS workflows and application support**. Computer Vision and OCR are shown as supporting contract/project experience, not as the primary positioning.
 
-## Principles
-- RackFlow is explicitly marked **in development**.
-- Fabric Defect Inspection is marked **portfolio concept**, not a completed system.
-- No unverified performance metrics are claimed.
-- Freelance projects are described as project-based engagements with gaps.
-- No backend, API keys, analytics, or package installation is required.
+## Information architecture
+
+1. **Positioning** — target direction, professional summary and contact paths.
+2. **Selected work** — RackFlow Mini ERP/WMS as the primary portfolio build, followed by two past project-based engagements.
+3. **Planned work** — Fabric Defect Inspection is explicitly marked as a concept in planning, not a completed model or deployed system.
+4. **Experience** — employment and fixed-term contract are separated from intermittent freelance work and earlier experience.
+5. **Capabilities, education and contact** — grouped for recruiter scanning.
+
+## Accuracy rules
+
+- Sumida is recorded as 1 year 10 months; do not round it to two years.
+- Halovi is recorded as a five-month Computer Vision contract.
+- Freelance engagements from 09/2022 to 12/2024 were intermittent, with gaps; they are not shown as continuous full-time employment.
+- RackFlow is in development. Only the inbound, inventory lookup, order lookup, stock reservation and event-history scope is presented as current; outbound and AI-assisted workflows are still under development.
+- Fabric Defect Inspection is a plan, not a completed experiment. No performance metrics are claimed.
+- Computer Vision and OCR project descriptions do not include unverified accuracy, FPS or time-saving metrics.
+- Industrial OT/IT tools are not presented as professional hands-on experience.
+- No public project-source/demo link is invented. Add one after the repository is safe and ready to share.
+- The contact CTA uses an email link; there is no fake contact form or backend.
 
 ## Local preview
-Open `index.html` in a browser, or from this directory run:
+
+From this directory:
 
 ```bash
 python -m http.server 8000
 ```
 
-Visit http://localhost:8000.
+Open http://localhost:8000 in a browser.
 
 ## Deploy to Vercel
-This site lives in the `portfolio/` directory of the GitHub profile repository.
+
+This static website is under `portfolio/` in the GitHub profile repository.
 
 1. Import `2000minhphat1999/2000minhphat1999` in Vercel.
 2. Set **Root Directory** to `portfolio`.
-3. Select **Other** / static site if a framework preset is requested.
+3. Choose **Other** / static site if a framework preset is requested.
 4. Leave the build command empty.
-5. Deploy, then check the live site on desktop and mobile.
+5. Deploy and inspect the live site on desktop and mobile.
 
-If this directory is moved into a dedicated repository, set the Vercel Root Directory to the repository root instead.
+Do not move `index.html` to the repository root unless the Vercel Root Directory is updated as part of the same change.
 
-## Before publishing
-Confirm role titles and dates against the latest CV. Add screenshots only if authentic and safe to share. Never commit credentials, customer data, confidential company material or proprietary source code. The email link opens the visitor's mail application; no contact form is implemented. No open-source license is included by default.
+## Validation
+
+The repository workflow runs `python portfolio/scripts/check_site.py` on changes to the portfolio. It checks the HTML title, single H1, unique IDs, internal navigation targets, required sections, project case-study anchors, video fallback and favicon.
