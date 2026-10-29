@@ -61,7 +61,7 @@ def main():
     for marker in ('id="langEN"', 'id="langVI"', 'function setLanguage(language)', 'portfolio-language'):
         if marker not in source:
             errors.append(f"bilingual switch marker missing: {marker}")
-    match = re.search(r"var translations=(\\{[\\s\\S]*?\\});\\n  var textRecords", source)
+    match = re.search(r"var translations=(\{[\s\S]*?\});\n  var textRecords", source)
     if not match:
         errors.append("translation dictionary is missing or malformed")
     else:
