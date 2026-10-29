@@ -6,7 +6,7 @@
 
 I build Python applications around operational workflows: requirements, business logic, database-backed features, debugging and validation. The live portfolio supports **English and Vietnamese** through the EN / VI selector.
 
-[**Live Portfolio**](https://2000minhphat1999-portfolio.vercel.app/) · [LinkedIn](https://www.linkedin.com/in/minhphat-ai/) · [Email](mailto:tranvietminhphat@gmail.com)
+[**Live Portfolio**](https://2000minhphat1999-portfolio.vercel.app/) · [**Portfolio Source**](https://github.com/2000minhphat1999/2000minhphat1999/tree/main/portfolio) · [LinkedIn](https://www.linkedin.com/in/minhphat-ai/) · [Email](mailto:tranvietminhphat@gmail.com)
 
 </div>
 
@@ -84,7 +84,7 @@ Co-author of “Building An IoT-Based Waste Management System for Hazardous Wast
 
 <div align="center">
 
-[**Open the full portfolio**](https://2000minhphat1999-portfolio.vercel.app/) · [LinkedIn](https://www.linkedin.com/in/minhphat-ai/) · [Email](mailto:tranvietminhphat@gmail.com)
+[**Open the full portfolio**](https://2000minhphat1999-portfolio.vercel.app/) · [**Browse source code**](https://github.com/2000minhphat1999/2000minhphat1999/tree/main/portfolio) · [LinkedIn](https://www.linkedin.com/in/minhphat-ai/) · [Email](mailto:tranvietminhphat@gmail.com)
 
 *Practical systems. Clear scope. Verifiable work.*
 
