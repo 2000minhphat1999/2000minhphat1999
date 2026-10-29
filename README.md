@@ -104,7 +104,7 @@ For opportunities involving Python applications, backend development, ERP/WMS, a
 
 - **LinkedIn:** [minhphat-ai](https://www.linkedin.com/in/minhphat-ai/)
 - **Email:** [tranvietminhphat@gmail.com](mailto:tranvietminhphat@gmail.com)
-- **Portfolio source:** [portfolio/](./portfolio/)
+- **Portfolio source:** [portfolio/index.html](./portfolio/index.html)
 
 <div align="center">
 
