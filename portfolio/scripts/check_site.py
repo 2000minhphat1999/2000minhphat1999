@@ -57,6 +57,14 @@ def main():
     for text in ("tranvietminhphat@gmail.com", "Python application engineering", "RackFlow — Mini ERP / WMS", "Fabric Defect Inspection", "Freelance Software Projects", "https://www.youtube.com/embed/tUJHJBcuKA0", "<iframe", "Planning stage"):
         if text not in source:
             errors.append(f"required content missing: {text}")
+    # Keep the hero headline localized as one unit so EN and VI fragments cannot mix.
+    for marker in (
+        'id="heroHeadline"',
+        'Tôi xây dựng phần mềm cho <em>quy trình vận hành thực tế.</em>',
+        'I build software for <em>real operational workflows.</em>',
+    ):
+        if marker not in source:
+            errors.append(f"hero headline localization marker missing: {marker}")
     # Ensure the website offers a real English/Vietnamese language switch.
     for marker in ('id="langEN"', 'id="langVI"', 'function setLanguage(language)', 'portfolio-language'):
         if marker not in source:
@@ -81,7 +89,6 @@ def main():
             if len(translations) < 100:
                 errors.append(f"translation dictionary unexpectedly small: {len(translations)} entries")
             for key, value in {
-                "I build software for": "Tôi xây dựng phần mềm cho",
                 "Problem & objective": "Bài toán và mục tiêu",
                 "Employment & fixed-term contract": "Việc làm và hợp đồng có thời hạn",
                 "Open to relevant opportunities in Python applications, ERP/WMS, backend development and application support. Computer Vision remains a supplementary direction.": "Tôi quan tâm đến cơ hội phù hợp trong phát triển ứng dụng Python, ERP/WMS, lập trình phía máy chủ và hỗ trợ ứng dụng. Thị giác máy tính vẫn là hướng bổ trợ.",
