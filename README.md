@@ -4,109 +4,87 @@
 
 ### Python Application Engineer · ERP/WMS · Application Support
 
-I build practical software for operational workflows — from business rules and APIs to data handling, automation, and testable features.
+I build Python applications around operational workflows: requirements, business logic, database-backed features, debugging and validation.
 
-[**Live Portfolio**](https://2000minhphat1999-portfolio.vercel.app/) · [Portfolio source](./portfolio/index.html) · [LinkedIn](https://www.linkedin.com/in/minhphat-ai/) · [Email](mailto:tranvietminhphat@gmail.com)
+[**Live Portfolio**](https://2000minhphat1999-portfolio.vercel.app/) · [LinkedIn](https://www.linkedin.com/in/minhphat-ai/) · [Email](mailto:tranvietminhphat@gmail.com)
 
 </div>
 
 ---
 
-## About
+## Professional Direction
 
-My main direction is **Python-based application engineering for ERP/WMS and operational workflows**. Computer Vision and OCR are supporting experience from a fixed-term contract and project-based engagements. Fabric defect inspection is a planned portfolio direction, not a completed system.
+My primary direction is **Python application engineering for ERP/WMS and operational systems**. Computer Vision and OCR are supporting experience from a fixed-term contract and intermittent freelance projects, rather than the main positioning of this profile.
 
-- **Primary:** Python, application logic, REST APIs, SQL, debugging and testing
-- **Operational systems:** FastAPI, Flask, PostgreSQL, SQLAlchemy, WMS/FEMS workflows
-- **Supporting project experience:** OCR, YOLOv5 and DeepSORT for Computer Vision workflows
-- **Engineering focus:** clear scope, explicit business rules, traceable state changes and verifiable results
+- **Core:** Python, application logic, SQL, debugging and testing
+- **Application stack:** Flask, FastAPI, SQLAlchemy, PostgreSQL
+- **Operational context:** WMS workflows, FEMS data processing, dashboards
+- **Supporting project work:** YOLOv5, DeepSORT, OCR and image processing
 
-> I distinguish professional experience, past project work, and portfolio experiments. Technologies are not presented as production experience unless that use is verified.
+I distinguish professional employment, contract work, intermittent freelance projects and portfolio experiments. Technologies and outcomes are not presented as production experience unless verified.
 
-## Featured Work
+## Selected Work
 
-<table>
-  <tr>
-    <td width="50%" valign="top">
+### 1. RackFlow — Mini ERP/WMS
 
-### RackFlow — Mini ERP/WMS
+**Status: In development · Personal portfolio project**
 
-**Status: In development**
+A warehouse operations application that models inbound receiving, inventory lookup, order lookup, stock reservation and event history.
 
-A warehouse operations project focused on inventory workflows, inbound receiving, stock reservations, order handling, and traceability.
+- Focus: explicit workflow rules, persistence and traceable state changes.
+- Stack: Python, FastAPI, Flask, SQLAlchemy and PostgreSQL.
+- Current limitation: outbound workflows and AI-assisted operations are still being developed; this is not presented as a deployed customer system.
 
-- Python backend and relational data
-- Explicit workflow rules and state transitions
-- Automated tests and incremental verification
+[View the RackFlow case study →](https://2000minhphat1999-portfolio.vercel.app/#rackflow)
 
-[View live case study →](https://2000minhphat1999-portfolio.vercel.app/#rackflow)
-
-    </td>
-    <td width="50%" valign="top">
-
-### Fabric Defect Inspection
-
-**Status: Portfolio concept / planning**
-
-A proposed Computer Vision project for fabric inspection, with emphasis on dataset quality, defect classes, reproducible evaluation, and clear limits before any factory deployment.
-
-- Python and OpenCV
-- Model evaluation as a measurable experiment
-- No unverified accuracy claims
-
-[View live case study →](https://2000minhphat1999-portfolio.vercel.app/#fabric-defect-inspection)
-
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-
-### Supermarket Delivery Monitoring
+### 2. Supermarket Delivery Monitoring
 
 **Status: Past project-based freelance work**
 
-A Computer Vision workflow using YOLOv5 for object detection and DeepSORT for object tracking in video.
+A video-based Computer Vision workflow using YOLOv5 for object detection and DeepSORT for object tracking. No unverified accuracy, FPS or time-saving metrics are claimed.
 
-[View live case study →](https://2000minhphat1999-portfolio.vercel.app/#supermarket-delivery-monitoring)
+[View the case study →](https://2000minhphat1999-portfolio.vercel.app/#supermarket-delivery-monitoring)
 
-    </td>
-    <td width="50%" valign="top">
-
-### OCR-assisted Data Entry
+### 3. OCR-assisted Data Entry
 
 **Status: Past project-based freelance work**
 
-A document workflow that extracted information from vehicle-inspection documents and automated data entry into a website.
+A workflow that used image processing and OCR to extract information from vehicle-inspection records and automate entry into the Da Nang Port website. Document-level accuracy and time savings are not asserted without evidence.
 
-[View live case study →](https://2000minhphat1999-portfolio.vercel.app/#ocr-assisted-data-entry)
+[View the case study →](https://2000minhphat1999-portfolio.vercel.app/#ocr-assisted-data-entry)
 
-    </td>
-  </tr>
-</table>
+### Planned direction: Fabric Defect Inspection
 
-## How I Approach Engineering
+A proposed Computer Vision portfolio experiment focused on dataset quality, defect categories, baseline evaluation and reproducible results. This is a **planning-stage concept**, not a completed model or factory deployment.
 
-1. **Understand the workflow** — users, constraints, business rules, and failure cases.
-2. **Model the behavior** — data, state transitions, validation, and error handling.
-3. **Implement in small steps** — keep changes understandable and maintainable.
-4. **Verify the result** — test the behavior, document evidence, and state what remains incomplete.
+[View the planned direction →](https://2000minhphat1999-portfolio.vercel.app/#fabric-defect-inspection)
 
-## Background
+## Experience Snapshot
 
-- **Software and operational applications:** Sumida — 1 year 10 months
-- **Computer Vision:** Halovi — 5-month contract
-- **Freelance:** project-based engagements from 09/2022 to 12/2024, with gaps between projects
-- **Education:** B.Eng. in Mechatronics Engineering Technology, The University of Technology and Education — The University of Danang
+- **Sumida:** 1 year 10 months in software development, focused on WMS workflows and FEMS data/dashboard functions.
+- **Halovi:** five-month Computer Vision contract.
+- **Freelance:** project-based engagements from 09/2022 to 12/2024, with gaps between projects; not continuous full-time employment.
+- **Earlier experience:** research/education work at The University of Technology and Education — The University of Danang, and an engineering internship at Premo Vietnam.
 
-## Contact
+## Education
 
-For opportunities involving Python applications, backend development, ERP/WMS, application support, or applied Computer Vision:
+**B.Eng. in Mechatronics Engineering Technology**  
+The University of Technology and Education — The University of Danang · 09/2018–06/2023 · Degree classification: Good
 
-- **LinkedIn:** [minhphat-ai](https://www.linkedin.com/in/minhphat-ai/)
-- **Email:** [tranvietminhphat@gmail.com](mailto:tranvietminhphat@gmail.com)
-- **Portfolio source:** [portfolio/index.html](./portfolio/index.html)
+Co-author of “Building An IoT-Based Waste Management System for Hazardous Waste,” REC-ECIT 2023, pp. 193–198.
+
+## Engineering Approach
+
+1. Understand the user, operational goal and constraints.
+2. Model data, business rules, state transitions and failure cases.
+3. Implement small, testable features and debug systematically.
+4. Verify expected behavior and state remaining limitations clearly.
+
+---
 
 <div align="center">
+
+[**Open the full portfolio**](https://2000minhphat1999-portfolio.vercel.app/) · [LinkedIn](https://www.linkedin.com/in/minhphat-ai/) · [Email](mailto:tranvietminhphat@gmail.com)
 
 *Practical systems. Clear scope. Verifiable work.*
 
