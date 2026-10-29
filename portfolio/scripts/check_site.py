@@ -95,6 +95,14 @@ def main():
             }.items():
                 if translations.get(key) != value:
                     errors.append(f"missing/incorrect Vietnamese translation: {key}")
+            for key, value in {
+                "Personal portfolio / Python / operational software": "Hồ sơ năng lực cá nhân / Python / phần mềm vận hành",
+                "How I approach a workflow": "Cách tôi tiếp cận quy trình",
+                "Workflow sketch": "Phác thảo quy trình",
+                "Things I’ve built — and what still needs proof.": "Những gì tôi đã làm — và những gì cần thêm bằng chứng.",
+            }.items():
+                if translations.get(key) != value:
+                    errors.append(f"personal portfolio translation missing/incorrect: {key}")
             for key in ("Menu", "A project-based freelance workflow using video to detect and track activity related to supermarket deliveries.", "Computer Vision & OCR"):
                 if key not in translations:
                     errors.append(f"missing Vietnamese localization entry: {key}")
@@ -108,34 +116,20 @@ def main():
                     errors.append(f"English prose remains in Vietnamese translation for: {key}")
         except json.JSONDecodeError:
             errors.append("translation dictionary is not valid JSON")
-    # Protect the calmer visual hierarchy from regressions.
+    # Protect the personal portfolio identity and readability-focused style.
     for marker in (
-        "Calmer redesign: fewer competing accents",
-        "font-size:14px;line-height:1.78",
-        "text-transform:none",
-        "prefers-reduced-motion:reduce",
-    ):
-        if marker not in source:
-            errors.append(f"calmer UI marker missing: {marker}")
-    # Keep a personal engineering portfolio identity instead of a generic company landing page.
-    for marker in (
+        "--accent:#b94e32",
         "Personal portfolio / Python / operational software",
         "How I approach a workflow",
         "Things I’ve built — and what still needs proof.",
         "workflow-sketch",
         "Illustrative model · not a product screenshot",
+        ".case-study{background:var(--paper);border:0;border-left:3px solid var(--accent)",
+        ".project-card{display:flex;flex-direction:column;position:relative;background:transparent",
+        "prefers-reduced-motion:reduce",
     ):
         if marker not in source:
-            errors.append(f"personal-portfolio marker missing: {marker}")
-    # Flatten content groups and reduce high-contrast blocks.
-    for marker in (
-        ".project-card{display:flex;flex-direction:column;background:transparent;border:0;border-top:1px solid var(--line)",
-        ".contact-section{background:#fff;color:var(--ink)",
-        ".status:before{display:none}",
-        ".tag+.tag:before{content:\"·\"",
-    ):
-        if marker not in source:
-            errors.append(f"calm-layout marker missing: {marker}")
+            errors.append(f"personal portfolio style marker missing: {marker}")
     if not (ROOT / "favicon.svg").is_file():
         errors.append("favicon.svg is missing")
     if errors:
