@@ -117,6 +117,15 @@ def main():
     ):
         if marker not in source:
             errors.append(f"calmer UI marker missing: {marker}")
+    # Flatten content groups and reduce high-contrast blocks.
+    for marker in (
+        ".project-card{display:flex;flex-direction:column;background:transparent;border:0;border-top:1px solid var(--line)",
+        ".contact-section{background:#fff;color:var(--ink)",
+        ".status:before{display:none}",
+        ".tag+.tag:before{content:\"·\"",
+    ):
+        if marker not in source:
+            errors.append(f"calm-layout marker missing: {marker}")
     if not (ROOT / "favicon.svg").is_file():
         errors.append("favicon.svg is missing")
     if errors:
