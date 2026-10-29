@@ -51,7 +51,7 @@ def main():
     unresolved = sorted(set(parser.anchors) - set(parser.ids))
     if unresolved:
         errors.append("unresolved in-page links: " + ", ".join(unresolved))
-    for section in ("work", "rackflow", "fabric-defect-inspection", "supermarket-delivery-monitoring", "ocr-assisted-data-entry", "video", "experience", "capabilities", "education", "contact"):
+    for section in ("work", "rackflow", "fullstack-projects", "ai-projects", "fabric-defect-inspection", "supermarket-delivery-monitoring", "ocr-assisted-data-entry", "video", "experience", "capabilities", "education", "contact"):
         if section not in parser.ids:
             errors.append(f"missing section: #{section}")
     for text in ("tranvietminhphat@gmail.com", "Python application engineering", "RackFlow — Mini ERP / WMS", "Fabric Defect Inspection", "Freelance Software Projects", "https://www.youtube.com/embed/tUJHJBcuKA0", "<iframe", "Planning stage"):
@@ -85,8 +85,6 @@ def main():
         ".navlinks{display:flex;align-items:center;gap:clamp(12px,1.6vw,22px);margin-left:auto}",
         ".nav-tools{display:flex;align-items:center;gap:8px;flex:none}",
         "@media(max-width:850px)",
-        ".navlinks.is-open{display:flex}",
-        "aria-controls=\"navLinks\"",
     ):
         if marker not in source:
             errors.append(f"navigation layout marker missing: {marker}")
@@ -111,7 +109,7 @@ def main():
                 "Python application development · ERP/WMS": "Phát triển ứng dụng Python · ERP/WMS",
                 "How I approach a workflow": "Cách tôi tiếp cận quy trình",
                 "Workflow sketch": "Phác thảo quy trình",
-                "Things I’ve built — and what still needs proof.": "Những gì tôi đã làm — và những gì cần thêm bằng chứng.",
+        "Systems built around operational workflows.",
             }.items():
                 if translations.get(key) != value:
                     errors.append(f"personal portfolio translation missing/incorrect: {key}")
@@ -130,8 +128,8 @@ def main():
             errors.append("translation dictionary is not valid JSON")
     # Verify button and CTA labels are localized as complete units in both languages.
     for marker in (
-        "setControlLabel('.navlinks a[href=\"#work\"]',\"Selected work\",\"Dự án\")",
-        "setControlLabel('.menu-button',\"Menu\",\"Danh mục\")",
+        "setControlLabel('.navlinks a[href=\"#work\"]',\"Full-Stack\",\"Full-Stack\")",
+        "setControlLabel('.navlinks a[href=\"#ai-projects\"]',\"AI Projects\",\"Dự án AI\")",
         "Xem các dự án tôi đã thực hiện <span aria-hidden=\"true\">↘</span>",
         "setControlLabel('.contact-actions a.btn-primary',\"Email me ↗\",\"Gửi email ↗\")",
         "setControlLabel('.footer-links a[href=\"#top\"]',\"Back to top ↑\",\"Về đầu trang ↑\")",
@@ -147,7 +145,7 @@ def main():
         ".hero h1{max-width:100%;font-family:Georgia,\"Times New Roman\",serif",
         "Python application development · ERP/WMS",
         "How I approach a workflow",
-        "Things I’ve built — and what still needs proof.",
+        "Systems built around operational workflows.",
         "workflow-sketch",
         "Illustrative model · not a product screenshot",
         ".case-study{background:var(--paper);border:0;border-left:3px solid var(--accent)",
@@ -156,6 +154,12 @@ def main():
     ):
         if marker not in source:
             errors.append(f"personal portfolio style marker missing: {marker}")
+    for marker in ("BRANCH 01 / FULL-STACK SYSTEMS", "BRANCH 02 / AI &amp; COMPUTER VISION", "AI / 01", "AI / 02", "AI / 03", "pipeline-block", "planned-steps"):
+        if marker not in source:
+            errors.append(f"project taxonomy/detail marker missing: {marker}")
+    for forbidden in ("menuButton", ".menu-button", ".navlinks.is-open"):
+        if forbidden in source:
+            errors.append(f"hidden-menu mechanism remains: {forbidden}")
     if not (ROOT / "favicon.svg").is_file():
         errors.append("favicon.svg is missing")
     if errors:
