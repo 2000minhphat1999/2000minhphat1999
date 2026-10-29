@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#f7f8fa">
+<meta name="theme-color" content="#f4f1ea">
 <meta name="description" content="Tran Viet Minh Phat — Python application engineering for ERP/WMS, operational workflows and backend applications.">
 <meta property="og:title" content="Tran Viet Minh Phat | Python Application Engineer">
 <meta property="og:description" content="Python applications, ERP/WMS workflows, operational software and applied Computer Vision project work.">
@@ -12,9 +12,10 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
 :root{
-  --ink:#25251f;--ink-soft:#45473f;--muted:#686b61;--faint:#77796f;
-  --line:#dcd8cc;--paper:#fbfaf6;--canvas:#f3f0e7;
-  --accent:#b94e32;--accent-dark:#963d27;--accent-pale:#f0e2d7;
+  --ink:#1c1917;--ink-soft:#44403c;--muted:#78716c;--faint:#78716c;
+  --line:#e7e2d9;--paper:#fbf9f3;--canvas:#f4f1ea;
+  --accent:#0f4c5c;--accent-dark:#0a3945;--accent-pale:#dce9e8;
+  --highlight:#b45309;--highlight-pale:#f7ebd7;
   --max:1080px;
 }
 *{box-sizing:border-box}
@@ -26,7 +27,7 @@ button{font:inherit}
 .wrap{width:min(var(--max),calc(100% - 48px));margin-inline:auto}
 .skip-link{position:absolute;left:-9999px;top:8px;z-index:100;background:var(--paper);padding:10px 14px;border:1px solid var(--line);border-radius:4px}
 .skip-link:focus{left:12px}
-.topbar{position:sticky;top:0;z-index:50;background:rgba(243,240,231,.97);border-bottom:1px solid var(--line)}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(244,241,234,.97);border-bottom:1px solid var(--line)}
 .nav{min-height:76px;display:flex;align-items:center;gap:22px;position:relative}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0;flex:none}
 .brand-mark{display:inline-block;width:auto;height:auto;background:transparent;color:var(--accent);font-family:Georgia,"Times New Roman",serif;font-size:27px;line-height:1;font-weight:700;letter-spacing:-.12em;border:0;border-radius:0}
@@ -87,7 +88,7 @@ h1 em{display:inline;color:var(--accent);font-family:Georgia,"Times New Roman",s
 .case-summary{max-width:740px;color:var(--muted);font-size:15px;line-height:1.8;margin:0}
 .status{flex:none;border:1px solid #c7c0b2;border-radius:3px;padding:5px 9px;color:#625f53;font-size:11px;font-weight:650;white-space:nowrap}
 .status:before{content:"";display:inline-block;width:6px;height:6px;background:currentColor;border-radius:50%;margin-right:7px;vertical-align:middle}
-.status-progress{background:#f7eee1;color:#89512d;border-color:#e8d7bf}
+.status-progress{background:var(--highlight-pale);color:#8a5a10;border-color:#e6d3b5}
 .status-past{background:#edf0e8;color:#4d6042;border-color:#d6ddce}
 .status-planned{background:#f1eee7;color:#6a665c;border-color:#dfd8cb}
 .workflow-sketch{padding:19px 30px 21px;background:#f1eee5;border-bottom:1px solid var(--line)}
@@ -261,9 +262,17 @@ h1 em{display:inline;color:var(--accent);font-family:Georgia,"Times New Roman",s
 }
 
 /* Make the candidate's name and professional direction unmissable. */
-.hero h1{max-width:100%;font-size:clamp(42px,5.8vw,68px);line-height:1.02;letter-spacing:-.05em;overflow-wrap:normal}
+.hero h1{max-width:100%;font-family:Georgia,"Times New Roman",serif;font-size:clamp(42px,5.8vw,68px);font-weight:500;line-height:1.04;letter-spacing:-.045em;overflow-wrap:normal}
 .hero-role{margin:-8px 0 18px;color:var(--accent);font-size:clamp(17px,1.9vw,21px);font-weight:700;line-height:1.45;letter-spacing:-.02em}
 @media(max-width:640px){.hero h1{font-size:clamp(39px,10.5vw,49px);line-height:1.07}.hero-role{font-size:17px;line-height:1.5;margin:-4px 0 15px}}
+
+/* Systems Ledger — technical editorial finish */
+.section-title,.case-header h3,.concept-panel h3,.contact-section h2{
+  font-family:Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:-.035em
+}
+.workflow-sketch,.case-footer,.experience-section{background:#ece8df}
+.contact-section,.footer{background:#eae5da}
+.concept-panel .concept-state{color:var(--highlight)}
 </style>
 </head>
 <body>
