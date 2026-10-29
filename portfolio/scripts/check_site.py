@@ -66,8 +66,17 @@ def main():
     ):
         if marker not in source:
             errors.append(f"candidate identity marker missing: {marker}")
+    # The first visit should be a complete Vietnamese experience; later user choice uses a new preference key.
+    for marker in (
+        '<html lang="vi">',
+        'var initialLanguage="vi";',
+        'portfolio-language-v2',
+        'window.localStorage.setItem("portfolio-language-v2",language)',
+    ):
+        if marker not in source:
+            errors.append(f"default language marker missing: {marker}")
     # Ensure the website offers a real English/Vietnamese language switch.
-    for marker in ('id="langEN"', 'id="langVI"', 'function setLanguage(language)', 'portfolio-language'):
+    for marker in ('id="langEN"', 'id="langVI"', 'function setLanguage(language)', 'portfolio-language-v2'):
         if marker not in source:
             errors.append(f"bilingual switch marker missing: {marker}")
     # Catch regressions in desktop alignment and responsive navigation.
