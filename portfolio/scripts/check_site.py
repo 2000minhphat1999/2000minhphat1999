@@ -60,7 +60,7 @@ def main():
     # Keep the hero headline localized as one unit so EN and VI fragments cannot mix.
     for marker in (
         'id="heroHeadline"',
-        'Tôi xây dựng phần mềm cho <em>quy trình vận hành thực tế.</em>',
+        'Tôi phát triển phần mềm phục vụ <em>quy trình vận hành thực tế.</em>',
         'I build software for <em>real operational workflows.</em>',
     ):
         if marker not in source:
