@@ -116,6 +116,14 @@ def main():
                     errors.append(f"English prose remains in Vietnamese translation for: {key}")
         except json.JSONDecodeError:
             errors.append("translation dictionary is not valid JSON")
+    # Verify accessible labels are localized when the language changes.
+    for marker in (
+        'if(focus) focus.setAttribute("aria-label",language==="vi"?"Cách tôi tiếp cận quy trình"',
+        'if(sketch) sketch.setAttribute("aria-label",language==="vi"?"Mô hình quy trình RackFlow"',
+        'Video bổ trợ cho hồ sơ năng lực',
+    ):
+        if marker not in source:
+            errors.append(f"localized accessibility marker missing: {marker}")
     # Protect the personal portfolio identity and readability-focused style.
     for marker in (
         "--accent:#b94e32",
