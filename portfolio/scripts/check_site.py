@@ -84,10 +84,21 @@ def main():
                 "I build software for": "Tôi xây dựng phần mềm cho",
                 "Problem & objective": "Bài toán và mục tiêu",
                 "Employment & fixed-term contract": "Việc làm và hợp đồng có thời hạn",
-                "Open to relevant opportunities in Python applications, ERP/WMS, backend development and application support. Computer Vision remains a supplementary direction.": "Quan tâm đến cơ hội phù hợp trong phát triển ứng dụng Python, ERP/WMS, backend và hỗ trợ ứng dụng. Computer Vision vẫn là hướng bổ trợ.",
+                "Open to relevant opportunities in Python applications, ERP/WMS, backend development and application support. Computer Vision remains a supplementary direction.": "Tôi quan tâm đến cơ hội phù hợp trong phát triển ứng dụng Python, ERP/WMS, lập trình phía máy chủ và hỗ trợ ứng dụng. Thị giác máy tính vẫn là hướng bổ trợ.",
             }.items():
                 if translations.get(key) != value:
                     errors.append(f"missing/incorrect Vietnamese translation: {key}")
+            for key in ("Menu", "A project-based freelance workflow using video to detect and track activity related to supermarket deliveries.", "Computer Vision & OCR"):
+                if key not in translations:
+                    errors.append(f"missing Vietnamese localization entry: {key}")
+            for key in (
+                "A project-based freelance workflow using video to detect and track activity related to supermarket deliveries.",
+                "Computer Vision & OCR",
+                "Menu",
+            ):
+                value = translations.get(key, "")
+                if any(term in value.lower() for term in ("freelance", "computer vision", "portfolio", "production")):
+                    errors.append(f"English prose remains in Vietnamese translation for: {key}")
         except json.JSONDecodeError:
             errors.append("translation dictionary is not valid JSON")
     if not (ROOT / "favicon.svg").is_file():
