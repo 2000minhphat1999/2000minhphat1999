@@ -5,7 +5,7 @@ A responsive, bilingual static portfolio for Python application engineering, ERP
 ## Site map
 
 - `index.html` — career positioning, experience, skills, education, contact and project directory.
-- `fullstack.html` — Full-Stack Systems overview.
+- `backend.html` — Backend Development overview.
 - `rackflow.html` — standalone RackFlow Mini ERP/WMS case study; personal project in development.
 - `ai-projects.html` — AI / Computer Vision overview.
 - `supermarket-delivery-monitoring.html` — past project-based Computer Vision work using YOLOv5 and DeepSORT.
@@ -21,7 +21,7 @@ A responsive, bilingual static portfolio for Python application engineering, ERP
 
 ## Navigation
 
-Six persistent destinations: Home, Full-Stack Systems, AI Projects, Experience, Skills and Contact. The current page is highlighted. All links remain visible on mobile; the menu reflows into three columns and then two columns rather than hiding behind a hamburger button.
+Six persistent destinations: Home, Backend Development, AI Projects, Experience, Skills and Contact. The current page is highlighted. All links remain visible on mobile; the menu reflows into three columns and then two columns rather than hiding behind a hamburger button.
 
 ## Visual system
 
