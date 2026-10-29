@@ -11,21 +11,22 @@ A recruiter-first, responsive static portfolio with a working **English / Vietna
 
 ## Visual system — Systems Ledger
 
-The portfolio uses a **technical editorial** visual identity: a warm paper canvas, strong serif display headings, quiet sans-serif body copy, monospaced section labels, thin rules and case-study layouts that prioritize evidence over decoration.
+The portfolio uses a **technical editorial** visual identity with warm paper surfaces, a teal hero, amber highlights and explicit project taxonomy. Full-Stack / Business Systems is separate from AI, which is split into Computer Vision, OCR/document automation and planned industrial visual inspection.
 
 - **Canvas:** `#F4F1EA`; paper surface: `#FBF9F3`; primary text: `#1C1917`.
 - **Primary accent:** deep teal `#0F4C5C`; **highlight/status accent:** amber `#B45309`.
 - **Typography:** Georgia / system sans-serif / system monospace, with no remote font dependency.
-- **Project presentation:** numbered case studies, a clearly labelled workflow illustration, explicit project status and visible limitations. Illustrative diagrams are not represented as product screenshots.
-- **Interaction and accessibility:** the EN / VI switch remains functional; mobile navigation, keyboard focus, skip link and reduced-motion preferences are preserved.
+- **Project presentation:** RackFlow is the detailed Full-Stack case study. AI separates detection/tracking, OCR/document automation and planned fabric-defect inspection. Workflow strips are conceptual summaries, not verified production architecture.
+- **Interaction and accessibility:** the EN / VI switch remains functional; always-visible mobile navigation, keyboard focus, skip link and reduced-motion preferences are preserved; no hidden hamburger menu is required.
 
 ## Information architecture
 
-1. **Positioning** — target direction, professional summary and contact paths.
-2. **Selected work** — RackFlow Mini ERP/WMS as the primary portfolio build, followed by two past project-based engagements.
-3. **Planned work** — Fabric Defect Inspection is explicitly marked as a concept in planning, not a completed model or deployed system.
-4. **Experience** — employment and fixed-term contract are separated from intermittent freelance work and earlier experience.
-5. **Capabilities, education and contact** — grouped for recruiter scanning.
+1. **Positioning** — professional direction and direct contact paths.
+2. **Full-Stack / Business Systems** — RackFlow Mini ERP/WMS is the primary personal build, with workflow, scope, implementation, evidence limits and next steps.
+3. **AI / Computer Vision** — supermarket delivery monitoring using YOLOv5 detection and DeepSORT tracking.
+4. **AI / OCR & document automation** — vehicle-inspection document extraction and website data entry.
+5. **AI / Industrial visual inspection** — fabric defect inspection remains a planned experiment, with dataset, baseline and evaluation steps identified as future work.
+6. **Experience, capabilities, education and contact** — remain separate sections for recruiter scanning.
 
 ## Accuracy rules
 
