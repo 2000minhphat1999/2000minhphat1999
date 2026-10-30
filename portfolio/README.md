@@ -14,18 +14,18 @@ A responsive, bilingual static portfolio for Python application engineering, ERP
 
 ## Shared files
 
-- `styles.css` — shared visual system, page layouts and responsive styling.
+- `styles.css` — one shared visual system, page layouts and responsive styling.
 - `site.js` — English/Vietnamese switch, navigation labels and per-page metadata.
 - `favicon.svg` — site icon.
 - `scripts/check_site.py` — checks all HTML pages, local links, H1/IDs and shared assets.
 
 ## Navigation
 
-Six persistent destinations: Home, Backend Development, AI Projects, Experience, Skills and Contact. The current page is highlighted. On smaller screens, navigation moves to a second row and remains horizontally scrollable when space is limited.
+Navigation links stay visible across pages. On smaller screens they move to a second row and can scroll horizontally when space is limited.
 
 ## Visual system
 
-A clean engineering-focused interface with white surfaces, soft blue backgrounds, dark navy typography and restrained blue accents. Clear spacing and consistent project/status styles help recruiters scan the work quickly. System font stacks avoid remote font dependencies.
+A restrained, evidence-first interface with neutral surfaces, charcoal text, muted blue-grey accents and thin borders. Gradients, shadows and lift-on-hover effects are avoided so concept diagrams and personal projects do not resemble a polished production product. Past work, current development and planned experiments are labelled separately; unverified metrics are not displayed. System font stacks avoid remote font dependencies.
 
 ## Content integrity
 
