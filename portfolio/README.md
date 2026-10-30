@@ -14,18 +14,18 @@ A responsive, bilingual static portfolio for Python application engineering, ERP
 
 ## Shared files
 
-- `styles.css` — Systems Ledger design system and responsive layouts.
+- `styles.css` — shared visual system, page layouts and responsive styling.
 - `site.js` — English/Vietnamese switch, navigation labels and per-page metadata.
 - `favicon.svg` — site icon.
 - `scripts/check_site.py` — checks all HTML pages, local links, H1/IDs and shared assets.
 
 ## Navigation
 
-Six persistent destinations: Home, Backend Development, AI Projects, Experience, Skills and Contact. The current page is highlighted. All links remain visible on mobile; the menu reflows into three columns and then two columns rather than hiding behind a hamburger button.
+Six persistent destinations: Home, Backend Development, AI Projects, Experience, Skills and Contact. The current page is highlighted. On smaller screens, navigation moves to a second row and remains horizontally scrollable when space is limited.
 
 ## Visual system
 
-Warm paper surfaces, ink text, deep teal accents and amber status highlights. Typography uses Georgia, system sans-serif and system monospace fonts. No remote font dependency is required.
+A clean engineering-focused interface with white surfaces, soft blue backgrounds, dark navy typography and restrained blue accents. Clear spacing and consistent project/status styles help recruiters scan the work quickly. System font stacks avoid remote font dependencies.
 
 ## Content integrity
 
