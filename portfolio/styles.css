@@ -65,7 +65,8 @@ p{color:var(--text)}
 /* Home hero */
 .hero{position:relative;isolation:isolate;overflow:hidden;padding:58px 0 30px;background:var(--navy);border-bottom:0;color:#fff}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(270px,.82fr);gap:clamp(30px,5vw,62px);align-items:center}
-h1{max-width:720px;margin:0 0 14px;color:#fff;font-size:clamp(40px,5.2vw,63px);font-weight:780;line-height:1.04;letter-spacing:-.052em}
+h1{max-width:720px;margin:0 0 14px;color:var(--ink);font-size:clamp(40px,5.2vw,63px);font-weight:780;line-height:1.04;letter-spacing:-.052em}
+.hero h1{color:#fff}
 h1 em{color:#ff9a7e;font-family:Georgia,"Times New Roman",serif;font-weight:500;font-style:italic}
 .hero-role{margin-bottom:17px;color:#aab8ff;font-size:clamp(16px,1.8vw,19px);font-weight:700;letter-spacing:-.015em}
 .hero-copy{max-width:660px;margin:0;color:#d1d7e3;font-size:14px;line-height:1.82}
