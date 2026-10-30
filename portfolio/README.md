@@ -25,7 +25,7 @@ Navigation links stay visible across pages. On smaller screens they move to a se
 
 ## Visual system
 
-A restrained, evidence-first interface with neutral surfaces, charcoal text, muted blue-grey accents and thin borders. Gradients, shadows and lift-on-hover effects are avoided so concept diagrams and personal projects do not resemble a polished production product. Past work, current development and planned experiments are labelled separately; unverified metrics are not displayed. System font stacks avoid remote font dependencies.
+A high-contrast editorial interface: deep navy hero and footer, warm off-white content areas, coral calls to action and a restrained indigo secondary accent. Motion is limited to short hover feedback and subtle card elevation; no large gradients, animated backgrounds or decorative effects that obscure project status. Past work, current development and planned experiments are labelled separately; unverified metrics are not displayed. System font stacks avoid remote font dependencies.
 
 ## Content integrity
 
