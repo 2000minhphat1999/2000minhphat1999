@@ -363,17 +363,143 @@ function ExperiencePreview({ lang }) {
   </div></main>;
 }function SkillsSection({ lang }) {
   const t=text[lang];
+  const vi=lang==="vi";
   const groups=[
-    {n:"01",name:t.core,title:lang==="vi"?"Ứng dụng Python":"Python applications",desc:lang==="vi"?"Logic ứng dụng, triển khai quy trình, gỡ lỗi và xác thực từng bước.":"Application logic, workflow implementation, debugging and incremental validation.",tags:["Python","Flask","FastAPI","REST APIs"]},
-    {n:"02",name:t.data,title:lang==="vi"?"Quy trình ERP / WMS":"ERP / WMS workflows",desc:lang==="vi"?"Yêu cầu nghiệp vụ, xử lý dữ liệu bằng SQL, quản lý thông tin tồn kho, kiểm tra dữ liệu và ghi nhận thay đổi trạng thái để có thể truy vết.":"Business requirements, SQL-backed workflows, inventory concepts, data checking and traceable state changes.",tags:["SQL","PostgreSQL","SQLAlchemy","WMS / FEMS"]},
-    {n:"03",name:t.supporting,title:lang==="vi"?"Thị giác máy tính & OCR":"Computer Vision & OCR",desc:lang==="vi"?"Đã sử dụng trong các dự án trước đây để phát hiện, theo dõi đối tượng và trích xuất dữ liệu từ tài liệu. Đánh giá mô hình vẫn là lĩnh vực đang tiếp tục phát triển.":"Prior project use for object detection, tracking and document data extraction. Model evaluation remains a developing area.",tags:["YOLOv5","DeepSORT","OCR","Image processing"]}
+    {
+      n:"01",kind:vi?"NĂNG LỰC CHÍNH":"CORE CAPABILITY",
+      evidence:vi?"Công việc & dự án cá nhân":"Work & personal project",
+      title:vi?"Phát triển ứng dụng Python":"Python application development",
+      desc:vi
+        ?"Python là ngôn ngữ phát triển chính. Tôi đã tham gia triển khai logic ứng dụng và chức năng nghiệp vụ; Flask xuất hiện trong công việc/dự án, còn FastAPI được sử dụng trong RackFlow — dự án cá nhân đang phát triển."
+        :"Python is my primary programming language. I have implemented application logic and business features; Flask has been used in work/project contexts, while FastAPI is used in RackFlow, a personal project in development.",
+      proof:vi
+        ?"Bằng chứng: phát triển chức năng WMS/FEMS tại Sumida; xây dựng RackFlow bằng FastAPI."
+        :"Evidence: WMS/FEMS feature work at Sumida; RackFlow development with FastAPI.",
+      tags:["Python","Flask","FastAPI","REST APIs"]
+    },
+    {
+      n:"02",kind:vi?"ỨNG DỤNG DOANH NGHIỆP":"ENTERPRISE APPLICATIONS",
+      evidence:vi?"Kinh nghiệm công việc":"Professional work",
+      title:vi?"Quy trình ERP / WMS / FEMS":"ERP / WMS / FEMS workflows",
+      desc:vi
+        ?"Làm rõ yêu cầu với người dùng kho, phân tích các bước nghiệp vụ, triển khai logic xử lý, kiểm thử chức năng và hỗ trợ chạy thử. Với FEMS, tham gia chức năng xử lý dữ liệu, bảng điều khiển điện năng và tính toán chi phí điện."
+        :"Clarified requirements with warehouse users, analysed operational steps, implemented application logic, tested features and supported trial deployment. FEMS work included data-processing features, an electricity dashboard and cost calculations.",
+      proof:vi
+        ?"Bằng chứng: tham gia phát triển WMS và FEMS tại Sumida; mô tả giới hạn theo phần việc đã thực hiện."
+        :"Evidence: WMS and FEMS development at Sumida, described within the scope of the work performed.",
+      tags:["ERP","WMS","FEMS","Workflow analysis","Business logic"]
+    },
+    {
+      n:"03",kind:vi?"DỮ LIỆU & LƯU TRỮ":"DATA & PERSISTENCE",
+      evidence:vi?"Công việc & dự án cá nhân":"Work & personal project",
+      title:vi?"SQL và cơ sở dữ liệu quan hệ":"SQL & relational databases",
+      desc:vi
+        ?"Sử dụng SQL và PostgreSQL trong ứng dụng nghiệp vụ; làm việc với SQLAlchemy trong RackFlow. Trọng tâm là tổ chức dữ liệu phục vụ quy trình, tra cứu, kiểm tra và ghi nhận thay đổi."
+        :"Used SQL and PostgreSQL in business applications, and SQLAlchemy in RackFlow. The focus is structuring application data for workflows, lookups, validation and recorded changes.",
+      proof:vi
+        ?"Bằng chứng: PostgreSQL trong ứng dụng nghiệp vụ; SQLAlchemy và PostgreSQL trong RackFlow đang phát triển."
+        :"Evidence: PostgreSQL in business-application work; SQLAlchemy and PostgreSQL in the RackFlow project under development.",
+      tags:["SQL","PostgreSQL","SQLAlchemy","Data validation"]
+    },
+    {
+      n:"04",kind:vi?"KINH NGHIỆM BỔ TRỢ":"SUPPORTING EXPERIENCE",
+      evidence:vi?"Hợp đồng & dự án theo đợt":"Contract & project engagements",
+      title:vi?"Thị giác máy tính và OCR":"Computer Vision & OCR",
+      desc:vi
+        ?"YOLOv5 và DeepSORT được sử dụng trong dự án theo dõi giao nhận qua video. OCR được áp dụng để trích xuất dữ liệu từ hồ sơ kiểm định phương tiện và hỗ trợ nhập liệu lên trang web. Riêng Halovi là hợp đồng thị giác máy tính 5 tháng."
+        :"YOLOv5 and DeepSORT were used in a video-based delivery-monitoring project. OCR was applied to extract information from vehicle-inspection documents and support website data entry. The Halovi engagement was a separate five-month Computer Vision contract.",
+      proof:vi
+        ?"Bằng chứng: dự án theo dõi giao nhận, dự án OCR và hợp đồng 5 tháng tại Halovi. Chưa công bố chỉ số độ chính xác đã xác minh."
+        :"Evidence: delivery-monitoring project, OCR project and a five-month contract at Halovi. No verified accuracy metrics are claimed.",
+      tags:["YOLOv5","DeepSORT","OCR","Image processing"]
+    },
+    {
+      n:"05",kind:vi?"NỀN TẢNG KỸ THUẬT":"ENGINEERING FOUNDATION",
+      evidence:vi?"Thực tập & đào tạo":"Internship & education",
+      title:vi?"Cơ điện tử và dữ liệu thiết bị":"Mechatronics & equipment data",
+      desc:vi
+        ?"Nền tảng Cơ điện tử, lập trình C, IoT và robot STEAM giúp tôi hiểu bối cảnh thiết bị và sản xuất. Trong kỳ thực tập tại Premo, tôi sử dụng Python để trích xuất dữ liệu hiệu suất từ cảm biến công nghiệp qua Modbus RTU."
+        :"My Mechatronics background, C programming, IoT and STEAM robotics provide context for equipment and manufacturing. During my internship at Premo, I used Python to extract performance data from industrial sensors through Modbus RTU.",
+      proof:vi
+        ?"Bằng chứng: kỳ thực tập Premo 05/2022–07/2022. Modbus RTU được giới hạn ở trải nghiệm thực tập."
+        :"Evidence: Premo internship, 05/2022–07/2022. Modbus RTU experience is limited to the internship.",
+      tags:["Mechatronics","C","IoT","Modbus RTU","STEAM robotics"]
+    },
+    {
+      n:"06",kind:vi?"CÁCH THỨC TRIỂN KHAI":"DELIVERY PRACTICE",
+      evidence:vi?"Xuyên suốt công việc":"Across work contexts",
+      title:vi?"Phân tích, kiểm thử và cải tiến":"Analysis, testing & refinement",
+      desc:vi
+        ?"Tiếp cận chức năng từ yêu cầu và luồng nghiệp vụ; xác định dữ liệu đầu vào/đầu ra, triển khai logic, kiểm thử kết quả, xử lý lỗi và hỗ trợ chạy thử. Đây là cách làm hình thành qua công việc phát triển ứng dụng doanh nghiệp."
+        :"Approach features through requirements and business workflows; identify inputs and outputs, implement logic, test results, resolve defects and support trial deployment. This practice comes from enterprise-application development work.",
+      proof:vi
+        ?"Bằng chứng: các phần việc WMS/FEMS tại Sumida và quá trình phát triển RackFlow."
+        :"Evidence: WMS/FEMS work at Sumida and the ongoing development of RackFlow.",
+      tags:vi?["Phân tích yêu cầu","Mô hình hóa quy trình","Kiểm thử chức năng","Gỡ lỗi"]:["Requirements analysis","Workflow modelling","Functional testing","Debugging"]
+    }
   ];
+  const steps=vi?[
+    ["01","Làm rõ bài toán","Hiểu người dùng, mục tiêu nghiệp vụ, các bước xử lý và điều kiện ngoại lệ."],
+    ["02","Xác định dữ liệu và logic","Làm rõ đầu vào/đầu ra, trạng thái nghiệp vụ và cách ứng dụng cần phản hồi."],
+    ["03","Triển khai chức năng","Xây dựng logic bằng Python và kết nối với lớp dữ liệu/API phù hợp."],
+    ["04","Kiểm thử và hoàn thiện","Kiểm tra luồng chính, xử lý lỗi và xác nhận hành vi trước khi hỗ trợ chạy thử."]
+  ]:[
+    ["01","Clarify the problem","Understand users, business objectives, process steps and exception conditions."],
+    ["02","Define data and logic","Identify inputs/outputs, business states and expected application behaviour."],
+    ["03","Implement the feature","Build application logic with Python and connect it to the appropriate data/API layer."],
+    ["04","Test and refine","Validate the main workflow, resolve defects and confirm behaviour before supporting trial use."]
+  ];
+  const boundaries=vi
+    ?"Không tự nhận chuyên môn sâu về AI/Computer Vision production hoặc triển khai PLC/SCADA. YOLOv5, DeepSORT và OCR được ghi nhận theo phạm vi dự án/hợp đồng; Modbus RTU chỉ thuộc kỳ thực tập tại Premo. RackFlow là dự án cá nhân đang phát triển, không phải hệ thống kho đã triển khai cho khách hàng."
+    :"I do not claim production-level AI/Computer Vision expertise or PLC/SCADA deployment experience. YOLOv5, DeepSORT and OCR are described within their project/contract scope; Modbus RTU is limited to the Premo internship. RackFlow is a personal project in development, not a warehouse system deployed for a customer.";
   return <main id="main-content" className="inner-page page-section-page skills-page"><div className="container">
-    <PageHeading index="01" kicker={t.skills} title={t.skillsTitle} intro={t.skillsPageIntro}/>
-    <div className="skill-grid">{groups.map(g=><article className="skill-card" key={g.n}><div className="skill-top"><span>{g.n}</span><small>{g.name}</small></div><h3>{g.title}</h3><p>{g.desc}</p><div className="tag-list">{g.tags.map(tag=><span key={tag}>{displayTag(tag,lang)}</span>)}</div></article>)}</div>
-    <p className="scope-note"><Icon name="check" size={17}/>{t.noOt}</p>
+    <PageHeading index="01" kicker={t.skills} title={t.skillsTitle} intro={vi
+      ?"Năng lực được hình thành từ phát triển ứng dụng Python, hệ thống nghiệp vụ doanh nghiệp và các dự án kỹ thuật. Mỗi nhóm dưới đây đều gắn với bối cảnh đã sử dụng hoặc đã thực hiện, thay vì chỉ liệt kê tên công nghệ."
+      :"My capabilities span Python application development, enterprise business systems and engineering projects. Each area below is tied to a work or project context rather than presented as a list of technology names."}/>
+    <section className="skills-profile-strip" aria-label={vi?"Tóm tắt định hướng năng lực":"Capability summary"}>
+      <div><span>{vi?"TRỌNG TÂM CHÍNH":"PRIMARY FOCUS"}</span><strong>Python · ERP / WMS</strong></div>
+      <div><span>{vi?"NĂNG LỰC BỔ TRỢ":"SUPPORTING AREAS"}</span><strong>{vi?"Thị giác máy tính · OCR":"Computer Vision · OCR"}</strong></div>
+      <div><span>{vi?"NỀN TẢNG KỸ THUẬT":"ENGINEERING FOUNDATION"}</span><strong>{vi?"Cơ điện tử · Dữ liệu thiết bị":"Mechatronics · Equipment data"}</strong></div>
+    </section>
+    <section className="skills-capabilities" aria-labelledby="skills-capabilities-title">
+      <div className="skills-section-heading">
+        <div><span>{vi?"01 / NHÓM NĂNG LỰC":"01 / CAPABILITY AREAS"}</span><h2 id="skills-capabilities-title">{vi?"Năng lực theo bối cảnh sử dụng":"Capabilities by practical context"}</h2></div>
+        <p>{vi?"Phân biệt kinh nghiệm công việc, dự án cá nhân, hợp đồng và thực tập để nhà tuyển dụng hiểu đúng mức độ áp dụng.":"Work experience, personal projects, contract work and internship exposure are distinguished so the context of each skill remains clear."}</p>
+      </div>
+      <div className="skills-detail-grid">
+        {groups.map(g=><article className={"skills-detail-card"+(g.n==="01"||g.n==="02"?" skills-detail-primary":"")} key={g.n}>
+          <div className="skills-detail-top"><span className="skills-detail-number">{g.n}</span><span className="skills-detail-kind">{g.kind}</span></div>
+          <div className="skills-evidence-type">{g.evidence}</div>
+          <h3>{g.title}</h3><p>{g.desc}</p>
+          <div className="skills-proof">{g.proof}</div>
+          <div className="tag-list">{g.tags.map(tag=><span key={tag}>{displayTag(tag,lang)}</span>)}</div>
+        </article>)}
+      </div>
+    </section>
+    <section className="skills-method" aria-labelledby="skills-method-title">
+      <div className="skills-section-heading">
+        <div><span>{vi?"02 / CÁCH TIẾP CẬN CÔNG VIỆC":"02 / WORKING APPROACH"}</span><h2 id="skills-method-title">{vi?"Từ yêu cầu nghiệp vụ đến chức năng có thể kiểm chứng":"From business requirements to verifiable features"}</h2></div>
+        <p>{vi?"Đây là quy trình làm việc được rút ra từ phần việc phát triển ứng dụng và hệ thống nghiệp vụ, không phải một quy trình chứng nhận độc lập.":"This working approach reflects the application and business-system work described above; it is not presented as a separate certified methodology."}</p>
+      </div>
+      <div className="skills-method-grid">
+        {steps.map(step=><article key={step[0]}><span>{step[0]}</span><h3>{step[1]}</h3><p>{step[2]}</p></article>)}
+      </div>
+    </section>
+    <section className="skills-stack" aria-labelledby="skills-stack-title">
+      <div className="skills-section-heading">
+        <div><span>{vi?"03 / CÔNG NGHỆ ĐÃ SỬ DỤNG":"03 / TECHNOLOGIES USED"}</span><h2 id="skills-stack-title">{vi?"Công cụ gắn với từng nhóm công việc":"Tools mapped to their work contexts"}</h2></div>
+      </div>
+      <div className="skills-stack-list">
+        <div><strong>{vi?"Ứng dụng & API":"Applications & APIs"}</strong><p>Python · Flask · FastAPI · REST APIs</p><small>{vi?"Flask trong công việc/dự án; FastAPI trong RackFlow.":"Flask in work/project contexts; FastAPI in RackFlow."}</small></div>
+        <div><strong>{vi?"Dữ liệu & cơ sở dữ liệu":"Data & databases"}</strong><p>SQL · PostgreSQL · SQLAlchemy</p><small>{vi?"SQL/PostgreSQL trong ứng dụng; SQLAlchemy trong RackFlow.":"SQL/PostgreSQL in applications; SQLAlchemy in RackFlow."}</small></div>
+        <div><strong>{vi?"Thị giác máy tính & tài liệu":"Computer Vision & documents"}</strong><p>YOLOv5 · DeepSORT · OCR · Image Processing</p><small>{vi?"Các dự án theo đợt và hợp đồng Computer Vision 5 tháng.":"Project engagements and a five-month Computer Vision contract."}</small></div>
+        <div><strong>{vi?"Kỹ thuật & dữ liệu thiết bị":"Engineering & equipment data"}</strong><p>C · IoT · Modbus RTU · STEAM Robotics</p><small>{vi?"Nền tảng đào tạo và kỳ thực tập tại Premo; không phải triển khai PLC/SCADA.":"Education and the Premo internship; not PLC/SCADA deployment."}</small></div>
+      </div>
+    </section>
+    <p className="scope-note skills-boundary"><Icon name="check" size={17}/>{boundaries}</p>
   </div></main>;
-}function EducationSection({ lang }) {
+}
+function EducationSection({ lang }) {
   const t=text[lang];
   return <main id="main-content" className="inner-page page-section-page education-page"><div className="container">
     <PageHeading index="01" kicker={t.education} title={t.educationTitle} intro={t.educationPageIntro}/>
