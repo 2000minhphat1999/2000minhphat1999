@@ -104,7 +104,7 @@ const text = {
     homeFocusText:"Từ nền tảng Python và hệ thống nghiệp vụ, tôi hướng đến phần mềm tích hợp AI để cải thiện quy trình và sử dụng nguồn lực doanh nghiệp hiệu quả hơn.",
     availability:"Sẵn sàng trao đổi cơ hội phù hợp", eyebrow:"PYTHON · PHẦN MỀM DOANH NGHIỆP TÍCH HỢP AI",
     headlineA:"Thiết kế phần mềm doanh nghiệp", headlineB:"tích hợp AI để vận hành hiệu quả hơn.",
-    intro:"Định hướng của tôi là thiết kế phần mềm doanh nghiệp tích hợp AI vào quy trình vận hành thực tế, giảm thao tác lặp lại, hỗ trợ ra quyết định và giúp doanh nghiệp sử dụng nguồn lực nhân sự hiệu quả hơn. Nền tảng hiện tại của tôi là ứng dụng Python và ERP/WMS; Computer Vision và OCR là kinh nghiệm từ các dự án riêng biệt.",
+    intro:"Tôi định hướng thiết kế phần mềm doanh nghiệp, đưa AI vào quy trình vận hành thực tế để giảm thao tác lặp lại, hỗ trợ ra quyết định và sử dụng nguồn lực nhân sự hiệu quả hơn. Nền tảng hiện tại của tôi là phát triển ứng dụng Python và hệ thống ERP/WMS; thị giác máy tính (Computer Vision) và OCR đến từ những dự án riêng biệt.",
     explore:"Khám phá dự án", getInTouch:"Liên hệ", snapshot:"TÓM TẮT KINH NGHIỆM", sumida:"tại Sumida", halovi:"hợp đồng tại Halovi", freelance:"dự án tự do chính",
     selected:"DỰ ÁN TIÊU BIỂU", featuredTitle:"Dự án có bài toán, phạm vi và trạng thái rõ ràng.",
     featuredIntro:"Hồ sơ năng lực phân biệt kinh nghiệm công việc, dự án đã thực hiện theo từng đợt và phần đang phát triển.",
@@ -121,7 +121,7 @@ const text = {
     core:"NỀN TẢNG CHÍNH", data:"DỮ LIỆU & QUY TRÌNH", supporting:"KINH NGHIỆM BỔ TRỢ",
     education:"HỌC VẤN", educationTitle:"Nền tảng kỹ thuật.",
     contactTitle:"Bạn có quy trình vận hành cần cải thiện?",
-    contactText:"Quan tâm đến các vị trí Python, ERP/WMS và Backend có thể phát triển theo hướng tích hợp AI vào quy trình nghiệp vụ và cải thiện hiệu suất vận hành. Computer Vision là lĩnh vực dự án bổ trợ.",
+    contactText:"Tôi quan tâm đến các vị trí Python, ERP/WMS và phát triển hệ thống phía máy chủ, có cơ hội mở rộng sang tích hợp AI vào quy trình nghiệp vụ và cải thiện hiệu quả vận hành. Thị giác máy tính là lĩnh vực dự án bổ trợ.",
     email:"Email", linkedin:"LinkedIn", github:"GitHub cá nhân", footer:"Hệ thống thực tế. Phạm vi rõ ràng. Công việc có thể kiểm chứng.",
     problem:"Bài toán & mục tiêu", role:"Vai trò cá nhân", approach:"Giải pháp & triển khai", scope:"Phạm vi",
     evidence:"Bằng chứng & giới hạn", next:"Bước tiếp theo", technologies:"CÔNG NGHỆ", back:"Quay lại dự án",
@@ -133,7 +133,7 @@ const text = {
     haloviText:"Tham gia phát triển các thành phần thị giác máy tính trong hợp đồng 5 tháng. Mô tả chỉ giới hạn ở lĩnh vực và thời hạn đã xác nhận; không bổ sung trách nhiệm triển khai thực tế khi chưa có căn cứ.",
     freelanceText:"Hai dự án chính được thực hiện ở các giai đoạn riêng biệt, có khoảng trống giữa các đợt; không phải công việc toàn thời gian liên tục.",
     uniRole:"Kỹ sư nghiên cứu",
-    uniText:"Phát triển website giáo dục, thiết kế và lắp ráp hệ thống robot STEAM, tham gia hoạt động học tập theo dự án.",
+    uniText:"Phát triển trang web giáo dục, thiết kế và lắp ráp hệ thống robot STEAM, tham gia hoạt động học tập theo dự án.",
     premoRole:"Thực tập sinh kỹ thuật Kaizen",
     premoText:"Hỗ trợ phân tích quy trình lắp ráp và hoạt động cải tiến liên tục trong kỳ thực tập kỹ thuật. Không trình bày đây là kinh nghiệm kỹ sư OT/IT chuyên nghiệp.",
     freelanceType:"Dự án tự do theo từng đợt", research:"Nghiên cứu / giáo dục", internship:"Thực tập",
@@ -142,7 +142,7 @@ const text = {
     award:"Thành tích nghiên cứu sinh viên năm 2022–2023, bao gồm giải Nhì Cuộc thi Sinh viên nghiên cứu khoa học TP. Đà Nẵng năm 2022.",
     rackSummary:"Ứng dụng vận hành kho tập trung vào nhập kho, tra cứu tồn, tra cứu đơn, giữ tồn và lịch sử thay đổi có thể truy vết.",
     cvSummary:"Quy trình thị giác máy tính thực hiện theo dự án, sử dụng video để phát hiện và theo dõi hoạt động giao nhận tại siêu thị.",
-    ocrSummary:"Quy trình theo dự án, trích xuất thông tin từ hồ sơ kiểm định phương tiện và nhập dữ liệu vào website.",
+    ocrSummary:"Quy trình thực hiện theo dự án, trích xuất thông tin từ hồ sơ kiểm định phương tiện và nhập dữ liệu vào trang web.",
     fabricSummary:"Đề xuất thử nghiệm thị giác máy tính để kiểm tra bề mặt vải. Chưa chọn tập dữ liệu, chưa triển khai, huấn luyện mô hình hoặc có kết quả đánh giá được xác minh.",
     rackProblem:"Quy trình kho cần dữ liệu tồn nhất quán và lịch sử rõ ràng cho từng thao tác. RackFlow mô hình hóa các luồng này trong một ứng dụng ERP/WMS thuộc hồ sơ năng lực cá nhân.",
     rackRole:"Dự án cá nhân. Tôi xác định phạm vi và triển khai ứng dụng theo từng bước; đây chưa phải hệ thống bàn giao cho khách hàng hoặc nền tảng đang vận hành tại nhà kho thực tế.",
@@ -151,11 +151,11 @@ const text = {
     rackEvidence:"Các tính năng được liệt kê xác định phạm vi hiện tại của dự án. Quy trình xuất kho và chức năng hỗ trợ vận hành bằng AI vẫn đang phát triển; chưa có tuyên bố về triển khai thực tế hoặc chỉ số hiệu quả nghiệp vụ.",
     rackNext:"Hoàn thiện và kiểm thử quy trình xuất kho thủ công trước, sau đó mới bổ sung AI cùng các bước kiểm tra dữ liệu, xác nhận của người vận hành và ghi nhận lịch sử có thể truy vết.",
     cvProblem:"Hỗ trợ giám sát giao nhận bằng cách nhận diện và theo dõi các đối tượng liên quan trong video.",
-    cvRole:"Triển khai quy trình Computer Vision sử dụng YOLOv5 để phát hiện đối tượng và DeepSORT để theo dõi đối tượng.",
+    cvRole:"Triển khai quy trình thị giác máy tính sử dụng YOLOv5 để phát hiện đối tượng và DeepSORT để theo dõi đối tượng.",
     cvEvidence:"Dự án tự do đã thực hiện theo từng đợt. Hồ sơ này không tự nhận chỉ số độ chính xác, thông lượng hoặc thời gian tiết kiệm khi chưa có bằng chứng xác minh.",
     cvNext:"Để có bản minh họa có thể tái lập, cần báo cáo precision/recall và các trường hợp lỗi; với theo dõi đối tượng, cần ghi nhận lỗi đổi định danh và hành vi khi đối tượng bị che khuất.",
-    ocrProblem:"Giảm thao tác nhập liệu lặp lại từ hồ sơ kiểm định phương tiện dạng giấy vào website Cảng Đà Nẵng.",
-    ocrRole:"Sử dụng xử lý ảnh và OCR trong quy trình trích xuất thông tin tài liệu và tự động nhập dữ liệu lên website.",
+    ocrProblem:"Giảm thao tác nhập liệu lặp lại từ hồ sơ kiểm định phương tiện dạng giấy vào trang web Cảng Đà Nẵng.",
+    ocrRole:"Sử dụng xử lý ảnh và OCR để trích xuất thông tin tài liệu, sau đó tự động nhập dữ liệu lên trang web.",
     ocrEvidence:"Dự án tự do được thực hiện theo từng đợt. Chưa công bố mẫu tài liệu, độ chính xác trích xuất theo từng trường hoặc thời gian tiết kiệm dưới dạng kết quả đã được xác minh.",
     ocrNext:"Để có bản minh họa có thể tái lập, cần đo độ khớp chính xác của từng trường (exact match), tỷ lệ phải sửa và khả năng xử lý lỗi trên bộ tài liệu đã được gán nhãn.",
     fabricProblem:"Lỗi bề mặt vải có thể ảnh hưởng chất lượng vật liệu trong sản xuất sofa. Mục tiêu đề xuất là kiểm tra khả năng phát hiện lỗi ổn định trước khi cân nhắc tích hợp vào quy trình nhà máy.",
@@ -267,6 +267,16 @@ function Flow({ project,lang }) {
   </div></div>;
 }
 
+function displayProjectTitle(project,lang) {
+  if(lang!=="vi") return project.title;
+  const titles={
+    supermarket:"Giám sát giao nhận tại siêu thị",
+    ocr:"Nhập liệu tài liệu bằng OCR",
+    fabric:"Kiểm tra lỗi bề mặt vải"
+  };
+  return titles[project.slug]||project.title;
+}
+
 function displayTag(tag,lang) {
   if(lang!=="vi") return tag;
   const labels={"Video tracking":"Theo dõi video","Image processing":"Xử lý ảnh","Automation":"Tự động hóa","Dataset design":"Thiết kế tập dữ liệu","Model evaluation":"Đánh giá mô hình","Computer Vision":"Thị giác máy tính"};
@@ -279,7 +289,7 @@ function ProjectCard({ project,lang,featured=false }) {
   return <article className={"project-card"+(featured?" project-card-featured":"")}>
     <div className="project-card-top"><span className="project-number">{t.projectWord} / {project.number}</span><Status status={project.status} lang={lang}/></div>
     <div className="project-card-main"><div className="project-card-text">
-      <span className="project-category">{category}</span><h3>{project.title}</h3><p>{t[project.summaryKey]}</p>
+      <span className="project-category">{category}</span><h3>{displayProjectTitle(project,lang)}</h3><p>{t[project.summaryKey]}</p>
       <div className="tag-list">{project.tags.map(tag=><span key={tag}>{displayTag(tag,lang)}</span>)}</div>
       <a className="text-link" href={"#project/"+project.slug}>{t.seeCase}<Icon name="arrow" size={16}/></a>
     </div>{featured&&<Flow project={project} lang={lang}/>}</div>
@@ -346,7 +356,7 @@ function ExperiencePreview({ lang }) {
     </div>
     <div className="experience-block-label earlier-label">{t.earlier}</div>
     <div className="history-grid">
-      <article className="history-card"><span className="history-date">09/2022 – 12/2024</span><span className="history-type">{t.freelanceType}</span><h3>{lang==="vi"?"Các dự án phần mềm theo từng hợp đồng":"Freelance Software Projects"}</h3><p>{t.freelanceText}</p><ul><li>Supermarket Delivery Monitoring — YOLOv5 and DeepSORT.</li><li>OCR-assisted data entry — vehicle-inspection documents and Da Nang Port website.</li></ul></article>
+      <article className="history-card"><span className="history-date">09/2022 – 12/2024</span><span className="history-type">{t.freelanceType}</span><h3>{lang==="vi"?"Các dự án phần mềm theo từng hợp đồng":"Freelance Software Projects"}</h3><p>{t.freelanceText}</p><ul><li>{lang==="vi"?"Giám sát giao nhận tại siêu thị":"Supermarket Delivery Monitoring"} — YOLOv5 và DeepSORT.</li><li>{lang==="vi"?"Trích xuất dữ liệu hồ sơ kiểm định bằng OCR":"OCR-assisted data entry"} — hồ sơ kiểm định phương tiện và trang web Cảng Đà Nẵng.</li></ul></article>
       <article className="history-card"><span className="history-date">03/2024 – 08/2024</span><span className="history-type">{t.research}</span><h3>{t.uniRole}</h3><p className="history-company">The University of Technology and Education — The University of Danang</p><p>{t.uniText}</p></article>
       <article className="history-card"><span className="history-date">05/2022 – 07/2022</span><span className="history-type">{t.internship}</span><h3>{t.premoRole}</h3><p className="history-company">Premo Vietnam</p><p>{t.premoText}</p></article>
     </div>
@@ -402,7 +412,7 @@ function ExperiencePreview({ lang }) {
   return <main id="main-content" className="inner-page detail-page"><div className="container">
     <a href={project.category==="backend"?"#projects/backend":"#projects/ai"} className="back-link">← {t.back}</a>
     <div className="detail-heading"><div className="section-kicker">{t.projectWord} / {project.number} <span>—</span> {project.category==="backend"?t.backend.toUpperCase():t.ai.toUpperCase()}</div>
-      <div className="detail-title-row"><h1>{project.title}</h1><Status status={project.status} lang={lang}/></div><p>{t[project.summaryKey]}</p>
+      <div className="detail-title-row"><h1>{displayProjectTitle(project,lang)}</h1><Status status={project.status} lang={lang}/></div><p>{t[project.summaryKey]}</p>
       <div className="tag-list">{project.tags.map(tag=><span key={tag}>{displayTag(tag,lang)}</span>)}</div>
     </div>
     <Flow project={project} lang={lang}/>
@@ -554,7 +564,7 @@ function App() {
       about:lang==="vi"?"Giới thiệu | Minh Phat":"About | Minh Phat",
       contact:lang==="vi"?"Liên hệ | Minh Phat":"Contact | Minh Phat"
     };
-    document.title=selected?selected.title+" | Minh Phat":(sectionTitles[route]||(lang==="vi"?"Minh Phat | Kỹ sư ứng dụng Python":"Tran Viet Minh Phat | Python Application Engineer"));
+    document.title=selected?displayProjectTitle(selected,lang)+" | Minh Phat":(sectionTitles[route]||(lang==="vi"?"Minh Phat | Kỹ sư ứng dụng Python":"Tran Viet Minh Phat | Python Application Engineer"));
     const pageDescriptions={
       home:text[lang].intro,
       projects:text[lang].projectsPageIntro,
