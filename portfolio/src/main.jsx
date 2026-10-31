@@ -255,7 +255,7 @@ function Hero({ lang }) {
 
 function HomePage({ lang }) {
   const t=text[lang];
-  return <>
+  return <main id="main-content">
     <Hero lang={lang}/>
     <section className="section section-projects" id="projects"><div className="container">
       <SectionHeading index="01" kicker={t.selected} title={t.featuredTitle} intro={t.featuredIntro}/>
@@ -270,9 +270,8 @@ function HomePage({ lang }) {
       </div>
     </div></section>
     <ExperiencePreview lang={lang}/><SkillsSection lang={lang}/><EducationSection lang={lang}/><ContactSection lang={lang}/>
-  </>;
+  </main>;
 }
-
 function ExperiencePreview({ lang,full=false }) {
   const t=text[lang];
   const entries=[
@@ -335,7 +334,7 @@ function ProjectsPage({ lang,category }) {
   const list=category==="ai"?projects.filter(p=>p.category==="ai"):category==="backend"?projects.filter(p=>p.category==="backend"):projects;
   const heading=category==="ai"?t.ai:category==="backend"?t.backend:t.projects;
   const intro=category==="ai"?t.aiDesc:category==="backend"?t.backendDesc:t.featuredIntro;
-  return <main className="inner-page"><div className="container">
+  return <main id="main-content" className="inner-page"><div className="container">
     <div className="page-hero"><div className="section-kicker"><span>PROJECTS</span> / {category?category.toUpperCase():"INDEX"}</div><h1>{heading}</h1><p>{intro}</p><div className="page-branch-links"><a className={!category?"selected":""} href="#projects">{t.all}</a><a className={category==="ai"?"selected":""} href="#projects/ai">{t.ai}</a><a className={category==="backend"?"selected":""} href="#projects/backend">{t.backend}</a></div></div>
     <div className="project-list">{list.map(project=><ProjectCard key={project.slug} project={project} lang={lang} featured={project.slug==="rackflow"}/>)}</div>
   </div></main>;
@@ -345,7 +344,7 @@ function ProjectDetail({ project,lang }) {
   const t=text[lang];
   if(!project) return <NotFound lang={lang}/>;
   const labels={problem:t.problem,role:t.role,scope:t.scope,approach:t.approach,evidence:t.evidence,next:t.next};
-  return <main className="inner-page detail-page"><div className="container">
+  return <main id="main-content" className="inner-page detail-page"><div className="container">
     <a href={project.category==="backend"?"#projects/backend":"#projects/ai"} className="back-link">← {t.back}</a>
     <div className="detail-heading"><div className="section-kicker">PROJECT / {project.number} <span>—</span> {project.category.toUpperCase()}</div>
       <div className="detail-title-row"><h1>{project.title}</h1><Status status={project.status} lang={lang}/></div><p>{t[project.summaryKey]}</p>
@@ -368,7 +367,7 @@ function AboutPage({ lang }) {
     ["02 / MODEL","Model rules and state","Make business rules, data, state transitions and exceptions explicit."],
     ["03 / VERIFY","Test and trace failures","Implement small changes, validate expected behaviour and state remaining limitations."]
   ];
-  return <main className="inner-page about-page"><div className="container"><div className="page-hero"><div className="section-kicker">PROFILE / APPROACH</div><h1>{t.about}</h1><p>{t.intro}</p></div>
+  return <main id="main-content" className="inner-page about-page"><div className="container"><div className="page-hero"><div className="section-kicker">PROFILE / APPROACH</div><h1>{t.about}</h1><p>{t.intro}</p></div>
     <div className="about-grid">{items.map(item=><article key={item[0]}><span>{item[0]}</span><h2>{item[1]}</h2><p>{item[2]}</p></article>)}</div>
     <p className="scope-note"><Icon name="check" size={17}/>{t.noOt}</p>
   </div></main>;
@@ -376,7 +375,7 @@ function AboutPage({ lang }) {
 
 function NotFound({ lang }) {
   const t=text[lang];
-  return <main className="inner-page not-found"><div className="container"><div className="section-kicker">404 / NOT FOUND</div><h1>Oops.</h1><p>{t.notFound}</p><a className="button button-primary" href="#home">{t.homeAction}<Icon name="arrow" size={16}/></a></div></main>;
+  return <main id="main-content" className="inner-page not-found"><div className="container"><div className="section-kicker">404 / NOT FOUND</div><h1>Oops.</h1><p>{t.notFound}</p><a className="button button-primary" href="#home">{t.homeAction}<Icon name="arrow" size={16}/></a></div></main>;
 }
 
 function Footer({ lang }) {
@@ -409,12 +408,12 @@ function App() {
   else if(route==="projects") content=<ProjectsPage lang={lang}/>;
   else if(route==="projects/ai") content=<ProjectsPage lang={lang} category="ai"/>;
   else if(route==="projects/backend") content=<ProjectsPage lang={lang} category="backend"/>;
-  else if(route==="experience") content=<ExperiencePreview lang={lang} full/>;
+  else if(route==="experience") content=<main id="main-content"><ExperiencePreview lang={lang} full/></main>;
   else if(route==="about") content=<AboutPage lang={lang}/>;
-  else if(route==="contact") content=<ContactSection lang={lang}/>;
+  else if(route==="contact") content=<main id="main-content"><ContactSection lang={lang}/></main>;
   else if(parts[0]==="project") content=<ProjectDetail project={projects.find(p=>p.slug===parts[1])} lang={lang}/>;
   else content=<NotFound lang={lang}/>;
-  return <><Header lang={lang} setLang={setLang}/>{content}<Footer lang={lang}/></>;
+  return <><a className="skip-link" href="#main-content">Skip to content</a><Header lang={lang} setLang={setLang}/>{content}<Footer lang={lang}/></>;
 }
 
 createRoot(document.getElementById("root")).render(<React.StrictMode><App/></React.StrictMode>);
