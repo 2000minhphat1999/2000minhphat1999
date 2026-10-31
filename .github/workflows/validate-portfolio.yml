@@ -1,4 +1,4 @@
-name: Validate portfolio
+name: Validate React portfolio
 
 on:
   push:
@@ -20,11 +20,13 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          python-version: "3.x"
-      - name: Check portfolio JavaScript syntax
-        run: node --check portfolio/site.js
-      - name: Check portfolio HTML and anchors
-        run: python portfolio/scripts/check_site.py
+          node-version: 22
+      - name: Install dependencies
+        working-directory: portfolio
+        run: npm install
+      - name: Build and validate production output
+        working-directory: portfolio
+        run: npm run check

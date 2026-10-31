@@ -1,49 +1,51 @@
-# Minh Phat — Professional Portfolio
+# Minh Phat — React Portfolio
 
-A responsive, bilingual static portfolio for Python application engineering, ERP/WMS workflows and applied AI projects. Each project has its **own HTML page**; shared styling and navigation keep the experience consistent.
+A bilingual (English/Vietnamese) React portfolio for Python application engineering, ERP/WMS workflows and applied AI project work.
 
-## Site map
+## Structure
 
-- `index.html` — career positioning, experience, skills, education, contact and project directory.
-- `backend.html` — Backend Development overview.
-- `rackflow.html` — standalone RackFlow Mini ERP/WMS case study; personal project in development.
-- `ai-projects.html` — AI / Computer Vision overview.
-- `supermarket-delivery-monitoring.html` — past project-based Computer Vision work using YOLOv5 and DeepSORT.
-- `ocr-assisted-data-entry.html` — past project-based OCR/document automation.
-- `fabric-defect-inspection.html` — proposed industrial visual-inspection experiment, explicitly not implemented or evaluated.
+- src/main.jsx — React application, hash-based navigation, language switch and project content.
+- src/styles.css — responsive visual system, page layouts and interaction states.
+- public/favicon.svg — site icon.
+- scripts/check-build.mjs — verifies the generated production output.
+- vite.config.js — Vite build configuration.
 
-## Shared files
+## Project navigation
 
-- `styles.css` — one shared visual system, page layouts and responsive styling.
-- `site.js` — English/Vietnamese switch, navigation labels and per-page metadata.
-- `favicon.svg` — site icon.
-- `scripts/check_site.py` — checks all HTML pages, local links, H1/IDs and shared assets.
+Projects is the parent section with two branches:
 
-## Navigation
+- Backend — RackFlow Mini ERP/WMS, a personal project in development.
+- AI — past freelance Computer Vision and OCR work, plus a separately labelled planned fabric-inspection experiment.
 
-Navigation links stay visible across pages. On smaller screens they move to a second row and can scroll horizontally when space is limited.
+Project detail pages describe the problem, individual role, scope, implementation, evidence, limitations and next steps.
 
-## Visual system
+## Run locally
 
-A high-contrast editorial interface: deep navy hero and footer, warm off-white content areas, coral calls to action and a restrained indigo secondary accent. Motion is limited to short hover feedback and subtle card elevation; no large gradients, animated backgrounds or decorative effects that obscure project status. Past work, current development and planned experiments are labelled separately; unverified metrics are not displayed. System font stacks avoid remote font dependencies.
+Requires Node.js 20.19+ or 22.12+.
+
+    cd portfolio
+    npm install
+    npm run dev
+
+Open the local URL printed by Vite.
+
+## Validate and build
+
+    npm run check
+    npm run preview
+
+The production build is written to dist/.
+
+## Vercel
+
+Keep the Vercel project Root Directory set to portfolio. The vercel.json in this directory configures the Vite build and dist output. The application uses hash-based navigation, so page selection does not depend on server-side route rewrites.
 
 ## Content integrity
 
-- Sumida is described as 1 year 10 months, with WMS and FEMS scope.
+- Sumida is listed as 1 year 10 months; the current CV should remain the source of truth for exact dates and title.
 - Halovi is a five-month Computer Vision contract.
-- Freelance work is described as intermittent project-based work with two main projects.
+- Freelance work from 09/2022 to 12/2024 is intermittent and limited to two main projects.
 - RackFlow is a personal project in development, not a deployed customer system.
-- Fabric Defect Inspection is a proposal only. No dataset, trained model, measured metric or factory integration is claimed.
-- Workflow strips and evaluation plans are labelled as conceptual/recommended, not measured results.
-
-## Run and validate locally
-
-Static site; no backend or package installation required.
-
-```bash
-cd portfolio
-python scripts/check_site.py
-python -m http.server 8000
-```
-
-Open `http://localhost:8000`. Test navigation, every project page and the EN/VI selector.
+- Fabric Defect Inspection is a proposal only. No dataset, trained model, measured result or factory integration is claimed.
+- No unverified KPI, production metric or industrial OT/IT hands-on experience is claimed.
+- Contact actions use direct email, LinkedIn and GitHub links. There is no fake form submission.
