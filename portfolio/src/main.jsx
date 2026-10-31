@@ -186,7 +186,10 @@ function Header({ lang, setLang }) {
           <a href="#projects/backend" onClick={close}><span>{t.backend}</span><small>Python · ERP / WMS</small></a>
         </div>
       </div>
-      <a href="#experience" onClick={close}>{t.experience}</a><a href="#about" onClick={close}>{t.about}</a>
+      <a href="#experience" onClick={close}>{t.experience}</a>
+      <a href="#skills" onClick={close}>{t.skills}</a>
+      <a href="#education" onClick={close}>{t.education}</a>
+      <a href="#about" onClick={close}>{t.about}</a>
       <a className="nav-contact" href="#contact" onClick={close}>{t.contact}<Icon name="up" size={14}/></a>
       <div className="language-switch" role="group" aria-label="Language">
         <button type="button" className={lang==="en"?"active":""} aria-pressed={lang==="en"} onClick={()=>setLang("en")}>EN</button>
@@ -398,7 +401,14 @@ function App() {
     document.documentElement.lang=lang;
     const slug=route.startsWith("project/")?route.split("/")[1]:null;
     const selected=projects.find(p=>p.slug===slug);
-    document.title=selected?selected.title+" | Minh Phat":"Tran Viet Minh Phat | Python Application Engineer";
+    const sectionTitles={
+      experience:lang==="vi"?"Kinh nghiệm | Minh Phat":"Experience | Minh Phat",
+      skills:lang==="vi"?"Kỹ năng | Minh Phat":"Skills | Minh Phat",
+      education:lang==="vi"?"Học vấn | Minh Phat":"Education | Minh Phat",
+      about:lang==="vi"?"Giới thiệu | Minh Phat":"About | Minh Phat",
+      contact:lang==="vi"?"Liên hệ | Minh Phat":"Contact | Minh Phat"
+    };
+    document.title=selected?selected.title+" | Minh Phat":(sectionTitles[route]||"Tran Viet Minh Phat | Python Application Engineer");
     const description=document.querySelector('meta[name="description"]');
     if(description) description.content=text[lang].intro;
   },[lang,route]);
@@ -409,6 +419,8 @@ function App() {
   else if(route==="projects/ai") content=<ProjectsPage lang={lang} category="ai"/>;
   else if(route==="projects/backend") content=<ProjectsPage lang={lang} category="backend"/>;
   else if(route==="experience") content=<main id="main-content"><ExperiencePreview lang={lang} full/></main>;
+  else if(route==="skills") content=<main id="main-content"><SkillsSection lang={lang}/></main>;
+  else if(route==="education") content=<main id="main-content"><EducationSection lang={lang}/></main>;
   else if(route==="about") content=<AboutPage lang={lang}/>;
   else if(route==="contact") content=<main id="main-content"><ContactSection lang={lang}/></main>;
   else if(parts[0]==="project") content=<ProjectDetail project={projects.find(p=>p.slug===parts[1])} lang={lang}/>;
