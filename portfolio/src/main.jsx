@@ -451,7 +451,7 @@ function App() {
   else if(route==="projects") content=<ProjectsPage lang={lang}/>;
   else if(route==="projects/ai") content=<ProjectsPage lang={lang} category="ai"/>;
   else if(route==="projects/backend") content=<ProjectsPage lang={lang} category="backend"/>;
-  else if(route==="experience") content=<ExperiencePreview lang={lang} full/>;
+  else if(route==="experience") content=<ExperiencePreview lang={lang}/>;
   else if(route==="skills") content=<SkillsSection lang={lang}/>;
   else if(route==="education") content=<EducationSection lang={lang}/>;
   else if(route==="about") content=<AboutPage lang={lang}/>;
