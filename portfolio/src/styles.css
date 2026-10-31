@@ -161,3 +161,54 @@
 .page-error-state h1{margin:12px 0;color:var(--dark);font-size:clamp(30px,5vw,48px);line-height:1.15}
 .page-error-state p{max-width:620px;margin:0 0 24px;color:#66766b;font-size:14px;line-height:1.8}
 .page-error-state .text-link{display:inline-flex;margin-left:18px;color:#a76348;font-size:12px;font-weight:700}
+
+/* Expanded skills page */
+.skills-page .page-hero{max-width:900px;padding-bottom:25px}
+.skills-page .page-hero>p{max-width:790px}
+.skills-profile-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;margin:8px 0 64px;overflow:hidden;border:1px solid #dce4da;border-radius:9px;background:#dce4da}
+.skills-profile-strip>div{display:flex;flex-direction:column;gap:10px;min-height:96px;padding:20px 22px;background:#f2f5ef}
+.skills-profile-strip span,.skills-section-heading>div>span{color:#9b725c;font:9px var(--font-mono);letter-spacing:.1em}
+.skills-profile-strip strong{color:var(--dark);font-size:15px;line-height:1.4}
+.skills-section-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:22px}
+.skills-section-heading>div{max-width:650px}
+.skills-section-heading h2{margin:10px 0 0;color:var(--dark);font-size:clamp(25px,3vw,35px);letter-spacing:-.045em;line-height:1.15}
+.skills-section-heading>p{max-width:390px;margin:0;color:#738076;font-size:12px;line-height:1.8}
+.skills-detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.skills-detail-card{display:flex;flex-direction:column;min-height:300px;padding:24px;border:1px solid #dfe6dd;border-radius:9px;background:#fff}
+.skills-detail-card.skills-detail-primary{background:#f4f7f1;border-color:#d6e1d3}
+.skills-detail-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.skills-detail-number{color:#bd7958;font:11px var(--font-mono)}
+.skills-detail-kind{color:#839087;font:8px var(--font-mono);letter-spacing:.08em;text-align:right}
+.skills-evidence-type{align-self:flex-start;margin-top:23px;padding:6px 9px;border-radius:3px;background:#edf1ea;color:#5b735e;font-size:9px;font-weight:750}
+.skills-detail-card h3{margin:15px 0 9px;color:var(--dark);font-size:22px;line-height:1.2;letter-spacing:-.035em}
+.skills-detail-card>p{margin:0;color:#68776d;font-size:12px;line-height:1.85}
+.skills-proof{margin-top:15px;padding-top:13px;border-top:1px solid #e5eae3;color:#637268;font-size:10px;line-height:1.75}
+.skills-detail-card .tag-list{margin-top:auto;padding-top:17px}
+.skills-method,.skills-stack{margin-top:68px}
+.skills-method-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.skills-method-grid article{min-height:180px;padding:20px;border:1px solid #dfe6dd;border-radius:8px;background:#f7f9f5}
+.skills-method-grid article>span{color:#bd7958;font:11px var(--font-mono)}
+.skills-method-grid h3{margin:25px 0 8px;color:var(--dark);font-size:16px;line-height:1.3}
+.skills-method-grid p{margin:0;color:#748177;font-size:11px;line-height:1.8}
+.skills-stack-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px;border-top:1px solid #dfe6dd}
+.skills-stack-list>div{padding:19px 0;border-bottom:1px solid #dfe6dd}
+.skills-stack-list strong{color:var(--dark);font-size:13px}
+.skills-stack-list p{margin:8px 0 5px;color:#405b4c;font:12px var(--font-mono);line-height:1.7}
+.skills-stack-list small{color:#859087;font-size:10px;line-height:1.7}
+.skills-boundary{margin-top:31px}
+@media(max-width:760px){
+ .skills-profile-strip{grid-template-columns:1fr;margin-bottom:46px}
+ .skills-profile-strip>div{min-height:0;padding:15px 18px}
+ .skills-section-heading{display:block}
+ .skills-section-heading>p{margin-top:12px}
+ .skills-detail-grid,.skills-stack-list{grid-template-columns:1fr}
+ .skills-detail-card{min-height:0}
+ .skills-method-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .skills-method-grid article{min-height:160px}
+}
+@media(max-width:480px){
+ .skills-method-grid{grid-template-columns:1fr}
+ .skills-method-grid article{min-height:0}
+ .skills-detail-card{padding:20px}
+ .skills-detail-card h3{font-size:20px}
+}
