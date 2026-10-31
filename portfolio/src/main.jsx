@@ -279,7 +279,7 @@ function displayProjectTitle(project,lang) {
 
 function displayTag(tag,lang) {
   if(lang!=="vi") return tag;
-  const labels={"Video tracking":"Theo dõi video","Image processing":"Xử lý ảnh","Automation":"Tự động hóa","REST APIs":"API dịch vụ","Dataset design":"Thiết kế tập dữ liệu","Model evaluation":"Đánh giá mô hình","Computer Vision":"Thị giác máy tính"};
+  const labels={"Video tracking":"Theo dõi video","Image processing":"Xử lý ảnh","Automation":"Tự động hóa","REST APIs":"API dịch vụ","Dataset design":"Thiết kế tập dữ liệu","Model evaluation":"Đánh giá mô hình","Computer Vision":"Thị giác máy tính","Workflow analysis":"Phân tích quy trình","Business logic":"Logic nghiệp vụ","Data validation":"Kiểm tra dữ liệu","Mechatronics":"Cơ điện tử","STEAM robotics":"Robot STEAM"};
   return labels[tag]||tag;
 }
 
