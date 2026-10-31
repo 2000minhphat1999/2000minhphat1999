@@ -464,7 +464,7 @@ function Footer({ lang }) {
 function resolvePortfolioRoute() {
   const hashRoute=window.location.hash
     .slice(1)
-    .replace(/^\\/+|\\/+$/g,"")
+    .replace(/^\/+|\/+$/g,"")
     .split("?")[0];
   return hashRoute || "home";
 }
