@@ -184,7 +184,7 @@ function Brand() {
   return <a className="brand" href="#home" aria-label="Minh Phat — home"><span className="brand-mark">MP<span>.</span></span><span className="brand-name">MINH PHAT<small>PYTHON · ERP / WMS</small></span></a>;
 }
 
-function Header({ lang, setLang }) {
+function Header({ lang, setLang, route }) {
   const t=text[lang];
   const [mobile,setMobile]=useState(false);
   const [projectsOpen,setProjectsOpen]=useState(false);
@@ -193,20 +193,20 @@ function Header({ lang, setLang }) {
     <Brand />
     <button className="mobile-toggle" type="button" aria-label="Toggle navigation" aria-expanded={mobile} onClick={()=>setMobile(!mobile)}><span/><span/><span/></button>
     <nav className={"main-nav"+(mobile?" is-open":"")} aria-label="Main navigation">
-      <a href="#home" onClick={close}>{t.home}</a>
+      <a className={route==="home"?"nav-active":""} aria-current={route==="home"?"page":undefined} href="#home" onClick={close}>{t.home}</a>
       <div className="nav-project">
-        <button type="button" className="nav-project-trigger" aria-expanded={projectsOpen} onClick={()=>setProjectsOpen(!projectsOpen)}>{t.projects}<Icon name="down" size={14}/></button>
+        <button type="button" className={"nav-project-trigger"+(route.startsWith("projects")||route.startsWith("project/")?" nav-active":"")} aria-expanded={projectsOpen} onClick={()=>setProjectsOpen(!projectsOpen)}>{t.projects}<Icon name="down" size={14}/></button>
         <div className={"project-dropdown"+(projectsOpen?" is-open":"")}>
-          <a href="#projects" onClick={close}><span>{t.all}</span><Icon name="arrow" size={15}/></a>
-          <a href="#projects/ai" onClick={close}><span>{t.ai}</span><small>Computer Vision · OCR</small></a>
-          <a href="#projects/backend" onClick={close}><span>{t.backend}</span><small>Python · ERP / WMS</small></a>
+          <a className={route==="projects"?"nav-active":""} aria-current={route==="projects"?"page":undefined} href="#projects" onClick={close}><span>{t.all}</span><Icon name="arrow" size={15}/></a>
+          <a className={route==="projects/ai"?"nav-active":""} aria-current={route==="projects/ai"?"page":undefined} href="#projects/ai" onClick={close}><span>{t.ai}</span><small>Computer Vision · OCR</small></a>
+          <a className={route==="projects/backend"?"nav-active":""} aria-current={route==="projects/backend"?"page":undefined} href="#projects/backend" onClick={close}><span>{t.backend}</span><small>Python · ERP / WMS</small></a>
         </div>
       </div>
-      <a href="#experience" onClick={close}>{t.experience}</a>
-      <a href="#skills" onClick={close}>{t.skills}</a>
-      <a href="#education" onClick={close}>{t.education}</a>
-      <a href="#about" onClick={close}>{t.about}</a>
-      <a className="nav-contact" href="#contact" onClick={close}>{t.contact}<Icon name="up" size={14}/></a>
+      <a className={route==="experience"?"nav-active":""} aria-current={route==="experience"?"page":undefined} href="#experience" onClick={close}>{t.experience}</a>
+      <a className={route==="skills"?"nav-active":""} aria-current={route==="skills"?"page":undefined} href="#skills" onClick={close}>{t.skills}</a>
+      <a className={route==="education"?"nav-active":""} aria-current={route==="education"?"page":undefined} href="#education" onClick={close}>{t.education}</a>
+      <a className={route==="about"?"nav-active":""} aria-current={route==="about"?"page":undefined} href="#about" onClick={close}>{t.about}</a>
+      <a className={"nav-contact"+(route==="contact"?" nav-active":"")} aria-current={route==="contact"?"page":undefined} href="#contact" onClick={close}>{t.contact}<Icon name="up" size={14}/></a>
       <div className="language-switch" role="group" aria-label="Language">
         <button type="button" className={lang==="en"?"active":""} aria-pressed={lang==="en"} onClick={()=>setLang("en")}>EN</button>
         <button type="button" className={lang==="vi"?"active":""} aria-pressed={lang==="vi"} onClick={()=>setLang("vi")}>VI</button>
@@ -458,7 +458,7 @@ function App() {
   else if(route==="contact") content=<ContactSection lang={lang}/>;
   else if(parts[0]==="project") content=<ProjectDetail project={projects.find(p=>p.slug===parts[1])} lang={lang}/>;
   else content=<NotFound lang={lang}/>;
-  return <><a className="skip-link" href="#main-content">Skip to content</a><Header lang={lang} setLang={setLang}/>{content}<Footer lang={lang}/></>;
+  return <><a className="skip-link" href="#main-content">Skip to content</a><Header lang={lang} setLang={setLang} route={route}/>{content}<Footer lang={lang}/></>;
 }
 
 createRoot(document.getElementById("root")).render(<React.StrictMode><App/></React.StrictMode>);
