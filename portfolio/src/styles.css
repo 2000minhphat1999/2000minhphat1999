@@ -101,7 +101,7 @@
 /* About page — five distinct sections */
 .about-page .page-hero{max-width:900px;margin-bottom:48px}
 .about-page .page-hero h1{max-width:850px}
-.about-block{margin:0 0:58px;padding:34px 0;border-top:1px solid #dfe5dc}
+.about-block{margin:0 0 58px;padding:34px 0;border-top:1px solid #dfe5dc}
 .about-block-heading{display:grid;grid-template-columns:minmax(190px,.42fr) minmax(0,1fr);column-gap:42px;row-gap:12px;margin-bottom:26px}
 .about-block-heading>span{padding-top:7px;color:#b96c4c;font:800 9px var(--font-mono);letter-spacing:.14em}
 .about-block-heading h2{max-width:720px;margin:0;color:#17352d;font-size:clamp(24px,3vw,34px);letter-spacing:-.04em;line-height:1.2}
