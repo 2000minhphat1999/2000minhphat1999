@@ -76,12 +76,25 @@ const text = {
     flow:"WORKFLOW MODEL · ILLUSTRATIVE", receive:"Receive stock", inventory:"Check inventory", reserve:"Reserve stock", trace:"Trace changes",
     video:"Video frames", detection:"YOLOv5 detection", tracking:"DeepSORT tracking", tracks:"Track output",
     document:"Document image", ocr:"Image processing / OCR", fields:"Extracted fields", entry:"Web entry",
-    dataset:"Dataset", baseline:"Baseline", evaluation:"Evaluation", notFound:"This portfolio page could not be found.", homeAction:"Back to home",
-    backTop:"Back to top", viDegree:"Degree classification: Good"
+    dataset:"Tập dữ liệu", baseline:"Mô hình cơ sở", evaluation:"Evaluation", notFound:"This portfolio page could not be found.", homeAction:"Back to home",
+    backTop:"Back to top", viDegree:"Degree classification: Good",
+    skipToContent:"Skip to content", brandHome:"Minh Phat — home", toggleNavigation:"Toggle navigation", mainNavigation:"Main navigation", language:"Language",
+    projectWord:"PROJECT", projectIndex:"INDEX", categoryBackend:"PYTHON BACKEND · ERP / WMS", categoryAi:"COMPUTER VISION · OCR", categoryPlanned:"PROPOSED COMPUTER VISION",
+    projectAiNav:"Computer Vision · OCR", projectBackendNav:"Python · ERP / WMS",
+    sumidaDuration:"1 yr 10 mo", haloviDuration:"5 months", homeFocusKicker:"PROFILE / OVERVIEW", heroProfile:"01 / 04 — PROFILE",
+    heroArtLabel:"Illustration of an operational software workflow", artTopLeft:"ENGINEERING / 01", artTopRight:"BUSINESS APPLICATIONS",
+    artTitle1:"Software with", artTitle2:"business impact.", artSubtitle:"AI-enabled business solutions",
+    artNeed:"NEED", artNeedText:"Business challenge", artSolution:"SOLUTION", artSolutionText:"Applied software", artImpact:"IMPACT", artImpactText:"Useful outcomes",
+    artFootLeft:"BUILT FOR PRACTICAL VALUE", artFootRight:"MP / SYSTEMS",
+    aboutWho:"WHO I AM", aboutJourney:"02 / MY JOURNEY", aboutMindset:"03 / PROFESSIONAL MINDSET", aboutBring:"04 / WHAT I BRING", aboutDirection:"05 / CAREER DIRECTION",
+    areaMechatronics:"MECHATRONICS", areaIndustrialData:"INDUSTRIAL DATA", areaWmsFems:"WMS & FEMS", areaPython:"PYTHON", areaVision:"COMPUTER VISION & OCR",
+    jobKind:"EMPLOYMENT", haloviKind:"5-month contract", researchLabel:"RESEARCH", notFoundLabel:"404 / NOT FOUND", notFoundTitle:"Oops.",
+    pageRenderError:"PAGE RENDER ERROR", reloadPage:"Reload page", backHome:"Back to home",
+    footerStack:"PYTHON APPLICATIONS · ERP / WMS", githubLabel:"GITHUB"
   },
   vi: {
-    home:"Trang chủ", projects:"Project", all:"Tất cả dự án", ai:"AI", backend:"Backend", experience:"Kinh nghiệm", about:"Giới thiệu", contact:"Liên hệ",
-    projectsPageIntro:"Duyệt các dự án theo lĩnh vực kỹ thuật, sau đó mở từng case study để xem phạm vi và bằng chứng.",
+    home:"Trang chủ", projects:"Dự án", all:"Tất cả dự án", ai:"AI", backend:"Backend", experience:"Kinh nghiệm", about:"Giới thiệu", contact:"Liên hệ",
+    projectsPageIntro:"Xem các dự án theo lĩnh vực kỹ thuật, sau đó mở hồ sơ chi tiết để tìm hiểu phạm vi và bằng chứng.",
     experiencePageIntro:"Kinh nghiệm nhân viên, hợp đồng có thời hạn, freelance theo từng đợt và trải nghiệm kỹ thuật trước đó — được phân loại riêng.",
     skillsPageIntro:"Tổng quan thực tế về công nghệ và lĩnh vực đã sử dụng trong những công việc được trình bày. Không chấm phần trăm hoặc tự nhận mức độ thiếu căn cứ.",
     educationPageIntro:"Quá trình đào tạo kỹ thuật và hoạt động nghiên cứu có thông tin xác nhận.",
@@ -92,17 +105,17 @@ const text = {
     availability:"Sẵn sàng trao đổi cơ hội phù hợp", eyebrow:"PYTHON · PHẦN MỀM DOANH NGHIỆP TÍCH HỢP AI",
     headlineA:"Thiết kế phần mềm doanh nghiệp", headlineB:"tích hợp AI để vận hành hiệu quả hơn.",
     intro:"Định hướng của tôi là thiết kế phần mềm doanh nghiệp tích hợp AI vào quy trình vận hành thực tế, giảm thao tác lặp lại, hỗ trợ ra quyết định và giúp doanh nghiệp sử dụng nguồn lực nhân sự hiệu quả hơn. Nền tảng hiện tại của tôi là ứng dụng Python và ERP/WMS; Computer Vision và OCR là kinh nghiệm từ các dự án riêng biệt.",
-    explore:"Khám phá dự án", getInTouch:"Liên hệ", snapshot:"TÓM TẮT KINH NGHIỆM", sumida:"tại Sumida", halovi:"hợp đồng tại Halovi", freelance:"dự án freelance chính",
+    explore:"Khám phá dự án", getInTouch:"Liên hệ", snapshot:"TÓM TẮT KINH NGHIỆM", sumida:"tại Sumida", halovi:"hợp đồng tại Halovi", freelance:"dự án tự do chính",
     selected:"DỰ ÁN TIÊU BIỂU", featuredTitle:"Dự án có bài toán, phạm vi và trạng thái rõ ràng.",
-    featuredIntro:"Portfolio phân biệt kinh nghiệm công việc, dự án đã thực hiện theo từng đợt và phần đang phát triển.",
-    seeCase:"Xem case study", viewAll:"Xem tất cả dự án", inProgress:"Đang phát triển", past:"Dự án đã thực hiện", planned:"Dự kiến thử nghiệm",
+    featuredIntro:"Hồ sơ năng lực phân biệt kinh nghiệm công việc, dự án đã thực hiện theo từng đợt và phần đang phát triển.",
+    seeCase:"Xem chi tiết dự án", viewAll:"Xem tất cả dự án", inProgress:"Đang phát triển", past:"Dự án đã thực hiện", planned:"Dự kiến thử nghiệm",
     domains:"NHÓM DỰ ÁN", domainsTitle:"Một hướng chính, hai nhánh chuyên môn.",
-    domainsIntro:"Project là mục cha; AI và Backend là hai nhánh con.",
+    domainsIntro:"Dự án là danh mục chính, gồm hai nhánh: AI và Backend.",
     backendDesc:"Dịch vụ Python, quy tắc nghiệp vụ, lưu trữ dữ liệu và quy trình kho. RackFlow là dự án cá nhân đang phát triển.",
     aiDesc:"Các dự án đã thực hiện về phát hiện/theo dõi qua video, OCR nhập liệu tài liệu và một thử nghiệm tương lai được đánh dấu riêng.",
     experienceTitle:"Kinh nghiệm với phạm vi thực tế được phân định.",
     experienceIntro:"Công việc chính thức, hợp đồng có thời hạn, freelance gián đoạn, nghiên cứu/giáo dục và thực tập được trình bày riêng.",
-    employment:"CÔNG VIỆC & HỢP ĐỒNG", earlier:"FREELANCE & KINH NGHIỆM TRƯỚC ĐÓ",
+    employment:"CÔNG VIỆC & HỢP ĐỒNG", earlier:"DỰ ÁN TỰ DO & KINH NGHIỆM TRƯỚC ĐÓ",
     skills:"NĂNG LỰC", skillsTitle:"Công nghệ và lĩnh vực có thể trình bày bằng bằng chứng.",
     skillsIntro:"Không dùng thanh phần trăm kỹ năng. Các nhóm thể hiện công nghệ gắn với công việc được mô tả.",
     core:"NỀN TẢNG CHÍNH", data:"DỮ LIỆU & QUY TRÌNH", supporting:"KINH NGHIỆM BỔ TRỢ",
@@ -128,7 +141,7 @@ const text = {
     publication:"Đồng tác giả bài báo “Building An IoT-Based Waste Management System for Hazardous Waste,” REC-ECIT 2023, trang 193–198.",
     award:"Thành tích nghiên cứu sinh viên năm 2022–2023, bao gồm giải Nhì Cuộc thi Sinh viên nghiên cứu khoa học TP. Đà Nẵng năm 2022.",
     rackSummary:"Ứng dụng vận hành kho tập trung vào nhập kho, tra cứu tồn, tra cứu đơn, giữ tồn và lịch sử thay đổi có thể truy vết.",
-    cvSummary:"Quy trình Computer Vision theo dự án freelance, sử dụng video để phát hiện và theo dõi hoạt động liên quan đến giao nhận tại siêu thị.",
+    cvSummary:"Quy trình thị giác máy tính theo dự án, sử dụng video để phát hiện và theo dõi hoạt động giao nhận tại siêu thị.",
     ocrSummary:"Quy trình theo dự án, trích xuất thông tin từ hồ sơ kiểm định phương tiện và nhập dữ liệu vào website.",
     fabricSummary:"Đề xuất thử nghiệm Computer Vision cho kiểm tra bề mặt vải. Chưa xác nhận dataset, triển khai, mô hình huấn luyện hay kết quả đánh giá.",
     rackProblem:"Quy trình kho cần dữ liệu tồn nhất quán và lịch sử rõ ràng cho các thao tác vận hành. RackFlow mô hình hóa các luồng này trong ứng dụng ERP/WMS quy mô portfolio.",
@@ -139,21 +152,34 @@ const text = {
     rackNext:"Hoàn thiện và kiểm thử xuất kho thủ công trước, sau đó mới bổ sung AI với bước xác thực, xác nhận của con người và sự kiện có thể truy vết.",
     cvProblem:"Hỗ trợ giám sát giao nhận bằng cách nhận diện và theo dõi các đối tượng liên quan trong video.",
     cvRole:"Triển khai quy trình Computer Vision sử dụng YOLOv5 để phát hiện đối tượng và DeepSORT để theo dõi đối tượng.",
-    cvEvidence:"Dự án freelance đã thực hiện theo từng đợt. Portfolio không tự nhận chỉ số độ chính xác, thông lượng hoặc tiết kiệm thời gian đã xác minh.",
-    cvNext:"Để tạo demo có thể tái lập, cần báo cáo precision/recall và trường hợp lỗi; với tracking cần ghi nhận identity switch và hành vi khi bị che khuất.",
+    cvEvidence:"Dự án tự do đã thực hiện theo từng đợt. Hồ sơ này không tự nhận chỉ số độ chính xác, thông lượng hoặc thời gian tiết kiệm khi chưa có bằng chứng xác minh.",
+    cvNext:"Để có bản minh họa có thể tái lập, cần báo cáo precision/recall và các trường hợp lỗi; với theo dõi đối tượng, cần ghi nhận lỗi đổi định danh và hành vi khi đối tượng bị che khuất.",
     ocrProblem:"Giảm thao tác nhập liệu lặp lại từ hồ sơ kiểm định phương tiện dạng giấy vào website Cảng Đà Nẵng.",
     ocrRole:"Sử dụng xử lý ảnh và OCR trong quy trình trích xuất thông tin tài liệu và tự động nhập dữ liệu lên website.",
     ocrEvidence:"Dự án freelance theo từng đợt. Mẫu tài liệu, độ chính xác từng trường và thời gian tiết kiệm chưa được công bố như bằng chứng đã xác minh.",
-    ocrNext:"Để tạo demo có thể tái lập, cần đo exact match từng trường, tỷ lệ phải sửa và xử lý lỗi trên bộ tài liệu đã gán nhãn.",
+    ocrNext:"Để có bản minh họa có thể tái lập, cần đo độ khớp chính xác của từng trường (exact match), tỷ lệ phải sửa và khả năng xử lý lỗi trên bộ tài liệu đã được gán nhãn.",
     fabricProblem:"Lỗi bề mặt vải có thể ảnh hưởng chất lượng vật liệu trong sản xuất sofa. Mục tiêu đề xuất là kiểm tra khả năng phát hiện lỗi ổn định trước khi cân nhắc tích hợp vào quy trình nhà máy.",
-    fabricApproach:"Kiểm tra dataset và annotation trước; sau đó chọn baseline có thể tái lập phù hợp định dạng nhãn. Chỉ quyết định detection, segmentation hay xử lý ảnh cổ điển sau khi xem dữ liệu.",
-    fabricEvidence:"Mới ở giai đoạn đề xuất. Chưa chọn dataset, chưa triển khai code, huấn luyện, đánh giá mô hình hay xác minh tích hợp nhà máy.",
-    fabricNext:"Xác nhận giấy phép dataset và kiểm tra ảnh mẫu trước khi chọn mô hình hoặc công bố kết quả.",
+    fabricApproach:"Kiểm tra tập dữ liệu và chú thích trước; sau đó chọn mô hình cơ sở có thể tái lập, phù hợp với định dạng nhãn. Chỉ quyết định dùng phương pháp phát hiện, phân đoạn hay xử lý ảnh truyền thống sau khi đã xem dữ liệu.",
+    fabricEvidence:"Mới ở giai đoạn đề xuất. Chưa chọn tập dữ liệu, chưa triển khai mã nguồn, huấn luyện, đánh giá mô hình hay xác minh việc tích hợp vào nhà máy.",
+    fabricNext:"Xác nhận giấy phép sử dụng tập dữ liệu và kiểm tra ảnh mẫu trước khi chọn mô hình hoặc công bố kết quả.",
     flow:"MÔ HÌNH QUY TRÌNH · MINH HỌA", receive:"Nhập kho", inventory:"Kiểm tra tồn", reserve:"Giữ tồn", trace:"Truy vết",
     video:"Khung hình video", detection:"YOLOv5 phát hiện", tracking:"DeepSORT tracking", tracks:"Kết quả tracking",
-    document:"Ảnh tài liệu", ocr:"Xử lý ảnh / OCR", fields:"Trường dữ liệu", entry:"Nhập website",
-    dataset:"Dataset", baseline:"Baseline", evaluation:"Đánh giá", notFound:"Không tìm thấy trang portfolio này.", homeAction:"Về trang chủ",
-    backTop:"Lên đầu trang", viDegree:"Xếp loại Khá"
+    document:"Ảnh tài liệu", ocr:"Xử lý ảnh / OCR", fields:"Trường thông tin", entry:"Nhập dữ liệu lên website",
+    dataset:"Tập dữ liệu", baseline:"Mô hình cơ sở", evaluation:"Đánh giá", notFound:"Không tìm thấy trang portfolio này.", homeAction:"Về trang chủ",
+    backTop:"Lên đầu trang", viDegree:"Xếp loại Khá",
+    skipToContent:"Chuyển đến nội dung chính", brandHome:"Minh Phát — trang chủ", toggleNavigation:"Mở hoặc đóng điều hướng", mainNavigation:"Điều hướng chính", language:"Ngôn ngữ",
+    projectWord:"DỰ ÁN", projectIndex:"DANH MỤC", categoryBackend:"PYTHON BACKEND · ERP / WMS", categoryAi:"THỊ GIÁC MÁY TÍNH · OCR", categoryPlanned:"ĐỀ XUẤT THỬ NGHIỆM THỊ GIÁC MÁY TÍNH",
+    projectAiNav:"Thị giác máy tính · OCR", projectBackendNav:"Python · ERP / WMS",
+    sumidaDuration:"1 năm 10 tháng", haloviDuration:"5 tháng", homeFocusKicker:"HỒ SƠ / TỔNG QUAN", heroProfile:"01 / 04 — HỒ SƠ",
+    heroArtLabel:"Minh họa quy trình vận hành phần mềm", artTopLeft:"KỸ THUẬT / 01", artTopRight:"ỨNG DỤNG NGHIỆP VỤ",
+    artTitle1:"Phần mềm tạo", artTitle2:"giá trị thực tiễn.", artSubtitle:"Giải pháp doanh nghiệp tích hợp AI",
+    artNeed:"NHU CẦU", artNeedText:"Bài toán nghiệp vụ", artSolution:"GIẢI PHÁP", artSolutionText:"Ứng dụng phần mềm", artImpact:"KẾT QUẢ", artImpactText:"Giá trị sử dụng",
+    artFootLeft:"ƯU TIÊN GIÁ TRỊ THỰC TẾ", artFootRight:"MP / HỆ THỐNG",
+    aboutWho:"TÔI LÀ AI", aboutJourney:"02 / HÀNH TRÌNH CHUYÊN MÔN", aboutMindset:"03 / TƯ DUY NGHỀ NGHIỆP", aboutBring:"04 / GIÁ TRỊ TÔI MANG LẠI", aboutDirection:"05 / ĐỊNH HƯỚNG NGHỀ NGHIỆP",
+    areaMechatronics:"CƠ ĐIỆN TỬ", areaIndustrialData:"DỮ LIỆU THIẾT BỊ", areaWmsFems:"WMS & FEMS", areaPython:"PYTHON", areaVision:"THỊ GIÁC MÁY TÍNH & OCR",
+    jobKind:"CÔNG VIỆC CHÍNH THỨC", haloviKind:"Hợp đồng 5 tháng", researchLabel:"NGHIÊN CỨU", notFoundLabel:"404 / KHÔNG TÌM THẤY", notFoundTitle:"Rất tiếc.",
+    pageRenderError:"LỖI HIỂN THỊ TRANG", reloadPage:"Tải lại trang", backHome:"Về trang chủ",
+    footerStack:"ỨNG DỤNG PYTHON · ERP / WMS", githubLabel:"GITHUB"
   }
 };
 
@@ -161,7 +187,7 @@ const projects = [
   { slug:"rackflow", category:"backend", number:"01", title:"RackFlow — Mini ERP / WMS", status:"progress", tags:["Python","FastAPI","Flask","SQLAlchemy","PostgreSQL"], summaryKey:"rackSummary", fields:[["problem","rackProblem"],["role","rackRole"],["scope","rackScope"],["approach","rackApproach"],["evidence","rackEvidence"],["next","rackNext"]], flow:["receive","inventory","reserve","trace"] },
   { slug:"supermarket", category:"ai", number:"02", title:"Supermarket Delivery Monitoring", status:"past", tags:["Python","YOLOv5","DeepSORT","Video tracking"], summaryKey:"cvSummary", fields:[["problem","cvProblem"],["role","cvRole"],["evidence","cvEvidence"],["next","cvNext"]], flow:["video","detection","tracking","tracks"] },
   { slug:"ocr", category:"ai", number:"03", title:"OCR-assisted Data Entry", status:"past", tags:["Python","OCR","Image processing","Automation"], summaryKey:"ocrSummary", fields:[["problem","ocrProblem"],["role","ocrRole"],["evidence","ocrEvidence"],["next","ocrNext"]], flow:["document","ocr","fields","entry"] },
-  { slug:"fabric", category:"ai", number:"04", title:"Fabric Defect Inspection", status:"planned", tags:["Computer Vision","Dataset design","Model evaluation"], summaryKey:"fabricSummary", fields:[["problem","fabricProblem"],["approach","fabricApproach"],["evidence","fabricEvidence"],["next","fabricNext"]], flow:["dataset","baseline","evaluation"] }
+  { slug:"fabric", category:"ai", number:"04", title:"Fabric Defect Inspection", status:"planned", tags:["Thị giác máy tính (Computer Vision)","Dataset design","Model evaluation"], summaryKey:"fabricSummary", fields:[["problem","fabricProblem"],["approach","fabricApproach"],["evidence","fabricEvidence"],["next","fabricNext"]], flow:["dataset","baseline","evaluation"] }
 ];
 
 function Icon({ name, size=18 }) {
@@ -180,8 +206,9 @@ function Icon({ name, size=18 }) {
   return <svg {...props}>{shapes[name] || shapes.arrow}</svg>;
 }
 
-function Brand() {
-  return <a className="brand" href="#home" aria-label="Minh Phat — home"><span className="brand-mark">MP<span>.</span></span><span className="brand-name">MINH PHAT<small>PYTHON · ERP / WMS</small></span></a>;
+function Brand({ lang }) {
+  const t=text[lang];
+  return <a className="brand" href="#home" aria-label={t.brandHome}><span className="brand-mark">MP<span>.</span></span><span className="brand-name">MINH PHAT<small>PYTHON · ERP / WMS</small></span></a>;
 }
 
 function Header({ lang, setLang, route }) {
@@ -190,16 +217,16 @@ function Header({ lang, setLang, route }) {
   const [projectsOpen,setProjectsOpen]=useState(false);
   const close=()=>{setMobile(false);setProjectsOpen(false);};
   return <header className="site-header"><div className="nav-wrap">
-    <Brand />
-    <button className="mobile-toggle" type="button" aria-label="Toggle navigation" aria-expanded={mobile} onClick={()=>setMobile(!mobile)}><span/><span/><span/></button>
-    <nav className={"main-nav"+(mobile?" is-open":"")} aria-label="Main navigation">
+    <Brand lang={lang}/>
+    <button className="mobile-toggle" type="button" aria-label={t.toggleNavigation} aria-expanded={mobile} onClick={()=>setMobile(!mobile)}><span/><span/><span/></button>
+    <nav className={"main-nav"+(mobile?" is-open":"")} aria-label={t.mainNavigation}>
       <a className={route==="home"?"nav-active":""} aria-current={route==="home"?"page":undefined} href="#home" onClick={close}>{t.home}</a>
       <div className="nav-project">
         <button type="button" className={"nav-project-trigger"+(route.startsWith("projects")||route.startsWith("project/")?" nav-active":"")} aria-expanded={projectsOpen} onClick={()=>setProjectsOpen(!projectsOpen)}>{t.projects}<Icon name="down" size={14}/></button>
         <div className={"project-dropdown"+(projectsOpen?" is-open":"")}>
           <a className={route==="projects"?"nav-active":""} aria-current={route==="projects"?"page":undefined} href="#projects" onClick={close}><span>{t.all}</span><Icon name="arrow" size={15}/></a>
-          <a className={route==="projects/ai"?"nav-active":""} aria-current={route==="projects/ai"?"page":undefined} href="#projects/ai" onClick={close}><span>{t.ai}</span><small>Computer Vision · OCR</small></a>
-          <a className={route==="projects/backend"?"nav-active":""} aria-current={route==="projects/backend"?"page":undefined} href="#projects/backend" onClick={close}><span>{t.backend}</span><small>Python · ERP / WMS</small></a>
+          <a className={route==="projects/ai"?"nav-active":""} aria-current={route==="projects/ai"?"page":undefined} href="#projects/ai" onClick={close}><span>{t.ai}</span><small>{t.projectAiNav}</small></a>
+          <a className={route==="projects/backend"?"nav-active":""} aria-current={route==="projects/backend"?"page":undefined} href="#projects/backend" onClick={close}><span>{t.backend}</span><small>{t.projectBackendNav}</small></a>
         </div>
       </div>
       <a className={route==="experience"?"nav-active":""} aria-current={route==="experience"?"page":undefined} href="#experience" onClick={close}>{t.experience}</a>
@@ -207,7 +234,7 @@ function Header({ lang, setLang, route }) {
       <a className={route==="education"?"nav-active":""} aria-current={route==="education"?"page":undefined} href="#education" onClick={close}>{t.education}</a>
       <a className={route==="about"?"nav-active":""} aria-current={route==="about"?"page":undefined} href="#about" onClick={close}>{t.about}</a>
       <a className={"nav-contact"+(route==="contact"?" nav-active":"")} aria-current={route==="contact"?"page":undefined} href="#contact" onClick={close}>{t.contact}<Icon name="up" size={14}/></a>
-      <div className="language-switch" role="group" aria-label="Language">
+      <div className="language-switch" role="group" aria-label={t.language}>
         <button type="button" className={lang==="en"?"active":""} aria-pressed={lang==="en"} onClick={()=>setLang("en")}>EN</button>
         <button type="button" className={lang==="vi"?"active":""} aria-pressed={lang==="vi"} onClick={()=>setLang("vi")}>VI</button>
       </div>
@@ -242,9 +269,9 @@ function Flow({ project,lang }) {
 
 function ProjectCard({ project,lang,featured=false }) {
   const t=text[lang];
-  const category=project.category==="backend"?"PYTHON BACKEND · ERP / WMS":project.status==="planned"?"PROPOSED COMPUTER VISION":"COMPUTER VISION · OCR";
+  const category=project.category==="backend"?t.categoryBackend:project.status==="planned"?t.categoryPlanned:t.categoryAi;
   return <article className={"project-card"+(featured?" project-card-featured":"")}>
-    <div className="project-card-top"><span className="project-number">PROJECT / {project.number}</span><Status status={project.status} lang={lang}/></div>
+    <div className="project-card-top"><span className="project-number">{t.projectWord} / {project.number}</span><Status status={project.status} lang={lang}/></div>
     <div className="project-card-main"><div className="project-card-text">
       <span className="project-category">{category}</span><h3>{project.title}</h3><p>{t[project.summaryKey]}</p>
       <div className="tag-list">{project.tags.map(tag=><span key={tag}>{tag}</span>)}</div>
@@ -263,19 +290,19 @@ function Hero({ lang }) {
         <h1>{t.headlineA}<br/><em>{t.headlineB}</em></h1>
         <p className="hero-intro">{t.intro}</p>
         <div className="hero-actions"><a className="button button-primary" href="#projects">{t.explore}<Icon name="arrow" size={17}/></a><a className="button button-quiet" href="mailto:tranvietminhphat@gmail.com">{t.getInTouch}<Icon name="up" size={15}/></a></div>
-        <div className="hero-socials"><a href="https://github.com/2000minhphat1999" target="_blank" rel="noopener noreferrer"><Icon name="github" size={16}/>GitHub</a><a href="https://www.linkedin.com/in/minhphat-ai/" target="_blank" rel="noopener noreferrer"><Icon name="linkedin" size={16}/>LinkedIn</a><span>01 / 04 — PROFILE</span></div>
+        <div className="hero-socials"><a href="https://github.com/2000minhphat1999" target="_blank" rel="noopener noreferrer"><Icon name="github" size={16}/>GitHub</a><a href="https://www.linkedin.com/in/minhphat-ai/" target="_blank" rel="noopener noreferrer"><Icon name="linkedin" size={16}/>LinkedIn</a><span>{t.heroProfile}</span></div>
       </div>
-      <div className="hero-art" aria-label="Illustration of an operational software workflow">
-        <div className="art-topline"><span>ENGINEERING / 01</span><span>BUSINESS APPLICATIONS</span></div>
-        <div className="art-title">Software with<br/>business impact.</div><div className="art-subtitle">AI-enabled business solutions</div>
-        <div className="art-node node-one"><span className="node-index">01</span><div><small>NEED</small><strong>Business challenge</strong></div><span className="node-symbol">↘</span></div>
-        <div className="art-connector"/><div className="art-node"><span className="node-index">02</span><div><small>SOLUTION</small><strong>Applied software</strong></div><span className="node-symbol">⌘</span></div>
-        <div className="art-connector"/><div className="art-node"><span className="node-index">03</span><div><small>IMPACT</small><strong>Useful outcomes</strong></div><span className="node-symbol">▤</span></div>
-        <div className="art-foot"><span><i/>BUILT FOR PRACTICAL VALUE</span><span>MP / SYSTEMS</span></div><div className="art-orbit orbit-a"/><div className="art-orbit orbit-b"/>
+      <div className="hero-art" aria-label={t.heroArtLabel}>
+        <div className="art-topline"><span>{t.artTopLeft}</span><span>{t.artTopRight}</span></div>
+        <div className="art-title">{t.artTitle1}<br/>{t.artTitle2}</div><div className="art-subtitle">{t.artSubtitle}</div>
+        <div className="art-node node-one"><span className="node-index">01</span><div><small>{t.artNeed}</small><strong>{t.artNeedText}</strong></div><span className="node-symbol">↘</span></div>
+        <div className="art-connector"/><div className="art-node"><span className="node-index">02</span><div><small>{t.artSolution}</small><strong>{t.artSolutionText}</strong></div><span className="node-symbol">⌘</span></div>
+        <div className="art-connector"/><div className="art-node"><span className="node-index">03</span><div><small>{t.artImpact}</small><strong>{t.artImpactText}</strong></div><span className="node-symbol">▤</span></div>
+        <div className="art-foot"><span><i/>{t.artFootLeft}</span><span>{t.artFootRight}</span></div><div className="art-orbit orbit-a"/><div className="art-orbit orbit-b"/>
       </div>
     </div>
     <div className="container hero-stats"><div className="stats-label">{t.snapshot}</div>
-      <div className="stat-item"><strong>1 yr 10 mo</strong><span>{t.sumida}</span></div><div className="stat-item"><strong>5 months</strong><span>{t.halovi}</span></div><div className="stat-item"><strong>2</strong><span>{t.freelance}</span></div><div className="stats-end">PYTHON <b>·</b> APPLICATIONS <b>·</b> ERP / WMS</div>
+      <div className="stat-item"><strong>{t.sumidaDuration}</strong><span>{t.sumida}</span></div><div className="stat-item"><strong>{t.haloviDuration}</strong><span>{t.halovi}</span></div><div className="stat-item"><strong>2</strong><span>{t.freelance}</span></div><div className="stats-end">PYTHON <b>·</b> APPLICATIONS <b>·</b> ERP / WMS</div>
     </div>
   </section>;
 }
@@ -286,7 +313,7 @@ function HomePage({ lang }) {
     <Hero lang={lang}/>
     <section className="home-focus">
       <div className="container home-focus-inner">
-        <div><div className="section-kicker">PROFILE / OVERVIEW</div><h2>{t.homeFocusTitle}</h2><p>{t.homeFocusText}</p></div>
+        <div><div className="section-kicker">{t.homeFocusKicker}</div><h2>{t.homeFocusTitle}</h2><p>{t.homeFocusText}</p></div>
         <div className="home-focus-links">
           <a href="#projects">{t.projects}<Icon name="arrow" size={16}/></a>
           <a href="#experience">{t.experience}<Icon name="arrow" size={16}/></a>
@@ -299,8 +326,8 @@ function HomePage({ lang }) {
 function ExperiencePreview({ lang }) {
   const t=text[lang];
   const entries=[
-    {date:"02/2025 – 11/2026",kind:"EMPLOYMENT",role:t.sumidaRole,company:"Sumida",bullets:[t.sumidaWms,t.sumidaFems]},
-    {date:"11/2023 – 03/2024",kind:lang==="vi"?"Hợp đồng 5 tháng":"5-month contract",role:t.haloviRole,company:"Halovi",bullets:[t.haloviText]}
+    {date:"02/2025 – 11/2026",kind:t.jobKind,role:t.sumidaRole,company:"Sumida",bullets:[t.sumidaWms,t.sumidaFems]},
+    {date:"11/2023 – 03/2024",kind:t.haloviKind,role:t.haloviRole,company:"Halovi",bullets:[t.haloviText]}
   ];
   return <main id="main-content" className="inner-page page-section-page experience-page"><div className="container">
     <PageHeading index="01" kicker={t.experience} title={t.experienceTitle} intro={t.experiencePageIntro}/>
@@ -313,7 +340,7 @@ function ExperiencePreview({ lang }) {
     </div>
     <div className="experience-block-label earlier-label">{t.earlier}</div>
     <div className="history-grid">
-      <article className="history-card"><span className="history-date">09/2022 – 12/2024</span><span className="history-type">{t.freelanceType}</span><h3>{lang==="vi"?"Dự án phần mềm freelance":"Freelance Software Projects"}</h3><p>{t.freelanceText}</p><ul><li>Supermarket Delivery Monitoring — YOLOv5 and DeepSORT.</li><li>OCR-assisted data entry — vehicle-inspection documents and Da Nang Port website.</li></ul></article>
+      <article className="history-card"><span className="history-date">09/2022 – 12/2024</span><span className="history-type">{t.freelanceType}</span><h3>{lang==="vi"?"Các dự án phần mềm theo từng hợp đồng":"Freelance Software Projects"}</h3><p>{t.freelanceText}</p><ul><li>Supermarket Delivery Monitoring — YOLOv5 and DeepSORT.</li><li>OCR-assisted data entry — vehicle-inspection documents and Da Nang Port website.</li></ul></article>
       <article className="history-card"><span className="history-date">03/2024 – 08/2024</span><span className="history-type">{t.research}</span><h3>{t.uniRole}</h3><p className="history-company">The University of Technology and Education — The University of Danang</p><p>{t.uniText}</p></article>
       <article className="history-card"><span className="history-date">05/2022 – 07/2022</span><span className="history-type">{t.internship}</span><h3>{t.premoRole}</h3><p className="history-company">Premo Vietnam</p><p>{t.premoText}</p></article>
     </div>
@@ -323,7 +350,7 @@ function ExperiencePreview({ lang }) {
   const groups=[
     {n:"01",name:t.core,title:lang==="vi"?"Ứng dụng Python":"Python applications",desc:lang==="vi"?"Logic ứng dụng, triển khai quy trình, gỡ lỗi và xác thực từng bước.":"Application logic, workflow implementation, debugging and incremental validation.",tags:["Python","Flask","FastAPI","REST APIs"]},
     {n:"02",name:t.data,title:lang==="vi"?"Quy trình ERP / WMS":"ERP / WMS workflows",desc:lang==="vi"?"Yêu cầu nghiệp vụ, quy trình dùng SQL, khái niệm tồn kho, kiểm tra dữ liệu và thay đổi trạng thái có thể truy vết.":"Business requirements, SQL-backed workflows, inventory concepts, data checking and traceable state changes.",tags:["SQL","PostgreSQL","SQLAlchemy","WMS / FEMS"]},
-    {n:"03",name:t.supporting,title:"Computer Vision & OCR",desc:lang==="vi"?"Đã sử dụng trong các dự án trước đây cho phát hiện, theo dõi đối tượng và trích xuất dữ liệu tài liệu. Đánh giá mô hình vẫn là lĩnh vực đang phát triển.":"Prior project use for object detection, tracking and document data extraction. Model evaluation remains a developing area.",tags:["YOLOv5","DeepSORT","OCR","Image processing"]}
+    {n:"03",name:t.supporting,title:lang==="vi"?"Thị giác máy tính & OCR":"Computer Vision & OCR",desc:lang==="vi"?"Đã sử dụng trong các dự án trước đây để phát hiện, theo dõi đối tượng và trích xuất dữ liệu tài liệu. Đánh giá mô hình vẫn là lĩnh vực đang tiếp tục phát triển.":"Prior project use for object detection, tracking and document data extraction. Model evaluation remains a developing area.",tags:["YOLOv5","DeepSORT","OCR","Image processing"]}
   ];
   return <main id="main-content" className="inner-page page-section-page skills-page"><div className="container">
     <PageHeading index="01" kicker={t.skills} title={t.skillsTitle} intro={t.skillsPageIntro}/>
@@ -336,7 +363,7 @@ function ExperiencePreview({ lang }) {
     <PageHeading index="01" kicker={t.education} title={t.educationTitle} intro={t.educationPageIntro}/>
     <div className="education-grid">
       <article className="education-card"><div className="education-symbol">ED / 01</div><span className="history-type">{t.education}</span><h3>{t.degree}</h3><p>The University of Technology and Education — The University of Danang</p><div className="education-meta">09/2018 – 06/2023 <b>·</b> {t.viDegree}</div></article>
-      <article className="education-card"><div className="education-symbol">RE / 02</div><span className="history-type">{lang==="vi"?"NGHIÊN CỨU":"RESEARCH"}</span><h3>IoT-Based Waste Management System for Hazardous Waste</h3><p>{t.publication}</p><div className="education-meta">{t.award}</div></article>
+      <article className="education-card"><div className="education-symbol">RE / 02</div><span className="history-type">{t.researchLabel}</span><h3>IoT-Based Waste Management System for Hazardous Waste</h3><p>{t.publication}</p><div className="education-meta">{t.award}</div></article>
     </div>
   </div></main>;
 }function ContactSection({ lang }) {
@@ -358,7 +385,7 @@ function ExperiencePreview({ lang }) {
   const heading=category==="ai"?t.ai:category==="backend"?t.backend:t.projects;
   const intro=category==="ai"?t.aiDesc:category==="backend"?t.backendDesc:t.projectsPageIntro;
   return <main id="main-content" className="inner-page projects-page"><div className="container">
-    <PageHeading index="01" kicker={category?category.toUpperCase():"INDEX"} title={heading} intro={intro}/>
+    <PageHeading index="01" kicker={category?(category==="ai"?t.ai.toUpperCase():t.backend.toUpperCase()):t.projectIndex} title={heading} intro={intro}/>
     <div className="page-branch-links"><a className={!category?"selected":""} href="#projects">{t.all}</a><a className={category==="ai"?"selected":""} href="#projects/ai">{t.ai}</a><a className={category==="backend"?"selected":""} href="#projects/backend">{t.backend}</a></div>
     <div className="project-list">{list.map(project=><ProjectCard key={project.slug} project={project} lang={lang} featured={project.slug==="rackflow"}/>)}</div>
   </div></main>;
@@ -368,7 +395,7 @@ function ExperiencePreview({ lang }) {
   const labels={problem:t.problem,role:t.role,scope:t.scope,approach:t.approach,evidence:t.evidence,next:t.next};
   return <main id="main-content" className="inner-page detail-page"><div className="container">
     <a href={project.category==="backend"?"#projects/backend":"#projects/ai"} className="back-link">← {t.back}</a>
-    <div className="detail-heading"><div className="section-kicker">PROJECT / {project.number} <span>—</span> {project.category.toUpperCase()}</div>
+    <div className="detail-heading"><div className="section-kicker">{t.projectWord} / {project.number} <span>—</span> {project.category==="backend"?t.backend.toUpperCase():t.ai.toUpperCase()}</div>
       <div className="detail-title-row"><h1>{project.title}</h1><Status status={project.status} lang={lang}/></div><p>{t[project.summaryKey]}</p>
       <div className="tag-list">{project.tags.map(tag=><span key={tag}>{tag}</span>)}</div>
     </div>
@@ -403,38 +430,38 @@ function AboutPage({ lang }) {
     ["03","Validate features in operational use","Test processing results, resolve defects and support trial deployment to check that features meet workflow requirements."]
   ];
   const contributions=vi?[
-    ["MECHATRONICS","Nền tảng kỹ thuật liên ngành","Kiến thức nền về hệ thống cơ khí - điện tử, lập trình C, IoT và robot STEAM. Có trải nghiệm phân tích cụm lắp ráp, kết cấu máy trong kỳ thực tập; không trình bày đây là kinh nghiệm thiết kế hoặc vận hành dây chuyền tự động hóa."],
-    ["INDUSTRIAL DATA","Thu thập dữ liệu thiết bị","Trong kỳ thực tập tại Premo, sử dụng Python đọc dữ liệu hiệu suất từ cảm biến công nghiệp qua Modbus RTU. Đây là trải nghiệm thực tập, không phải kinh nghiệm triển khai hệ thống SCADA/PLC."],
-    ["WMS & FEMS","Ứng dụng doanh nghiệp tại Sumida","Tham gia phát triển chức năng WMS và FEMS; với WMS là phân tích quy trình kho, logic xử lý và kiểm thử; với FEMS là xử lý dữ liệu, dashboard điện năng và tính toán chi phí điện."],
-    ["PYTHON","Phát triển ứng dụng và backend","Python là ngôn ngữ phát triển chính. Công việc và dự án đã sử dụng Python, Flask, SQL và PostgreSQL. FastAPI và SQLAlchemy được sử dụng trong RackFlow, dự án portfolio đang phát triển."],
-    ["COMPUTER VISION & OCR","Thị giác máy tính và xử lý tài liệu","Kinh nghiệm từ hợp đồng Computer Vision 5 tháng tại Halovi và các dự án riêng: YOLOv5/DeepSORT cho theo dõi giao nhận qua video; OCR để trích xuất dữ liệu tài liệu và tự động nhập lên website."]
+    [t.areaMechatronics,"Nền tảng kỹ thuật liên ngành","Kiến thức nền về hệ thống cơ khí - điện tử, lập trình C, IoT và robot STEAM. Có trải nghiệm phân tích cụm lắp ráp, kết cấu máy trong kỳ thực tập; không trình bày đây là kinh nghiệm thiết kế hoặc vận hành dây chuyền tự động hóa."],
+    [t.areaIndustrialData,"Thu thập dữ liệu thiết bị","Trong kỳ thực tập tại Premo, sử dụng Python đọc dữ liệu hiệu suất từ cảm biến công nghiệp qua Modbus RTU. Đây là trải nghiệm thực tập, không phải kinh nghiệm triển khai hệ thống SCADA/PLC."],
+    [t.areaWmsFems,"Ứng dụng doanh nghiệp tại Sumida","Tham gia phát triển chức năng WMS và FEMS; với WMS là phân tích quy trình kho, logic xử lý và kiểm thử; với FEMS là xử lý dữ liệu, dashboard điện năng và tính toán chi phí điện."],
+    [t.areaPython,"Phát triển ứng dụng và backend","Python là ngôn ngữ phát triển chính. Công việc và dự án đã sử dụng Python, Flask, SQL và PostgreSQL. FastAPI và SQLAlchemy được sử dụng trong RackFlow, dự án portfolio đang phát triển."],
+    [t.areaVision,"Thị giác máy tính và xử lý tài liệu","Kinh nghiệm từ hợp đồng Computer Vision 5 tháng tại Halovi và các dự án riêng: YOLOv5/DeepSORT cho theo dõi giao nhận qua video; OCR để trích xuất dữ liệu tài liệu và tự động nhập lên website."]
   ]:[
-    ["MECHATRONICS","Interdisciplinary engineering foundation","Foundation in mechanical/electrical systems, C programming, IoT and STEAM robotics. I also analysed mechanical assemblies and machine structures during my internship; this is not presented as hands-on production-line automation engineering."],
-    ["INDUSTRIAL DATA","Equipment data acquisition","During my internship at Premo, I used Python to read performance data from industrial sensors through Modbus RTU. This was internship experience, not SCADA/PLC system deployment."],
-    ["WMS & FEMS","Enterprise applications at Sumida","Contributed to WMS and FEMS features. WMS work involved warehouse workflows, application logic and testing; FEMS work involved data processing, an electricity dashboard and cost calculations."],
-    ["PYTHON","Application and backend development","Python is my primary programming language. Work and project experience includes Python, Flask, SQL and PostgreSQL. FastAPI and SQLAlchemy are used in RackFlow, a portfolio project in development."],
-    ["COMPUTER VISION & OCR","Visual recognition and document processing","Experience from a five-month Computer Vision contract at Halovi and separate projects: YOLOv5/DeepSORT for video-based delivery tracking, and OCR for document extraction and website data entry."]
+    [t.areaMechatronics,"Interdisciplinary engineering foundation","Foundation in mechanical/electrical systems, C programming, IoT and STEAM robotics. I also analysed mechanical assemblies and machine structures during my internship; this is not presented as hands-on production-line automation engineering."],
+    [t.areaIndustrialData,"Equipment data acquisition","During my internship at Premo, I used Python to read performance data from industrial sensors through Modbus RTU. This was internship experience, not SCADA/PLC system deployment."],
+    [t.areaWmsFems,"Enterprise applications at Sumida","Contributed to WMS and FEMS features. WMS work involved warehouse workflows, application logic and testing; FEMS work involved data processing, an electricity dashboard and cost calculations."],
+    [t.areaPython,"Application and backend development","Python is my primary programming language. Work and project experience includes Python, Flask, SQL and PostgreSQL. FastAPI and SQLAlchemy are used in RackFlow, a portfolio project in development."],
+    [t.areaVision,"Visual recognition and document processing","Experience from a five-month Computer Vision contract at Halovi and separate projects: YOLOv5/DeepSORT for video-based delivery tracking, and OCR for document extraction and website data entry."]
   ];
   return <main id="main-content" className="inner-page about-page"><div className="container">
-    <PageHeading index="01" kicker="WHO I AM" title={vi?"Từ Cơ điện tử đến kỹ sư phần mềm Python cho hệ thống doanh nghiệp.":"From Mechatronics to Python software engineering for business systems."} intro={vi?"Nền tảng Cơ điện tử giúp tôi tiếp cận thiết bị, cảm biến và quy trình sản xuất. Tôi bắt đầu kết nối nền tảng đó với phần mềm qua lập trình C, IoT và việc dùng Python thu thập dữ liệu cảm biến công nghiệp trong kỳ thực tập. Sau đó, tôi chuyển trọng tâm sang phát triển ứng dụng: Computer Vision, OCR, rồi các hệ thống nghiệp vụ WMS và FEMS. Hiện tại, chuyên môn chính của tôi là phát triển phần mềm Python và ứng dụng doanh nghiệp; không phải kỹ sư điều khiển PLC/SCADA.": "My Mechatronics background introduced me to equipment, sensors and production processes. I began connecting that foundation with software through C programming, IoT and Python-based industrial sensor data extraction during my internship. I then moved toward application development: Computer Vision, OCR and enterprise systems such as WMS and FEMS. My current focus is Python software and business applications, rather than PLC/SCADA control engineering."}/>
+    <PageHeading index="01" kicker={t.aboutWho} title={vi?"Từ Cơ điện tử đến kỹ sư phần mềm Python cho hệ thống doanh nghiệp.":"From Mechatronics to Python software engineering for business systems."} intro={vi?"Nền tảng Cơ điện tử giúp tôi tiếp cận thiết bị, cảm biến và quy trình sản xuất. Tôi bắt đầu kết nối nền tảng đó với phần mềm qua lập trình C, IoT và việc dùng Python thu thập dữ liệu cảm biến công nghiệp trong kỳ thực tập. Sau đó, tôi chuyển trọng tâm sang phát triển ứng dụng: Computer Vision, OCR, rồi các hệ thống nghiệp vụ WMS và FEMS. Hiện tại, chuyên môn chính của tôi là phát triển phần mềm Python và ứng dụng doanh nghiệp; không phải kỹ sư điều khiển PLC/SCADA.": "My Mechatronics background introduced me to equipment, sensors and production processes. I began connecting that foundation with software through C programming, IoT and Python-based industrial sensor data extraction during my internship. I then moved toward application development: Computer Vision, OCR and enterprise systems such as WMS and FEMS. My current focus is Python software and business applications, rather than PLC/SCADA control engineering."}/>
 
     <section className="about-block about-journey">
-      <div className="about-block-heading"><span>02 / MY JOURNEY</span><h2>{vi?"Mạch chuyên môn: từ hệ thống cơ điện tử đến hệ thống phần mềm":"The progression: from mechatronic systems to software systems"}</h2><p>{vi?"Quá trình chuyển hướng diễn ra qua những trải nghiệm cụ thể với cảm biến, dữ liệu, ứng dụng và phần mềm phục vụ vận hành.":"The transition took shape through practical exposure to sensors, data, applications and software used in operations."}</p></div>
+      <div className="about-block-heading"><span>{t.aboutJourney}</span><h2>{vi?"Mạch chuyên môn: từ hệ thống cơ điện tử đến hệ thống phần mềm":"The progression: from mechatronic systems to software systems"}</h2><p>{vi?"Quá trình chuyển hướng diễn ra qua những trải nghiệm cụ thể với cảm biến, dữ liệu, ứng dụng và phần mềm phục vụ vận hành.":"The transition took shape through practical exposure to sensors, data, applications and software used in operations."}</p></div>
       <div className="about-journey-list">{journey.map(item=><article className="about-journey-item" key={item[0]+item[2]}><div className="about-journey-meta"><time>{item[0]}</time><span>{item[1]}</span></div><div className="about-journey-content"><h3>{item[2]}</h3><p>{item[3]}</p></div></article>)}</div>
     </section>
 
     <section className="about-block about-mindset">
-      <div className="about-block-heading"><span>03 / PROFESSIONAL MINDSET</span><h2>{vi?"Kết nối quy trình vận hành với logic phần mềm":"Connecting operational workflows with software logic"}</h2><p>{vi?"Kinh nghiệm Cơ điện tử giúp tôi chú ý đến thiết bị, dữ liệu và điều kiện vận hành; kinh nghiệm WMS giúp tôi chuyển góc nhìn đó sang yêu cầu và chức năng phần mềm.":"My Mechatronics exposure made me attentive to equipment, data and operating conditions; WMS development extended that perspective to software requirements and application features."}</p></div>
+      <div className="about-block-heading"><span>{t.aboutMindset}</span><h2>{vi?"Kết nối quy trình vận hành với logic phần mềm":"Connecting operational workflows with software logic"}</h2><p>{vi?"Kinh nghiệm Cơ điện tử giúp tôi chú ý đến thiết bị, dữ liệu và điều kiện vận hành; kinh nghiệm WMS giúp tôi chuyển góc nhìn đó sang yêu cầu và chức năng phần mềm.":"My Mechatronics exposure made me attentive to equipment, data and operating conditions; WMS development extended that perspective to software requirements and application features."}</p></div>
       <div className="about-mindset-grid">{mindset.map(item=><article key={item[0]}><span>{item[0]}</span><h3>{item[1]}</h3><p>{item[2]}</p></article>)}</div>
     </section>
 
     <section className="about-block about-bring">
-      <div className="about-block-heading"><span>04 / WHAT I BRING</span><h2>{vi?"Nền tảng Cơ điện tử kết hợp kinh nghiệm phát triển phần mềm":"Mechatronics foundation combined with software experience"}</h2><p>{vi?"Tôi có thể làm việc ở giao điểm giữa bối cảnh kỹ thuật nhà máy, dữ liệu thiết bị và ứng dụng nghiệp vụ, với phạm vi kinh nghiệm được nêu rõ theo từng môi trường.":"I bring exposure to factory engineering contexts and equipment data, combined with business-application development. The scope of each experience is stated by its actual work context."}</p></div>
+      <div className="about-block-heading"><span>{t.aboutBring}</span><h2>{vi?"Nền tảng Cơ điện tử kết hợp kinh nghiệm phát triển phần mềm":"Mechatronics foundation combined with software experience"}</h2><p>{vi?"Tôi có thể làm việc ở giao điểm giữa bối cảnh kỹ thuật nhà máy, dữ liệu thiết bị và ứng dụng nghiệp vụ, với phạm vi kinh nghiệm được nêu rõ theo từng môi trường.":"I bring exposure to factory engineering contexts and equipment data, combined with business-application development. The scope of each experience is stated by its actual work context."}</p></div>
       <div className="about-bring-grid">{contributions.map(item=><article key={item[0]}><span>{item[0]}</span><h3>{item[1]}</h3><p>{item[2]}</p></article>)}</div>
     </section>
 
     <section className="about-block about-direction">
-      <div className="about-block-heading"><span>05 / CAREER DIRECTION</span><h2>{vi?"Kỹ sư phần mềm doanh nghiệp, có hiểu biết về môi trường sản xuất":"Enterprise software engineer with an understanding of manufacturing environments"}</h2></div>
+      <div className="about-block-heading"><span>{t.aboutDirection}</span><h2>{vi?"Kỹ sư phần mềm doanh nghiệp, có hiểu biết về môi trường sản xuất":"Enterprise software engineer with an understanding of manufacturing environments"}</h2></div>
       <div className="about-direction-content">
         <p className="about-direction-lead">{vi?"Tôi muốn phát triển theo hướng kỹ sư phần mềm chuyên về ứng dụng doanh nghiệp và hệ thống phục vụ vận hành sản xuất. Điểm khác biệt tôi muốn xây dựng là kết hợp nền tảng Cơ điện tử - hiểu thiết bị, dữ liệu và quy trình nhà máy - với năng lực phát triển Python backend và tích hợp hệ thống.":"I aim to develop as a software engineer specialising in enterprise applications and systems that support manufacturing operations. I want to combine my Mechatronics foundation—understanding equipment, data and factory workflows—with stronger Python backend and system-integration skills."}</p>
         <div className="about-direction-stages">
@@ -451,13 +478,13 @@ function AboutPage({ lang }) {
 
 function NotFound({ lang }) {
   const t=text[lang];
-  return <main id="main-content" className="inner-page not-found"><div className="container"><div className="section-kicker">404 / NOT FOUND</div><h1>Oops.</h1><p>{t.notFound}</p><a className="button button-primary" href="#home">{t.homeAction}<Icon name="arrow" size={16}/></a></div></main>;
+  return <main id="main-content" className="inner-page not-found"><div className="container"><div className="section-kicker">{t.notFoundLabel}</div><h1>{t.notFoundTitle}</h1><p>{t.notFound}</p><a className="button button-primary" href="#home">{t.homeAction}<Icon name="arrow" size={16}/></a></div></main>;
 }
 
 function Footer({ lang }) {
   const t=text[lang];
-  return <footer className="site-footer"><div className="container footer-top"><Brand/><p>{t.footer}</p><a href="#home" className="back-top">{t.backTop} ↑</a></div>
-    <div className="container footer-bottom"><span>© {new Date().getFullYear()} TRAN VIET MINH PHAT</span><span>PYTHON APPLICATIONS · ERP / WMS</span><a href="https://github.com/2000minhphat1999" target="_blank" rel="noopener noreferrer">GITHUB <Icon name="up" size={13}/></a></div>
+  return <footer className="site-footer"><div className="container footer-top"><Brand lang={lang}/><p>{t.footer}</p><a href="#home" className="back-top">{t.backTop} ↑</a></div>
+    <div className="container footer-bottom"><span>© {new Date().getFullYear()} TRAN VIET MINH PHAT</span><span>{t.footerStack}</span><a href="https://github.com/2000minhphat1999" target="_blank" rel="noopener noreferrer">{t.githubLabel} <Icon name="up" size={13}/></a></div>
   </footer>;
 }
 
@@ -485,11 +512,11 @@ class RenderErrorBoundary extends React.Component {
       const vi=this.props.lang==="vi";
       return <main className="inner-page page-error-state" role="alert">
         <div className="container">
-          <div className="section-kicker">PAGE RENDER ERROR</div>
+          <div className="section-kicker">{this.props.lang==="vi"?text.vi.pageRenderError:text.en.pageRenderError}</div>
           <h1>{vi?"Trang này đang gặp lỗi hiển thị.":"This page could not be displayed."}</h1>
           <p>{vi?"Nội dung không tải được do lỗi khi render. Hãy tải lại trang; lỗi đã được ghi nhận trong console để kiểm tra.":"A rendering error prevented this page from loading. Reload the page; technical details are available in the browser console."}</p>
-          <button type="button" className="button button-primary" onClick={()=>window.location.reload()}>{vi?"Tải lại trang":"Reload page"}</button>
-          <a className="text-link" href="#home">{vi?"Về trang chủ":"Back to home"}</a>
+          <button type="button" className="button button-primary" onClick={()=>window.location.reload()}>{vi?text.vi.reloadPage:text.en.reloadPage}</button>
+          <a className="text-link" href="#home">{vi?text.vi.backHome:text.en.backHome}</a>
         </div>
       </main>;
     }
@@ -520,7 +547,7 @@ function App() {
       about:lang==="vi"?"Giới thiệu | Minh Phat":"About | Minh Phat",
       contact:lang==="vi"?"Liên hệ | Minh Phat":"Contact | Minh Phat"
     };
-    document.title=selected?selected.title+" | Minh Phat":(sectionTitles[route]||"Tran Viet Minh Phat | Python Application Engineer");
+    document.title=selected?selected.title+" | Minh Phat":(sectionTitles[route]||(lang==="vi"?"Minh Phat | Kỹ sư ứng dụng Python":"Tran Viet Minh Phat | Python Application Engineer"));
     const pageDescriptions={
       home:text[lang].intro,
       projects:text[lang].projectsPageIntro,
@@ -533,7 +560,13 @@ function App() {
       contact:text[lang].contactPageIntro
     };
     const description=document.querySelector('meta[name="description"]');
-    if(description) description.content=pageDescriptions[route]||text[lang].intro;
+    if(description) description.content=selected?text[lang][selected.summaryKey]:(pageDescriptions[route]||text[lang].intro);
+    const ogTitle=document.querySelector('meta[property="og:title"]');
+    const ogDescription=document.querySelector('meta[property="og:description"]');
+    const ogLocale=document.querySelector('meta[property="og:locale"]');
+    if(ogTitle) ogTitle.content=document.title;
+    if(ogDescription) ogDescription.content=description?.content||text[lang].intro;
+    if(ogLocale) ogLocale.content=lang==="vi"?"vi_VN":"en_US";
   },[lang,route]);
   const parts=route.split("/");
   let content;
@@ -548,7 +581,7 @@ function App() {
   else if(route==="contact") content=<ContactSection lang={lang}/>;
   else if(parts[0]==="project") content=<ProjectDetail project={projects.find(p=>p.slug===parts[1])} lang={lang}/>;
   else content=<NotFound lang={lang}/>;
-  return <><a className="skip-link" href="#main-content">Skip to content</a><Header lang={lang} setLang={setLang} route={route}/><RenderErrorBoundary lang={lang}>{content}</RenderErrorBoundary><Footer lang={lang}/></>;
+  return <><a className="skip-link" href="#main-content">{text[lang].skipToContent}</a><Header lang={lang} setLang={setLang} route={route}/><RenderErrorBoundary lang={lang}>{content}</RenderErrorBoundary><Footer lang={lang}/></>;
 }
 
 createRoot(document.getElementById("root")).render(<React.StrictMode><App/></React.StrictMode>);
