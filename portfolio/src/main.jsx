@@ -5,6 +5,14 @@ import "./styles.css";
 const text = {
   en: {
     home:"Home", projects:"Projects", all:"All projects", ai:"AI", backend:"Backend", experience:"Experience", about:"About", contact:"Contact",
+    projectsPageIntro:"Browse the work by engineering domain, then open an individual case study for scope and evidence.",
+    experiencePageIntro:"Employment, a fixed-term contract, intermittent freelance engagements and earlier engineering experience — kept separate by type and duration.",
+    skillsPageIntro:"A practical view of the tools and domains used in the work described in this portfolio. No percentage ratings or unsupported proficiency claims.",
+    educationPageIntro:"Formal engineering education and documented research activity.",
+    aboutPageIntro:"How I approach operational software problems: understand the workflow, make rules explicit, then implement and verify.",
+    contactPageIntro:"For opportunities in Python applications, ERP/WMS, backend engineering and application support.",
+    homeFocusTitle:"Build around the actual workflow.",
+    homeFocusText:"Explore the engineering work, professional timeline and technical capabilities through separate pages."
     availability:"Open to relevant opportunities", eyebrow:"PYTHON APPLICATION ENGINEERING",
     headlineA:"I build software around", headlineB:"real operational workflows.",
     intro:"I work across business requirements, Python application logic, database-backed features and validation. My main direction is ERP/WMS and backend applications; Computer Vision and OCR are supporting experience.",
@@ -73,6 +81,14 @@ const text = {
   },
   vi: {
     home:"Trang chủ", projects:"Project", all:"Tất cả dự án", ai:"AI", backend:"Backend", experience:"Kinh nghiệm", about:"Giới thiệu", contact:"Liên hệ",
+    projectsPageIntro:"Duyệt các dự án theo lĩnh vực kỹ thuật, sau đó mở từng case study để xem phạm vi và bằng chứng.",
+    experiencePageIntro:"Kinh nghiệm nhân viên, hợp đồng có thời hạn, freelance theo từng đợt và trải nghiệm kỹ thuật trước đó — được phân loại riêng.",
+    skillsPageIntro:"Tổng quan thực tế về công nghệ và lĩnh vực đã sử dụng trong những công việc được trình bày. Không chấm phần trăm hoặc tự nhận mức độ thiếu căn cứ.",
+    educationPageIntro:"Quá trình đào tạo kỹ thuật và hoạt động nghiên cứu có thông tin xác nhận.",
+    aboutPageIntro:"Cách tôi tiếp cận bài toán phần mềm vận hành: hiểu quy trình, làm rõ quy tắc, sau đó triển khai và kiểm chứng.",
+    contactPageIntro:"Trao đổi cơ hội về ứng dụng Python, ERP/WMS, Backend và Application Support.",
+    homeFocusTitle:"Phần mềm phải bám sát quy trình thực tế.",
+    homeFocusText:"Khám phá dự án kỹ thuật, dòng thời gian kinh nghiệm và năng lực chuyên môn qua từng trang riêng biệt."
     availability:"Sẵn sàng trao đổi cơ hội phù hợp", eyebrow:"PHÁT TRIỂN ỨNG DỤNG PYTHON",
     headlineA:"Tôi xây dựng phần mềm dựa trên", headlineB:"quy trình vận hành thực tế.",
     intro:"Tôi làm việc từ yêu cầu nghiệp vụ, logic ứng dụng Python, chức năng gắn với cơ sở dữ liệu đến kiểm thử và xác thực. Hướng chính là ERP/WMS và Backend; Computer Vision và OCR là kinh nghiệm bổ trợ.",
@@ -199,6 +215,14 @@ function Header({ lang, setLang }) {
   </div></header>;
 }
 
+function PageHeading({ index="01",kicker,title,intro }) {
+  return <div className="page-hero">
+    <div className="section-kicker"><span>{index}</span>{kicker}</div>
+    <h1>{title}</h1>
+    {intro&&<p>{intro}</p>}
+  </div>;
+}
+
 function SectionHeading({ index,kicker,title,intro }) {
   return <div className="section-heading"><div><div className="section-kicker"><span>{index}</span>{kicker}</div><h2>{title}</h2></div>{intro&&<p>{intro}</p>}</div>;
 }
@@ -258,21 +282,18 @@ function Hero({ lang }) {
 
 function HomePage({ lang }) {
   const t=text[lang];
-  return <main id="main-content">
+  return <main id="main-content" className="home-page">
     <Hero lang={lang}/>
-    <section className="section section-projects" id="projects"><div className="container">
-      <SectionHeading index="01" kicker={t.selected} title={t.featuredTitle} intro={t.featuredIntro}/>
-      <div className="featured-grid"><ProjectCard project={projects[0]} lang={lang} featured/><div className="featured-side"><ProjectCard project={projects[1]} lang={lang}/><ProjectCard project={projects[2]} lang={lang}/></div></div>
-      <div className="section-bottom-link"><a className="text-link" href="#projects">{t.viewAll}<Icon name="arrow" size={16}/></a></div>
-    </div></section>
-    <section className="section section-domains" id="domains"><div className="container">
-      <SectionHeading index="02" kicker={t.domains} title={t.domainsTitle} intro={t.domainsIntro}/>
-      <div className="domain-grid">
-        <a className="domain-panel domain-backend" href="#projects/backend"><div className="domain-number">01 / BACKEND</div><div className="domain-icon"><Icon name="code" size={25}/></div><h3>{t.backend}</h3><p>{t.backendDesc}</p><span className="domain-link">{t.viewAll}<Icon name="arrow" size={16}/></span></a>
-        <a className="domain-panel domain-ai" href="#projects/ai"><div className="domain-number">02 / AI & VISION</div><div className="domain-icon"><Icon name="grid" size={25}/></div><h3>{t.ai}</h3><p>{t.aiDesc}</p><span className="domain-link">{t.viewAll}<Icon name="arrow" size={16}/></span></a>
+    <section className="home-focus">
+      <div className="container home-focus-inner">
+        <div><div className="section-kicker">PROFILE / OVERVIEW</div><h2>{t.homeFocusTitle}</h2><p>{t.homeFocusText}</p></div>
+        <div className="home-focus-links">
+          <a href="#projects">{t.projects}<Icon name="arrow" size={16}/></a>
+          <a href="#experience">{t.experience}<Icon name="arrow" size={16}/></a>
+          <a href="#skills">{t.skills}<Icon name="arrow" size={16}/></a>
+        </div>
       </div>
-    </div></section>
-    <ExperiencePreview lang={lang}/><SkillsSection lang={lang}/><EducationSection lang={lang}/><ContactSection lang={lang}/>
+    </section>
   </main>;
 }
 function ExperiencePreview({ lang,full=false }) {
@@ -338,7 +359,7 @@ function ProjectsPage({ lang,category }) {
   const heading=category==="ai"?t.ai:category==="backend"?t.backend:t.projects;
   const intro=category==="ai"?t.aiDesc:category==="backend"?t.backendDesc:t.featuredIntro;
   return <main id="main-content" className="inner-page"><div className="container">
-    <div className="page-hero"><div className="section-kicker"><span>PROJECTS</span> / {category?category.toUpperCase():"INDEX"}</div><h1>{heading}</h1><p>{intro}</p><div className="page-branch-links"><a className={!category?"selected":""} href="#projects">{t.all}</a><a className={category==="ai"?"selected":""} href="#projects/ai">{t.ai}</a><a className={category==="backend"?"selected":""} href="#projects/backend">{t.backend}</a></div></div>
+    <PageHeading index="PROJECTS" kicker={category?category.toUpperCase():"INDEX"} title={heading} intro={category?intro:t.projectsPageIntro}/><div className="page-branch-links"><a className={!category?"selected":""} href="#projects">{t.all}</a><a className={category==="ai"?"selected":""} href="#projects/ai">{t.ai}</a><a className={category==="backend"?"selected":""} href="#projects/backend">{t.backend}</a></div></div>
     <div className="project-list">{list.map(project=><ProjectCard key={project.slug} project={project} lang={lang} featured={project.slug==="rackflow"}/>)}</div>
   </div></main>;
 }
@@ -370,7 +391,7 @@ function AboutPage({ lang }) {
     ["02 / MODEL","Model rules and state","Make business rules, data, state transitions and exceptions explicit."],
     ["03 / VERIFY","Test and trace failures","Implement small changes, validate expected behaviour and state remaining limitations."]
   ];
-  return <main id="main-content" className="inner-page about-page"><div className="container"><div className="page-hero"><div className="section-kicker">PROFILE / APPROACH</div><h1>{t.about}</h1><p>{t.intro}</p></div>
+  return <main id="main-content" className="inner-page about-page"><div className="container"><PageHeading index="01" kicker={t.about} title={t.about} intro={t.aboutPageIntro}/>
     <div className="about-grid">{items.map(item=><article key={item[0]}><span>{item[0]}</span><h2>{item[1]}</h2><p>{item[2]}</p></article>)}</div>
     <p className="scope-note"><Icon name="check" size={17}/>{t.noOt}</p>
   </div></main>;
@@ -402,6 +423,9 @@ function App() {
     const slug=route.startsWith("project/")?route.split("/")[1]:null;
     const selected=projects.find(p=>p.slug===slug);
     const sectionTitles={
+      projects:lang==="vi"?"Dự án | Minh Phat":"Projects | Minh Phat",
+      "projects/ai":lang==="vi"?"Dự án AI | Minh Phat":"AI Projects | Minh Phat",
+      "projects/backend":lang==="vi"?"Dự án Backend | Minh Phat":"Backend Projects | Minh Phat",
       experience:lang==="vi"?"Kinh nghiệm | Minh Phat":"Experience | Minh Phat",
       skills:lang==="vi"?"Kỹ năng | Minh Phat":"Skills | Minh Phat",
       education:lang==="vi"?"Học vấn | Minh Phat":"Education | Minh Phat",
@@ -409,8 +433,19 @@ function App() {
       contact:lang==="vi"?"Liên hệ | Minh Phat":"Contact | Minh Phat"
     };
     document.title=selected?selected.title+" | Minh Phat":(sectionTitles[route]||"Tran Viet Minh Phat | Python Application Engineer");
+    const pageDescriptions={
+      home:text[lang].intro,
+      projects:text[lang].projectsPageIntro,
+      "projects/ai":text[lang].aiDesc,
+      "projects/backend":text[lang].backendDesc,
+      experience:text[lang].experiencePageIntro,
+      skills:text[lang].skillsPageIntro,
+      education:text[lang].educationPageIntro,
+      about:text[lang].aboutPageIntro,
+      contact:text[lang].contactPageIntro
+    };
     const description=document.querySelector('meta[name="description"]');
-    if(description) description.content=text[lang].intro;
+    if(description) description.content=pageDescriptions[route]||text[lang].intro;
   },[lang,route]);
   const parts=route.split("/");
   let content;
@@ -418,11 +453,11 @@ function App() {
   else if(route==="projects") content=<ProjectsPage lang={lang}/>;
   else if(route==="projects/ai") content=<ProjectsPage lang={lang} category="ai"/>;
   else if(route==="projects/backend") content=<ProjectsPage lang={lang} category="backend"/>;
-  else if(route==="experience") content=<main id="main-content"><ExperiencePreview lang={lang} full/></main>;
-  else if(route==="skills") content=<main id="main-content"><SkillsSection lang={lang}/></main>;
-  else if(route==="education") content=<main id="main-content"><EducationSection lang={lang}/></main>;
+  else if(route==="experience") content=<ExperiencePreview lang={lang} full/>;
+  else if(route==="skills") content=<SkillsSection lang={lang}/>;
+  else if(route==="education") content=<EducationSection lang={lang}/>;
   else if(route==="about") content=<AboutPage lang={lang}/>;
-  else if(route==="contact") content=<main id="main-content"><ContactSection lang={lang}/></main>;
+  else if(route==="contact") content=<ContactSection lang={lang}/>;
   else if(parts[0]==="project") content=<ProjectDetail project={projects.find(p=>p.slug===parts[1])} lang={lang}/>;
   else content=<NotFound lang={lang}/>;
   return <><a className="skip-link" href="#main-content">Skip to content</a><Header lang={lang} setLang={setLang}/>{content}<Footer lang={lang}/></>;
