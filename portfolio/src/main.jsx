@@ -404,7 +404,7 @@ function AboutPage({ lang }) {
       <div className="about-subheading"><span>{vi?"CÁCH TIẾP CẬN":"WORKING APPROACH"}</span><h2>{vi?"Bắt đầu từ bài toán, không phải từ công nghệ":"Start with the problem, not the technology"}</h2></div>
       <div className="about-grid">{principles.map(item=><article key={item[0]}><span>{item[0]}</span><h3>{item[1]}</h3><p>{item[2]}</p></article>)}</div>
     </section>
-    <div className="about-direction"><span>{vi?"ĐỊNH HƯỚNG DÀI HẠN":"LONG-TERM DIRECTION"}</span><p>{vi?"Thiết kế phần mềm doanh nghiệp tích hợp AI để giảm thao tác lặp lại, hỗ trợ ra quyết định và nâng cao hiệu suất vận hành. Tối ưu nhân sự theo hướng phân bổ nguồn lực hợp lý hơn, không chỉ đơn thuần cắt giảm số lượng người.":"Design AI-integrated business software to reduce repetitive work, support decisions and improve operational efficiency. Optimise workforce allocation so people are used more effectively, rather than treating headcount reduction as the goal."}</p></div>
+    <div className="about-direction"><span>{vi?"ĐỊNH HƯỚNG DÀI HẠN":"LONG-TERM DIRECTION"}</span><p>{vi?"Thiết kế phần mềm doanh nghiệp tích hợp AI để giảm thao tác lặp lại, hỗ trợ ra quyết định và nâng cao hiệu suất vận hành; đồng thời giúp doanh nghiệp bố trí và sử dụng nguồn lực nhân sự phù hợp hơn với nhu cầu thực tế.":"Design AI-integrated business software to reduce repetitive work, support decisions and improve operational efficiency, while helping companies allocate and use workforce capacity more effectively based on real operational needs."}</p></div>
     <p className="scope-note"><Icon name="check" size={17}/>{t.noOt}</p>
   </div></main>;
 }
