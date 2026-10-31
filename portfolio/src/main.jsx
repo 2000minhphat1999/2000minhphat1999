@@ -381,13 +381,13 @@ function ExperiencePreview({ lang }) {
 function AboutPage({ lang }) {
   const vi=lang==="vi";
   const journey=vi?[
-    ["09/2018 – 06/2023","NỀN TẢNG CHUYÊN MÔN","Công nghệ Kỹ thuật Cơ điện tử","Đào tạo về hệ thống cơ khí - điện tử và tư duy kỹ thuật liên ngành. Trong quá trình học, tôi tiếp cận lập trình C, IoT và các hệ thống có kết hợp phần cứng với phần mềm. Tôi đồng tác giả nghiên cứu về hệ thống quản lý chất thải nguy hại ứng dụng IoT, được công bố tại REC-ECIT 2023."],
+    ["09/2018 – 06/2023","HỌC VẤN · XẾP LOẠI KHÁ","Kỹ sư Công nghệ Kỹ thuật Cơ điện tử","Đại học Sư phạm Kỹ thuật – Đại học Đà Nẵng. Chương trình đào tạo liên ngành là nền tảng để tôi tiếp cận lập trình C, IoT và các hệ thống kết hợp phần cứng với phần mềm."]
     ["05/2022 – 07/2022","TIẾP XÚC MÔI TRƯỜNG CÔNG NGHIỆP","Thực tập sinh kỹ thuật Kaizen | Premo Vietnam","Sử dụng Python để trích xuất dữ liệu hiệu suất từ cảm biến công nghiệp qua Modbus RTU; đồng thời tham gia phân tích cụm lắp ráp cơ khí và kết cấu máy. Đây là trải nghiệm kết nối kiến thức cơ điện tử với việc thu thập, xử lý dữ liệu bằng phần mềm."],
     ["09/2022 – 12/2024","PHÁT TRIỂN PHẦN MỀM THEO DỰ ÁN","Computer Vision và OCR","Thực hiện hai dự án freelance chính theo từng đợt, có khoảng trống giữa các lần làm việc: ứng dụng Computer Vision theo dõi giao nhận tại siêu thị và công cụ OCR trích xuất dữ liệu sổ đăng kiểm để nhập lên website Cảng Đà Nẵng. Riêng Halovi là hợp đồng Computer Vision 5 tháng."],
     ["03/2024 – 08/2024","PHÁT TRIỂN ỨNG DỤNG","Research Engineer | University of Technology and Education – The University of Danang","Phát triển website giáo dục, thiết kế và lắp ráp robot STEAM, tham gia xây dựng hoạt động học tập theo dự án."],
     ["02/2025 – 11/2026","PHẦN MỀM DOANH NGHIỆP","Trưởng nhóm kỹ thuật phát triển phần mềm | Sumida","Tham gia phát triển WMS và FEMS. Công việc tập trung vào yêu cầu nghiệp vụ, mô hình hóa quy trình, logic ứng dụng, phát triển chức năng, kiểm thử, sửa lỗi và hỗ trợ chạy thử."]
   ]:[
-    ["09/2018 – 06/2023","ENGINEERING FOUNDATION","Mechatronics Engineering Technology","Studied an interdisciplinary field combining mechanical and electrical systems. My coursework exposed me to C programming, IoT and systems involving both hardware and software. I co-authored an IoT-based hazardous-waste management study published at REC-ECIT 2023."],
+    ["09/2018 – 06/2023","EDUCATION · GOOD CLASSIFICATION","B.Eng. in Mechatronics Engineering Technology","The University of Technology and Education – The University of Danang. The interdisciplinary programme introduced me to C programming, IoT and systems combining hardware and software."]
     ["05/2022 – 07/2022","INDUSTRIAL EXPOSURE","Kaizen Engineer Intern | Premo Vietnam","Used Python to extract performance data from industrial sensors through Modbus RTU, and took part in analysing mechanical assemblies and machine structures. This internship connected my Mechatronics background with software-based data collection and processing."],
     ["09/2022 – 12/2024","PROJECT-BASED SOFTWARE DEVELOPMENT","Computer Vision and OCR","Completed two main freelance projects in separate engagements with gaps between them: a Computer Vision application for supermarket delivery monitoring and an OCR tool to extract vehicle-registration data for the Da Nang Port website. The Halovi engagement was a separate five-month Computer Vision contract."],
     ["03/2024 – 08/2024","APPLICATION DEVELOPMENT","Research Engineer | University of Technology and Education – The University of Danang","Developed educational websites, designed and assembled STEAM robots, and contributed to project-based learning activities."],
@@ -420,7 +420,7 @@ function AboutPage({ lang }) {
 
     <section className="about-block about-journey">
       <div className="about-block-heading"><span>02 / MY JOURNEY</span><h2>{vi?"Mạch chuyên môn: từ hệ thống cơ điện tử đến hệ thống phần mềm":"The progression: from mechatronic systems to software systems"}</h2><p>{vi?"Quá trình chuyển hướng diễn ra qua những trải nghiệm cụ thể với cảm biến, dữ liệu, ứng dụng và phần mềm phục vụ vận hành.":"The transition took shape through practical exposure to sensors, data, applications and software used in operations."}</p></div>
-      <div className="about-journey-grid">{journey.map(item=><article key={item[0]+item[2]}><time>{item[0]}</time><span>{item[1]}</span><h3>{item[2]}</h3><p>{item[3]}</p></article>)}</div>
+      <div className="about-journey-list">{journey.map(item=><article className="about-journey-item" key={item[0]+item[2]}><div className="about-journey-meta"><time>{item[0]}</time><span>{item[1]}</span></div><div className="about-journey-content"><h3>{item[2]}</h3><p>{item[3]}</p></div></article>)}</div>
     </section>
 
     <section className="about-block about-mindset">
