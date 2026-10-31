@@ -381,33 +381,70 @@ function ExperiencePreview({ lang }) {
 function AboutPage({ lang }) {
   const t=text[lang];
   const vi=lang==="vi";
-  const principles=vi?[
-    ["01 / BUSINESS SYSTEMS","WMS & FEMS","Tại Sumida, tôi tham gia phát triển WMS: làm rõ yêu cầu với bộ phận kho, phân tích luồng nghiệp vụ, lập trình chức năng, kiểm thử và xử lý lỗi. Với FEMS, tôi tham gia xử lý dữ liệu, phát triển dashboard điện năng và chức năng tính chi phí điện."],
-    ["02 / PYTHON DEVELOPMENT","Python & ứng dụng nghiệp vụ","Python là nền tảng phát triển chính của tôi. Tôi tập trung vào logic ứng dụng và xử lý dữ liệu, đồng thời sử dụng Flask, FastAPI, SQL và PostgreSQL trong các hệ thống và dự án được trình bày trong portfolio."],
-    ["03 / COMPUTER VISION & OCR","Nhận diện hình ảnh và xử lý tài liệu","Tôi từng làm hợp đồng Computer Vision 5 tháng tại Halovi. Trong các dự án freelance riêng biệt, tôi sử dụng YOLOv5 và DeepSORT cho bài toán theo dõi giao nhận, đồng thời dùng OCR để trích xuất thông tin hồ sơ và hỗ trợ nhập liệu lên website."]
+  const journey=vi?[
+    ["01 / ENGINEERING FOUNDATION","Nền tảng Cơ điện tử","Tôi học Công nghệ Kỹ thuật Cơ điện tử tại Đại học Sư phạm Kỹ thuật – Đại học Đà Nẵng. Việc tiếp xúc với lập trình vi xử lý giúp tôi nhận ra mình muốn đi sâu hơn vào lập trình và cách phần mềm điều khiển, kết nối các thành phần của một hệ thống."],
+    ["02 / SOFTWARE PROJECTS","Làm quen với các bài toán phần mềm","Tôi tham gia các dự án phần mềm theo từng giai đoạn, trong đó có Computer Vision và OCR. Tôi có hợp đồng Computer Vision 5 tháng tại Halovi; ngoài ra, freelance là các đợt công việc riêng biệt với hai dự án chính, không phải quá trình làm liên tục."],
+    ["03 / BUSINESS SOFTWARE","Chuyển trọng tâm sang hệ thống doanh nghiệp","Tại Sumida, tôi tham gia phát triển các ứng dụng phục vụ vận hành, nổi bật là WMS và FEMS. Đây là giai đoạn giúp tôi hiểu rõ hơn mối liên hệ giữa yêu cầu của người dùng, quy tắc nghiệp vụ và phần mềm được sử dụng trong công việc hằng ngày."]
   ]:[
-    ["01 / BUSINESS SYSTEMS","WMS & FEMS","At Sumida, I contributed to WMS development by clarifying requirements with warehouse users, reviewing workflows, implementing features, testing and fixing issues. In FEMS, I worked on data processing, an electricity-monitoring dashboard and electricity-cost calculations."],
-    ["02 / PYTHON DEVELOPMENT","Python business applications","Python is my primary development foundation. I focus on application logic and data processing, and use Flask, FastAPI, SQL and PostgreSQL across the systems and projects presented in this portfolio."],
-    ["03 / COMPUTER VISION & OCR","Visual recognition and document processing","I completed a five-month Computer Vision contract at Halovi. In separate freelance projects, I used YOLOv5 and DeepSORT for delivery-monitoring workflows, and OCR to extract information from vehicle documents and support website data entry."]
+    ["01 / ENGINEERING FOUNDATION","A Mechatronics foundation","I studied Mechatronics Engineering Technology at the University of Technology and Education – The University of Danang. Exposure to microcontroller programming sparked my interest in going deeper into software and how it connects and controls the parts of a system."],
+    ["02 / SOFTWARE PROJECTS","Exploring practical software problems","I worked on software projects in separate periods, including Computer Vision and OCR. I completed a five-month Computer Vision contract at Halovi. My freelance work also consisted of separate engagements with two main projects, not continuous full-time work."],
+    ["03 / BUSINESS SOFTWARE","Moving toward enterprise applications","At Sumida, I contributed to applications used in business operations, particularly WMS and FEMS. This experience gave me a closer understanding of how user needs, business rules and software come together in day-to-day work."]
+  ];
+  const mindset=vi?[
+    ["Hiểu bối cảnh sử dụng","Tôi quan tâm ai sẽ dùng phần mềm, họ cần giải quyết việc gì và những điều kiện thực tế nào ảnh hưởng đến cách sử dụng."],
+    ["Nhìn vấn đề ở cấp hệ thống","Một chức năng không đứng riêng lẻ. Dữ liệu, quy tắc nghiệp vụ và các thành phần liên quan cần phối hợp nhất quán."],
+    ["Quan tâm đến kết quả thực tế","Tôi coi kiểm thử, phản hồi khi sử dụng và việc xử lý những tình huống chưa ổn là phần cần thiết để cải thiện chất lượng phần mềm."]
+  ]:[
+    ["Understand the working context","I pay attention to who will use the software, what they need to accomplish and which real-world constraints affect its use."],
+    ["Think beyond an individual feature","A feature does not work in isolation. Data, business rules and related components need to work together consistently."],
+    ["Focus on practical outcomes","I see testing, user feedback and handling unexpected behaviour as necessary parts of improving software quality."]
+  ];
+  const contributions=vi?[
+    ["WMS","Phần mềm quản lý kho","Tham gia làm rõ yêu cầu với người dùng kho, phân tích luồng nghiệp vụ, triển khai logic ứng dụng, kiểm thử chức năng, sửa lỗi và hỗ trợ chạy thử."],
+    ["FEMS","Phần mềm quản lý năng lượng","Tham gia các chức năng xử lý dữ liệu, dashboard giám sát điện năng và tính toán chi phí điện."],
+    ["PYTHON","Phát triển ứng dụng","Python là nền tảng chính. Các công nghệ tôi đã sử dụng trong công việc và dự án gồm Flask, FastAPI, SQL, SQLAlchemy và PostgreSQL."],
+    ["COMPUTER VISION","Phát hiện và theo dõi đối tượng","Có hợp đồng Computer Vision 5 tháng tại Halovi; trong dự án freelance theo dõi giao nhận tại siêu thị, tôi sử dụng YOLOv5 và DeepSORT."],
+    ["OCR","Trích xuất dữ liệu tài liệu","Trong một dự án freelance cho Cảng Đà Nẵng, tôi làm quy trình OCR hồ sơ kiểm định phương tiện đã scan và hỗ trợ tự động điền dữ liệu lên website."]
+  ]:[
+    ["WMS","Warehouse management software","Contributed to clarifying requirements with warehouse users, reviewing workflows, implementing application logic, testing features, fixing issues and supporting trial use."],
+    ["FEMS","Energy management software","Contributed to data-processing functions, an electricity-monitoring dashboard and electricity-cost calculations."],
+    ["PYTHON","Application development","Python is my primary development foundation. Technologies I have used across work and projects include Flask, FastAPI, SQL, SQLAlchemy and PostgreSQL."],
+    ["COMPUTER VISION","Object detection and tracking","I completed a five-month Computer Vision contract at Halovi. In a separate supermarket delivery-monitoring freelance project, I used YOLOv5 and DeepSORT."],
+    ["OCR","Document data extraction","In a freelance project for Da Nang Port, I worked on an OCR workflow for scanned vehicle-inspection documents and assisted data entry into a website."]
   ];
   return <main id="main-content" className="inner-page about-page"><div className="container">
-    <PageHeading index="01" kicker={t.about} title={vi?"Từ Cơ điện tử đến phát triển phần mềm":"From Mechatronics to Software Engineering"} intro={vi?"Tôi bắt đầu với nền tảng kỹ sư Cơ điện tử. Việc tiếp xúc với lập trình vi xử lý trong quá trình học dần dẫn tôi sang lĩnh vực IT và phát triển phần mềm.":"My background is in Mechatronics Engineering. Exposure to microcontroller programming during my studies gradually led me toward IT and software development."}/>
-    <section className="about-story">
-      <div className="about-story-index"><span>BACKGROUND / 01</span><strong>{vi?"Điểm bắt đầu":"Where it started"}</strong></div>
-      <div className="about-story-copy">
-        <h2>{vi?"Lập trình là cầu nối giữa Cơ điện tử và IT":"Programming became the bridge between Mechatronics and IT"}</h2>
-        <p>{vi?"Ngành Cơ điện tử giúp tôi tiếp cận lập trình vi xử lý. Từ nền tảng đó, tôi dần chuyển sự quan tâm sang phần mềm và tiếp tục phát triển theo hướng IT. Đây là quá trình chuyển hướng từng bước, không phải một thay đổi tách rời khỏi nền tảng kỹ thuật ban đầu.":"Mechatronics introduced me to microcontroller programming. From that foundation, my interest gradually shifted toward software, and I continued developing in IT. It was a step-by-step transition built on my original engineering background."}</p>
-        <p>{vi?"Trong công việc, tôi có cơ hội tham gia phát triển WMS và FEMS; bên cạnh đó là nền tảng Python cùng những dự án riêng về Computer Vision và OCR. Những trải nghiệm này giúp tôi xác định rõ hướng đi: làm phần mềm phục vụ công việc thực tế và mở rộng khả năng tự động hóa bằng AI khi công nghệ đó thực sự phù hợp.":"My work has exposed me to WMS and FEMS development, alongside my Python foundation and separate Computer Vision and OCR projects. These experiences have helped clarify my direction: building software for real work and using AI to improve automation when it is genuinely useful."}</p>
+    <PageHeading index="01" kicker="WHO I AM" title={vi?"Tôi có nền tảng Cơ điện tử và tập trung phát triển phần mềm Python cho bài toán doanh nghiệp.":"A Mechatronics-trained engineer focused on Python software for business needs."} intro={vi?"Tôi chuyển hướng sang phát triển phần mềm từ nền tảng kỹ thuật và lập trình vi xử lý. Hiện tại, mối quan tâm chính của tôi là ứng dụng Python, hệ thống nghiệp vụ và cách phần mềm có thể giúp công việc vận hành hiệu quả hơn.":"I moved into software development from an engineering and microcontroller-programming background. My current focus is Python applications, business systems and how software can make operational work more effective."}/>
+
+    <section className="about-block about-journey">
+      <div className="about-block-heading"><span>02 / MY JOURNEY</span><h2>{vi?"Từ nền tảng kỹ thuật đến phần mềm phục vụ công việc thực tế":"From an engineering foundation to software used in real work"}</h2></div>
+      <div className="about-journey-grid">{journey.map(item=><article key={item[0]}><span>{item[0]}</span><h3>{item[1]}</h3><p>{item[2]}</p></article>)}</div>
+    </section>
+
+    <section className="about-block about-mindset">
+      <div className="about-block-heading"><span>03 / PROFESSIONAL MINDSET</span><h2>{vi?"Cách tôi tiếp cận một vấn đề kỹ thuật":"How I approach an engineering problem"}</h2><p>{vi?"Tôi không xem việc hoàn thành một chức năng là đích đến duy nhất. Điều quan trọng là giải pháp có phù hợp với cách công việc diễn ra và hoạt động ổn định khi được sử dụng hay không.":"Completing a feature is not the only goal. The solution also needs to fit the way work is done and behave reliably when people use it."}</p></div>
+      <div className="about-mindset-grid">{mindset.map((item,i)=><article key={item[0]}><span>0{i+1}</span><h3>{item[0]}</h3><p>{item[1]}</p></article>)}</div>
+    </section>
+
+    <section className="about-block about-bring">
+      <div className="about-block-heading"><span>04 / WHAT I BRING</span><h2>{vi?"Kinh nghiệm và công nghệ tôi đã trực tiếp tham gia":"Experience and technologies I have worked with"}</h2><p>{vi?"Các mảng dưới đây đến từ công việc, hợp đồng và những dự án freelance riêng biệt. Phạm vi từng phần được trình bày đúng theo trải nghiệm thực tế.":"The areas below come from employment, a fixed-term contract and separate freelance projects. Each is described within the scope of my actual involvement."}</p></div>
+      <div className="about-bring-grid">{contributions.map(item=><article key={item[0]}><span>{item[0]}</span><h3>{item[1]}</h3><p>{item[2]}</p></article>)}</div>
+    </section>
+
+    <section className="about-block about-direction">
+      <div className="about-block-heading"><span>05 / CAREER DIRECTION</span><h2>{vi?"Trở thành kỹ sư có thể xây dựng giải pháp từ nhu cầu thực tế":"Grow into an engineer who builds solutions around real needs"}</h2></div>
+      <div className="about-direction-content">
+        <p className="about-direction-lead">{vi?"Trong những năm tới, tôi muốn phát triển thành kỹ sư phần mềm doanh nghiệp có thể đảm nhận phạm vi công việc rộng hơn: hiểu bài toán vận hành, tham gia định hình giải pháp, xây dựng các thành phần phần mềm và góp phần bảo đảm hệ thống hoạt động tin cậy.":"Over the coming years, I want to grow into a business software engineer who can take broader responsibility: understanding operational problems, helping shape solutions, building software components and contributing to reliable systems."}</p>
+        <div className="about-direction-stages">
+          <div><span>{vi?"TRƯỚC MẮT":"NEAR TERM"}</span><p>{vi?"Làm vững Python Backend, cơ sở dữ liệu, API, kiểm thử và tích hợp hệ thống.":"Strengthen Python backend development, databases, APIs, testing and system integration."}</p></div>
+          <div><span>{vi?"TRONG VÀI NĂM TỚI":"NEXT STAGE"}</span><p>{vi?"Nâng cao năng lực thiết kế phần mềm, nhìn nhận kiến trúc tổng thể và chịu trách nhiệm nhiều hơn về chất lượng giải pháp.":"Develop stronger software-design and system-level thinking, while taking greater responsibility for solution quality."}</p></div>
+          <div><span>{vi?"ĐỊNH HƯỚNG DÀI HẠN":"LONG TERM"}</span><p>{vi?"Tích hợp AI vào phần mềm doanh nghiệp ở những nơi có giá trị rõ ràng: giảm thao tác lặp lại, hỗ trợ quyết định và giúp sử dụng nguồn lực phù hợp hơn với nhu cầu vận hành.":"Integrate AI into business software where it adds clear value: reducing repetitive work, supporting decisions and helping organisations use resources in line with operational needs."}</p></div>
+        </div>
       </div>
     </section>
-    <section className="about-principles">
-      <div className="about-subheading"><span>{vi?"TÔI CÓ THỂ ĐÓNG GÓP":"WHAT I BRING"}</span><h2>{vi?"Kinh nghiệm từ hệ thống vận hành đến tự động hóa":"Experience across business systems and automation"}</h2></div>
-      <div className="about-grid">{principles.map(item=><article key={item[0]}><span>{item[0]}</span><h3>{item[1]}</h3><p>{item[2]}</p></article>)}</div>
-    </section>
-    <div className="about-direction"><span>{vi?"ĐỊNH HƯỚNG PHÁT TRIỂN":"CAREER DIRECTION"}</span><p>{vi?"Trong những năm tới, tôi muốn phát triển thành kỹ sư phần mềm doanh nghiệp có thể đảm nhận nhiều hơn trong việc hiểu nhu cầu vận hành, định hình giải pháp và xây dựng hệ thống ổn định, dễ sử dụng. Trước mắt, tôi tập trung làm vững backend Python, cơ sở dữ liệu, tích hợp hệ thống và chất lượng phần mềm. Về lâu dài, tôi muốn đưa AI vào những quy trình mà nó tạo ra giá trị rõ ràng: giảm việc lặp lại, khai thác dữ liệu tốt hơn và hỗ trợ ra quyết định.":"Over the next few years, I want to grow into a business software engineer who can take broader responsibility for understanding operational needs, shaping solutions and building reliable, usable systems. My near-term focus is to deepen Python backend development, databases, system integration and software quality. Over time, I want to apply AI where it creates clear value: reducing repetitive work, making better use of data and supporting decisions."}</p></div>
     <p className="scope-note"><Icon name="check" size={17}/>{t.noOt}</p>
   </div></main>;
 }
+
 function NotFound({ lang }) {
   const t=text[lang];
   return <main id="main-content" className="inner-page not-found"><div className="container"><div className="section-kicker">404 / NOT FOUND</div><h1>Oops.</h1><p>{t.notFound}</p><a className="button button-primary" href="#home">{t.homeAction}<Icon name="arrow" size={16}/></a></div></main>;
