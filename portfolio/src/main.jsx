@@ -279,7 +279,7 @@ function displayProjectTitle(project,lang) {
 
 function displayTag(tag,lang) {
   if(lang!=="vi") return tag;
-  const labels={"Video tracking":"Theo dõi video","Image processing":"Xử lý ảnh","Automation":"Tự động hóa","REST APIs":"API dịch vụ","Dataset design":"Thiết kế tập dữ liệu","Model evaluation":"Đánh giá mô hình","Computer Vision":"Thị giác máy tính","Workflow analysis":"Phân tích quy trình","Business logic":"Logic nghiệp vụ","Data validation":"Kiểm tra dữ liệu","Mechatronics":"Cơ điện tử","STEAM robotics":"Robot STEAM"};
+  const labels={"Video tracking":"Theo dõi video","Image processing":"Xử lý ảnh","Automation":"Tự động hóa","REST APIs":"API dịch vụ","Dataset design":"Thiết kế tập dữ liệu","Model evaluation":"Đánh giá mô hình","Computer Vision":"Thị giác máy tính","Workflow analysis":"Phân tích quy trình","Business logic":"Logic nghiệp vụ","Data validation":"Kiểm tra dữ liệu","Mechatronics":"Cơ điện tử","STEAM robotics":"Robot STEAM","Slave ID discovery":"Dò địa chỉ Slave","Register mapping":"Xác định thanh ghi"};
   return labels[tag]||tag;
 }
 
@@ -416,14 +416,14 @@ function ExperiencePreview({ lang }) {
     {
       n:"05",kind:vi?"NỀN TẢNG KỸ THUẬT":"ENGINEERING FOUNDATION",
       evidence:vi?"Thực tập & đào tạo":"Internship & education",
-      title:vi?"Cơ điện tử và dữ liệu thiết bị":"Mechatronics & equipment data",
+      title:vi?"Cơ điện tử & giao tiếp thiết bị công nghiệp":"Mechatronics & industrial device communication",
       desc:vi
-        ?"Nền tảng Cơ điện tử, lập trình C, IoT và robot STEAM giúp tôi hiểu bối cảnh thiết bị và sản xuất. Trong kỳ thực tập tại Premo, tôi sử dụng Python để trích xuất dữ liệu hiệu suất từ cảm biến công nghiệp qua Modbus RTU."
-        :"My Mechatronics background, C programming, IoT and STEAM robotics provide context for equipment and manufacturing. During my internship at Premo, I used Python to extract performance data from industrial sensors through Modbus RTU.",
+        ?"Nền tảng Cơ điện tử, lập trình C, IoT và robot STEAM giúp tôi hiểu bối cảnh thiết bị và sản xuất. Trong kỳ thực tập tại Premo, tôi sử dụng Python thu thập dữ liệu cảm biến qua Modbus RTU. Tôi có thể khảo sát thiết bị Modbus RTU trên RS-485, dò địa chỉ thiết bị (Slave ID), xác định địa chỉ thanh ghi (Register) và đọc/đối chiếu giá trị dữ liệu."
+        :"My Mechatronics background, C programming, IoT and STEAM robotics provide context for equipment and manufacturing. During my Premo internship, I used Python to collect sensor data over Modbus RTU. I can also investigate Modbus RTU devices over RS-485 by discovering device addresses (slave IDs), identifying register addresses and reading/checking register values.",
       proof:vi
-        ?"Bằng chứng: kỳ thực tập Premo 05/2022–07/2022. Modbus RTU được giới hạn ở trải nghiệm thực tập."
-        :"Evidence: Premo internship, 05/2022–07/2022. Modbus RTU experience is limited to the internship.",
-      tags:["Mechatronics","C","IoT","Modbus RTU","STEAM robotics"]
+        ?"Bằng chứng: kỳ thực tập Premo 05/2022–07/2022 có sử dụng Python thu thập dữ liệu qua Modbus RTU; kỹ năng khảo sát địa chỉ và thanh ghi được nêu ở phạm vi thiết bị, không phải triển khai PLC/SCADA."
+        :"Evidence: the Premo internship (05/2022–07/2022) included Python-based sensor data acquisition over Modbus RTU. Device-address discovery and register identification are presented as technical capabilities, not as PLC/SCADA deployment experience.",
+      tags:["Mechatronics","C","IoT","Modbus RTU","RS-485","Slave ID discovery","Register mapping"]
     },
     {
       n:"06",kind:vi?"CÁCH THỨC TRIỂN KHAI":"DELIVERY PRACTICE",
