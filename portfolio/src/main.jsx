@@ -12,7 +12,7 @@ const text = {
     aboutPageIntro:"How I approach operational software problems: understand the workflow, make rules explicit, then implement and verify.",
     contactPageIntro:"For opportunities in Python applications, ERP/WMS, backend engineering and application support.",
     homeFocusTitle:"Build around the actual workflow.",
-    homeFocusText:"Explore the engineering work, professional timeline and technical capabilities through separate pages."
+    homeFocusText:"Explore the engineering work, professional timeline and technical capabilities through separate pages.",
     availability:"Open to relevant opportunities", eyebrow:"PYTHON APPLICATION ENGINEERING",
     headlineA:"I build software around", headlineB:"real operational workflows.",
     intro:"I work across business requirements, Python application logic, database-backed features and validation. My main direction is ERP/WMS and backend applications; Computer Vision and OCR are supporting experience.",
@@ -88,7 +88,7 @@ const text = {
     aboutPageIntro:"Cách tôi tiếp cận bài toán phần mềm vận hành: hiểu quy trình, làm rõ quy tắc, sau đó triển khai và kiểm chứng.",
     contactPageIntro:"Trao đổi cơ hội về ứng dụng Python, ERP/WMS, Backend và Application Support.",
     homeFocusTitle:"Phần mềm phải bám sát quy trình thực tế.",
-    homeFocusText:"Khám phá dự án kỹ thuật, dòng thời gian kinh nghiệm và năng lực chuyên môn qua từng trang riêng biệt."
+    homeFocusText:"Khám phá dự án kỹ thuật, dòng thời gian kinh nghiệm và năng lực chuyên môn qua từng trang riêng biệt.",
     availability:"Sẵn sàng trao đổi cơ hội phù hợp", eyebrow:"PHÁT TRIỂN ỨNG DỤNG PYTHON",
     headlineA:"Tôi xây dựng phần mềm dựa trên", headlineB:"quy trình vận hành thực tế.",
     intro:"Tôi làm việc từ yêu cầu nghiệp vụ, logic ứng dụng Python, chức năng gắn với cơ sở dữ liệu đến kiểm thử và xác thực. Hướng chính là ERP/WMS và Backend; Computer Vision và OCR là kinh nghiệm bổ trợ.",
