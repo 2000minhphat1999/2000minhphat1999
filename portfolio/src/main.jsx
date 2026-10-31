@@ -382,13 +382,13 @@ function AboutPage({ lang }) {
   const t=text[lang];
   const vi=lang==="vi";
   const principles=vi?[
-    ["01 / SYSTEMS THINKING","Tư duy hệ thống","Nhìn nhận bài toán trong bối cảnh tổng thể, cân nhắc mối liên hệ giữa mục tiêu, con người, dữ liệu và công nghệ."],
-    ["02 / SOLUTION DESIGN","Thiết kế giải pháp","Hướng đến cấu trúc phần mềm phù hợp với nhu cầu tổ chức, có khả năng tích hợp và phát triển theo bối cảnh sử dụng."],
-    ["03 / CONTINUOUS IMPROVEMENT","Cải tiến hiệu quả","Quan tâm đến độ tin cậy, hiệu suất và giá trị đầu ra; đánh giá giải pháp dựa trên tác động thực tế."]
+    ["01 / PROBLEM SOLVING","Hiểu đúng vấn đề","Tìm hiểu điều doanh nghiệp thực sự cần giải quyết, thay vì vội chọn công nghệ hoặc bắt tay vào code."],
+    ["02 / BUILDING SOFTWARE","Thiết kế và kết nối giải pháp","Quan tâm đến cách các phần của phần mềm phối hợp với nhau để đáp ứng yêu cầu thực tế."],
+    ["03 / MAKING IT BETTER","Đo lường và cải tiến","Kiểm tra kết quả, tìm chỗ chưa hiệu quả và tiếp tục cải thiện độ ổn định cũng như hiệu suất."]
   ]:[
-    ["01 / SYSTEMS THINKING","Systems thinking","View a problem in its wider context, considering the relationships between organisational goals, people, data and technology."],
-    ["02 / SOLUTION DESIGN","Solution design","Shape software solutions around organisational needs, with the ability to integrate and evolve as usage contexts change."],
-    ["03 / CONTINUOUS IMPROVEMENT","Continuous improvement","Focus on reliability, performance and useful outcomes; assess solutions by their practical impact."]
+    ["01 / PROBLEM SOLVING","Understand the problem","Learn what the business actually needs to solve before choosing a technology or jumping into code."],
+    ["02 / BUILDING SOFTWARE","Design and connect solutions","Think about how the parts of a software system work together to meet real requirements."],
+    ["03 / MAKING IT BETTER","Measure and improve","Check the results, find what is not working well and keep improving reliability and performance."]
   ];
   return <main id="main-content" className="inner-page about-page"><div className="container">
     <PageHeading index="01" kicker={t.about} title={vi?"Từ Cơ điện tử đến phát triển phần mềm":"From Mechatronics to Software Engineering"} intro={vi?"Tôi bắt đầu với nền tảng kỹ sư Cơ điện tử. Việc tiếp xúc với lập trình vi xử lý trong quá trình học dần dẫn tôi sang lĩnh vực IT và phát triển phần mềm.":"My background is in Mechatronics Engineering. Exposure to microcontroller programming during my studies gradually led me toward IT and software development."}/>
@@ -401,7 +401,7 @@ function AboutPage({ lang }) {
       </div>
     </section>
     <section className="about-principles">
-      <div className="about-subheading"><span>{vi?"TƯ DUY NGHỀ NGHIỆP":"PROFESSIONAL MINDSET"}</span><h2>{vi?"Từ bài toán phức tạp đến giá trị thực tiễn":"From complex problems to practical value"}</h2></div>
+      <div className="about-subheading"><span>{vi?"TƯ DUY NGHỀ NGHIỆP":"PROFESSIONAL MINDSET"}</span><h2>{vi?"Hiểu vấn đề, xây giải pháp, cải thiện kết quả":"Understand the problem. Build the solution. Improve the result."}</h2></div>
       <div className="about-grid">{principles.map(item=><article key={item[0]}><span>{item[0]}</span><h3>{item[1]}</h3><p>{item[2]}</p></article>)}</div>
     </section>
     <div className="about-direction"><span>{vi?"ĐỊNH HƯỚNG DÀI HẠN":"LONG-TERM DIRECTION"}</span><p>{vi?"Thiết kế phần mềm doanh nghiệp tích hợp AI để giảm thao tác lặp lại, hỗ trợ ra quyết định và nâng cao hiệu suất vận hành; đồng thời giúp doanh nghiệp bố trí và sử dụng nguồn lực nhân sự phù hợp hơn với nhu cầu thực tế.":"Design AI-integrated business software to reduce repetitive work, support decisions and improve operational efficiency, while helping companies allocate and use workforce capacity more effectively based on real operational needs."}</p></div>
