@@ -80,3 +80,19 @@
 .home-focus-links a:hover{border-color:#b9c9b4;color:#b96c4c}
 .nav-active{color:#b96c4c!important}
 @media(max-width:760px){.contact-page-panel{grid-template-columns:1fr;gap:20px;padding:22px}.home-focus-inner{grid-template-columns:1fr;gap:22px}.home-focus-links{grid-template-columns:1fr}.page-section-page .page-hero h1,.projects-page .page-hero h1{font-size:43px}}
+
+/* Expanded About page: engineering background and career direction */
+.about-story{display:grid;grid-template-columns:minmax(170px,.42fr) minmax(0,1fr);gap:42px;margin:34px 0 58px;padding:30px 0;border-top:1px solid #dfe5dc;border-bottom:1px solid #dfe5dc}
+.about-story-index{display:flex;flex-direction:column;gap:18px;color:#b96c4c}
+.about-story-index span,.about-direction>span,.about-subheading>span{font-size:9px;font-weight:800;letter-spacing:.16em}
+.about-story-index strong{color:#244538;font-size:14px}
+.about-story-copy h2,.about-subheading h2{max-width:650px;margin:0;color:#17352d;font-size:clamp(25px,3vw,36px);letter-spacing:-.045em;line-height:1.15}
+.about-story-copy p{max-width:740px;color:#66766b;font-size:13px;line-height:1.95}
+.about-principles{margin:0 0 44px}
+.about-subheading{display:grid;grid-template-columns:minmax(170px,.42fr) minmax(0,1fr);gap:42px;align-items:start;margin-bottom:24px}
+.about-subheading>span{padding-top:8px;color:#b96c4c}
+.about-grid article h3{margin:14px 0 8px;color:#17352d;font-size:19px;line-height:1.35;letter-spacing:-.025em}
+.about-direction{display:grid;grid-template-columns:minmax(170px,.42fr) minmax(0,1fr);gap:42px;padding:24px 0;border-top:1px solid #dfe5dc}
+.about-direction>span{padding-top:5px;color:#b96c4c}
+.about-direction p{max-width:720px;margin:0;color:#40594a;font-size:14px;line-height:1.9}
+@media(max-width:760px){.about-story,.about-subheading,.about-direction{grid-template-columns:1fr;gap:16px}.about-story{margin:24px 0 42px;padding:22px 0}.about-story-index{gap:8px}.about-subheading{margin-bottom:18px}}
