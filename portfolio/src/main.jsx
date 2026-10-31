@@ -9,7 +9,7 @@ const text = {
     experiencePageIntro:"Employment, a fixed-term contract, intermittent freelance engagements and earlier engineering experience — kept separate by type and duration.",
     skillsPageIntro:"A practical view of the tools and domains used in the work described in this portfolio. No percentage ratings or unsupported proficiency claims.",
     educationPageIntro:"Formal engineering education and documented research activity.",
-    aboutPageIntro:"My direction is AI-integrated business software that helps organisations work more effectively and make better use of their resources.",
+    aboutPageIntro:"My professional mindset combines systems thinking, solution design and continuous improvement.",
     contactPageIntro:"For Python business applications, ERP/WMS, backend engineering and AI-integrated workflow opportunities.",
     homeFocusTitle:"Design for operational efficiency.",
     homeFocusText:"Explore how my Python and business-systems foundation connects to my goal of building AI-integrated software for real business workflows.",
@@ -85,7 +85,7 @@ const text = {
     experiencePageIntro:"Kinh nghiệm nhân viên, hợp đồng có thời hạn, freelance theo từng đợt và trải nghiệm kỹ thuật trước đó — được phân loại riêng.",
     skillsPageIntro:"Tổng quan thực tế về công nghệ và lĩnh vực đã sử dụng trong những công việc được trình bày. Không chấm phần trăm hoặc tự nhận mức độ thiếu căn cứ.",
     educationPageIntro:"Quá trình đào tạo kỹ thuật và hoạt động nghiên cứu có thông tin xác nhận.",
-    aboutPageIntro:"Định hướng của tôi là phần mềm doanh nghiệp tích hợp AI nhằm nâng cao hiệu quả công việc và sử dụng nguồn lực tốt hơn.",
+    aboutPageIntro:"Tư duy nghề nghiệp của tôi kết hợp góc nhìn hệ thống, thiết kế giải pháp và cải tiến hiệu quả.",
     contactPageIntro:"Trao đổi cơ hội về ứng dụng Python, ERP/WMS, Backend và phần mềm doanh nghiệp tích hợp AI.",
     homeFocusTitle:"Thiết kế để nâng cao hiệu suất vận hành.",
     homeFocusText:"Từ nền tảng Python và hệ thống nghiệp vụ, tôi hướng đến phần mềm tích hợp AI để cải thiện quy trình và sử dụng nguồn lực doanh nghiệp hiệu quả hơn.",
@@ -382,13 +382,13 @@ function AboutPage({ lang }) {
   const t=text[lang];
   const vi=lang==="vi";
   const principles=vi?[
-    ["01 / CONTEXT","Bối cảnh đa chiều","Xem xét mối liên hệ giữa mục tiêu, nguồn lực, dữ liệu và công nghệ trong bối cảnh tổng thể của tổ chức."],
-    ["02 / ADAPTIVE DESIGN","Thiết kế thích ứng","Hướng đến giải pháp phù hợp với đặc thù riêng và có thể phát triển khi nhu cầu doanh nghiệp thay đổi."],
-    ["03 / HUMAN × AI","Phối hợp người và AI","Kết hợp tự động hóa với năng lực con người để tăng khả năng xử lý, đồng thời giữ trách nhiệm ở những quyết định quan trọng."]
+    ["01 / SYSTEMS THINKING","Tư duy hệ thống","Nhìn nhận bài toán trong bối cảnh tổng thể, cân nhắc mối liên hệ giữa mục tiêu, con người, dữ liệu và công nghệ."],
+    ["02 / SOLUTION DESIGN","Thiết kế giải pháp","Hướng đến cấu trúc phần mềm phù hợp với nhu cầu tổ chức, có khả năng tích hợp và phát triển theo bối cảnh sử dụng."],
+    ["03 / CONTINUOUS IMPROVEMENT","Cải tiến hiệu quả","Quan tâm đến độ tin cậy, hiệu suất và giá trị đầu ra; đánh giá giải pháp dựa trên tác động thực tế."]
   ]:[
-    ["01 / CONTEXT","A multi-dimensional view","Consider how organisational goals, resources, data and technology relate within the wider business context."],
-    ["02 / ADAPTIVE DESIGN","Design for change","Shape solutions around organisational needs and allow them to evolve as business conditions change."],
-    ["03 / HUMAN × AI","Human–AI collaboration","Combine automation with human judgement to expand execution capacity while keeping accountability in important decisions."]
+    ["01 / SYSTEMS THINKING","Systems thinking","View a problem in its wider context, considering the relationships between organisational goals, people, data and technology."],
+    ["02 / SOLUTION DESIGN","Solution design","Shape software solutions around organisational needs, with the ability to integrate and evolve as usage contexts change."],
+    ["03 / CONTINUOUS IMPROVEMENT","Continuous improvement","Focus on reliability, performance and useful outcomes; assess solutions by their practical impact."]
   ];
   return <main id="main-content" className="inner-page about-page"><div className="container">
     <PageHeading index="01" kicker={t.about} title={vi?"Từ Cơ điện tử đến phát triển phần mềm":"From Mechatronics to Software Engineering"} intro={vi?"Tôi bắt đầu với nền tảng kỹ sư Cơ điện tử. Việc tiếp xúc với lập trình vi xử lý trong quá trình học dần dẫn tôi sang lĩnh vực IT và phát triển phần mềm.":"My background is in Mechatronics Engineering. Exposure to microcontroller programming during my studies gradually led me toward IT and software development."}/>
@@ -401,7 +401,7 @@ function AboutPage({ lang }) {
       </div>
     </section>
     <section className="about-principles">
-      <div className="about-subheading"><span>{vi?"TRỌNG TÂM PHÁT TRIỂN":"AREAS OF FOCUS"}</span><h2>{vi?"Nhìn vấn đề ở nhiều lớp, không theo một khuôn mẫu cố định":"Look across layers, not through a fixed template"}</h2></div>
+      <div className="about-subheading"><span>{vi?"TƯ DUY NGHỀ NGHIỆP":"PROFESSIONAL MINDSET"}</span><h2>{vi?"Từ bài toán phức tạp đến giá trị thực tiễn":"From complex problems to practical value"}</h2></div>
       <div className="about-grid">{principles.map(item=><article key={item[0]}><span>{item[0]}</span><h3>{item[1]}</h3><p>{item[2]}</p></article>)}</div>
     </section>
     <div className="about-direction"><span>{vi?"ĐỊNH HƯỚNG DÀI HẠN":"LONG-TERM DIRECTION"}</span><p>{vi?"Thiết kế phần mềm doanh nghiệp tích hợp AI để giảm thao tác lặp lại, hỗ trợ ra quyết định và nâng cao hiệu suất vận hành; đồng thời giúp doanh nghiệp bố trí và sử dụng nguồn lực nhân sự phù hợp hơn với nhu cầu thực tế.":"Design AI-integrated business software to reduce repetitive work, support decisions and improve operational efficiency, while helping companies allocate and use workforce capacity more effectively based on real operational needs."}</p></div>
