@@ -79,7 +79,7 @@ const text = {
     dataset:"Dataset", baseline:"Baseline", evaluation:"Evaluation", notFound:"This portfolio page could not be found.", homeAction:"Back to home",
     backTop:"Back to top", viDegree:"Degree classification: Good",
     skipToContent:"Skip to content", brandHome:"Minh Phat — home", toggleNavigation:"Toggle navigation", mainNavigation:"Main navigation", language:"Language",
-    projectWord:"PROJECT", projectIndex:"INDEX", categoryBackend:"PYTHON BACKEND · ERP / WMS", categoryAi:"COMPUTER VISION · OCR", categoryPlanned:"PROPOSED COMPUTER VISION",
+    projectWord:"PROJECT", projectIndex:"INDEX", regionLabel:"VIETNAM", brandDescriptor:"PYTHON · ERP / WMS", categoryBackend:"PYTHON BACKEND · ERP / WMS", categoryAi:"COMPUTER VISION · OCR", categoryPlanned:"PROPOSED COMPUTER VISION",
     projectAiNav:"Computer Vision · OCR", projectBackendNav:"Python · ERP / WMS",
     sumidaDuration:"1 yr 10 mo", haloviDuration:"5 months", homeFocusKicker:"PROFILE / OVERVIEW", heroProfile:"01 / 04 — PROFILE",
     heroArtLabel:"Illustration of an operational software workflow", artTopLeft:"ENGINEERING / 01", artTopRight:"BUSINESS APPLICATIONS",
@@ -168,7 +168,7 @@ const text = {
     dataset:"Tập dữ liệu", baseline:"Mô hình cơ sở", evaluation:"Đánh giá", notFound:"Không tìm thấy trang này.", homeAction:"Về trang chủ",
     backTop:"Lên đầu trang", viDegree:"Xếp loại Khá",
     skipToContent:"Chuyển đến nội dung chính", brandHome:"Minh Phát — trang chủ", toggleNavigation:"Mở hoặc đóng điều hướng", mainNavigation:"Điều hướng chính", language:"Ngôn ngữ",
-    projectWord:"DỰ ÁN", projectIndex:"DANH MỤC", categoryBackend:"PYTHON BACKEND · ERP / WMS", categoryAi:"THỊ GIÁC MÁY TÍNH · OCR", categoryPlanned:"ĐỀ XUẤT THỬ NGHIỆM THỊ GIÁC MÁY TÍNH",
+    projectWord:"DỰ ÁN", projectIndex:"DANH MỤC", regionLabel:"VIỆT NAM", brandDescriptor:"ỨNG DỤNG PYTHON · ERP / WMS", categoryBackend:"PYTHON BACKEND · ERP / WMS", categoryAi:"THỊ GIÁC MÁY TÍNH · OCR", categoryPlanned:"ĐỀ XUẤT THỬ NGHIỆM THỊ GIÁC MÁY TÍNH",
     projectAiNav:"Thị giác máy tính · OCR", projectBackendNav:"Python · ERP / WMS",
     sumidaDuration:"1 năm 10 tháng", haloviDuration:"5 tháng", homeFocusKicker:"HỒ SƠ / TỔNG QUAN", heroProfile:"01 / 04 — HỒ SƠ",
     heroArtLabel:"Minh họa quy trình vận hành phần mềm", artTopLeft:"KỸ THUẬT / 01", artTopRight:"ỨNG DỤNG NGHIỆP VỤ",
@@ -208,7 +208,7 @@ function Icon({ name, size=18 }) {
 
 function Brand({ lang }) {
   const t=text[lang];
-  return <a className="brand" href="#home" aria-label={t.brandHome}><span className="brand-mark">MP<span>.</span></span><span className="brand-name">MINH PHAT<small>PYTHON · ERP / WMS</small></span></a>;
+  return <a className="brand" href="#home" aria-label={t.brandHome}><span className="brand-mark">MP<span>.</span></span><span className="brand-name">MINH PHAT<small>{t.brandDescriptor}</small></span></a>;
 }
 
 function Header({ lang, setLang, route }) {
@@ -302,7 +302,7 @@ function Hero({ lang }) {
     <div className="container hero-container">
       <div className="hero-copy">
         <div className="availability"><span className="availability-dot"/>{t.availability}</div>
-        <div className="hero-kicker">{t.eyebrow}<span>—</span>VIETNAM</div>
+        <div className="hero-kicker">{t.eyebrow}<span>—</span>{t.regionLabel}</div>
         <h1>{t.headlineA}<br/><em>{t.headlineB}</em></h1>
         <p className="hero-intro">{t.intro}</p>
         <div className="hero-actions"><a className="button button-primary" href="#projects">{t.explore}<Icon name="arrow" size={17}/></a><a className="button button-quiet" href="mailto:tranvietminhphat@gmail.com">{t.getInTouch}<Icon name="up" size={15}/></a></div>
