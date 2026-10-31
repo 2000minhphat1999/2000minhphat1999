@@ -379,71 +379,74 @@ function ExperiencePreview({ lang }) {
 }
 
 function AboutPage({ lang }) {
-  const t=text[lang];
   const vi=lang==="vi";
   const journey=vi?[
-    ["01 / ENGINEERING FOUNDATION","Nền tảng Cơ điện tử","Tôi học Công nghệ Kỹ thuật Cơ điện tử tại Đại học Sư phạm Kỹ thuật – Đại học Đà Nẵng. Việc tiếp xúc với lập trình vi xử lý giúp tôi nhận ra mình muốn đi sâu hơn vào lập trình và cách phần mềm điều khiển, kết nối các thành phần của một hệ thống."],
-    ["02 / SOFTWARE PROJECTS","Làm quen với các bài toán phần mềm","Tôi tham gia các dự án phần mềm theo từng giai đoạn, trong đó có Computer Vision và OCR. Tôi có hợp đồng Computer Vision 5 tháng tại Halovi; ngoài ra, freelance là các đợt công việc riêng biệt với hai dự án chính, không phải quá trình làm liên tục."],
-    ["03 / BUSINESS SOFTWARE","Chuyển trọng tâm sang hệ thống doanh nghiệp","Tại Sumida, tôi tham gia phát triển các ứng dụng phục vụ vận hành, nổi bật là WMS và FEMS. Đây là giai đoạn giúp tôi hiểu rõ hơn mối liên hệ giữa yêu cầu của người dùng, quy tắc nghiệp vụ và phần mềm được sử dụng trong công việc hằng ngày."]
+    ["09/2018 – 06/2023","ĐÀO TẠO KỸ THUẬT","Kỹ sư Công nghệ Kỹ thuật Cơ điện tử","Tốt nghiệp Đại học Sư phạm Kỹ thuật – Đại học Đà Nẵng, xếp loại Khá. Nền tảng đào tạo giúp tôi tiếp cận tư duy kỹ thuật, lập trình và các hệ thống có sự kết hợp giữa phần cứng và phần mềm."],
+    ["09/2022 – 12/2024","FREELANCE THEO DỰ ÁN","Hai dự án phần mềm chính","Thực hiện theo từng đợt, có khoảng trống giữa các lần làm việc: ứng dụng Computer Vision hỗ trợ quản lý giao nhận tại siêu thị và công cụ OCR trích xuất dữ liệu sổ đăng kiểm để nhập lên website Cảng Đà Nẵng."],
+    ["11/2023 – 03/2024","HỢP ĐỒNG 5 THÁNG","Computer Vision Engineer | Halovi","Tham gia phát triển các thành phần Computer Vision trong phạm vi hợp đồng có thời hạn 5 tháng."],
+    ["03/2024 – 08/2024","NGHIÊN CỨU / GIÁO DỤC","Research Engineer | University of Technology and Education – The University of Danang","Phát triển website giáo dục; thiết kế, lắp ráp robot STEAM và tham gia xây dựng hoạt động học tập theo dự án."],
+    ["02/2025 – 11/2026","PHẦN MỀM DOANH NGHIỆP","Trưởng nhóm kỹ thuật phát triển phần mềm | Sumida","Tham gia phát triển WMS và FEMS. Trọng tâm công việc gồm làm rõ yêu cầu, mô hình hóa quy trình, phát triển logic và chức năng ứng dụng, kiểm thử, xử lý lỗi và hỗ trợ chạy thử."]
   ]:[
-    ["01 / ENGINEERING FOUNDATION","A Mechatronics foundation","I studied Mechatronics Engineering Technology at the University of Technology and Education – The University of Danang. Exposure to microcontroller programming sparked my interest in going deeper into software and how it connects and controls the parts of a system."],
-    ["02 / SOFTWARE PROJECTS","Exploring practical software problems","I worked on software projects in separate periods, including Computer Vision and OCR. I completed a five-month Computer Vision contract at Halovi. My freelance work also consisted of separate engagements with two main projects, not continuous full-time work."],
-    ["03 / BUSINESS SOFTWARE","Moving toward enterprise applications","At Sumida, I contributed to applications used in business operations, particularly WMS and FEMS. This experience gave me a closer understanding of how user needs, business rules and software come together in day-to-day work."]
+    ["09/2018 – 06/2023","ENGINEERING EDUCATION","B.Eng. in Mechatronics Engineering Technology","Graduated from the University of Technology and Education – The University of Danang, with a Good classification. The programme provided an engineering foundation across technical systems and software-related work."],
+    ["09/2022 – 12/2024","PROJECT-BASED FREELANCE","Two main software projects","Delivered in separate engagements with gaps between them: a Computer Vision application for supermarket delivery operations and an OCR tool to extract vehicle-registration data for entry into the Da Nang Port website."],
+    ["11/2023 – 03/2024","FIVE-MONTH CONTRACT","Computer Vision Engineer | Halovi","Contributed to Computer Vision components within the scope of a five-month fixed-term contract."],
+    ["03/2024 – 08/2024","RESEARCH / EDUCATION","Research Engineer | University of Technology and Education – The University of Danang","Developed educational websites, designed and assembled STEAM robots, and contributed to project-based learning activities."],
+    ["02/2025 – 11/2026","ENTERPRISE SOFTWARE","Software Development Technical Team Lead | Sumida","Contributed to WMS and FEMS development. The work included requirements clarification, workflow modelling, application logic and feature development, testing, defect handling and trial deployment support."]
   ];
   const mindset=vi?[
-    ["Hiểu bối cảnh sử dụng","Tôi quan tâm ai sẽ dùng phần mềm, họ cần giải quyết việc gì và những điều kiện thực tế nào ảnh hưởng đến cách sử dụng."],
-    ["Nhìn vấn đề ở cấp hệ thống","Một chức năng không đứng riêng lẻ. Dữ liệu, quy tắc nghiệp vụ và các thành phần liên quan cần phối hợp nhất quán."],
-    ["Quan tâm đến kết quả thực tế","Tôi coi kiểm thử, phản hồi khi sử dụng và việc xử lý những tình huống chưa ổn là phần cần thiết để cải thiện chất lượng phần mềm."]
+    ["01","Phân tích nghiệp vụ","Trao đổi với người dùng kho để làm rõ yêu cầu; phân tích và mô hình hóa luồng nghiệp vụ trước khi xác định logic xử lý của chức năng."],
+    ["02","Thiết kế logic và triển khai chức năng","Chuyển yêu cầu nghiệp vụ thành logic ứng dụng, xử lý dữ liệu và các chức năng phù hợp với quy trình sử dụng. Ưu tiên cách triển khai có thể kiểm tra và bảo trì."],
+    ["03","Kiểm thử và xử lý lỗi","Kiểm thử chức năng, xác nhận kết quả xử lý, sửa lỗi phát sinh và hỗ trợ chạy thử. Quan tâm đến tính đúng đắn của dữ liệu và hành vi của ứng dụng trong quá trình sử dụng."]
   ]:[
-    ["Understand the working context","I pay attention to who will use the software, what they need to accomplish and which real-world constraints affect its use."],
-    ["Think beyond an individual feature","A feature does not work in isolation. Data, business rules and related components need to work together consistently."],
-    ["Focus on practical outcomes","I see testing, user feedback and handling unexpected behaviour as necessary parts of improving software quality."]
+    ["01","Business analysis","Work with warehouse users to clarify requirements, analyse operational workflows and model the process before defining feature behaviour."],
+    ["02","Application logic and implementation","Translate business requirements into application logic, data handling and features that support the intended workflow. Favour implementations that can be tested and maintained."],
+    ["03","Testing and defect resolution","Test features, verify processing results, fix defects and support trial deployment. Pay attention to data correctness and application behaviour during use."]
   ];
   const contributions=vi?[
-    ["WMS","Phần mềm quản lý kho","Tham gia làm rõ yêu cầu với người dùng kho, phân tích luồng nghiệp vụ, triển khai logic ứng dụng, kiểm thử chức năng, sửa lỗi và hỗ trợ chạy thử."],
-    ["FEMS","Phần mềm quản lý năng lượng","Tham gia các chức năng xử lý dữ liệu, dashboard giám sát điện năng và tính toán chi phí điện."],
-    ["PYTHON","Phát triển ứng dụng","Python là nền tảng chính. Các công nghệ tôi đã sử dụng trong công việc và dự án gồm Flask, FastAPI, SQL, SQLAlchemy và PostgreSQL."],
-    ["COMPUTER VISION","Phát hiện và theo dõi đối tượng","Có hợp đồng Computer Vision 5 tháng tại Halovi; trong dự án freelance theo dõi giao nhận tại siêu thị, tôi sử dụng YOLOv5 và DeepSORT."],
-    ["OCR","Trích xuất dữ liệu tài liệu","Trong một dự án freelance cho Cảng Đà Nẵng, tôi làm quy trình OCR hồ sơ kiểm định phương tiện đã scan và hỗ trợ tự động điền dữ liệu lên website."]
+    ["WMS","Warehouse Management System","Tại Sumida, trao đổi với bộ phận kho để làm rõ yêu cầu; phân tích, mô hình hóa quy trình; triển khai logic và chức năng; kiểm thử, sửa lỗi và hỗ trợ chạy thử."],
+    ["FEMS","Factory Energy Management System","Tham gia phát triển chức năng xử lý dữ liệu, dashboard theo dõi điện năng và chức năng tính toán chi phí điện."],
+    ["PYTHON","Phát triển ứng dụng và backend","Python là ngôn ngữ phát triển chính. Công việc và dự án đã sử dụng Python, Flask, SQL và PostgreSQL. FastAPI và SQLAlchemy được sử dụng trong RackFlow, dự án portfolio đang phát triển."],
+    ["COMPUTER VISION","Phát hiện và theo dõi đối tượng","Có hợp đồng 5 tháng tại Halovi, tham gia phát triển thành phần Computer Vision. Trong dự án freelance quản lý giao nhận tại siêu thị, sử dụng YOLOv5 để phát hiện và DeepSORT để theo dõi đối tượng qua video."],
+    ["OCR","Trích xuất dữ liệu và tự động nhập liệu","Trong dự án freelance cho Cảng Đà Nẵng, xử lý ảnh tài liệu đã scan, trích xuất thông tin từ sổ đăng kiểm bằng OCR và tự động điền dữ liệu lên website."]
   ]:[
-    ["WMS","Warehouse management software","Contributed to clarifying requirements with warehouse users, reviewing workflows, implementing application logic, testing features, fixing issues and supporting trial use."],
-    ["FEMS","Energy management software","Contributed to data-processing functions, an electricity-monitoring dashboard and electricity-cost calculations."],
-    ["PYTHON","Application development","Python is my primary development foundation. Technologies I have used across work and projects include Flask, FastAPI, SQL, SQLAlchemy and PostgreSQL."],
-    ["COMPUTER VISION","Object detection and tracking","I completed a five-month Computer Vision contract at Halovi. In a separate supermarket delivery-monitoring freelance project, I used YOLOv5 and DeepSORT."],
-    ["OCR","Document data extraction","In a freelance project for Da Nang Port, I worked on an OCR workflow for scanned vehicle-inspection documents and assisted data entry into a website."]
+    ["WMS","Warehouse Management System","At Sumida, worked with warehouse users to clarify requirements, model workflows, implement application logic and features, test, fix defects and support trial deployment."],
+    ["FEMS","Factory Energy Management System","Contributed to data-processing functions, an electricity-monitoring dashboard and electricity-cost calculation features."],
+    ["PYTHON","Application and backend development","Python is my primary programming language. Work and project experience includes Python, Flask, SQL and PostgreSQL. FastAPI and SQLAlchemy are used in RackFlow, a portfolio project in development."],
+    ["COMPUTER VISION","Object detection and tracking","Completed a five-month contract at Halovi, contributing to Computer Vision components. In a separate supermarket delivery project, used YOLOv5 for detection and DeepSORT for video-based tracking."],
+    ["OCR","Document extraction and data entry","For a freelance project at Da Nang Port, processed scanned documents, extracted vehicle-registration information with OCR and automated data entry into the website."]
   ];
   return <main id="main-content" className="inner-page about-page"><div className="container">
-    <PageHeading index="01" kicker="WHO I AM" title={vi?"Tôi có nền tảng Cơ điện tử và tập trung phát triển phần mềm Python cho bài toán doanh nghiệp.":"A Mechatronics-trained engineer focused on Python software for business needs."} intro={vi?"Tôi chuyển hướng sang phát triển phần mềm từ nền tảng kỹ thuật và lập trình vi xử lý. Hiện tại, mối quan tâm chính của tôi là ứng dụng Python, hệ thống nghiệp vụ và cách phần mềm có thể giúp công việc vận hành hiệu quả hơn.":"I moved into software development from an engineering and microcontroller-programming background. My current focus is Python applications, business systems and how software can make operational work more effective."}/>
+    <PageHeading index="01" kicker="WHO I AM" title={vi?"Kỹ sư phát triển phần mềm với nền tảng Cơ điện tử, tập trung vào Python và hệ thống nghiệp vụ.":"Software developer with a Mechatronics background, focused on Python and business systems."} intro={vi?"Tôi có 1 năm 10 tháng kinh nghiệm tại Sumida, tham gia phát triển WMS và FEMS. Nền tảng chuyên môn của tôi là Python và ứng dụng nghiệp vụ; Computer Vision và OCR là kinh nghiệm từ hợp đồng và các dự án riêng.":"I have 1 year and 10 months of experience at Sumida, contributing to WMS and FEMS development. My core foundation is Python and business applications, complemented by Computer Vision and OCR work through a fixed-term contract and separate projects."}/>
 
     <section className="about-block about-journey">
-      <div className="about-block-heading"><span>02 / MY JOURNEY</span><h2>{vi?"Từ nền tảng kỹ thuật đến phần mềm phục vụ công việc thực tế":"From an engineering foundation to software used in real work"}</h2></div>
-      <div className="about-journey-grid">{journey.map(item=><article key={item[0]}><span>{item[0]}</span><h3>{item[1]}</h3><p>{item[2]}</p></article>)}</div>
+      <div className="about-block-heading"><span>02 / MY JOURNEY</span><h2>{vi?"Quá trình chuyển từ đào tạo Cơ điện tử sang phát triển phần mềm":"From Mechatronics education to software development"}</h2><p>{vi?"Các mốc dưới đây phân biệt rõ đào tạo, công việc theo dự án, hợp đồng có thời hạn và kinh nghiệm tại doanh nghiệp.":"The milestones distinguish formal education, project-based work, a fixed-term contract and enterprise employment."}</p></div>
+      <div className="about-journey-grid">{journey.map(item=><article key={item[0]+item[2]}><time>{item[0]}</time><span>{item[1]}</span><h3>{item[2]}</h3><p>{item[3]}</p></article>)}</div>
     </section>
 
     <section className="about-block about-mindset">
-      <div className="about-block-heading"><span>03 / PROFESSIONAL MINDSET</span><h2>{vi?"Cách tôi tiếp cận một vấn đề kỹ thuật":"How I approach an engineering problem"}</h2><p>{vi?"Tôi không xem việc hoàn thành một chức năng là đích đến duy nhất. Điều quan trọng là giải pháp có phù hợp với cách công việc diễn ra và hoạt động ổn định khi được sử dụng hay không.":"Completing a feature is not the only goal. The solution also needs to fit the way work is done and behave reliably when people use it."}</p></div>
-      <div className="about-mindset-grid">{mindset.map((item,i)=><article key={item[0]}><span>0{i+1}</span><h3>{item[0]}</h3><p>{item[1]}</p></article>)}</div>
+      <div className="about-block-heading"><span>03 / PROFESSIONAL MINDSET</span><h2>{vi?"Phân tích nghiệp vụ, triển khai logic và kiểm chứng chức năng":"Business analysis, implementation and verification"}</h2><p>{vi?"Cách tiếp cận hình thành từ công việc phát triển WMS, nơi chức năng phần mềm phải đáp ứng quy trình và yêu cầu của người dùng kho.":"This approach is informed by WMS development, where software features must meet warehouse workflows and user requirements."}</p></div>
+      <div className="about-mindset-grid">{mindset.map(item=><article key={item[0]}><span>{item[0]}</span><h3>{item[1]}</h3><p>{item[2]}</p></article>)}</div>
     </section>
 
     <section className="about-block about-bring">
-      <div className="about-block-heading"><span>04 / WHAT I BRING</span><h2>{vi?"Kinh nghiệm và công nghệ tôi đã trực tiếp tham gia":"Experience and technologies I have worked with"}</h2><p>{vi?"Các mảng dưới đây đến từ công việc, hợp đồng và những dự án freelance riêng biệt. Phạm vi từng phần được trình bày đúng theo trải nghiệm thực tế.":"The areas below come from employment, a fixed-term contract and separate freelance projects. Each is described within the scope of my actual involvement."}</p></div>
+      <div className="about-block-heading"><span>04 / WHAT I BRING</span><h2>{vi?"Kinh nghiệm hệ thống và công nghệ đã sử dụng":"Systems experience and technologies used"}</h2><p>{vi?"Mỗi nội dung được gắn với môi trường và phạm vi công việc tương ứng; dự án cá nhân được phân biệt với kinh nghiệm tại doanh nghiệp.":"Each capability is tied to its work context and scope; personal projects are distinguished from enterprise employment."}</p></div>
       <div className="about-bring-grid">{contributions.map(item=><article key={item[0]}><span>{item[0]}</span><h3>{item[1]}</h3><p>{item[2]}</p></article>)}</div>
     </section>
 
     <section className="about-block about-direction">
-      <div className="about-block-heading"><span>05 / CAREER DIRECTION</span><h2>{vi?"Trở thành kỹ sư có thể xây dựng giải pháp từ nhu cầu thực tế":"Grow into an engineer who builds solutions around real needs"}</h2></div>
+      <div className="about-block-heading"><span>05 / CAREER DIRECTION</span><h2>{vi?"Phát triển theo hướng kỹ sư phần mềm doanh nghiệp":"Growing as an enterprise software engineer"}</h2></div>
       <div className="about-direction-content">
-        <p className="about-direction-lead">{vi?"Trong những năm tới, tôi muốn phát triển thành kỹ sư phần mềm doanh nghiệp có thể đảm nhận phạm vi công việc rộng hơn: hiểu bài toán vận hành, tham gia định hình giải pháp, xây dựng các thành phần phần mềm và góp phần bảo đảm hệ thống hoạt động tin cậy.":"Over the coming years, I want to grow into a business software engineer who can take broader responsibility: understanding operational problems, helping shape solutions, building software components and contributing to reliable systems."}</p>
+        <p className="about-direction-lead">{vi?"Mục tiêu của tôi là phát triển từ kỹ sư triển khai chức năng thành kỹ sư có thể đảm nhiệm thiết kế và phát triển các hệ thống nghiệp vụ ở quy mô lớn hơn, từ tầng backend và dữ liệu đến tích hợp giữa các thành phần.":"My goal is to progress from feature implementation toward engineering broader business applications, taking responsibility for backend services, data design and integration across system components."}</p>
         <div className="about-direction-stages">
-          <div><span>{vi?"TRƯỚC MẮT":"NEAR TERM"}</span><p>{vi?"Làm vững Python Backend, cơ sở dữ liệu, API, kiểm thử và tích hợp hệ thống.":"Strengthen Python backend development, databases, APIs, testing and system integration."}</p></div>
-          <div><span>{vi?"TRONG VÀI NĂM TỚI":"NEXT STAGE"}</span><p>{vi?"Nâng cao năng lực thiết kế phần mềm, nhìn nhận kiến trúc tổng thể và chịu trách nhiệm nhiều hơn về chất lượng giải pháp.":"Develop stronger software-design and system-level thinking, while taking greater responsibility for solution quality."}</p></div>
-          <div><span>{vi?"ĐỊNH HƯỚNG DÀI HẠN":"LONG TERM"}</span><p>{vi?"Tích hợp AI vào phần mềm doanh nghiệp ở những nơi có giá trị rõ ràng: giảm thao tác lặp lại, hỗ trợ quyết định và giúp sử dụng nguồn lực phù hợp hơn với nhu cầu vận hành.":"Integrate AI into business software where it adds clear value: reducing repetitive work, supporting decisions and helping organisations use resources in line with operational needs."}</p></div>
+          <div><span>{vi?"NĂNG LỰC CẦN CỦNG CỐ":"NEXT TECHNICAL FOCUS"}</span><p>{vi?"Python Backend, thiết kế API, mô hình dữ liệu quan hệ, xử lý giao dịch, kiểm thử tự động và khả năng vận hành ứng dụng.":"Python backend engineering, API design, relational data modelling, transaction handling, automated testing and application operations."}</p></div>
+          <div><span>{vi?"PHẠM VI MUỐN ĐẢM NHẬN":"BROADER RESPONSIBILITY"}</span><p>{vi?"Thiết kế cấu trúc ứng dụng, tích hợp các module nghiệp vụ và bảo đảm tính nhất quán dữ liệu, khả năng truy vết và độ tin cậy của hệ thống.":"Design application structure, integrate business modules and improve data consistency, traceability and system reliability."}</p></div>
+          <div><span>{vi?"ĐỊNH HƯỚNG DÀI HẠN":"LONG-TERM DIRECTION"}</span><p>{vi?"Phát triển phần mềm doanh nghiệp có tích hợp AI cho các tác vụ phù hợp như trích xuất tài liệu, phân loại thông tin và hỗ trợ xử lý quy trình; kết quả AI cần được kiểm tra và có cơ chế xác nhận phù hợp.":"Build enterprise software with AI for suitable tasks such as document extraction, information classification and workflow assistance, with appropriate validation and human review."}</p></div>
         </div>
       </div>
     </section>
-    <p className="scope-note"><Icon name="check" size={17}/>{t.noOt}</p>
   </div></main>;
 }
+
 
 function NotFound({ lang }) {
   const t=text[lang];
