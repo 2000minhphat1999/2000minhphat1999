@@ -9,13 +9,13 @@ const text = {
     experiencePageIntro:"Employment, a fixed-term contract, intermittent freelance engagements and earlier engineering experience — kept separate by type and duration.",
     skillsPageIntro:"A practical view of the tools and domains used in the work described in this portfolio. No percentage ratings or unsupported proficiency claims.",
     educationPageIntro:"Formal engineering education and documented research activity.",
-    aboutPageIntro:"How I approach operational software problems: understand the workflow, make rules explicit, then implement and verify.",
-    contactPageIntro:"For opportunities in Python applications, ERP/WMS, backend engineering and application support.",
-    homeFocusTitle:"Build around the actual workflow.",
-    homeFocusText:"Explore the engineering work, professional timeline and technical capabilities through separate pages.",
-    availability:"Open to relevant opportunities", eyebrow:"PYTHON APPLICATION ENGINEERING",
-    headlineA:"I build software around", headlineB:"real operational workflows.",
-    intro:"I work across business requirements, Python application logic, database-backed features and validation. My main direction is ERP/WMS and backend applications; Computer Vision and OCR are supporting experience.",
+    aboutPageIntro:"My direction is AI-integrated business software: understand the workflow, model the rules, and validate improvements to operational work.",
+    contactPageIntro:"For Python business applications, ERP/WMS, backend engineering and AI-integrated workflow opportunities.",
+    homeFocusTitle:"Design for operational efficiency.",
+    homeFocusText:"Explore how my Python and business-systems foundation connects to my goal of building AI-integrated software for real business workflows.",
+    availability:"Open to relevant opportunities", eyebrow:"PYTHON · AI-INTEGRATED BUSINESS SOFTWARE",
+    headlineA:"Business software designed", headlineB:"to work smarter with AI.",
+    intro:"My direction is to design Python-based business software that integrates AI into real operational workflows—reducing repetitive work, supporting decisions and helping companies use their workforce more effectively. My current foundation is Python applications and ERP/WMS; Computer Vision and OCR come from separate project experience.",
     explore:"Explore projects", getInTouch:"Get in touch", snapshot:"PROFESSIONAL SNAPSHOT", sumida:"at Sumida", halovi:"contract at Halovi", freelance:"main freelance projects",
     selected:"SELECTED WORK", featuredTitle:"Projects with a clear problem, scope and status.",
     featuredIntro:"Professional experience, past project engagements and work still in development are clearly separated.",
@@ -32,7 +32,7 @@ const text = {
     core:"CORE", data:"DATA & WORKFLOWS", supporting:"SUPPORTING EXPERIENCE",
     education:"EDUCATION", educationTitle:"Engineering foundation.",
     contactTitle:"Have an operational workflow to improve?",
-    contactText:"Open to relevant roles in Python application development, ERP/WMS, backend engineering and application support. Computer Vision remains a supplementary direction.",
+    contactText:"Interested in Python business applications, ERP/WMS and backend roles that can grow toward AI-integrated workflows and measurable operational improvements. Computer Vision remains a supporting project domain.",
     email:"Email", linkedin:"LinkedIn", github:"GitHub profile", footer:"Practical systems. Clear scope. Verifiable work.",
     problem:"Problem & objective", role:"My role", approach:"Solution & implementation", scope:"Scope",
     evidence:"Evidence & limitations", next:"Next step", technologies:"TECHNOLOGIES", back:"Back to projects",
@@ -85,13 +85,13 @@ const text = {
     experiencePageIntro:"Kinh nghiệm nhân viên, hợp đồng có thời hạn, freelance theo từng đợt và trải nghiệm kỹ thuật trước đó — được phân loại riêng.",
     skillsPageIntro:"Tổng quan thực tế về công nghệ và lĩnh vực đã sử dụng trong những công việc được trình bày. Không chấm phần trăm hoặc tự nhận mức độ thiếu căn cứ.",
     educationPageIntro:"Quá trình đào tạo kỹ thuật và hoạt động nghiên cứu có thông tin xác nhận.",
-    aboutPageIntro:"Cách tôi tiếp cận bài toán phần mềm vận hành: hiểu quy trình, làm rõ quy tắc, sau đó triển khai và kiểm chứng.",
-    contactPageIntro:"Trao đổi cơ hội về ứng dụng Python, ERP/WMS, Backend và Application Support.",
-    homeFocusTitle:"Phần mềm phải bám sát quy trình thực tế.",
-    homeFocusText:"Khám phá dự án kỹ thuật, dòng thời gian kinh nghiệm và năng lực chuyên môn qua từng trang riêng biệt.",
-    availability:"Sẵn sàng trao đổi cơ hội phù hợp", eyebrow:"PHÁT TRIỂN ỨNG DỤNG PYTHON",
-    headlineA:"Tôi xây dựng phần mềm dựa trên", headlineB:"quy trình vận hành thực tế.",
-    intro:"Tôi làm việc từ yêu cầu nghiệp vụ, logic ứng dụng Python, chức năng gắn với cơ sở dữ liệu đến kiểm thử và xác thực. Hướng chính là ERP/WMS và Backend; Computer Vision và OCR là kinh nghiệm bổ trợ.",
+    aboutPageIntro:"Định hướng của tôi là phần mềm doanh nghiệp tích hợp AI: hiểu quy trình, mô hình hóa quy tắc và kiểm chứng hiệu quả cải thiện vận hành.",
+    contactPageIntro:"Trao đổi cơ hội về ứng dụng Python, ERP/WMS, Backend và phần mềm doanh nghiệp tích hợp AI.",
+    homeFocusTitle:"Thiết kế để nâng cao hiệu suất vận hành.",
+    homeFocusText:"Từ nền tảng Python và hệ thống nghiệp vụ, tôi hướng đến phần mềm tích hợp AI để cải thiện quy trình và sử dụng nguồn lực doanh nghiệp hiệu quả hơn.",
+    availability:"Sẵn sàng trao đổi cơ hội phù hợp", eyebrow:"PYTHON · PHẦN MỀM DOANH NGHIỆP TÍCH HỢP AI",
+    headlineA:"Thiết kế phần mềm doanh nghiệp", headlineB:"tích hợp AI để vận hành hiệu quả hơn.",
+    intro:"Định hướng của tôi là thiết kế phần mềm doanh nghiệp tích hợp AI vào quy trình vận hành thực tế, giảm thao tác lặp lại, hỗ trợ ra quyết định và giúp doanh nghiệp sử dụng nguồn lực nhân sự hiệu quả hơn. Nền tảng hiện tại của tôi là ứng dụng Python và ERP/WMS; Computer Vision và OCR là kinh nghiệm từ các dự án riêng biệt.",
     explore:"Khám phá dự án", getInTouch:"Liên hệ", snapshot:"TÓM TẮT KINH NGHIỆM", sumida:"tại Sumida", halovi:"hợp đồng tại Halovi", freelance:"dự án freelance chính",
     selected:"DỰ ÁN TIÊU BIỂU", featuredTitle:"Dự án có bài toán, phạm vi và trạng thái rõ ràng.",
     featuredIntro:"Portfolio phân biệt kinh nghiệm công việc, dự án đã thực hiện theo từng đợt và phần đang phát triển.",
@@ -108,7 +108,7 @@ const text = {
     core:"NỀN TẢNG CHÍNH", data:"DỮ LIỆU & QUY TRÌNH", supporting:"KINH NGHIỆM BỔ TRỢ",
     education:"HỌC VẤN", educationTitle:"Nền tảng kỹ thuật.",
     contactTitle:"Bạn có quy trình vận hành cần cải thiện?",
-    contactText:"Quan tâm đến vị trí phù hợp về phát triển ứng dụng Python, ERP/WMS, Backend và Application Support. Computer Vision là hướng bổ trợ.",
+    contactText:"Quan tâm đến các vị trí Python, ERP/WMS và Backend có thể phát triển theo hướng tích hợp AI vào quy trình nghiệp vụ và cải thiện hiệu suất vận hành. Computer Vision là lĩnh vực dự án bổ trợ.",
     email:"Email", linkedin:"LinkedIn", github:"GitHub cá nhân", footer:"Hệ thống thực tế. Phạm vi rõ ràng. Công việc có thể kiểm chứng.",
     problem:"Bài toán & mục tiêu", role:"Vai trò cá nhân", approach:"Giải pháp & triển khai", scope:"Phạm vi",
     evidence:"Bằng chứng & giới hạn", next:"Bước tiếp theo", technologies:"CÔNG NGHỆ", back:"Quay lại dự án",
@@ -397,14 +397,14 @@ function AboutPage({ lang }) {
       <div className="about-story-copy">
         <h2>{vi?"Lập trình là cầu nối giữa Cơ điện tử và IT":"Programming became the bridge between Mechatronics and IT"}</h2>
         <p>{vi?"Ngành Cơ điện tử giúp tôi tiếp cận lập trình vi xử lý. Từ nền tảng đó, tôi dần chuyển sự quan tâm sang phần mềm và tiếp tục phát triển theo hướng IT. Đây là quá trình chuyển hướng từng bước, không phải một thay đổi tách rời khỏi nền tảng kỹ thuật ban đầu.":"Mechatronics introduced me to microcontroller programming. From that foundation, my interest gradually shifted toward software, and I continued developing in IT. It was a step-by-step transition built on my original engineering background."}</p>
-        <p>{vi?"Tôi đặc biệt hứng thú với hai phần liên kết với nhau: phân tích vấn đề và thiết kế cấu trúc giải pháp; đồng thời tìm hiểu quy trình nghiệp vụ thực tế để phần mềm giải quyết đúng nhu cầu vận hành. Tôi muốn hiểu vì sao quy trình diễn ra như vậy, các quy tắc và ngoại lệ nằm ở đâu, rồi chuyển chúng thành logic ứng dụng có thể kiểm tra. Hiện tại, hướng chuyên môn tôi muốn phát triển tập trung vào ứng dụng Python, hệ thống nghiệp vụ và các quy trình ERP/WMS. Computer Vision và OCR là những mảng tôi có trải nghiệm qua các dự án riêng biệt.":"I am especially interested in two connected parts of software work: analysing a problem and designing the structure of a solution, while understanding the real business workflow so the software addresses the operational need. I want to understand why a process works the way it does, where its rules and exceptions sit, and how to translate them into testable application logic. My current focus is Python applications, business systems and ERP/WMS workflows. Computer Vision and OCR are additional areas I have explored through separate projects."}</p>
+        <p>{vi?"Tôi đặc biệt hứng thú với hai phần liên kết với nhau: phân tích vấn đề và thiết kế cấu trúc giải pháp; đồng thời tìm hiểu quy trình nghiệp vụ thực tế để phần mềm giải quyết đúng nhu cầu vận hành. Tôi muốn hiểu vì sao quy trình diễn ra như vậy, các quy tắc và ngoại lệ nằm ở đâu, rồi chuyển chúng thành logic ứng dụng có thể kiểm tra. Định hướng dài hạn của tôi là thiết kế phần mềm doanh nghiệp tích hợp AI vào quy trình thực tế để giảm thao tác lặp lại, hỗ trợ ra quyết định và giúp doanh nghiệp phân bổ nguồn lực nhân sự hiệu quả hơn. Ứng dụng Python và ERP/WMS là nền tảng tôi đang phát triển; Computer Vision và OCR là những mảng tôi có trải nghiệm qua các dự án riêng biệt.":"I am especially interested in two connected parts of software work: analysing a problem and designing the structure of a solution, while understanding the real business workflow so the software addresses the operational need. I want to understand why a process works the way it does, where its rules and exceptions sit, and how to translate them into testable application logic. My long-term direction is to design business software that integrates AI into real workflows to reduce repetitive tasks, support better decisions and help companies allocate workforce capacity more effectively. Python applications and ERP/WMS are my current foundation; Computer Vision and OCR are additional areas I have explored through separate projects."}</p>
       </div>
     </section>
     <section className="about-principles">
       <div className="about-subheading"><span>{vi?"CÁCH TIẾP CẬN":"WORKING APPROACH"}</span><h2>{vi?"Bắt đầu từ bài toán, không phải từ công nghệ":"Start with the problem, not the technology"}</h2></div>
       <div className="about-grid">{principles.map(item=><article key={item[0]}><span>{item[0]}</span><h3>{item[1]}</h3><p>{item[2]}</p></article>)}</div>
     </section>
-    <div className="about-direction"><span>{vi?"ĐỊNH HƯỚNG HIỆN TẠI":"CURRENT DIRECTION"}</span><p>{vi?"Phát triển sâu hơn về Python Backend và ứng dụng nghiệp vụ; xây dựng portfolio bằng các dự án có phạm vi, trạng thái và bằng chứng rõ ràng.":"Deepen Python backend and business-application skills, and build a portfolio of projects with clear scope, status and evidence."}</p></div>
+    <div className="about-direction"><span>{vi?"ĐỊNH HƯỚNG DÀI HẠN":"LONG-TERM DIRECTION"}</span><p>{vi?"Thiết kế phần mềm doanh nghiệp tích hợp AI để giảm thao tác lặp lại, hỗ trợ ra quyết định và nâng cao hiệu suất vận hành. Tối ưu nhân sự theo hướng phân bổ nguồn lực hợp lý hơn, không chỉ đơn thuần cắt giảm số lượng người.":"Design AI-integrated business software to reduce repetitive work, support decisions and improve operational efficiency. Optimise workforce allocation so people are used more effectively, rather than treating headcount reduction as the goal."}</p></div>
     <p className="scope-note"><Icon name="check" size={17}/>{t.noOt}</p>
   </div></main>;
 }
