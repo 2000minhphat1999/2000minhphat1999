@@ -296,75 +296,73 @@ function HomePage({ lang }) {
     </section>
   </main>;
 }
-function ExperiencePreview({ lang,full=false }) {
+function ExperiencePreview({ lang }) {
   const t=text[lang];
   const entries=[
     {date:"02/2025 – 11/2026",kind:"EMPLOYMENT",role:t.sumidaRole,company:"Sumida",bullets:[t.sumidaWms,t.sumidaFems]},
     {date:"11/2023 – 03/2024",kind:lang==="vi"?"Hợp đồng 5 tháng":"5-month contract",role:t.haloviRole,company:"Halovi",bullets:[t.haloviText]}
   ];
-  return <section className="section experience-section" id="experience"><div className="container">
-    <SectionHeading index="03" kicker={t.experience} title={t.experienceTitle} intro={t.experienceIntro}/>
-    <div className="experience-block-label">{t.employment}</div><div className="timeline">
-      {entries.map(entry=><article className="timeline-entry" key={entry.company}><div className="timeline-date"><time>{entry.date}</time><span>{entry.kind}</span></div><div className="timeline-body"><h3>{entry.role}</h3><div className="timeline-company">{entry.company}</div><ul>{entry.bullets.map((line,i)=><li key={i}>{line}</li>)}</ul></div></article>)}
+  return <main id="main-content" className="inner-page page-section-page experience-page"><div className="container">
+    <PageHeading index="01" kicker={t.experience} title={t.experienceTitle} intro={t.experiencePageIntro}/>
+    <div className="experience-block-label">{t.employment}</div>
+    <div className="timeline">
+      {entries.map(entry=><article className="timeline-entry" key={entry.company}>
+        <div className="timeline-date"><time>{entry.date}</time><span>{entry.kind}</span></div>
+        <div className="timeline-body"><h3>{entry.role}</h3><div className="timeline-company">{entry.company}</div><ul>{entry.bullets.map((line,i)=><li key={i}>{line}</li>)}</ul></div>
+      </article>)}
     </div>
-    {full&&<><div className="experience-block-label earlier-label">{t.earlier}</div><div className="history-grid">
+    <div className="experience-block-label earlier-label">{t.earlier}</div>
+    <div className="history-grid">
       <article className="history-card"><span className="history-date">09/2022 – 12/2024</span><span className="history-type">{t.freelanceType}</span><h3>{lang==="vi"?"Dự án phần mềm freelance":"Freelance Software Projects"}</h3><p>{t.freelanceText}</p><ul><li>Supermarket Delivery Monitoring — YOLOv5 and DeepSORT.</li><li>OCR-assisted data entry — vehicle-inspection documents and Da Nang Port website.</li></ul></article>
       <article className="history-card"><span className="history-date">03/2024 – 08/2024</span><span className="history-type">{t.research}</span><h3>{t.uniRole}</h3><p className="history-company">The University of Technology and Education — The University of Danang</p><p>{t.uniText}</p></article>
       <article className="history-card"><span className="history-date">05/2022 – 07/2022</span><span className="history-type">{t.internship}</span><h3>{t.premoRole}</h3><p className="history-company">Premo Vietnam</p><p>{t.premoText}</p></article>
-    </div></>}
-    {!full&&<div className="section-bottom-link"><a className="text-link" href="#experience">{t.experience}<Icon name="arrow" size={16}/></a></div>}
-  </div></section>;
-}
-
-function SkillsSection({ lang }) {
+    </div>
+  </div></main>;
+}function SkillsSection({ lang }) {
   const t=text[lang];
   const groups=[
     {n:"01",name:t.core,title:lang==="vi"?"Ứng dụng Python":"Python applications",desc:lang==="vi"?"Logic ứng dụng, triển khai quy trình, gỡ lỗi và xác thực từng bước.":"Application logic, workflow implementation, debugging and incremental validation.",tags:["Python","Flask","FastAPI","REST APIs"]},
     {n:"02",name:t.data,title:lang==="vi"?"Quy trình ERP / WMS":"ERP / WMS workflows",desc:lang==="vi"?"Yêu cầu nghiệp vụ, quy trình dùng SQL, khái niệm tồn kho, kiểm tra dữ liệu và thay đổi trạng thái có thể truy vết.":"Business requirements, SQL-backed workflows, inventory concepts, data checking and traceable state changes.",tags:["SQL","PostgreSQL","SQLAlchemy","WMS / FEMS"]},
-    {n:"03",name:t.supporting,title:lang==="vi"?"Computer Vision & OCR":"Computer Vision & OCR",desc:lang==="vi"?"Đã sử dụng trong các dự án trước đây cho phát hiện, theo dõi đối tượng và trích xuất dữ liệu tài liệu. Đánh giá mô hình vẫn là lĩnh vực đang phát triển.":"Prior project use for object detection, tracking and document data extraction. Model evaluation remains a developing area.",tags:["YOLOv5","DeepSORT","OCR","Image processing"]}
+    {n:"03",name:t.supporting,title:"Computer Vision & OCR",desc:lang==="vi"?"Đã sử dụng trong các dự án trước đây cho phát hiện, theo dõi đối tượng và trích xuất dữ liệu tài liệu. Đánh giá mô hình vẫn là lĩnh vực đang phát triển.":"Prior project use for object detection, tracking and document data extraction. Model evaluation remains a developing area.",tags:["YOLOv5","DeepSORT","OCR","Image processing"]}
   ];
-  return <section className="section skills-section" id="skills"><div className="container">
-    <SectionHeading index="04" kicker={t.skills} title={t.skillsTitle} intro={t.skillsIntro}/>
+  return <main id="main-content" className="inner-page page-section-page skills-page"><div className="container">
+    <PageHeading index="01" kicker={t.skills} title={t.skillsTitle} intro={t.skillsPageIntro}/>
     <div className="skill-grid">{groups.map(g=><article className="skill-card" key={g.n}><div className="skill-top"><span>{g.n}</span><small>{g.name}</small></div><h3>{g.title}</h3><p>{g.desc}</p><div className="tag-list">{g.tags.map(tag=><span key={tag}>{tag}</span>)}</div></article>)}</div>
     <p className="scope-note"><Icon name="check" size={17}/>{t.noOt}</p>
-  </div></section>;
-}
-
-function EducationSection({ lang }) {
+  </div></main>;
+}function EducationSection({ lang }) {
   const t=text[lang];
-  return <section className="section education-section" id="education"><div className="container">
-    <SectionHeading index="05" kicker={t.education} title={t.educationTitle}/>
+  return <main id="main-content" className="inner-page page-section-page education-page"><div className="container">
+    <PageHeading index="01" kicker={t.education} title={t.educationTitle} intro={t.educationPageIntro}/>
     <div className="education-grid">
       <article className="education-card"><div className="education-symbol">ED / 01</div><span className="history-type">{t.education}</span><h3>{t.degree}</h3><p>The University of Technology and Education — The University of Danang</p><div className="education-meta">09/2018 – 06/2023 <b>·</b> {t.viDegree}</div></article>
       <article className="education-card"><div className="education-symbol">RE / 02</div><span className="history-type">{lang==="vi"?"NGHIÊN CỨU":"RESEARCH"}</span><h3>IoT-Based Waste Management System for Hazardous Waste</h3><p>{t.publication}</p><div className="education-meta">{t.award}</div></article>
     </div>
-  </div></section>;
-}
-
-function ContactSection({ lang }) {
+  </div></main>;
+}function ContactSection({ lang }) {
   const t=text[lang];
-  return <section className="contact-section" id="contact"><div className="container contact-inner">
-    <div className="contact-copy"><div className="section-kicker"><span>06</span>{t.contact}</div><h2>{t.contactTitle}</h2><p>{t.contactText}</p></div>
-    <div className="contact-links">
-      <a className="contact-link-card" href="mailto:tranvietminhphat@gmail.com"><span><Icon name="mail" size={19}/>{t.email}</span><strong>tranvietminhphat@gmail.com<Icon name="up" size={17}/></strong></a>
-      <a className="contact-link-card" href="https://www.linkedin.com/in/minhphat-ai/" target="_blank" rel="noopener noreferrer"><span><Icon name="linkedin" size={19}/>{t.linkedin}</span><strong>minhphat-ai<Icon name="up" size={17}/></strong></a>
-      <a className="contact-link-card" href="https://github.com/2000minhphat1999" target="_blank" rel="noopener noreferrer"><span><Icon name="github" size={19}/>{t.github}</span><strong>2000minhphat1999<Icon name="up" size={17}/></strong></a>
+  return <main id="main-content" className="inner-page page-section-page contact-page"><div className="container">
+    <PageHeading index="01" kicker={t.contact} title={t.contactTitle} intro={t.contactPageIntro}/>
+    <div className="contact-page-panel">
+      <p>{t.contactText}</p>
+      <div className="contact-links">
+        <a className="contact-link-card" href="mailto:tranvietminhphat@gmail.com"><span><Icon name="mail" size={19}/>{t.email}</span><strong>tranvietminhphat@gmail.com<Icon name="up" size={17}/></strong></a>
+        <a className="contact-link-card" href="https://www.linkedin.com/in/minhphat-ai/" target="_blank" rel="noopener noreferrer"><span><Icon name="linkedin" size={19}/>{t.linkedin}</span><strong>minhphat-ai<Icon name="up" size={17}/></strong></a>
+        <a className="contact-link-card" href="https://github.com/2000minhphat1999" target="_blank" rel="noopener noreferrer"><span><Icon name="github" size={19}/>{t.github}</span><strong>2000minhphat1999<Icon name="up" size={17}/></strong></a>
+      </div>
     </div>
-  </div></section>;
-}
-
-function ProjectsPage({ lang,category }) {
+  </div></main>;
+}function ProjectsPage({ lang,category }) {
   const t=text[lang];
   const list=category==="ai"?projects.filter(p=>p.category==="ai"):category==="backend"?projects.filter(p=>p.category==="backend"):projects;
   const heading=category==="ai"?t.ai:category==="backend"?t.backend:t.projects;
-  const intro=category==="ai"?t.aiDesc:category==="backend"?t.backendDesc:t.featuredIntro;
-  return <main id="main-content" className="inner-page"><div className="container">
-    <PageHeading index="PROJECTS" kicker={category?category.toUpperCase():"INDEX"} title={heading} intro={category?intro:t.projectsPageIntro}/><div className="page-branch-links"><a className={!category?"selected":""} href="#projects">{t.all}</a><a className={category==="ai"?"selected":""} href="#projects/ai">{t.ai}</a><a className={category==="backend"?"selected":""} href="#projects/backend">{t.backend}</a></div></div>
+  const intro=category==="ai"?t.aiDesc:category==="backend"?t.backendDesc:t.projectsPageIntro;
+  return <main id="main-content" className="inner-page projects-page"><div className="container">
+    <PageHeading index="01" kicker={category?category.toUpperCase():"INDEX"} title={heading} intro={intro}/>
+    <div className="page-branch-links"><a className={!category?"selected":""} href="#projects">{t.all}</a><a className={category==="ai"?"selected":""} href="#projects/ai">{t.ai}</a><a className={category==="backend"?"selected":""} href="#projects/backend">{t.backend}</a></div>
     <div className="project-list">{list.map(project=><ProjectCard key={project.slug} project={project} lang={lang} featured={project.slug==="rackflow"}/>)}</div>
   </div></main>;
-}
-
-function ProjectDetail({ project,lang }) {
+}function ProjectDetail({ project,lang }) {
   const t=text[lang];
   if(!project) return <NotFound lang={lang}/>;
   const labels={problem:t.problem,role:t.role,scope:t.scope,approach:t.approach,evidence:t.evidence,next:t.next};
