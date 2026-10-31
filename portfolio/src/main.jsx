@@ -76,7 +76,7 @@ const text = {
     flow:"WORKFLOW MODEL · ILLUSTRATIVE", receive:"Receive stock", inventory:"Check inventory", reserve:"Reserve stock", trace:"Trace changes",
     video:"Video frames", detection:"YOLOv5 detection", tracking:"DeepSORT tracking", tracks:"Track output",
     document:"Document image", ocr:"Image processing / OCR", fields:"Extracted fields", entry:"Web entry",
-    dataset:"Tập dữ liệu", baseline:"Mô hình cơ sở", evaluation:"Evaluation", notFound:"This portfolio page could not be found.", homeAction:"Back to home",
+    dataset:"Dataset", baseline:"Baseline", evaluation:"Evaluation", notFound:"This portfolio page could not be found.", homeAction:"Back to home",
     backTop:"Back to top", viDegree:"Degree classification: Good",
     skipToContent:"Skip to content", brandHome:"Minh Phat — home", toggleNavigation:"Toggle navigation", mainNavigation:"Main navigation", language:"Language",
     projectWord:"PROJECT", projectIndex:"INDEX", categoryBackend:"PYTHON BACKEND · ERP / WMS", categoryAi:"COMPUTER VISION · OCR", categoryPlanned:"PROPOSED COMPUTER VISION",
@@ -95,11 +95,11 @@ const text = {
   vi: {
     home:"Trang chủ", projects:"Dự án", all:"Tất cả dự án", ai:"AI", backend:"Backend", experience:"Kinh nghiệm", about:"Giới thiệu", contact:"Liên hệ",
     projectsPageIntro:"Xem các dự án theo lĩnh vực kỹ thuật, sau đó mở hồ sơ chi tiết để tìm hiểu phạm vi và bằng chứng.",
-    experiencePageIntro:"Kinh nghiệm nhân viên, hợp đồng có thời hạn, freelance theo từng đợt và trải nghiệm kỹ thuật trước đó — được phân loại riêng.",
-    skillsPageIntro:"Tổng quan thực tế về công nghệ và lĩnh vực đã sử dụng trong những công việc được trình bày. Không chấm phần trăm hoặc tự nhận mức độ thiếu căn cứ.",
+    experiencePageIntro:"Công việc chính thức, hợp đồng có thời hạn, các dự án tự do thực hiện theo từng đợt và trải nghiệm kỹ thuật trước đó được phân loại riêng.",
+    skillsPageIntro:"Tổng quan về công nghệ và lĩnh vực đã được sử dụng trong công việc, hợp đồng và dự án được trình bày. Không dùng thang điểm phần trăm hoặc tự nhận mức độ thành thạo khi chưa có căn cứ.",
     educationPageIntro:"Quá trình đào tạo kỹ thuật và hoạt động nghiên cứu có thông tin xác nhận.",
     aboutPageIntro:"Tư duy nghề nghiệp của tôi kết hợp góc nhìn hệ thống, thiết kế giải pháp và cải tiến hiệu quả.",
-    contactPageIntro:"Trao đổi cơ hội về ứng dụng Python, ERP/WMS, Backend và phần mềm doanh nghiệp tích hợp AI.",
+    contactPageIntro:"Trao đổi cơ hội về ứng dụng Python, ERP/WMS, phát triển hệ thống phía máy chủ và phần mềm doanh nghiệp tích hợp AI.",
     homeFocusTitle:"Thiết kế để nâng cao hiệu suất vận hành.",
     homeFocusText:"Từ nền tảng Python và hệ thống nghiệp vụ, tôi hướng đến phần mềm tích hợp AI để cải thiện quy trình và sử dụng nguồn lực doanh nghiệp hiệu quả hơn.",
     availability:"Sẵn sàng trao đổi cơ hội phù hợp", eyebrow:"PYTHON · PHẦN MỀM DOANH NGHIỆP TÍCH HỢP AI",
@@ -114,7 +114,7 @@ const text = {
     backendDesc:"Dịch vụ Python, quy tắc nghiệp vụ, lưu trữ dữ liệu và quy trình kho. RackFlow là dự án cá nhân đang phát triển.",
     aiDesc:"Các dự án đã thực hiện về phát hiện/theo dõi qua video, OCR nhập liệu tài liệu và một thử nghiệm tương lai được đánh dấu riêng.",
     experienceTitle:"Kinh nghiệm với phạm vi thực tế được phân định.",
-    experienceIntro:"Công việc chính thức, hợp đồng có thời hạn, freelance gián đoạn, nghiên cứu/giáo dục và thực tập được trình bày riêng.",
+    experienceIntro:"Công việc chính thức, hợp đồng có thời hạn, dự án tự do không liên tục, hoạt động nghiên cứu – giáo dục và kỳ thực tập được trình bày riêng.",
     employment:"CÔNG VIỆC & HỢP ĐỒNG", earlier:"DỰ ÁN TỰ DO & KINH NGHIỆM TRƯỚC ĐÓ",
     skills:"NĂNG LỰC", skillsTitle:"Công nghệ và lĩnh vực có thể trình bày bằng bằng chứng.",
     skillsIntro:"Không dùng thanh phần trăm kỹ năng. Các nhóm thể hiện công nghệ gắn với công việc được mô tả.",
@@ -128,44 +128,44 @@ const text = {
     noOt:"Các công nghệ OT/IT công nghiệp như Siemens S7, SCADA, MQTT và OPC UA không được trình bày như kinh nghiệm thực chiến chuyên nghiệp.",
     sumidaRole:"Trưởng nhóm kỹ thuật phát triển phần mềm",
     sumidaWms:"WMS: làm rõ yêu cầu với người dùng kho, phân tích quy trình, triển khai logic ứng dụng, kiểm thử chức năng, sửa lỗi và hỗ trợ chạy thử.",
-    sumidaFems:"FEMS: tham gia chức năng xử lý dữ liệu, dashboard giám sát điện năng và tính toán chi phí điện.",
-    haloviRole:"Kỹ sư Computer Vision",
-    haloviText:"Tham gia các thành phần Computer Vision trong hợp đồng 5 tháng. Nội dung giới hạn ở lĩnh vực và thời hạn đã xác nhận; không bổ sung trách nhiệm production chưa được kiểm chứng.",
+    sumidaFems:"FEMS: tham gia phát triển chức năng xử lý dữ liệu, bảng điều khiển giám sát điện năng và tính toán chi phí điện.",
+    haloviRole:"Kỹ sư thị giác máy tính",
+    haloviText:"Tham gia phát triển các thành phần thị giác máy tính trong hợp đồng 5 tháng. Mô tả chỉ giới hạn ở lĩnh vực và thời hạn đã xác nhận; không bổ sung trách nhiệm triển khai thực tế khi chưa có căn cứ.",
     freelanceText:"Hai dự án chính được thực hiện ở các giai đoạn riêng biệt, có khoảng trống giữa các đợt; không phải công việc toàn thời gian liên tục.",
     uniRole:"Kỹ sư nghiên cứu",
     uniText:"Phát triển website giáo dục, thiết kế và lắp ráp hệ thống robot STEAM, tham gia hoạt động học tập theo dự án.",
     premoRole:"Thực tập sinh kỹ thuật Kaizen",
     premoText:"Hỗ trợ phân tích quy trình lắp ráp và hoạt động cải tiến liên tục trong kỳ thực tập kỹ thuật. Không trình bày đây là kinh nghiệm kỹ sư OT/IT chuyên nghiệp.",
-    freelanceType:"Freelance theo từng đợt", research:"Nghiên cứu / giáo dục", internship:"Thực tập",
+    freelanceType:"Dự án tự do theo từng đợt", research:"Nghiên cứu / giáo dục", internship:"Thực tập",
     degree:"Kỹ sư Công nghệ Kỹ thuật Cơ điện tử",
     publication:"Đồng tác giả bài báo “Building An IoT-Based Waste Management System for Hazardous Waste,” REC-ECIT 2023, trang 193–198.",
     award:"Thành tích nghiên cứu sinh viên năm 2022–2023, bao gồm giải Nhì Cuộc thi Sinh viên nghiên cứu khoa học TP. Đà Nẵng năm 2022.",
     rackSummary:"Ứng dụng vận hành kho tập trung vào nhập kho, tra cứu tồn, tra cứu đơn, giữ tồn và lịch sử thay đổi có thể truy vết.",
-    cvSummary:"Quy trình thị giác máy tính theo dự án, sử dụng video để phát hiện và theo dõi hoạt động giao nhận tại siêu thị.",
+    cvSummary:"Quy trình thị giác máy tính thực hiện theo dự án, sử dụng video để phát hiện và theo dõi hoạt động giao nhận tại siêu thị.",
     ocrSummary:"Quy trình theo dự án, trích xuất thông tin từ hồ sơ kiểm định phương tiện và nhập dữ liệu vào website.",
-    fabricSummary:"Đề xuất thử nghiệm Computer Vision cho kiểm tra bề mặt vải. Chưa xác nhận dataset, triển khai, mô hình huấn luyện hay kết quả đánh giá.",
-    rackProblem:"Quy trình kho cần dữ liệu tồn nhất quán và lịch sử rõ ràng cho các thao tác vận hành. RackFlow mô hình hóa các luồng này trong ứng dụng ERP/WMS quy mô portfolio.",
-    rackRole:"Dự án cá nhân. Tôi xác định phạm vi và triển khai ứng dụng theo từng bước; đây không phải hệ thống khách hàng đã triển khai hay nền tảng kho production.",
+    fabricSummary:"Đề xuất thử nghiệm thị giác máy tính để kiểm tra bề mặt vải. Chưa chọn tập dữ liệu, chưa triển khai, huấn luyện mô hình hoặc có kết quả đánh giá được xác minh.",
+    rackProblem:"Quy trình kho cần dữ liệu tồn nhất quán và lịch sử rõ ràng cho từng thao tác. RackFlow mô hình hóa các luồng này trong một ứng dụng ERP/WMS thuộc hồ sơ năng lực cá nhân.",
+    rackRole:"Dự án cá nhân. Tôi xác định phạm vi và triển khai ứng dụng theo từng bước; đây chưa phải hệ thống bàn giao cho khách hàng hoặc nền tảng đang vận hành tại nhà kho thực tế.",
     rackScope:"Nhập kho và tra cứu tồn; tra cứu đơn và giữ tồn; lịch sử sự kiện phục vụ truy vết vận hành.",
     rackApproach:"Các dịch vụ Python sử dụng FastAPI, Flask, SQLAlchemy và PostgreSQL. Trọng tâm là quy tắc nghiệp vụ, lưu trữ dữ liệu, hành vi quy trình và thay đổi trạng thái tường minh.",
-    rackEvidence:"Các tính năng liệt kê xác định phạm vi portfolio hiện tại. Quy trình xuất kho và vận hành có AI vẫn đang phát triển; không tuyên bố triển khai production hoặc KPI nghiệp vụ.",
-    rackNext:"Hoàn thiện và kiểm thử xuất kho thủ công trước, sau đó mới bổ sung AI với bước xác thực, xác nhận của con người và sự kiện có thể truy vết.",
+    rackEvidence:"Các tính năng được liệt kê xác định phạm vi hiện tại của dự án. Quy trình xuất kho và chức năng hỗ trợ vận hành bằng AI vẫn đang phát triển; chưa có tuyên bố về triển khai thực tế hoặc chỉ số hiệu quả nghiệp vụ.",
+    rackNext:"Hoàn thiện và kiểm thử quy trình xuất kho thủ công trước, sau đó mới bổ sung AI cùng các bước kiểm tra dữ liệu, xác nhận của người vận hành và ghi nhận lịch sử có thể truy vết.",
     cvProblem:"Hỗ trợ giám sát giao nhận bằng cách nhận diện và theo dõi các đối tượng liên quan trong video.",
     cvRole:"Triển khai quy trình Computer Vision sử dụng YOLOv5 để phát hiện đối tượng và DeepSORT để theo dõi đối tượng.",
     cvEvidence:"Dự án tự do đã thực hiện theo từng đợt. Hồ sơ này không tự nhận chỉ số độ chính xác, thông lượng hoặc thời gian tiết kiệm khi chưa có bằng chứng xác minh.",
     cvNext:"Để có bản minh họa có thể tái lập, cần báo cáo precision/recall và các trường hợp lỗi; với theo dõi đối tượng, cần ghi nhận lỗi đổi định danh và hành vi khi đối tượng bị che khuất.",
     ocrProblem:"Giảm thao tác nhập liệu lặp lại từ hồ sơ kiểm định phương tiện dạng giấy vào website Cảng Đà Nẵng.",
     ocrRole:"Sử dụng xử lý ảnh và OCR trong quy trình trích xuất thông tin tài liệu và tự động nhập dữ liệu lên website.",
-    ocrEvidence:"Dự án freelance theo từng đợt. Mẫu tài liệu, độ chính xác từng trường và thời gian tiết kiệm chưa được công bố như bằng chứng đã xác minh.",
+    ocrEvidence:"Dự án tự do được thực hiện theo từng đợt. Chưa công bố mẫu tài liệu, độ chính xác trích xuất theo từng trường hoặc thời gian tiết kiệm dưới dạng kết quả đã được xác minh.",
     ocrNext:"Để có bản minh họa có thể tái lập, cần đo độ khớp chính xác của từng trường (exact match), tỷ lệ phải sửa và khả năng xử lý lỗi trên bộ tài liệu đã được gán nhãn.",
     fabricProblem:"Lỗi bề mặt vải có thể ảnh hưởng chất lượng vật liệu trong sản xuất sofa. Mục tiêu đề xuất là kiểm tra khả năng phát hiện lỗi ổn định trước khi cân nhắc tích hợp vào quy trình nhà máy.",
     fabricApproach:"Kiểm tra tập dữ liệu và chú thích trước; sau đó chọn mô hình cơ sở có thể tái lập, phù hợp với định dạng nhãn. Chỉ quyết định dùng phương pháp phát hiện, phân đoạn hay xử lý ảnh truyền thống sau khi đã xem dữ liệu.",
     fabricEvidence:"Mới ở giai đoạn đề xuất. Chưa chọn tập dữ liệu, chưa triển khai mã nguồn, huấn luyện, đánh giá mô hình hay xác minh việc tích hợp vào nhà máy.",
     fabricNext:"Xác nhận giấy phép sử dụng tập dữ liệu và kiểm tra ảnh mẫu trước khi chọn mô hình hoặc công bố kết quả.",
     flow:"MÔ HÌNH QUY TRÌNH · MINH HỌA", receive:"Nhập kho", inventory:"Kiểm tra tồn", reserve:"Giữ tồn", trace:"Truy vết",
-    video:"Khung hình video", detection:"YOLOv5 phát hiện", tracking:"DeepSORT tracking", tracks:"Kết quả tracking",
+    video:"Khung hình video", detection:"YOLOv5 phát hiện", tracking:"Theo dõi bằng DeepSORT", tracks:"Kết quả theo dõi",
     document:"Ảnh tài liệu", ocr:"Xử lý ảnh / OCR", fields:"Trường thông tin", entry:"Nhập dữ liệu lên website",
-    dataset:"Tập dữ liệu", baseline:"Mô hình cơ sở", evaluation:"Đánh giá", notFound:"Không tìm thấy trang portfolio này.", homeAction:"Về trang chủ",
+    dataset:"Tập dữ liệu", baseline:"Mô hình cơ sở", evaluation:"Đánh giá", notFound:"Không tìm thấy trang này.", homeAction:"Về trang chủ",
     backTop:"Lên đầu trang", viDegree:"Xếp loại Khá",
     skipToContent:"Chuyển đến nội dung chính", brandHome:"Minh Phát — trang chủ", toggleNavigation:"Mở hoặc đóng điều hướng", mainNavigation:"Điều hướng chính", language:"Ngôn ngữ",
     projectWord:"DỰ ÁN", projectIndex:"DANH MỤC", categoryBackend:"PYTHON BACKEND · ERP / WMS", categoryAi:"THỊ GIÁC MÁY TÍNH · OCR", categoryPlanned:"ĐỀ XUẤT THỬ NGHIỆM THỊ GIÁC MÁY TÍNH",
@@ -175,7 +175,7 @@ const text = {
     artTitle1:"Phần mềm tạo", artTitle2:"giá trị thực tiễn.", artSubtitle:"Giải pháp doanh nghiệp tích hợp AI",
     artNeed:"NHU CẦU", artNeedText:"Bài toán nghiệp vụ", artSolution:"GIẢI PHÁP", artSolutionText:"Ứng dụng phần mềm", artImpact:"KẾT QUẢ", artImpactText:"Giá trị sử dụng",
     artFootLeft:"ƯU TIÊN GIÁ TRỊ THỰC TẾ", artFootRight:"MP / HỆ THỐNG",
-    aboutWho:"TÔI LÀ AI", aboutJourney:"02 / HÀNH TRÌNH CHUYÊN MÔN", aboutMindset:"03 / TƯ DUY NGHỀ NGHIỆP", aboutBring:"04 / GIÁ TRỊ TÔI MANG LẠI", aboutDirection:"05 / ĐỊNH HƯỚNG NGHỀ NGHIỆP",
+    aboutWho:"GIỚI THIỆU BẢN THÂN", aboutJourney:"02 / HÀNH TRÌNH CHUYÊN MÔN", aboutMindset:"03 / TƯ DUY NGHỀ NGHIỆP", aboutBring:"04 / GIÁ TRỊ TÔI MANG LẠI", aboutDirection:"05 / ĐỊNH HƯỚNG NGHỀ NGHIỆP",
     areaMechatronics:"CƠ ĐIỆN TỬ", areaIndustrialData:"DỮ LIỆU THIẾT BỊ", areaWmsFems:"WMS & FEMS", areaPython:"PYTHON", areaVision:"THỊ GIÁC MÁY TÍNH & OCR",
     jobKind:"CÔNG VIỆC CHÍNH THỨC", haloviKind:"Hợp đồng 5 tháng", researchLabel:"NGHIÊN CỨU", notFoundLabel:"404 / KHÔNG TÌM THẤY", notFoundTitle:"Rất tiếc.",
     pageRenderError:"LỖI HIỂN THỊ TRANG", reloadPage:"Tải lại trang", backHome:"Về trang chủ",
@@ -187,7 +187,7 @@ const projects = [
   { slug:"rackflow", category:"backend", number:"01", title:"RackFlow — Mini ERP / WMS", status:"progress", tags:["Python","FastAPI","Flask","SQLAlchemy","PostgreSQL"], summaryKey:"rackSummary", fields:[["problem","rackProblem"],["role","rackRole"],["scope","rackScope"],["approach","rackApproach"],["evidence","rackEvidence"],["next","rackNext"]], flow:["receive","inventory","reserve","trace"] },
   { slug:"supermarket", category:"ai", number:"02", title:"Supermarket Delivery Monitoring", status:"past", tags:["Python","YOLOv5","DeepSORT","Video tracking"], summaryKey:"cvSummary", fields:[["problem","cvProblem"],["role","cvRole"],["evidence","cvEvidence"],["next","cvNext"]], flow:["video","detection","tracking","tracks"] },
   { slug:"ocr", category:"ai", number:"03", title:"OCR-assisted Data Entry", status:"past", tags:["Python","OCR","Image processing","Automation"], summaryKey:"ocrSummary", fields:[["problem","ocrProblem"],["role","ocrRole"],["evidence","ocrEvidence"],["next","ocrNext"]], flow:["document","ocr","fields","entry"] },
-  { slug:"fabric", category:"ai", number:"04", title:"Fabric Defect Inspection", status:"planned", tags:["Thị giác máy tính (Computer Vision)","Dataset design","Model evaluation"], summaryKey:"fabricSummary", fields:[["problem","fabricProblem"],["approach","fabricApproach"],["evidence","fabricEvidence"],["next","fabricNext"]], flow:["dataset","baseline","evaluation"] }
+  { slug:"fabric", category:"ai", number:"04", title:"Fabric Defect Inspection", status:"planned", tags:["Computer Vision","Dataset design","Model evaluation"], summaryKey:"fabricSummary", fields:[["problem","fabricProblem"],["approach","fabricApproach"],["evidence","fabricEvidence"],["next","fabricNext"]], flow:["dataset","baseline","evaluation"] }
 ];
 
 function Icon({ name, size=18 }) {
@@ -267,6 +267,12 @@ function Flow({ project,lang }) {
   </div></div>;
 }
 
+function displayTag(tag,lang) {
+  if(lang!=="vi") return tag;
+  const labels={"Video tracking":"Theo dõi video","Image processing":"Xử lý ảnh","Automation":"Tự động hóa","Dataset design":"Thiết kế tập dữ liệu","Model evaluation":"Đánh giá mô hình","Computer Vision":"Thị giác máy tính"};
+  return labels[tag]||tag;
+}
+
 function ProjectCard({ project,lang,featured=false }) {
   const t=text[lang];
   const category=project.category==="backend"?t.categoryBackend:project.status==="planned"?t.categoryPlanned:t.categoryAi;
@@ -274,7 +280,7 @@ function ProjectCard({ project,lang,featured=false }) {
     <div className="project-card-top"><span className="project-number">{t.projectWord} / {project.number}</span><Status status={project.status} lang={lang}/></div>
     <div className="project-card-main"><div className="project-card-text">
       <span className="project-category">{category}</span><h3>{project.title}</h3><p>{t[project.summaryKey]}</p>
-      <div className="tag-list">{project.tags.map(tag=><span key={tag}>{tag}</span>)}</div>
+      <div className="tag-list">{project.tags.map(tag=><span key={tag}>{displayTag(tag,lang)}</span>)}</div>
       <a className="text-link" href={"#project/"+project.slug}>{t.seeCase}<Icon name="arrow" size={16}/></a>
     </div>{featured&&<Flow project={project} lang={lang}/>}</div>
   </article>;
@@ -302,7 +308,7 @@ function Hero({ lang }) {
       </div>
     </div>
     <div className="container hero-stats"><div className="stats-label">{t.snapshot}</div>
-      <div className="stat-item"><strong>{t.sumidaDuration}</strong><span>{t.sumida}</span></div><div className="stat-item"><strong>{t.haloviDuration}</strong><span>{t.halovi}</span></div><div className="stat-item"><strong>2</strong><span>{t.freelance}</span></div><div className="stats-end">PYTHON <b>·</b> APPLICATIONS <b>·</b> ERP / WMS</div>
+      <div className="stat-item"><strong>{t.sumidaDuration}</strong><span>{t.sumida}</span></div><div className="stat-item"><strong>{t.haloviDuration}</strong><span>{t.halovi}</span></div><div className="stat-item"><strong>2</strong><span>{t.freelance}</span></div><div className="stats-end">{lang==="vi"?"PYTHON · ỨNG DỤNG · ERP / WMS":"PYTHON · APPLICATIONS · ERP / WMS"}</div>
     </div>
   </section>;
 }
@@ -354,7 +360,7 @@ function ExperiencePreview({ lang }) {
   ];
   return <main id="main-content" className="inner-page page-section-page skills-page"><div className="container">
     <PageHeading index="01" kicker={t.skills} title={t.skillsTitle} intro={t.skillsPageIntro}/>
-    <div className="skill-grid">{groups.map(g=><article className="skill-card" key={g.n}><div className="skill-top"><span>{g.n}</span><small>{g.name}</small></div><h3>{g.title}</h3><p>{g.desc}</p><div className="tag-list">{g.tags.map(tag=><span key={tag}>{tag}</span>)}</div></article>)}</div>
+    <div className="skill-grid">{groups.map(g=><article className="skill-card" key={g.n}><div className="skill-top"><span>{g.n}</span><small>{g.name}</small></div><h3>{g.title}</h3><p>{g.desc}</p><div className="tag-list">{g.tags.map(tag=><span key={tag}>{displayTag(tag,lang)}</span>)}</div></article>)}</div>
     <p className="scope-note"><Icon name="check" size={17}/>{t.noOt}</p>
   </div></main>;
 }function EducationSection({ lang }) {
@@ -397,11 +403,11 @@ function ExperiencePreview({ lang }) {
     <a href={project.category==="backend"?"#projects/backend":"#projects/ai"} className="back-link">← {t.back}</a>
     <div className="detail-heading"><div className="section-kicker">{t.projectWord} / {project.number} <span>—</span> {project.category==="backend"?t.backend.toUpperCase():t.ai.toUpperCase()}</div>
       <div className="detail-title-row"><h1>{project.title}</h1><Status status={project.status} lang={lang}/></div><p>{t[project.summaryKey]}</p>
-      <div className="tag-list">{project.tags.map(tag=><span key={tag}>{tag}</span>)}</div>
+      <div className="tag-list">{project.tags.map(tag=><span key={tag}>{displayTag(tag,lang)}</span>)}</div>
     </div>
     <Flow project={project} lang={lang}/>
     <div className="case-grid">{project.fields.map(([label,key])=><article className={"case-panel case-"+label} key={key}><span>{labels[label]}</span><p>{t[key]}</p></article>)}</div>
-    <div className="detail-footer"><span>{t.technologies}</span><div className="tag-list">{project.tags.map(tag=><span key={tag}>{tag}</span>)}</div><a className="text-link" href="#projects">{t.viewAll}<Icon name="arrow" size={16}/></a></div>
+    <div className="detail-footer"><span>{t.technologies}</span><div className="tag-list">{project.tags.map(tag=><span key={tag}>{displayTag(tag,lang)}</span>)}</div><a className="text-link" href="#projects">{t.viewAll}<Icon name="arrow" size={16}/></a></div>
   </div></main>;
 }
 
@@ -409,9 +415,9 @@ function AboutPage({ lang }) {
   const vi=lang==="vi";
   const journey=vi?[
     ["09/2018 – 06/2023","HỌC VẤN · XẾP LOẠI KHÁ","Kỹ sư Công nghệ Kỹ thuật Cơ điện tử","Đại học Sư phạm Kỹ thuật – Đại học Đà Nẵng. Chương trình đào tạo liên ngành là nền tảng để tôi tiếp cận lập trình C, IoT và các hệ thống kết hợp phần cứng với phần mềm."],
-    ["05/2022 – 07/2022","TIẾP XÚC MÔI TRƯỜNG CÔNG NGHIỆP","Thực tập sinh kỹ thuật Kaizen | Premo Vietnam","Sử dụng Python để trích xuất dữ liệu hiệu suất từ cảm biến công nghiệp qua Modbus RTU; đồng thời tham gia phân tích cụm lắp ráp cơ khí và kết cấu máy. Đây là trải nghiệm kết nối kiến thức cơ điện tử với việc thu thập, xử lý dữ liệu bằng phần mềm."],
-    ["09/2022 – 12/2024","PHÁT TRIỂN PHẦN MỀM THEO DỰ ÁN","Computer Vision và OCR","Thực hiện hai dự án freelance chính theo từng đợt, có khoảng trống giữa các lần làm việc: ứng dụng Computer Vision theo dõi giao nhận tại siêu thị và công cụ OCR trích xuất dữ liệu sổ đăng kiểm để nhập lên website Cảng Đà Nẵng. Riêng Halovi là hợp đồng Computer Vision 5 tháng."],
-    ["03/2024 – 08/2024","PHÁT TRIỂN ỨNG DỤNG","Research Engineer | University of Technology and Education – The University of Danang","Phát triển website giáo dục, thiết kế và lắp ráp robot STEAM, tham gia xây dựng hoạt động học tập theo dự án."],
+    ["05/2022 – 07/2022","THỰC TẬP TRONG MÔI TRƯỜNG CÔNG NGHIỆP","Thực tập sinh kỹ thuật Kaizen | Premo Vietnam","Sử dụng Python để trích xuất dữ liệu hiệu suất từ cảm biến công nghiệp qua Modbus RTU; đồng thời tham gia phân tích cụm lắp ráp cơ khí và kết cấu máy. Đây là trải nghiệm kết nối kiến thức cơ điện tử với việc thu thập, xử lý dữ liệu bằng phần mềm."],
+    ["09/2022 – 12/2024","PHÁT TRIỂN PHẦN MỀM THEO DỰ ÁN","Thị giác máy tính và OCR","Thực hiện hai dự án tự do chính theo từng đợt, có khoảng trống giữa các lần làm việc: ứng dụng thị giác máy tính theo dõi giao nhận tại siêu thị và công cụ OCR trích xuất dữ liệu sổ đăng kiểm để nhập lên website Cảng Đà Nẵng. Halovi là hợp đồng thị giác máy tính riêng biệt kéo dài 5 tháng."],
+    ["03/2024 – 08/2024","PHÁT TRIỂN ỨNG DỤNG","Kỹ sư nghiên cứu | The University of Technology and Education – The University of Danang","Phát triển website giáo dục, thiết kế và lắp ráp robot STEAM, tham gia xây dựng hoạt động học tập theo dự án."],
     ["02/2025 – 11/2026","PHẦN MỀM DOANH NGHIỆP","Trưởng nhóm kỹ thuật phát triển phần mềm | Sumida","Tham gia phát triển WMS và FEMS. Công việc tập trung vào yêu cầu nghiệp vụ, mô hình hóa quy trình, logic ứng dụng, phát triển chức năng, kiểm thử, sửa lỗi và hỗ trợ chạy thử."]
   ]:[
     ["09/2018 – 06/2023","EDUCATION · GOOD CLASSIFICATION","B.Eng. in Mechatronics Engineering Technology","The University of Technology and Education – The University of Danang. The interdisciplinary programme introduced me to C programming, IoT and systems combining hardware and software."],
@@ -432,9 +438,9 @@ function AboutPage({ lang }) {
   const contributions=vi?[
     [t.areaMechatronics,"Nền tảng kỹ thuật liên ngành","Kiến thức nền về hệ thống cơ khí - điện tử, lập trình C, IoT và robot STEAM. Có trải nghiệm phân tích cụm lắp ráp, kết cấu máy trong kỳ thực tập; không trình bày đây là kinh nghiệm thiết kế hoặc vận hành dây chuyền tự động hóa."],
     [t.areaIndustrialData,"Thu thập dữ liệu thiết bị","Trong kỳ thực tập tại Premo, sử dụng Python đọc dữ liệu hiệu suất từ cảm biến công nghiệp qua Modbus RTU. Đây là trải nghiệm thực tập, không phải kinh nghiệm triển khai hệ thống SCADA/PLC."],
-    [t.areaWmsFems,"Ứng dụng doanh nghiệp tại Sumida","Tham gia phát triển chức năng WMS và FEMS; với WMS là phân tích quy trình kho, logic xử lý và kiểm thử; với FEMS là xử lý dữ liệu, dashboard điện năng và tính toán chi phí điện."],
-    [t.areaPython,"Phát triển ứng dụng và backend","Python là ngôn ngữ phát triển chính. Công việc và dự án đã sử dụng Python, Flask, SQL và PostgreSQL. FastAPI và SQLAlchemy được sử dụng trong RackFlow, dự án portfolio đang phát triển."],
-    [t.areaVision,"Thị giác máy tính và xử lý tài liệu","Kinh nghiệm từ hợp đồng Computer Vision 5 tháng tại Halovi và các dự án riêng: YOLOv5/DeepSORT cho theo dõi giao nhận qua video; OCR để trích xuất dữ liệu tài liệu và tự động nhập lên website."]
+    [t.areaWmsFems,"Ứng dụng doanh nghiệp tại Sumida","Tham gia phát triển chức năng WMS và FEMS; với WMS là phân tích quy trình kho, logic xử lý và kiểm thử; với FEMS là xử lý dữ liệu, bảng điều khiển điện năng và tính toán chi phí điện."],
+    [t.areaPython,"Phát triển ứng dụng và hệ thống phía máy chủ","Python là ngôn ngữ phát triển chính. Công việc và dự án đã sử dụng Python, Flask, SQL và PostgreSQL. FastAPI và SQLAlchemy được sử dụng trong RackFlow, dự án cá nhân đang phát triển."],
+    [t.areaVision,"Thị giác máy tính và xử lý tài liệu","Kinh nghiệm đến từ hợp đồng 5 tháng tại Halovi và các dự án riêng: YOLOv5/DeepSORT để phát hiện, theo dõi hoạt động giao nhận qua video; OCR để trích xuất dữ liệu tài liệu và tự động nhập lên website."]
   ]:[
     [t.areaMechatronics,"Interdisciplinary engineering foundation","Foundation in mechanical/electrical systems, C programming, IoT and STEAM robotics. I also analysed mechanical assemblies and machine structures during my internship; this is not presented as hands-on production-line automation engineering."],
     [t.areaIndustrialData,"Equipment data acquisition","During my internship at Premo, I used Python to read performance data from industrial sensors through Modbus RTU. This was internship experience, not SCADA/PLC system deployment."],
@@ -465,13 +471,13 @@ function AboutPage({ lang }) {
       <div className="about-direction-content">
         <p className="about-direction-lead">{vi?"Tôi muốn phát triển theo hướng kỹ sư phần mềm chuyên về ứng dụng doanh nghiệp và hệ thống phục vụ vận hành sản xuất. Điểm khác biệt tôi muốn xây dựng là kết hợp nền tảng Cơ điện tử - hiểu thiết bị, dữ liệu và quy trình nhà máy - với năng lực phát triển Python backend và tích hợp hệ thống.":"I aim to develop as a software engineer specialising in enterprise applications and systems that support manufacturing operations. I want to combine my Mechatronics foundation—understanding equipment, data and factory workflows—with stronger Python backend and system-integration skills."}</p>
         <div className="about-direction-stages">
-          <div><span>{vi?"TRỌNG TÂM KỸ THUẬT":"TECHNICAL FOCUS"}</span><p>{vi?"Python Backend, thiết kế API, cơ sở dữ liệu quan hệ, xử lý giao dịch, kiểm thử tự động và tích hợp hệ thống.":"Python backend engineering, API design, relational databases, transaction handling, automated testing and system integration."}</p></div>
+          <div><span>{vi?"TRỌNG TÂM KỸ THUẬT":"TECHNICAL FOCUS"}</span><p>{vi?"Phát triển hệ thống phía máy chủ bằng Python, thiết kế API, cơ sở dữ liệu quan hệ, xử lý giao dịch, kiểm thử tự động và tích hợp hệ thống.":"Python backend engineering, API design, relational databases, transaction handling, automated testing and system integration."}</p></div>
           <div><span>{vi?"PHẠM VI PHÁT TRIỂN":"SCOPE TO GROW INTO"}</span><p>{vi?"Thiết kế và phát triển các module nghiệp vụ có tính liên kết; cải thiện tính nhất quán dữ liệu, khả năng truy vết và độ tin cậy của ứng dụng.":"Design and develop interconnected business modules, improving data consistency, traceability and application reliability."}</p></div>
           <div><span>{vi?"ĐỊNH HƯỚNG DÀI HẠN":"LONG-TERM DIRECTION"}</span><p>{vi?"Tích hợp AI và Computer Vision vào hệ thống doanh nghiệp khi phù hợp với bài toán, chẳng hạn trích xuất chứng từ, kiểm tra dữ liệu và hỗ trợ quy trình sản xuất - kho vận.":"Integrate AI and Computer Vision into enterprise systems where they fit the problem, such as document extraction, data validation and support for manufacturing and warehouse workflows."}</p></div>
         </div>
       </div>
     </section>
-    <p className="scope-note"><Icon name="check" size={17}/>{vi?"Kinh nghiệm Modbus RTU được giới hạn ở kỳ thực tập tại Premo. Tôi không trình bày PLC, SCADA hoặc hệ thống điều khiển công nghiệp là kinh nghiệm triển khai chuyên nghiệp.":"Modbus RTU experience is limited to my internship at Premo. I do not present PLC, SCADA or industrial control systems as professional deployment experience."}</p>
+    <p className="scope-note"><Icon name="check" size={17}/>{vi?"Kinh nghiệm Modbus RTU chỉ giới hạn ở kỳ thực tập tại Premo. Tôi không trình bày PLC, SCADA hoặc hệ thống điều khiển công nghiệp như kinh nghiệm triển khai chuyên nghiệp.":"Modbus RTU experience is limited to my internship at Premo. I do not present PLC, SCADA or industrial control systems as professional deployment experience."}</p>
   </div></main>;
 }
 
@@ -525,7 +531,7 @@ class RenderErrorBoundary extends React.Component {
 }
 
 function App() {
-  const [lang,setLang]=useState("en");
+  const [lang,setLang]=useState(()=>window.localStorage.getItem("portfolio-language")==="vi"?"vi":"en");
   const [route,setRoute]=useState(()=>resolvePortfolioRoute());
   useEffect(()=>{
     const change=()=>{setRoute(resolvePortfolioRoute());window.scrollTo({top:0,behavior:"auto"});};
@@ -534,6 +540,7 @@ function App() {
     return ()=>window.removeEventListener("hashchange",change);
   },[]);
   useEffect(()=>{
+    window.localStorage.setItem("portfolio-language",lang);
     document.documentElement.lang=lang;
     const slug=route.startsWith("project/")?route.split("/")[1]:null;
     const selected=projects.find(p=>p.slug===slug);
