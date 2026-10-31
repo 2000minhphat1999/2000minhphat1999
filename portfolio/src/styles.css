@@ -154,3 +154,10 @@
   .about-journey-content h3{font-size:17px}
   .about-journey-content p{font-size:12px}
 }
+
+
+/* Visible recovery state for React render errors */
+.page-error-state .container{max-width:760px}
+.page-error-state h1{margin:12px 0;color:var(--dark);font-size:clamp(30px,5vw,48px);line-height:1.15}
+.page-error-state p{max-width:620px;margin:0 0 24px;color:#66766b;font-size:14px;line-height:1.8}
+.page-error-state .text-link{display:inline-flex;margin-left:18px;color:#a76348;font-size:12px;font-weight:700}
