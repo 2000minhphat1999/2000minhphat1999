@@ -96,3 +96,43 @@
 .about-direction>span{padding-top:5px;color:#b96c4c}
 .about-direction p{max-width:720px;margin:0;color:#40594a;font-size:14px;line-height:1.9}
 @media(max-width:760px){.about-story,.about-subheading,.about-direction{grid-template-columns:1fr;gap:16px}.about-story{margin:24px 0 42px;padding:22px 0}.about-story-index{gap:8px}.about-subheading{margin-bottom:18px}}
+
+
+/* About page — five distinct sections */
+.about-page .page-hero{max-width:900px;margin-bottom:48px}
+.about-page .page-hero h1{max-width:850px}
+.about-block{margin:0 0:58px;padding:34px 0;border-top:1px solid #dfe5dc}
+.about-block-heading{display:grid;grid-template-columns:minmax(190px,.42fr) minmax(0,1fr);column-gap:42px;row-gap:12px;margin-bottom:26px}
+.about-block-heading>span{padding-top:7px;color:#b96c4c;font:800 9px var(--font-mono);letter-spacing:.14em}
+.about-block-heading h2{max-width:720px;margin:0;color:#17352d;font-size:clamp(24px,3vw,34px);letter-spacing:-.04em;line-height:1.2}
+.about-block-heading>p{grid-column:2;max-width:720px;margin:0;color:#66766b;font-size:13px;line-height:1.9}
+.about-journey-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.about-journey-grid article,.about-mindset-grid article,.about-bring-grid article{padding:22px;border:1px solid #e1e7df;border-radius:8px;background:#fff}
+.about-journey-grid article>span,.about-bring-grid article>span{color:#b37255;font:9px var(--font-mono);letter-spacing:.07em}
+.about-journey-grid h3,.about-mindset-grid h3,.about-bring-grid h3{margin:14px 0 9px;color:#17352d;font-size:18px;line-height:1.35;letter-spacing:-.025em}
+.about-journey-grid p,.about-mindset-grid p,.about-bring-grid p{margin:0;color:#66766b;font-size:12px;line-height:1.9}
+.about-mindset-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.about-mindset-grid article>span{color:#b37255;font:10px var(--font-mono)}
+.about-bring-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.about-direction{display:grid;grid-template-columns:minmax(190px,.42fr) minmax(0,1fr);gap:42px;padding:34px 0;border-top:1px solid #dfe5dc}
+.about-direction .about-block-heading{display:block;margin:0}
+.about-direction-content{min-width:0}
+.about-direction-lead{max-width:760px;margin:0 0 25px;color:#40594a;font-size:14px;line-height:1.95}
+.about-direction-stages{display:grid;gap:0;border-top:1px solid #e1e7df}
+.about-direction-stages>div{display:grid;grid-template-columns:145px minmax(0,1fr);gap:20px;padding:16px 0;border-bottom:1px solid #e1e7df}
+.about-direction-stages span{padding-top:3px;color:#b37255;font:9px var(--font-mono);letter-spacing:.1em}
+.about-direction-stages p{margin:0;color:#66766b;font-size:12px;line-height:1.85}
+@media(max-width:900px){
+  .about-journey-grid,.about-mindset-grid{grid-template-columns:1fr 1fr}
+  .about-bring-grid{grid-template-columns:1fr 1fr}
+  .about-direction{grid-template-columns:1fr;gap:18px}
+}
+@media(max-width:760px){
+  .about-page .page-hero{margin-bottom:30px}
+  .about-block{margin-bottom:34px;padding:26px 0}
+  .about-block-heading{grid-template-columns:1fr;gap:12px;margin-bottom:20px}
+  .about-block-heading>p{grid-column:1}
+  .about-journey-grid,.about-mindset-grid,.about-bring-grid{grid-template-columns:1fr}
+  .about-direction{grid-template-columns:1fr;gap:16px}
+  .about-direction-stages>div{grid-template-columns:1fr;gap:7px;padding:14px 0}
+}
