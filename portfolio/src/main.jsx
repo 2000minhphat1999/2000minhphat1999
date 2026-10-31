@@ -382,13 +382,13 @@ function AboutPage({ lang }) {
   const t=text[lang];
   const vi=lang==="vi";
   const principles=vi?[
-    ["01 / BUSINESS","Ứng dụng cho doanh nghiệp","Tập trung vào phần mềm hữu ích cho công việc và nhu cầu thực tế của tổ chức."],
-    ["02 / AI","AI có mục đích","Ưu tiên tích hợp AI ở những nơi có thể hỗ trợ người dùng và giảm công việc thủ công."],
-    ["03 / VALUE","Giá trị sử dụng","Quan tâm đến tính hữu ích, độ tin cậy và tác động thực tế của giải pháp."]
+    ["01 / CONTEXT","Bối cảnh đa chiều","Xem xét mối liên hệ giữa mục tiêu, nguồn lực, dữ liệu và công nghệ trong bối cảnh tổng thể của tổ chức."],
+    ["02 / ADAPTIVE DESIGN","Thiết kế thích ứng","Hướng đến giải pháp phù hợp với đặc thù riêng và có thể phát triển khi nhu cầu doanh nghiệp thay đổi."],
+    ["03 / HUMAN × AI","Phối hợp người và AI","Kết hợp tự động hóa với năng lực con người để tăng khả năng xử lý, đồng thời giữ trách nhiệm ở những quyết định quan trọng."]
   ]:[
-    ["01 / BUSINESS","Software for business","Focus on software that supports practical work and organisational needs."],
-    ["02 / AI","AI with a purpose","Apply AI where it can support users and reduce manual effort."],
-    ["03 / VALUE","Practical value","Prioritise usefulness, reliability and the real-world impact of a solution."]
+    ["01 / CONTEXT","A multi-dimensional view","Consider how organisational goals, resources, data and technology relate within the wider business context."],
+    ["02 / ADAPTIVE DESIGN","Design for change","Shape solutions around organisational needs and allow them to evolve as business conditions change."],
+    ["03 / HUMAN × AI","Human–AI collaboration","Combine automation with human judgement to expand execution capacity while keeping accountability in important decisions."]
   ];
   return <main id="main-content" className="inner-page about-page"><div className="container">
     <PageHeading index="01" kicker={t.about} title={vi?"Từ Cơ điện tử đến phát triển phần mềm":"From Mechatronics to Software Engineering"} intro={vi?"Tôi bắt đầu với nền tảng kỹ sư Cơ điện tử. Việc tiếp xúc với lập trình vi xử lý trong quá trình học dần dẫn tôi sang lĩnh vực IT và phát triển phần mềm.":"My background is in Mechatronics Engineering. Exposure to microcontroller programming during my studies gradually led me toward IT and software development."}/>
@@ -401,7 +401,7 @@ function AboutPage({ lang }) {
       </div>
     </section>
     <section className="about-principles">
-      <div className="about-subheading"><span>{vi?"TRỌNG TÂM PHÁT TRIỂN":"AREAS OF FOCUS"}</span><h2>{vi?"Công nghệ hướng đến giá trị sử dụng":"Technology focused on practical value"}</h2></div>
+      <div className="about-subheading"><span>{vi?"TRỌNG TÂM PHÁT TRIỂN":"AREAS OF FOCUS"}</span><h2>{vi?"Nhìn vấn đề ở nhiều lớp, không theo một khuôn mẫu cố định":"Look across layers, not through a fixed template"}</h2></div>
       <div className="about-grid">{principles.map(item=><article key={item[0]}><span>{item[0]}</span><h3>{item[1]}</h3><p>{item[2]}</p></article>)}</div>
     </section>
     <div className="about-direction"><span>{vi?"ĐỊNH HƯỚNG DÀI HẠN":"LONG-TERM DIRECTION"}</span><p>{vi?"Thiết kế phần mềm doanh nghiệp tích hợp AI để giảm thao tác lặp lại, hỗ trợ ra quyết định và nâng cao hiệu suất vận hành; đồng thời giúp doanh nghiệp bố trí và sử dụng nguồn lực nhân sự phù hợp hơn với nhu cầu thực tế.":"Design AI-integrated business software to reduce repetitive work, support decisions and improve operational efficiency, while helping companies allocate and use workforce capacity more effectively based on real operational needs."}</p></div>
