@@ -9,7 +9,7 @@ const text = {
     experiencePageIntro:"Employment, a fixed-term contract, intermittent freelance engagements and earlier engineering experience — kept separate by type and duration.",
     skillsPageIntro:"A practical view of the tools and domains used in the work described in this portfolio. No percentage ratings or unsupported proficiency claims.",
     educationPageIntro:"Formal engineering education and documented research activity.",
-    aboutPageIntro:"My direction is AI-integrated business software: analyse operational structure, shape the solution design, and validate practical improvements.",
+    aboutPageIntro:"My direction is AI-integrated business software that helps organisations work more effectively and make better use of their resources.",
     contactPageIntro:"For Python business applications, ERP/WMS, backend engineering and AI-integrated workflow opportunities.",
     homeFocusTitle:"Design for operational efficiency.",
     homeFocusText:"Explore how my Python and business-systems foundation connects to my goal of building AI-integrated software for real business workflows.",
@@ -85,7 +85,7 @@ const text = {
     experiencePageIntro:"Kinh nghiệm nhân viên, hợp đồng có thời hạn, freelance theo từng đợt và trải nghiệm kỹ thuật trước đó — được phân loại riêng.",
     skillsPageIntro:"Tổng quan thực tế về công nghệ và lĩnh vực đã sử dụng trong những công việc được trình bày. Không chấm phần trăm hoặc tự nhận mức độ thiếu căn cứ.",
     educationPageIntro:"Quá trình đào tạo kỹ thuật và hoạt động nghiên cứu có thông tin xác nhận.",
-    aboutPageIntro:"Định hướng của tôi là phần mềm doanh nghiệp tích hợp AI: phân tích cấu trúc vận hành, thiết kế logic giải pháp và kiểm chứng hiệu quả thực tế.",
+    aboutPageIntro:"Định hướng của tôi là phần mềm doanh nghiệp tích hợp AI nhằm nâng cao hiệu quả công việc và sử dụng nguồn lực tốt hơn.",
     contactPageIntro:"Trao đổi cơ hội về ứng dụng Python, ERP/WMS, Backend và phần mềm doanh nghiệp tích hợp AI.",
     homeFocusTitle:"Thiết kế để nâng cao hiệu suất vận hành.",
     homeFocusText:"Từ nền tảng Python và hệ thống nghiệp vụ, tôi hướng đến phần mềm tích hợp AI để cải thiện quy trình và sử dụng nguồn lực doanh nghiệp hiệu quả hơn.",
@@ -266,12 +266,12 @@ function Hero({ lang }) {
         <div className="hero-socials"><a href="https://github.com/2000minhphat1999" target="_blank" rel="noopener noreferrer"><Icon name="github" size={16}/>GitHub</a><a href="https://www.linkedin.com/in/minhphat-ai/" target="_blank" rel="noopener noreferrer"><Icon name="linkedin" size={16}/>LinkedIn</a><span>01 / 04 — PROFILE</span></div>
       </div>
       <div className="hero-art" aria-label="Illustration of an operational software workflow">
-        <div className="art-topline"><span>WORKFLOW / 01</span><span>APPLICATION LAYER</span></div>
-        <div className="art-title">From process<br/>to application.</div><div className="art-subtitle">A practical engineering approach</div>
-        <div className="art-node node-one"><span className="node-index">01</span><div><small>INPUT</small><strong>Business request</strong></div><span className="node-symbol">↘</span></div>
-        <div className="art-connector"/><div className="art-node"><span className="node-index">02</span><div><small>LOGIC</small><strong>Python services</strong></div><span className="node-symbol">⌘</span></div>
-        <div className="art-connector"/><div className="art-node"><span className="node-index">03</span><div><small>DATA</small><strong>SQL · workflow state</strong></div><span className="node-symbol">▤</span></div>
-        <div className="art-foot"><span><i/>TRACEABLE CHANGES</span><span>MP / SYSTEMS</span></div><div className="art-orbit orbit-a"/><div className="art-orbit orbit-b"/>
+        <div className="art-topline"><span>ENGINEERING / 01</span><span>BUSINESS APPLICATIONS</span></div>
+        <div className="art-title">Software with<br/>business impact.</div><div className="art-subtitle">AI-enabled business solutions</div>
+        <div className="art-node node-one"><span className="node-index">01</span><div><small>NEED</small><strong>Business challenge</strong></div><span className="node-symbol">↘</span></div>
+        <div className="art-connector"/><div className="art-node"><span className="node-index">02</span><div><small>SOLUTION</small><strong>Applied software</strong></div><span className="node-symbol">⌘</span></div>
+        <div className="art-connector"/><div className="art-node"><span className="node-index">03</span><div><small>IMPACT</small><strong>Useful outcomes</strong></div><span className="node-symbol">▤</span></div>
+        <div className="art-foot"><span><i/>BUILT FOR PRACTICAL VALUE</span><span>MP / SYSTEMS</span></div><div className="art-orbit orbit-a"/><div className="art-orbit orbit-b"/>
       </div>
     </div>
     <div className="container hero-stats"><div className="stats-label">{t.snapshot}</div>
@@ -382,13 +382,13 @@ function AboutPage({ lang }) {
   const t=text[lang];
   const vi=lang==="vi";
   const principles=vi?[
-    ["01 / DISCOVER","Phân tích cấu trúc vận hành","Làm rõ mục tiêu, vai trò và cách công việc diễn ra ở mức cần thiết trước khi định hình giải pháp."],
-    ["02 / DESIGN","Mô hình hóa logic giải pháp","Chuyển nhu cầu thực tế thành một cấu trúc xử lý mạch lạc, làm nền tảng cho thiết kế và triển khai phần mềm."],
-    ["03 / VERIFY","Đối chiếu với thực tế","Đánh giá phương án theo mục tiêu, kiểm tra hành vi hệ thống và nêu rõ giới hạn chưa được xác minh."]
+    ["01 / BUSINESS","Ứng dụng cho doanh nghiệp","Tập trung vào phần mềm hữu ích cho công việc và nhu cầu thực tế của tổ chức."],
+    ["02 / AI","AI có mục đích","Ưu tiên tích hợp AI ở những nơi có thể hỗ trợ người dùng và giảm công việc thủ công."],
+    ["03 / VALUE","Giá trị sử dụng","Quan tâm đến tính hữu ích, độ tin cậy và tác động thực tế của giải pháp."]
   ]:[
-    ["01 / DISCOVER","Analyse the operational structure","Understand the objective, roles and how work takes place at the level needed to shape a solution."],
-    ["02 / DESIGN","Model the solution logic","Translate practical needs into a coherent solution structure that guides software design and implementation."],
-    ["03 / VERIFY","Validate against reality","Assess the approach against its goals, check system behaviour and state what has not been verified."]
+    ["01 / BUSINESS","Software for business","Focus on software that supports practical work and organisational needs."],
+    ["02 / AI","AI with a purpose","Apply AI where it can support users and reduce manual effort."],
+    ["03 / VALUE","Practical value","Prioritise usefulness, reliability and the real-world impact of a solution."]
   ];
   return <main id="main-content" className="inner-page about-page"><div className="container">
     <PageHeading index="01" kicker={t.about} title={vi?"Từ Cơ điện tử đến phát triển phần mềm":"From Mechatronics to Software Engineering"} intro={vi?"Tôi bắt đầu với nền tảng kỹ sư Cơ điện tử. Việc tiếp xúc với lập trình vi xử lý trong quá trình học dần dẫn tôi sang lĩnh vực IT và phát triển phần mềm.":"My background is in Mechatronics Engineering. Exposure to microcontroller programming during my studies gradually led me toward IT and software development."}/>
@@ -397,11 +397,11 @@ function AboutPage({ lang }) {
       <div className="about-story-copy">
         <h2>{vi?"Lập trình là cầu nối giữa Cơ điện tử và IT":"Programming became the bridge between Mechatronics and IT"}</h2>
         <p>{vi?"Ngành Cơ điện tử giúp tôi tiếp cận lập trình vi xử lý. Từ nền tảng đó, tôi dần chuyển sự quan tâm sang phần mềm và tiếp tục phát triển theo hướng IT. Đây là quá trình chuyển hướng từng bước, không phải một thay đổi tách rời khỏi nền tảng kỹ thuật ban đầu.":"Mechatronics introduced me to microcontroller programming. From that foundation, my interest gradually shifted toward software, and I continued developing in IT. It was a step-by-step transition built on my original engineering background."}</p>
-        <p>{vi?"Tôi đặc biệt hứng thú với việc phân tích vấn đề và định hình cấu trúc giải pháp. Trước khi triển khai, tôi muốn xây dựng một bức tranh tổng thể rõ ràng về cách công việc vận hành và cách phần mềm nên hỗ trợ công việc đó. Định hướng dài hạn của tôi là thiết kế phần mềm doanh nghiệp tích hợp AI để giảm thao tác lặp lại, hỗ trợ ra quyết định, nâng cao hiệu suất vận hành và giúp doanh nghiệp sử dụng nguồn lực nhân sự phù hợp hơn. Python và ERP/WMS là nền tảng tôi đang phát triển; Computer Vision và OCR là những mảng tôi có trải nghiệm qua các dự án riêng biệt.":"I am particularly interested in analysing problems and shaping the structure of a solution. Before implementation, I aim to build a clear high-level picture of how work operates and how software should support it. My long-term direction is to design AI-integrated business software that reduces repetitive tasks, supports better decisions, improves operational efficiency and helps companies use workforce capacity more effectively. Python applications and ERP/WMS are my current foundation; Computer Vision and OCR are additional areas I have explored through separate projects."}</p>
+        <p>{vi?"Tôi muốn phát triển phần mềm doanh nghiệp tích hợp AI để giảm thao tác thủ công, hỗ trợ công việc hằng ngày và giúp tổ chức sử dụng nguồn lực hiệu quả hơn. Python và ERP/WMS là nền tảng tôi đang phát triển; Computer Vision và OCR là những mảng tôi đã trải nghiệm qua các dự án riêng biệt.":"I want to build AI-integrated business software that reduces manual effort, supports day-to-day work and helps organisations use resources more effectively. Python applications and ERP/WMS are my current foundation; Computer Vision and OCR are additional areas I have explored through separate projects."}</p>
       </div>
     </section>
     <section className="about-principles">
-      <div className="about-subheading"><span>{vi?"CÁCH TIẾP CẬN":"WORKING APPROACH"}</span><h2>{vi?"Bắt đầu từ bài toán, không phải từ công nghệ":"Start with the problem, not the technology"}</h2></div>
+      <div className="about-subheading"><span>{vi?"TRỌNG TÂM PHÁT TRIỂN":"AREAS OF FOCUS"}</span><h2>{vi?"Công nghệ hướng đến giá trị sử dụng":"Technology focused on practical value"}</h2></div>
       <div className="about-grid">{principles.map(item=><article key={item[0]}><span>{item[0]}</span><h3>{item[1]}</h3><p>{item[2]}</p></article>)}</div>
     </section>
     <div className="about-direction"><span>{vi?"ĐỊNH HƯỚNG DÀI HẠN":"LONG-TERM DIRECTION"}</span><p>{vi?"Thiết kế phần mềm doanh nghiệp tích hợp AI để giảm thao tác lặp lại, hỗ trợ ra quyết định và nâng cao hiệu suất vận hành; đồng thời giúp doanh nghiệp bố trí và sử dụng nguồn lực nhân sự phù hợp hơn với nhu cầu thực tế.":"Design AI-integrated business software to reduce repetitive work, support decisions and improve operational efficiency, while helping companies allocate and use workforce capacity more effectively based on real operational needs."}</p></div>
