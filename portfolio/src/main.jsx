@@ -380,21 +380,34 @@ function ExperiencePreview({ lang }) {
 
 function AboutPage({ lang }) {
   const t=text[lang];
-  const items=lang==="vi"?[
-    ["01 / UNDERSTAND","Hiểu quy trình trước khi viết code","Làm rõ người dùng, mục tiêu vận hành, dữ liệu đầu vào và các ràng buộc thực tế."],
-    ["02 / MODEL","Mô hình hóa quy tắc và trạng thái","Tách quy tắc nghiệp vụ, dữ liệu, chuyển trạng thái và các trường hợp ngoại lệ."],
-    ["03 / VERIFY","Kiểm thử và truy vết lỗi","Triển khai thay đổi nhỏ, kiểm tra hành vi mong đợi và nêu rõ giới hạn còn lại."]
+  const vi=lang==="vi";
+  const principles=vi?[
+    ["01 / UNDERSTAND","Hiểu quy trình trước khi viết code","Làm rõ mục tiêu vận hành, người sử dụng, dữ liệu đầu vào và các ràng buộc thực tế."],
+    ["02 / MODEL","Làm rõ quy tắc nghiệp vụ","Tách dữ liệu, quy tắc xử lý, trạng thái và trường hợp ngoại lệ để hệ thống dễ hiểu và kiểm tra."],
+    ["03 / VERIFY","Kiểm tra hành vi thực tế","Đối chiếu kết quả với yêu cầu, truy tìm nguyên nhân khi có lỗi và nói rõ giới hạn chưa được xác minh."]
   ]:[
-    ["01 / UNDERSTAND","Understand the process before coding","Clarify the user, operational goal, inputs and real-world constraints."],
-    ["02 / MODEL","Model rules and state","Make business rules, data, state transitions and exceptions explicit."],
-    ["03 / VERIFY","Test and trace failures","Implement small changes, validate expected behaviour and state remaining limitations."]
+    ["01 / UNDERSTAND","Understand the workflow before coding","Clarify the operational goal, users, inputs and real-world constraints."],
+    ["02 / MODEL","Make business rules explicit","Separate data, processing rules, state transitions and exceptions so the system can be understood and tested."],
+    ["03 / VERIFY","Validate real behaviour","Compare results with requirements, trace failures to their causes and state what has not been verified."]
   ];
-  return <main id="main-content" className="inner-page about-page"><div className="container"><PageHeading index="01" kicker={t.about} title={t.about} intro={t.aboutPageIntro}/>
-    <div className="about-grid">{items.map(item=><article key={item[0]}><span>{item[0]}</span><h2>{item[1]}</h2><p>{item[2]}</p></article>)}</div>
+  return <main id="main-content" className="inner-page about-page"><div className="container">
+    <PageHeading index="01" kicker={t.about} title={vi?"Từ Cơ điện tử đến phát triển phần mềm":"From Mechatronics to Software Engineering"} intro={vi?"Tôi bắt đầu với nền tảng kỹ sư Cơ điện tử. Việc tiếp xúc với lập trình vi xử lý trong quá trình học dần dẫn tôi sang lĩnh vực IT và phát triển phần mềm.":"My background is in Mechatronics Engineering. Exposure to microcontroller programming during my studies gradually led me toward IT and software development."}/>
+    <section className="about-story">
+      <div className="about-story-index"><span>BACKGROUND / 01</span><strong>{vi?"Điểm bắt đầu":"Where it started"}</strong></div>
+      <div className="about-story-copy">
+        <h2>{vi?"Lập trình là cầu nối giữa Cơ điện tử và IT":"Programming became the bridge between Mechatronics and IT"}</h2>
+        <p>{vi?"Ngành Cơ điện tử giúp tôi tiếp cận lập trình vi xử lý. Từ nền tảng đó, tôi dần chuyển sự quan tâm sang phần mềm và tiếp tục phát triển theo hướng IT. Đây là quá trình chuyển hướng từng bước, không phải một thay đổi tách rời khỏi nền tảng kỹ thuật ban đầu.":"Mechatronics introduced me to microcontroller programming. From that foundation, my interest gradually shifted toward software, and I continued developing in IT. It was a step-by-step transition built on my original engineering background."}</p>
+        <p>{vi?"Hiện tại, hướng chuyên môn tôi muốn phát triển tập trung vào ứng dụng Python, hệ thống nghiệp vụ và các quy trình ERP/WMS. Computer Vision và OCR là những mảng tôi có trải nghiệm qua các dự án riêng biệt.":"Today, I want to deepen my work in Python applications, business systems and ERP/WMS workflows. Computer Vision and OCR are additional areas I have explored through separate projects."}</p>
+      </div>
+    </section>
+    <section className="about-principles">
+      <div className="about-subheading"><span>{vi?"CÁCH TIẾP CẬN":"WORKING APPROACH"}</span><h2>{vi?"Bắt đầu từ bài toán, không phải từ công nghệ":"Start with the problem, not the technology"}</h2></div>
+      <div className="about-grid">{principles.map(item=><article key={item[0]}><span>{item[0]}</span><h3>{item[1]}</h3><p>{item[2]}</p></article>)}</div>
+    </section>
+    <div className="about-direction"><span>{vi?"ĐỊNH HƯỚNG HIỆN TẠI":"CURRENT DIRECTION"}</span><p>{vi?"Phát triển sâu hơn về Python Backend và ứng dụng nghiệp vụ; xây dựng portfolio bằng các dự án có phạm vi, trạng thái và bằng chứng rõ ràng.":"Deepen Python backend and business-application skills, and build a portfolio of projects with clear scope, status and evidence."}</p></div>
     <p className="scope-note"><Icon name="check" size={17}/>{t.noOt}</p>
   </div></main>;
 }
-
 function NotFound({ lang }) {
   const t=text[lang];
   return <main id="main-content" className="inner-page not-found"><div className="container"><div className="section-kicker">404 / NOT FOUND</div><h1>Oops.</h1><p>{t.notFound}</p><a className="button button-primary" href="#home">{t.homeAction}<Icon name="arrow" size={16}/></a></div></main>;
