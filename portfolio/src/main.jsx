@@ -461,11 +461,47 @@ function Footer({ lang }) {
   </footer>;
 }
 
+function resolvePortfolioRoute() {
+  const hashRoute=window.location.hash
+    .slice(1)
+    .replace(/^\\/+|\\/+$/g,"")
+    .split("?")[0];
+  return hashRoute || "home";
+}
+
+class RenderErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state={hasError:false};
+  }
+  static getDerivedStateFromError() {
+    return {hasError:true};
+  }
+  componentDidCatch(error,info) {
+    console.error("Portfolio page render failed:",error,info.componentStack);
+  }
+  render() {
+    if(this.state.hasError) {
+      const vi=this.props.lang==="vi";
+      return <main className="inner-page page-error-state" role="alert">
+        <div className="container">
+          <div className="section-kicker">PAGE RENDER ERROR</div>
+          <h1>{vi?"Trang này đang gặp lỗi hiển thị.":"This page could not be displayed."}</h1>
+          <p>{vi?"Nội dung không tải được do lỗi khi render. Hãy tải lại trang; lỗi đã được ghi nhận trong console để kiểm tra.":"A rendering error prevented this page from loading. Reload the page; technical details are available in the browser console."}</p>
+          <button type="button" className="button button-primary" onClick={()=>window.location.reload()}>{vi?"Tải lại trang":"Reload page"}</button>
+          <a className="text-link" href="#home">{vi?"Về trang chủ":"Back to home"}</a>
+        </div>
+      </main>;
+    }
+    return this.props.children;
+  }
+}
+
 function App() {
   const [lang,setLang]=useState("en");
-  const [route,setRoute]=useState(()=>window.location.hash.slice(1)||"home");
+  const [route,setRoute]=useState(()=>resolvePortfolioRoute());
   useEffect(()=>{
-    const change=()=>{setRoute(window.location.hash.slice(1)||"home");window.scrollTo({top:0,behavior:"auto"});};
+    const change=()=>{setRoute(resolvePortfolioRoute());window.scrollTo({top:0,behavior:"auto"});};
     window.addEventListener("hashchange",change);
     if(!window.location.hash) window.location.hash="home";
     return ()=>window.removeEventListener("hashchange",change);
@@ -512,7 +548,7 @@ function App() {
   else if(route==="contact") content=<ContactSection lang={lang}/>;
   else if(parts[0]==="project") content=<ProjectDetail project={projects.find(p=>p.slug===parts[1])} lang={lang}/>;
   else content=<NotFound lang={lang}/>;
-  return <><a className="skip-link" href="#main-content">Skip to content</a><Header lang={lang} setLang={setLang} route={route}/>{content}<Footer lang={lang}/></>;
+  return <><a className="skip-link" href="#main-content">Skip to content</a><Header lang={lang} setLang={setLang} route={route}/><RenderErrorBoundary lang={lang}>{content}</RenderErrorBoundary><Footer lang={lang}/></>;
 }
 
 createRoot(document.getElementById("root")).render(<React.StrictMode><App/></React.StrictMode>);
