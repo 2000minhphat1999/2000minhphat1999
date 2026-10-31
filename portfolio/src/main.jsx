@@ -164,7 +164,7 @@ const text = {
     fabricNext:"Xác nhận giấy phép sử dụng tập dữ liệu và kiểm tra ảnh mẫu trước khi chọn mô hình hoặc công bố kết quả.",
     flow:"MÔ HÌNH QUY TRÌNH · MINH HỌA", receive:"Nhập kho", inventory:"Kiểm tra tồn", reserve:"Giữ tồn", trace:"Truy vết",
     video:"Khung hình video", detection:"YOLOv5 phát hiện", tracking:"Theo dõi bằng DeepSORT", tracks:"Kết quả theo dõi",
-    document:"Ảnh tài liệu", ocr:"Xử lý ảnh / OCR", fields:"Trường thông tin", entry:"Nhập dữ liệu lên website",
+    document:"Ảnh tài liệu", ocr:"Xử lý ảnh / OCR", fields:"Trường thông tin", entry:"Nhập dữ liệu lên trang web",
     dataset:"Tập dữ liệu", baseline:"Mô hình cơ sở", evaluation:"Đánh giá", notFound:"Không tìm thấy trang này.", homeAction:"Về trang chủ",
     backTop:"Lên đầu trang", viDegree:"Xếp loại Khá",
     skipToContent:"Chuyển đến nội dung chính", brandHome:"Minh Phát — trang chủ", toggleNavigation:"Mở hoặc đóng điều hướng", mainNavigation:"Điều hướng chính", language:"Ngôn ngữ",
