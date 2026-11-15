@@ -63,7 +63,7 @@ try {
       assert.ok(html.includes('id="main-content"'), `Missing main content: ${lang} / ${route}`);
       assert.ok(!html.includes("PAGE RENDER ERROR"), `Render boundary activated: ${lang} / ${route}`);
       assert.ok(html.includes(expected), `Wrong page content for ${lang} / ${route}; expected marker: ${expected}`);
-      assert.ok((html.match(/<h1(?:\\s|>)/g) || []).length >= 1, `Page heading missing: ${lang} / ${route}`);
+      assert.ok((html.match(/<h1(?:\s|>)/g) || []).length >= 1, `Page heading missing: ${lang} / ${route}`);
       assert.ok(!html.includes("undefined"), `Undefined content rendered: ${lang} / ${route}`);
       for (const phrase of forbiddenCopy) {
         assert.ok(!html.includes(phrase), `Self-undervaluing copy found on ${lang} / ${route}: ${phrase}`);
