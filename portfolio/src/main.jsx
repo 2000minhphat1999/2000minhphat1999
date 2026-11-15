@@ -7,125 +7,125 @@ import "./styles.css";
 const text = {
   en: {
     home:"Home", projects:"Projects", all:"All projects", ai:"AI", backend:"Backend", experience:"Experience", about:"About me", contact:"Contact",
-    projectsPageIntro:"Browse the work by engineering domain, then open an individual case study for scope and evidence.",
-    experiencePageIntro:"Employment, a fixed-term contract, intermittent freelance engagements and earlier engineering experience — kept separate by type and duration.",
-    skillsPageIntro:"A practical view of the tools and domains used in the work described in this portfolio. No percentage ratings or unsupported proficiency claims.",
-    educationPageIntro:"Formal engineering education and documented research activity.",
-    aboutPageIntro:"My professional mindset combines systems thinking, solution design and continuous improvement.",
-    contactPageIntro:"For IT Staff / ERP support, business application support, Python development, ERP/WMS and backend engineering opportunities.",
-    homeFocusKicker:"HOW I APPROACH THE WORK",
-    homeFocusTitle:"I start by understanding the workflow.",
-    homeFocusText:"Before changing software, I try to understand how people use the system, what data moves through it and where errors occur. Then I translate the process into application logic, test the expected behaviour and work through defects.",
-    eyebrow:"PERSONAL PORTFOLIO · IT STAFF / ERP SUPPORT", regionLabel:"QUANG NGAI, VIETNAM",
-    headlineA:"Hi, I'm Phát.", headlineB:"IT Staff / ERP Support",
-    heroRole:"Python · WMS / FEMS · Business applications",
-    intro:"I have 1 year 10 months of experience contributing to WMS and FEMS at Sumida. My work included clarifying warehouse requirements, translating workflows into application logic, testing features and fixing defects. I'm looking for an IT Staff / ERP Support role where I can keep building and supporting business applications.",
+    projectsPageIntro:"Các dự án và hệ thống tôi đã thực hiện. Mỗi trang chi tiết đi sâu hơn vào bài toán và cách tôi triển khai.",
+    experiencePageIntro:"Những công việc, dự án và môi trường kỹ thuật đã góp phần hình thành kinh nghiệm của tôi.",
+    skillsPageIntro:"Các công nghệ tôi sử dụng và những dạng bài toán tôi muốn tiếp tục phát triển.",
+    educationPageIntro:"Nền tảng đào tạo kỹ thuật, hoạt động nghiên cứu và các dấu mốc học thuật.",
+    aboutPageIntro:"Tôi bắt đầu từ ngành Cơ điện tử và tìm thấy hướng đi của mình trong phát triển phần mềm phục vụ vận hành.",
+    contactPageIntro:"Trao đổi về cơ hội IT Staff, ERP Support, phát triển Python và ứng dụng nghiệp vụ.",
+    homeFocusKicker:"ĐIỀU TÔI QUAN TÂM",
+    homeFocusTitle:"Phần mềm nên giúp công việc rõ ràng và dễ làm hơn.",
+    homeFocusText:"Tôi thích tìm hiểu cách một công việc đang diễn ra trước khi viết code. Đó là lúc cần lắng nghe người trực tiếp sử dụng hệ thống, theo dõi dữ liệu qua từng bước và xây dựng chức năng giúp quy trình dễ quản lý hơn.",
+    eyebrow:"IT STAFF / ERP SUPPORT · QUẢNG NGÃI", regionLabel:"QUANG NGAI, VIETNAM",
+    headlineA:"Xin chào, tôi là Phát.", headlineB:"Tôi làm phần mềm từ quy trình thực tế.",
+    heroRole:"Python · WMS / FEMS · Ứng dụng nghiệp vụ",
+    intro:"Tôi có 1 năm 10 tháng tham gia phát triển WMS và FEMS tại Sumida. Tôi làm việc với người dùng kho, chuyển các bước vận hành thành logic ứng dụng, phát triển và kiểm thử chức năng, đồng thời xử lý lỗi phát sinh. Trước đó, tôi thực hiện các dự án Computer Vision, OCR và dữ liệu công nghiệp. Hiện tại, tôi tập trung vào Python và ứng dụng nghiệp vụ.",
     explore:"See my work", getInTouch:"Get in touch",
-    personalNoteLabel:"A NOTE ABOUT ME", personalNoteTitle:"From mechatronics to business applications.",
-    personalNoteText:"I studied Mechatronics Engineering Technology at the University of Technology and Education – The University of Danang. That background led me toward software, industrial data and the applications people use at work.",
-    personalFact1Label:"BACKGROUND", personalFact1Title:"Mechatronics Engineering", personalFact1Meta:"UTE – The University of Danang · Good classification",
-    personalFact2Label:"HOW I WORK", personalFact2Title:"Understand → implement → test", personalFact2Meta:"Start with the real workflow and the expected result",
-    personalFact3Label:"CURRENT PROJECT", personalFact3Title:"RackFlow — Mini ERP / WMS", personalFact3Meta:"Personal project · In development",
-    experienceStripLabel:"MY EXPERIENCE SO FAR", experienceStripIntro:"A short timeline of my employment and project work.",
-    sumidaPeriod:"02/2025 – 11/2026", sumidaStripText:"WMS & FEMS · 1 year 10 months",
-    haloviPeriod:"11/2023 – 03/2024", haloviStripText:"Computer Vision · five-month contract",
-    freelancePeriod:"09/2022 – 12/2024", freelanceStripText:"Two main freelance projects · intermittent",
-    homeWorkKicker:"SELECTED WORK", homeWorkTitle:"A few projects I've worked on.",
-    homeWorkIntro:"A mix of employment work, independent projects and a personal build. Each case study describes my role, the scope and what is still in progress.",
-    homeWorkMore:"See all projects",
-    personalAboutLink:"About me", personalExperienceLink:"Experience", personalSkillsLink:"Skills",
-    footer:"Thanks for taking a look at my work.",
-    selected:"SELECTED WORK", featuredTitle:"Projects with a clear problem, scope and status.",
-    featuredIntro:"Professional experience, past project engagements and work still in development are clearly separated.",
-    seeCase:"View case study", viewAll:"View all projects", inProgress:"In development", past:"Past project", prototype:"Experimental prototype", planned:"Planned experiment",
-    domains:"PROJECT AREAS", domainsTitle:"One primary direction. Two supporting domains.",
-    domainsIntro:"Projects is the parent section; AI and Backend are its two branches.",
-    backendDesc:"Python services, business rules, persistence and warehouse workflows. RackFlow is a personal project in development.",
-    aiDesc:"Past work in video-based detection and tracking, OCR-assisted document entry, plus an experimental fabric-defect detector evaluated with Faster R-CNN.",
-    experienceTitle:"Experience grounded in actual scope.",
-    experienceIntro:"Employment, fixed-term contract, intermittent freelance work, research/education and internship are listed separately.",
+    personalNoteLabel:"ĐÔI NÉT VỀ TÔI", personalNoteTitle:"Nền tảng kỹ thuật, tư duy phát triển phần mềm.",
+    personalNoteText:"Tôi tốt nghiệp Công nghệ Kỹ thuật Cơ điện tử. Quá trình làm việc với thiết bị, dữ liệu và hệ thống kho đã đưa tôi đến gần hơn với phần mềm phục vụ công việc hằng ngày.",
+    personalFact1Label:"HỌC VẤN", personalFact1Title:"Công nghệ Kỹ thuật Cơ điện tử", personalFact1Meta:"ĐH Sư phạm Kỹ thuật – ĐH Đà Nẵng · Xếp loại Khá",
+    personalFact2Label:"CÁCH TÔI LÀM VIỆC", personalFact2Title:"Hiểu · xây dựng · kiểm thử", personalFact2Meta:"Bắt đầu từ người dùng, quy trình và kết quả cần đạt",
+    personalFact3Label:"DỰ ÁN ĐANG XÂY DỰNG", personalFact3Title:"RackFlow — Mini ERP / WMS", personalFact3Meta:"Ứng dụng quản lý quy trình kho",
+    experienceStripLabel:"KINH NGHIỆM CỦA TÔI", experienceStripIntro:"Một vài môi trường làm việc và dự án đã tạo nên hành trình của tôi.",
+    sumidaPeriod:"02/2025 – 11/2026", sumidaStripText:"WMS & FEMS · Phát triển phần mềm",
+    haloviPeriod:"11/2023 – 03/2024", haloviStripText:"Computer Vision Engineer · Hợp đồng 5 tháng",
+    freelancePeriod:"09/2022 – 12/2024", freelanceStripText:"Các dự án Computer Vision và OCR",
+    homeWorkKicker:"DỰ ÁN TIÊU BIỂU", homeWorkTitle:"Một vài sản phẩm tôi đã xây dựng.",
+    homeWorkIntro:"Từ ứng dụng kho đến nhận diện hình ảnh và tự động hóa nhập liệu, các dự án dưới đây cho thấy những bài toán tôi đã trực tiếp làm việc.",
+    homeWorkMore:"Xem tất cả dự án",
+    personalAboutLink:"Tìm hiểu về tôi", personalExperienceLink:"Kinh nghiệm", personalSkillsLink:"Kỹ năng",
+    footer:"Cảm ơn bạn đã ghé thăm. Rất vui được kết nối và trao đổi.",
+    selected:"DỰ ÁN TIÊU BIỂU", featuredTitle:"Những dự án bắt đầu từ bài toán thực tế.",
+    featuredIntro:"Mời bạn xem các sản phẩm, cách tôi triển khai và trạng thái hiện tại của từng dự án.",
+    seeCase:"Xem dự án", viewAll:"Xem tất cả dự án", inProgress:"Đang phát triển", past:"Đã hoàn thành", prototype:"Nguyên mẫu nghiên cứu", planned:"Dự kiến",
+    domains:"LĨNH VỰC TÔI LÀM VIỆC", domainsTitle:"Ứng dụng nghiệp vụ, cùng nền tảng AI ứng dụng.",
+    domainsIntro:"Python và hệ thống nghiệp vụ là hướng đi chính. Computer Vision và OCR là những trải nghiệm đã đưa tôi đến với con đường này.",
+    backendDesc:"Ứng dụng Python, quy tắc nghiệp vụ, dữ liệu và quy trình kho. RackFlow kết hợp các nội dung này trong một dự án ERP/WMS cá nhân.",
+    aiDesc:"Computer Vision theo dõi giao nhận, OCR hỗ trợ nhập liệu tài liệu và thử nghiệm phát hiện lỗi vải bằng Faster R-CNN.",
+    experienceTitle:"Công việc và dự án tôi đã đi qua.",
+    experienceIntro:"Những vai trò và dự án đã giúp tôi trưởng thành hơn trong công việc kỹ thuật.",
     employment:"EMPLOYMENT & CONTRACT", earlier:"PROJECT-BASED & EARLIER EXPERIENCE",
-    skills:"CAPABILITIES", skillsTitle:"Tools and domains I can discuss with evidence.",
-    skillsIntro:"No percentage skill bars. These groups describe technologies used in the work listed here.",
-    core:"CORE", data:"DATA & WORKFLOWS", supporting:"SUPPORTING EXPERIENCE",
-    education:"EDUCATION", educationTitle:"Engineering foundation.",
-    contactTitle:"Have an operational workflow to improve?",
-    contactText:"Interested in IT Staff / ERP support, business application support, Python development, ERP/WMS and backend roles. Computer Vision and OCR remain supporting project experience.",
+    skills:"KỸ NĂNG", skillsTitle:"Công nghệ tôi sử dụng để biến yêu cầu thành phần mềm hoạt động.",
+    skillsIntro:"Kết hợp giữa phát triển phần mềm, quy trình nghiệp vụ và nền tảng kỹ thuật ứng dụng.",
+    core:"PHÁT TRIỂN PHẦN MỀM", data:"DỮ LIỆU & QUY TRÌNH NGHIỆP VỤ", supporting:"KỸ THUẬT ỨNG DỤNG",
+    education:"EDUCATION", educationTitle:"Nơi hành trình kỹ thuật của tôi bắt đầu.",
+    contactTitle:"Cùng trao đổi về phần mềm và công việc mà nó hỗ trợ.",
+    contactText:"Tôi quan tâm đến các vị trí IT Staff / ERP Support, phát triển Python và ứng dụng nghiệp vụ cho môi trường sản xuất, kho vận và vận hành.",
     email:"Email", linkedin:"LinkedIn", github:"GitHub profile",
-    problem:"Problem & objective", role:"My role", approach:"Solution & implementation", scope:"Scope",
-    evidence:"Evidence & limitations", next:"Next step", technologies:"TECHNOLOGIES", videoShowcaseLabel:"VIDEO DEMO · YOUTUBE", videoShowcaseTitle:"Model demonstration", videoPlaceholderTitle:"YouTube demo will appear here", videoPlaceholderText:"A 16:9 video space is reserved. Add a YouTube URL to the youtubeUrl field in the fabric project entry to display the video.", videoFrameTitle:"Fabric defect inspection demo", back:"Back to projects",
+    problem:"Bài toán", role:"Phần việc của tôi", approach:"Cách triển khai", scope:"Chức năng chính",
+    evidence:"Trạng thái dự án", next:"Hướng phát triển tiếp theo", technologies:"TECHNOLOGIES", videoShowcaseLabel:"VIDEO DEMO · YOUTUBE", videoShowcaseTitle:"Model demonstration", videoPlaceholderTitle:"YouTube demo will appear here", videoPlaceholderText:"A 16:9 video space is reserved. Add a YouTube URL to the youtubeUrl field in the fabric project entry to display the video.", videoFrameTitle:"Fabric defect inspection demo", back:"Back to projects",
     noOt:"Industrial OT/IT technologies such as Siemens S7, SCADA, MQTT and OPC UA are not presented as hands-on professional experience.",
     sumidaRole:"Software Development Technical Team Lead",
     sumidaWms:"WMS: clarified requirements with warehouse users, analysed workflows, implemented application logic, tested features, fixed defects and supported trial deployment.",
     sumidaFems:"FEMS: contributed to data-processing functions, an electricity-monitoring dashboard and electricity-cost calculations.",
     haloviRole:"Computer Vision Engineer",
-    haloviText:"Worked on Computer Vision components during a five-month contract. The scope is limited to the confirmed contract and field; unverified production responsibilities are not added.",
-    freelanceText:"Two main engagements carried out in separate project periods, with gaps between them; this was not continuous full-time employment.",
+    haloviText:"Làm việc với vai trò Computer Vision Engineer trong hợp đồng 5 tháng, tham gia phát triển các thành phần thị giác máy tính.",
+    freelanceText:"Thực hiện hai dự án phần mềm chính: theo dõi giao nhận tại siêu thị qua video và tự động hóa nhập liệu bằng OCR cho Cảng Đà Nẵng.",
     uniRole:"Research Engineer",
     uniText:"Developed educational websites, designed and assembled STEAM robot systems, and contributed to project-based learning activities.",
     premoRole:"Kaizen Engineer Intern",
-    premoText:"Supported assembly-process analysis and continuous-improvement activities during an engineering internship. This is not presented as professional OT/IT systems engineering.",
-    freelanceType:"Intermittent freelance engagements", research:"Research / education", internship:"Internship",
+    premoText:"Sử dụng Python để thu thập dữ liệu hiệu suất từ cảm biến công nghiệp qua Modbus RTU, đồng thời tham gia phân tích quy trình lắp ráp.",
+    freelanceType:"Dự án phần mềm độc lập", research:"Nghiên cứu & giáo dục", internship:"Thực tập kỹ thuật",
     degree:"B.Eng. in Mechatronics Engineering Technology",
     publication:"Co-author of “Building An IoT-Based Waste Management System for Hazardous Waste,” REC-ECIT 2023, pp. 193–198.",
     award:"Encouragement Prize, Student Science and Technology Awards at Higher Education Institutions (2023); Second Prize, Da Nang City Student Scientific Research Competition (2022).",
-    rackSummary:"A warehouse operations application focused on inbound receiving, inventory lookup, order lookup, stock reservation and traceable state changes.",
-    cvSummary:"A project-based freelance Computer Vision workflow using video to detect and track activity related to supermarket deliveries.",
-    ocrSummary:"A project-based workflow for extracting information from vehicle-inspection documents and entering data into a website.",
-    fabricSummary:"An experimental fabric-defect detector built with Faster R-CNN and a MobileNetV3-FPN backbone, with validation experiments and an image-inference interface. Factory deployment is outside the current scope.",
-    rackProblem:"Warehouse workflows need consistent stock information and clear records of operational actions. RackFlow models these flows in a small ERP/WMS portfolio application.",
-    rackRole:"Personal project. I define the scope and implement the application incrementally; this is not a deployed customer system or production warehouse platform.",
-    rackScope:"Inbound receiving and inventory lookup; order lookup and stock reservation; event history for operational traceability.",
-    rackApproach:"Python services using FastAPI and Flask, SQLAlchemy and PostgreSQL. The project focuses on business rules, data persistence, workflow behaviour and explicit state changes.",
-    rackEvidence:"The listed features define the current portfolio scope. Outbound workflows and AI-assisted operations remain under development; no production deployment or business KPI is claimed.",
-    rackNext:"Complete and verify manual outbound first, then add AI-assisted operations with validation, human confirmation and traceable events.",
-    cvProblem:"Support delivery monitoring by identifying and following relevant objects through video.",
-    cvRole:"Implemented a Computer Vision workflow using YOLOv5 for object detection and DeepSORT for object tracking.",
-    cvEvidence:"Past freelance project delivered in a project-based engagement. No verified accuracy, throughput or time-saving metrics are claimed.",
-    cvNext:"For a reproducible demo, report detector precision/recall and representative failure cases; for tracking, document identity switches and occlusion behaviour.",
-    ocrProblem:"Reduce repetitive manual entry from paper vehicle-inspection records into the Da Nang Port website.",
-    ocrRole:"Used image processing and OCR in a workflow that extracted document information and automated website data entry.",
-    ocrEvidence:"Past project-based freelance work. Document samples, field-level accuracy and time-saved measurements are not published as verified evidence here.",
-    ocrNext:"For a reproducible demo, measure field-level exact match, correction rate and failure handling on labelled documents.",
-    fabricProblem:"Build a repeatable detector that localizes visible defects in fabric images as an inspection-support prototype, not as an automated production quality-release system.",
-    fabricRole:"Independently developed the experiment from model selection through training, validation and an image-inference interface. The implementation uses a Faster R-CNN path rather than an Ultralytics/YOLO stack.",
-    fabricScope:"Upload a fabric image and return predicted bounding boxes, one of nine Vietnamese defect labels, a raw model score (0–1) and JSON output. Scores are presented as model outputs, not calibrated probabilities.",
-    fabricApproach:"Faster R-CNN with a MobileNetV3-FPN backbone, trained and evaluated on Google Colab with a T4 GPU. The project uses a reproducible validation workflow and multi-seed experiments.",
-    fabricEvidence:"Experimental E1 validation mAP50–95 across three seeds: 0.412 / 0.412 / 0.426. These are validation-split results; external/OOD generalization is not established. Model scores are not calibrated, and no factory deployment or production KPI is claimed.",
-    fabricNext:"Evaluate on independent out-of-distribution fabric images, review per-class precision/recall and failure cases, and assess score calibration before considering any factory workflow.",
-    fabricBlogKicker:"ENGINEERING JOURNAL · COMPUTER VISION",
-    fabricBlogLead:"Building a fabric-surface defect detector with Faster R-CNN, then turning model predictions into an image-inference demo. This article documents the engineering decisions, validation experiments and the limits that still matter.",
-    fabricImageAlt:"Illustrative textile swatches showing a woven surface, yarn irregularity, surface discoloration and a localized opening.",
-    fabricImageCaption:"Illustrative textile surface study. These visuals explain the inspection context; they are not samples from the training dataset and are not model predictions.",
+    rackSummary:"Dự án ERP/WMS cá nhân tập trung vào nhập kho, tra cứu tồn, giữ hàng và lưu lại lịch sử hoạt động kho.",
+    cvSummary:"Ứng dụng Computer Vision phát hiện và theo dõi hoạt động giao nhận từ video tại siêu thị.",
+    ocrSummary:"Quy trình xử lý tài liệu: trích xuất thông tin từ sổ đăng kiểm và nhập dữ liệu lên website Cảng Đà Nẵng.",
+    fabricSummary:"Dự án phát hiện lỗi vải sử dụng Faster R-CNN và MobileNetV3-FPN, đi kèm các lần đánh giá validation có thể lặp lại và giao diện suy luận ảnh.",
+    rackProblem:"Bộ phận kho cần thông tin tồn kho đáng tin cậy và lịch sử rõ ràng cho từng thao tác. RackFlow đưa các bước nghiệp vụ chính vào cùng một ứng dụng.",
+    rackRole:"Tôi tự thiết kế và phát triển RackFlow như một dự án ERP/WMS cá nhân, từ mô hình dữ liệu, quy tắc nghiệp vụ đến các luồng thao tác trên giao diện.",
+    rackScope:"Nhập kho, tra cứu tồn, tra cứu đơn hàng, giữ tồn và lịch sử sự kiện để theo dõi thay đổi. Luồng xuất kho đang được phát triển.",
+    rackApproach:"Xây dựng bằng Python, FastAPI, Flask, SQLAlchemy và PostgreSQL. Ứng dụng mô hình hóa luân chuyển tồn kho và trạng thái nghiệp vụ thành các quy tắc xử lý rõ ràng.",
+    rackEvidence:"Đã có các chức năng nhập kho, tra cứu tồn, tra cứu đơn hàng, giữ tồn và lịch sử sự kiện. Luồng xuất kho thủ công và luồng có Gemini hỗ trợ đang được phát triển.",
+    rackNext:"Hoàn thiện luồng xuất kho, sau đó bổ sung cơ chế Gemini hỗ trợ với bước kiểm tra tồn, xác nhận của người dùng và lịch sử thao tác.",
+    cvProblem:"Giúp việc theo dõi giao nhận tại siêu thị thuận tiện hơn thông qua phát hiện và theo dõi đối tượng trong video.",
+    cvRole:"Xây dựng quy trình xử lý video: YOLOv5 phát hiện đối tượng và DeepSORT theo dõi đối tượng qua các khung hình.",
+    cvEvidence:"Dự án kết hợp phát hiện và theo dõi đối tượng trong một quy trình giám sát giao nhận tại siêu thị.",
+    cvNext:"Mở rộng đánh giá với các đoạn video đại diện, độ ổn định theo dõi và những tình huống hình ảnh phức tạp.",
+    ocrProblem:"Giảm thao tác nhập liệu lặp lại từ sổ đăng kiểm phương tiện lên website Cảng Đà Nẵng.",
+    ocrRole:"Kết hợp tiền xử lý ảnh và OCR để trích xuất các trường dữ liệu, sau đó dùng Selenium nhập thông tin lên website.",
+    ocrEvidence:"Quy trình kết nối xử lý ảnh tài liệu, trích xuất văn bản, tách trường dữ liệu và tự động nhập liệu qua trình duyệt.",
+    ocrNext:"Bổ sung bước rà soát các trường dữ liệu chưa rõ ràng và đánh giá độ chính xác trích xuất trên tập tài liệu đã gán nhãn.",
+    fabricProblem:"Định vị các lỗi nhìn thấy trên bề mặt vải và xác định nhóm lỗi tương ứng từ ảnh đầu vào.",
+    fabricRole:"Tôi phát triển thử nghiệm từ lựa chọn mô hình, chuẩn bị dữ liệu, huấn luyện, validation đến giao diện suy luận ảnh.",
+    fabricScope:"Tải ảnh vải lên và nhận về bounding box dự đoán, một trong chín nhãn lỗi tiếng Việt, model score (0–1) và dữ liệu JSON.",
+    fabricApproach:"Sử dụng Faster R-CNN với backbone MobileNetV3-FPN, huấn luyện trên Google Colab với GPU T4. Thử nghiệm E1 được đánh giá qua nhiều random seed để so sánh kết quả.",
+    fabricEvidence:"mAP50–95 trên tập validation E1 qua ba seed: 0.412, 0.412 và 0.426. Giao diện trả về raw model score; các bước tiếp theo là hiệu chuẩn score và đánh giá trên nguồn ảnh vải độc lập.",
+    fabricNext:"Đánh giá mô hình trên ảnh vải độc lập, xem xét precision/recall theo từng lớp lỗi và kiểm tra hiệu chuẩn score.",
+    fabricBlogKicker:"GHI CHÚ KỸ THUẬT · COMPUTER VISION",
+    fabricBlogLead:"Cách tôi tiếp cận bài toán phát hiện lỗi vải bằng Faster R-CNN, kiểm tra mô hình qua các lần validation có thể lặp lại và xây dựng giao diện quan sát dự đoán trên ảnh.",
+    fabricImageAlt:"Hình minh họa các bề mặt vải với kết cấu dệt khác nhau và một số dạng bất thường trên sợi vải.",
+    fabricImageCaption:"Hình ảnh giới thiệu bối cảnh của bài toán kiểm tra bề mặt vải.",
     fabricBlogToc:"IN THIS ARTICLE",
     fabricBlogChallengeTitle:"Starting with the inspection problem",
-    fabricBlogChallengeP1:"Fabric-surface defects can affect the material used in sofa manufacturing. The practical computer-vision task in this project is not simply to label an image as good or bad: the model needs to identify where a visible defect appears and assign it to a defect category.",
-    fabricBlogChallengeP2:"That makes object localization central to the prototype. The intended output is an inspection aid for a human reviewer, not an autonomous quality-release decision or a factory-integrated system.",
+    fabricBlogChallengeP1:"Lỗi trên bề mặt vải có thể ảnh hưởng đến ngoại quan và chất lượng vật liệu dùng trong sản xuất sofa. Với dự án này, tôi muốn mô hình không chỉ phân loại ảnh mà còn xác định vị trí lỗi và gán đúng nhóm lỗi tương ứng.",
+    fabricBlogChallengeP2:"Vì vậy, object detection là lựa chọn phù hợp. Giao diện trình bày kết quả dự đoán để người xem có thể quan sát vị trí và nhãn lỗi trên ảnh.",
     fabricBlogModelTitle:"Choosing a model that fits the constraints",
-    fabricBlogModelP1:"I chose Faster R-CNN with a MobileNetV3-FPN backbone. The project constraints ruled out the AGPL/Ultralytics/YOLO11n route, so the implementation follows a different object-detection stack.",
-    fabricBlogModelP2:"The choice keeps the work focused on a conventional detection pipeline: prepare the labelled images, train the detector, inspect validation behaviour, and expose predictions in a small inference interface. The model choice is an engineering decision for this experiment, not a claim that one detector is universally best.",
+    fabricBlogModelP1:"Tôi chọn Faster R-CNN với backbone MobileNetV3-FPN. Các ràng buộc của dự án đưa tôi đến một hướng detection khác với Ultralytics/YOLO11n, phù hợp để huấn luyện và đánh giá trong môi trường hiện có.",
+    fabricBlogModelP2:"Quy trình triển khai gồm chuẩn bị ảnh đã gán nhãn, huấn luyện detector, xem xét kết quả validation và đưa dự đoán ra giao diện suy luận ảnh.",
     fabricBlogSetupTitle:"Setting up repeatable experiments",
-    fabricBlogSetupP1:"Training and evaluation were carried out on Google Colab with a T4 GPU. I used a multi-seed validation check for the E1 experiment rather than relying on a single run.",
-    fabricBlogSetupP2:"The three validation mAP50–95 results were 0.412, 0.412 and 0.426. The runs are close to one another, which is useful as a check on run-to-run variation within this setup; it does not establish performance on unseen factories, cameras or fabric types.",
+    fabricBlogSetupP1:"Tôi huấn luyện và đánh giá mô hình trên Google Colab với GPU T4. Trong thử nghiệm E1, tôi chạy validation với ba random seed để so sánh độ ổn định giữa các lần chạy.",
+    fabricBlogSetupP2:"Ba kết quả mAP50–95 trên tập validation lần lượt là 0.412, 0.412 và 0.426. Các giá trị khá gần nhau, cung cấp một góc nhìn về tính lặp lại trong thử nghiệm này.",
     fabricBlogInterfaceTitle:"Turning predictions into something people can inspect",
-    fabricBlogInterfaceP1:"The demo flow is intentionally small: upload a fabric image, run inference, inspect the predicted bounding boxes and defect labels, then access the structured JSON output.",
-    fabricBlogInterfaceP2:"The interface shows one of nine Vietnamese defect labels and a raw model score from 0 to 1 for each prediction. That score is the model output; it has not been calibrated and must not be read as a verified probability that the prediction is correct.",
+    fabricBlogInterfaceP1:"Luồng demo được giữ đơn giản: tải ảnh vải lên, chạy suy luận, quan sát bounding box và nhãn lỗi, sau đó truy cập dữ liệu JSON có cấu trúc.",
+    fabricBlogInterfaceP2:"Mỗi dự đoán gồm một trong chín nhãn lỗi tiếng Việt và raw model score từ 0 đến 1. Score được hiển thị như đầu ra mô hình, tách biệt với xác suất đã hiệu chuẩn.",
     fabricBlogLimitsTitle:"Reading the results without overclaiming",
-    fabricBlogLimitsP1:"The reported values are from the validation split used in the E1 experiment. They are not independent external-test results. Out-of-distribution evaluation remains incomplete, so generalization to different fabric sources, lighting conditions or production cameras is still unknown.",
-    fabricBlogLimitsP2:"The prototype also does not establish line-speed performance, operator acceptance, defect escape rate or measurable production savings. No factory deployment is claimed.",
+    fabricBlogLimitsP1:"Các số liệu E1 đến từ tập validation sử dụng trong quá trình phát triển. Bước đánh giá tiếp theo là thử nghiệm trên nguồn ảnh vải, điều kiện ánh sáng và camera độc lập.",
+    fabricBlogLimitsP2:"Việc xem xét precision, recall theo từng lớp và các lỗi bỏ sót sẽ giúp xác định rõ hơn điểm mạnh của mô hình cũng như những phần cần cải thiện trong dữ liệu hoặc thuật toán.",
     fabricBlogNextTitle:"What I would test next",
-    fabricBlogNextP1:"The next stage is to evaluate independent fabric images outside the current validation distribution, inspect precision and recall by defect class, and document representative false positives and missed defects.",
-    fabricBlogNextP2:"I would also assess score calibration before using confidence thresholds in a human-review workflow. Only after those checks would integration with a real inspection process be worth evaluating.",
+    fabricBlogNextP1:"Tôi dự định đánh giá detector trên các ảnh vải độc lập và kiểm tra false positive, missed defect tiêu biểu theo từng nhóm lỗi.",
+    fabricBlogNextP2:"Tôi cũng sẽ đánh giá score calibration trước khi sử dụng confidence threshold trong quy trình có người kiểm tra.",
     fabricBlogMetricsLabel:"VALIDATION · E1 · THREE SEEDS",
     fabricBlogMetricName:"mAP50–95",
-    fabricBlogMetricNote:"Validation split only · not an external test",
+    fabricBlogMetricNote:"Tập validation E1 · ba random seed",
     fabricBlogTechTitle:"Experiment setup",
     fabricBlogTechModel:"Detector",
     fabricBlogTechBackbone:"Backbone",
     fabricBlogTechRuntime:"Training environment",
     fabricBlogTechTask:"Task",
     fabricBlogTaskValue:"Object detection · bounding boxes",
-    fabricBlogClosing:"This is an experimental prototype: useful for demonstrating model development and inference, but not yet evidence of production readiness.",
+    fabricBlogClosing:"Dự án kết hợp phát triển mô hình, đánh giá có thể lặp lại và giao diện suy luận ảnh. Giai đoạn tiếp theo là mở rộng kiểm thử trên dữ liệu vải độc lập.",
     flow:"WORKFLOW MODEL · ILLUSTRATIVE", receive:"Receive stock", inventory:"Check inventory", reserve:"Reserve stock", trace:"Trace changes",
     video:"Video frames", detection:"YOLOv5 detection", tracking:"DeepSORT tracking", tracks:"Track output",
     document:"Document image", ocr:"Image processing / OCR", fields:"Extracted fields", entry:"Web entry",
@@ -535,7 +535,7 @@ function ExperiencePreview({ lang }) {
         :"Clarified requirements with warehouse users, analysed operational steps, implemented application logic, tested features and supported trial deployment. FEMS work included data-processing features, an electricity dashboard and cost calculations.",
       proof:vi
         ?"Bằng chứng: tham gia phát triển WMS và FEMS tại Sumida; mô tả giới hạn theo phần việc đã thực hiện."
-        :"Evidence: WMS and FEMS development at Sumida, described within the scope of the work performed.",
+         :"Evidence: WMS and FEMS features developed at Sumida.",
       tags:["ERP","WMS","FEMS","Workflow analysis","Business logic"]
     },
     {
@@ -559,7 +559,7 @@ function ExperiencePreview({ lang }) {
         :"YOLOv5 and DeepSORT were used in a video-based delivery-monitoring project. OCR was applied to extract information from vehicle-inspection documents and support website data entry. The Halovi engagement was a separate five-month Computer Vision contract.",
       proof:vi
         ?"Bằng chứng: dự án theo dõi giao nhận, dự án OCR và hợp đồng 5 tháng tại Halovi. Chưa công bố chỉ số độ chính xác đã xác minh."
-        :"Evidence: delivery-monitoring project, OCR project and a five-month contract at Halovi. No verified accuracy metrics are claimed.",
+         :"Evidence: a delivery-monitoring application, an OCR data-entry tool and a five-month Computer Vision contract at Halovi.",
       tags:["YOLOv5","DeepSORT","OCR","Image processing"]
     },
     {
@@ -571,7 +571,7 @@ function ExperiencePreview({ lang }) {
         :"My Mechatronics background, C programming, IoT and STEAM robotics provide context for equipment and manufacturing. During my Premo internship, I used Python to collect sensor data over Modbus RTU. I can also investigate Modbus RTU devices over RS-485 by discovering device addresses (slave IDs), identifying register addresses and reading/checking register values.",
       proof:vi
         ?"Bằng chứng: kỳ thực tập Premo 05/2022–07/2022 có sử dụng Python thu thập dữ liệu qua Modbus RTU; kỹ năng khảo sát địa chỉ và thanh ghi được nêu ở phạm vi thiết bị, không phải triển khai PLC/SCADA."
-        :"Evidence: the Premo internship (05/2022–07/2022) included Python-based sensor data acquisition over Modbus RTU. Device-address discovery and register identification are presented as technical capabilities, not as PLC/SCADA deployment experience.",
+         :"Evidence: Python-based sensor data acquisition over Modbus RTU at Premo, in an industrial engineering environment.",
       tags:["Mechatronics","C","IoT","Modbus RTU","RS-485","Slave ID discovery","Register mapping"]
     },
     {
@@ -599,8 +599,8 @@ function ExperiencePreview({ lang }) {
     ["04","Test and refine","Validate the main workflow, resolve defects and confirm behaviour before supporting trial use."]
   ];
   const boundaries=vi
-    ?"Không tự nhận chuyên môn sâu về AI/Computer Vision production hoặc triển khai PLC/SCADA. YOLOv5, DeepSORT và OCR được ghi nhận theo phạm vi dự án/hợp đồng; Modbus RTU chỉ thuộc kỳ thực tập tại Premo. RackFlow là dự án cá nhân đang phát triển, không phải hệ thống kho đã triển khai cho khách hàng."
-    :"I do not claim production-level AI/Computer Vision expertise or PLC/SCADA deployment experience. YOLOv5, DeepSORT and OCR are described within their project/contract scope; Modbus RTU is limited to the Premo internship. RackFlow is a personal project in development, not a warehouse system deployed for a customer.";
+    ?"Python, Flask, FastAPI, SQL và PostgreSQL là nền tảng tôi sử dụng trong công việc và các dự án. Computer Vision, OCR và Modbus RTU bổ sung góc nhìn về hình ảnh, tài liệu và dữ liệu thiết bị."
+    :"Python, Flask, FastAPI, SQL and PostgreSQL are central to my work and projects. Computer Vision, OCR and Modbus RTU add experience with images, documents and equipment data."
   return <main id="main-content" className="inner-page page-section-page skills-page"><div className="container">
     <PageHeading index="01" kicker={t.skills} title={t.skillsTitle} intro={vi
       ?"Năng lực được hình thành từ phát triển ứng dụng Python, hệ thống nghiệp vụ doanh nghiệp và các dự án kỹ thuật. Mỗi nhóm dưới đây đều gắn với bối cảnh đã sử dụng hoặc đã thực hiện, thay vì chỉ liệt kê tên công nghệ."
@@ -628,7 +628,7 @@ function ExperiencePreview({ lang }) {
     <section className="skills-method" aria-labelledby="skills-method-title">
       <div className="skills-section-heading">
         <div><span>{vi?"02 / CÁCH TIẾP CẬN CÔNG VIỆC":"02 / WORKING APPROACH"}</span><h2 id="skills-method-title">{vi?"Từ yêu cầu nghiệp vụ đến chức năng có thể kiểm chứng":"From business requirements to verifiable features"}</h2></div>
-        <p>{vi?"Đây là quy trình làm việc được rút ra từ phần việc phát triển ứng dụng và hệ thống nghiệp vụ, không phải một quy trình chứng nhận độc lập.":"This working approach reflects the application and business-system work described above; it is not presented as a separate certified methodology."}</p>
+        <p>{vi?"Đây là cách tôi thường đi từ yêu cầu ban đầu đến chức năng có thể kiểm thử và sử dụng.":"This is how I move from an initial requirement to a feature that can be tested and used."}</p>
       </div>
       <div className="skills-method-grid">
         {steps.map(step=><article key={step[0]}><span>{step[0]}</span><h3>{step[1]}</h3><p>{step[2]}</p></article>)}
@@ -642,7 +642,7 @@ function ExperiencePreview({ lang }) {
         <div><strong>{vi?"Ứng dụng & API":"Applications & APIs"}</strong><p>Python · Flask · FastAPI · REST APIs</p><small>{vi?"Flask trong công việc/dự án; FastAPI trong RackFlow.":"Flask in work/project contexts; FastAPI in RackFlow."}</small></div>
         <div><strong>{vi?"Dữ liệu & cơ sở dữ liệu":"Data & databases"}</strong><p>SQL · PostgreSQL · SQLAlchemy</p><small>{vi?"SQL/PostgreSQL trong ứng dụng; SQLAlchemy trong RackFlow.":"SQL/PostgreSQL in applications; SQLAlchemy in RackFlow."}</small></div>
         <div><strong>{vi?"Thị giác máy tính & tài liệu":"Computer Vision & documents"}</strong><p>YOLOv5 · DeepSORT · OCR · Image Processing</p><small>{vi?"Các dự án theo đợt và hợp đồng Computer Vision 5 tháng.":"Project engagements and a five-month Computer Vision contract."}</small></div>
-        <div><strong>{vi?"Kỹ thuật & dữ liệu thiết bị":"Engineering & equipment data"}</strong><p>C · IoT · Modbus RTU · STEAM Robotics</p><small>{vi?"Nền tảng đào tạo và kỳ thực tập tại Premo; không phải triển khai PLC/SCADA.":"Education and the Premo internship; not PLC/SCADA deployment."}</small></div>
+        <div><strong>{vi?"Kỹ thuật & dữ liệu thiết bị":"Engineering & equipment data"}</strong><p>C · IoT · Modbus RTU · STEAM Robotics</p><small>{vi?"Lập trình C, IoT, robot STEAM và thu thập dữ liệu cảm biến qua Modbus RTU.":"C programming, IoT, STEAM robotics and sensor data collection over Modbus RTU."}</small></div>
       </div>
     </section>
     <p className="scope-note skills-boundary"><Icon name="check" size={17}/>{boundaries}</p>
@@ -785,76 +785,56 @@ function ProjectDetail({ project,lang }) {
 }
 
 function AboutPage({ lang }) {
-  const t=text[lang];
   const vi=lang==="vi";
   const journey=vi?[
-    ["09/2018 – 06/2023","HỌC VẤN · XẾP LOẠI KHÁ","Kỹ sư Công nghệ Kỹ thuật Cơ điện tử","Đại học Sư phạm Kỹ thuật – Đại học Đà Nẵng. Chương trình đào tạo liên ngành là nền tảng để tôi tiếp cận lập trình C, IoT và các hệ thống kết hợp phần cứng với phần mềm."],
-    ["05/2022 – 07/2022","THỰC TẬP TRONG MÔI TRƯỜNG CÔNG NGHIỆP","Thực tập sinh kỹ thuật Kaizen | Premo Vietnam","Sử dụng Python để trích xuất dữ liệu hiệu suất từ cảm biến công nghiệp qua Modbus RTU; đồng thời tham gia phân tích cụm lắp ráp cơ khí và kết cấu máy. Đây là trải nghiệm kết nối kiến thức cơ điện tử với việc thu thập, xử lý dữ liệu bằng phần mềm."],
-    ["09/2022 – 12/2024","PHÁT TRIỂN PHẦN MỀM THEO DỰ ÁN","Thị giác máy tính và OCR","Thực hiện hai dự án tự do chính theo từng đợt, có khoảng trống giữa các lần làm việc: ứng dụng thị giác máy tính theo dõi giao nhận tại siêu thị và công cụ OCR trích xuất dữ liệu sổ đăng kiểm để nhập lên trang web Cảng Đà Nẵng. Halovi là hợp đồng thị giác máy tính riêng biệt kéo dài 5 tháng."],
-    ["03/2024 – 08/2024","PHÁT TRIỂN ỨNG DỤNG","Kỹ sư nghiên cứu | Trường Đại học Sư phạm Kỹ thuật – Đại học Đà Nẵng","Phát triển trang web giáo dục, thiết kế và lắp ráp robot STEAM, tham gia xây dựng hoạt động học tập theo dự án."],
-    ["02/2025 – 11/2026","PHẦN MỀM DOANH NGHIỆP","Trưởng nhóm kỹ thuật phát triển phần mềm | Sumida","Tham gia phát triển WMS và FEMS. Công việc tập trung vào yêu cầu nghiệp vụ, mô hình hóa quy trình, logic ứng dụng, phát triển chức năng, kiểm thử, sửa lỗi và hỗ trợ chạy thử."]
+    ["02/2025 – 11/2026","SUMIDA","Trưởng nhóm kỹ thuật phát triển phần mềm","Tham gia phát triển WMS và FEMS. Với WMS, tôi làm việc cùng bộ phận kho để làm rõ yêu cầu, mô hình hóa quy trình, phát triển logic xử lý, kiểm thử và sửa lỗi. Với FEMS, tôi phát triển chức năng xử lý dữ liệu, dashboard điện năng và tính toán chi phí điện."],
+    ["11/2023 – 03/2024","HALOVI · HỢP ĐỒNG 5 THÁNG","Computer Vision Engineer","Tham gia phát triển các thành phần thị giác máy tính trong nhóm dự án tại Halovi."],
+    ["09/2022 – 12/2024","DỰ ÁN ĐỘC LẬP","Computer Vision và OCR","Thực hiện hai dự án chính: ứng dụng theo dõi giao nhận tại siêu thị bằng YOLOv5 và DeepSORT; công cụ OCR trích xuất thông tin từ sổ đăng kiểm và tự động nhập dữ liệu lên website Cảng Đà Nẵng."],
+    ["03/2024 – 08/2024","ĐH SƯ PHẠM KỸ THUẬT – ĐH ĐÀ NẴNG","Research Engineer","Phát triển website giáo dục, thiết kế và lắp ráp robot STEAM, đồng thời xây dựng hoạt động học tập theo dự án."],
+    ["05/2022 – 07/2022","PREMO VIETNAM","Kaizen Engineer Intern","Sử dụng Python thu thập dữ liệu hiệu suất từ cảm biến công nghiệp qua Modbus RTU, kết hợp phân tích quy trình lắp ráp và hoạt động cải tiến."]
   ]:[
-    ["09/2018 – 06/2023","EDUCATION · GOOD CLASSIFICATION","B.Eng. in Mechatronics Engineering Technology","The University of Technology and Education – The University of Danang. The interdisciplinary programme introduced me to C programming, IoT and systems combining hardware and software."],
-    ["05/2022 – 07/2022","INDUSTRIAL EXPOSURE","Kaizen Engineer Intern | Premo Vietnam","Used Python to extract performance data from industrial sensors through Modbus RTU, and took part in analysing mechanical assemblies and machine structures. This internship connected my Mechatronics background with software-based data collection and processing."],
-    ["09/2022 – 12/2024","PROJECT-BASED SOFTWARE DEVELOPMENT","Computer Vision and OCR","Completed two main freelance projects in separate engagements with gaps between them: a Computer Vision application for supermarket delivery monitoring and an OCR tool to extract vehicle-registration data for the Da Nang Port website. The Halovi engagement was a separate five-month Computer Vision contract."],
-    ["03/2024 – 08/2024","APPLICATION DEVELOPMENT","Research Engineer | University of Technology and Education – The University of Danang","Developed educational websites, designed and assembled STEAM robots, and contributed to project-based learning activities."],
-    ["02/2025 – 11/2026","ENTERPRISE SOFTWARE","Software Development Technical Team Lead | Sumida","Contributed to WMS and FEMS development. The work covered business requirements, workflow modelling, application logic, feature development, testing, defect resolution and trial deployment support."]
+    ["02/2025 – 11/2026","SUMIDA","Software Development Technical Team Lead","Contributed to WMS and FEMS. For WMS, I worked with warehouse users to clarify requirements, model workflows, develop application logic, test features and fix issues. For FEMS, I worked on data-processing features, an electricity dashboard and cost calculations."],
+    ["11/2023 – 03/2024","HALOVI · 5-MONTH CONTRACT","Computer Vision Engineer","Contributed to Computer Vision development as part of the Halovi project team."],
+    ["09/2022 – 12/2024","INDEPENDENT PROJECTS","Computer Vision and OCR","Worked on two main projects: a YOLOv5 and DeepSORT application for supermarket delivery monitoring, and an OCR tool that extracted vehicle-registration data and entered it into the Da Nang Port website."],
+    ["03/2024 – 08/2024","UTE – THE UNIVERSITY OF DANANG","Research Engineer","Developed educational websites, designed and assembled STEAM robots, and helped create project-based learning activities."],
+    ["05/2022 – 07/2022","PREMO VIETNAM","Kaizen Engineer Intern","Used Python to collect performance data from industrial sensors over Modbus RTU, alongside assembly-process analysis and continuous-improvement work."]
   ];
-  const mindset=vi?[
-    ["01","Phân tích quy trình và yêu cầu","Làm rõ yêu cầu với người dùng kho; phân tích các bước nghiệp vụ, dữ liệu đầu vào/đầu ra và điều kiện xử lý trước khi triển khai chức năng."],
-    ["02","Chuyển yêu cầu thành logic phần mềm","Xác định cách ứng dụng xử lý dữ liệu và trạng thái nghiệp vụ; triển khai chức năng bằng Python và các công nghệ phù hợp để phát triển hệ thống phía máy chủ."],
-    ["03","Kiểm chứng chức năng trong vận hành","Kiểm thử kết quả xử lý, xử lý lỗi và hỗ trợ chạy thử để bảo đảm chức năng đáp ứng quy trình sử dụng."]
+  const ways=vi?[
+    ["01","Bắt đầu từ người sử dụng","Tôi muốn hiểu ai sẽ dùng chức năng, họ đang làm việc theo trình tự nào và điều gì khiến quy trình bị gián đoạn."],
+    ["02","Biến quy trình thành logic","Tôi làm rõ dữ liệu đầu vào, trạng thái cần quản lý và cách hệ thống phản hồi trước khi triển khai chức năng."],
+    ["03","Kiểm tra trong bối cảnh sử dụng","Tôi kiểm thử các luồng chính, xử lý tình huống lỗi và trao đổi lại với người dùng trong quá trình chạy thử."]
   ]:[
-    ["01","Workflow and requirements analysis","Clarify requirements with warehouse users; examine process steps, input/output data and processing conditions before implementing a feature."],
-    ["02","Translate requirements into software logic","Define how the application processes data and business states, then implement features with Python and suitable backend technologies."],
-    ["03","Validate features in operational use","Test processing results, resolve defects and support trial deployment to check that features meet workflow requirements."]
-  ];
-  const contributions=vi?[
-    [t.areaMechatronics,"Nền tảng kỹ thuật liên ngành","Kiến thức nền về hệ thống cơ khí - điện tử, lập trình C, IoT và robot STEAM. Có trải nghiệm phân tích cụm lắp ráp, kết cấu máy trong kỳ thực tập; không trình bày đây là kinh nghiệm thiết kế hoặc vận hành dây chuyền tự động hóa."],
-    [t.areaIndustrialData,"Thu thập dữ liệu thiết bị","Trong kỳ thực tập tại Premo, sử dụng Python đọc dữ liệu hiệu suất từ cảm biến công nghiệp qua Modbus RTU. Đây là trải nghiệm thực tập, không phải kinh nghiệm triển khai hệ thống SCADA/PLC."],
-    [t.areaWmsFems,"Ứng dụng doanh nghiệp tại Sumida","Tham gia phát triển chức năng WMS và FEMS; với WMS là phân tích quy trình kho, logic xử lý và kiểm thử; với FEMS là xử lý dữ liệu, bảng điều khiển điện năng và tính toán chi phí điện."],
-    [t.areaPython,"Phát triển ứng dụng và hệ thống phía máy chủ","Python là ngôn ngữ phát triển chính. Công việc và dự án đã sử dụng Python, Flask, SQL và PostgreSQL. FastAPI và SQLAlchemy được sử dụng trong RackFlow, dự án cá nhân đang phát triển."],
-    [t.areaVision,"Thị giác máy tính và xử lý tài liệu","Kinh nghiệm đến từ hợp đồng 5 tháng tại Halovi và các dự án riêng: YOLOv5/DeepSORT để phát hiện, theo dõi hoạt động giao nhận qua video; OCR để trích xuất dữ liệu tài liệu và tự động nhập lên trang web."]
-  ]:[
-    [t.areaMechatronics,"Interdisciplinary engineering foundation","Foundation in mechanical/electrical systems, C programming, IoT and STEAM robotics. I also analysed mechanical assemblies and machine structures during my internship; this is not presented as hands-on production-line automation engineering."],
-    [t.areaIndustrialData,"Equipment data acquisition","During my internship at Premo, I used Python to read performance data from industrial sensors through Modbus RTU. This was internship experience, not SCADA/PLC system deployment."],
-    [t.areaWmsFems,"Enterprise applications at Sumida","Contributed to WMS and FEMS features. WMS work involved warehouse workflows, application logic and testing; FEMS work involved data processing, an electricity dashboard and cost calculations."],
-    [t.areaPython,"Application and backend development","Python is my primary programming language. Work and project experience includes Python, Flask, SQL and PostgreSQL. FastAPI and SQLAlchemy are used in RackFlow, a portfolio project in development."],
-    [t.areaVision,"Visual recognition and document processing","Experience from a five-month Computer Vision contract at Halovi and separate projects: YOLOv5/DeepSORT for video-based delivery tracking, and OCR for document extraction and website data entry."]
+    ["01","Start with the people using it","I want to understand who uses a feature, how the work flows today and where the process gets interrupted."],
+    ["02","Turn the workflow into application logic","I clarify the inputs, states and expected system behaviour before implementing the feature."],
+    ["03","Test it in the context of the work","I check the main flows, handle errors and work through feedback during trial use."]
   ];
   return <main id="main-content" className="inner-page about-page"><div className="container">
-    <PageHeading index="01" kicker={t.aboutWho} title={vi?"Từ Cơ điện tử đến kỹ sư phần mềm Python cho hệ thống doanh nghiệp.":"From Mechatronics to Python software engineering for business systems."} intro={vi?"Nền tảng Cơ điện tử giúp tôi tiếp cận thiết bị, cảm biến và quy trình sản xuất. Tôi bắt đầu kết nối nền tảng đó với phần mềm qua lập trình C, IoT và việc dùng Python thu thập dữ liệu cảm biến công nghiệp trong kỳ thực tập. Sau đó, tôi chuyển trọng tâm sang phát triển ứng dụng: thị giác máy tính, OCR, rồi các hệ thống nghiệp vụ WMS và FEMS. Hiện tại, chuyên môn chính của tôi là phát triển phần mềm Python và ứng dụng doanh nghiệp; không phải kỹ sư điều khiển PLC/SCADA.": "My Mechatronics background introduced me to equipment, sensors and production processes. I began connecting that foundation with software through C programming, IoT and Python-based industrial sensor data extraction during my internship. I then moved toward application development: Computer Vision, OCR and enterprise systems such as WMS and FEMS. My current focus is Python software and business applications, rather than PLC/SCADA control engineering."}/>
-
-    <section className="about-block about-journey">
-      <div className="about-block-heading"><span>{t.aboutJourney}</span><h2>{vi?"Mạch chuyên môn: từ hệ thống cơ điện tử đến hệ thống phần mềm":"The progression: from mechatronic systems to software systems"}</h2><p>{vi?"Quá trình chuyển hướng diễn ra qua những trải nghiệm cụ thể với cảm biến, dữ liệu, ứng dụng và phần mềm phục vụ vận hành.":"The transition took shape through practical exposure to sensors, data, applications and software used in operations."}</p></div>
-      <div className="about-journey-list">{journey.map(item=><article className="about-journey-item" key={item[0]+item[2]}><div className="about-journey-meta"><time>{item[0]}</time><span>{item[1]}</span></div><div className="about-journey-content"><h3>{item[2]}</h3><p>{item[3]}</p></div></article>)}</div>
-    </section>
-
-    <section className="about-block about-mindset">
-      <div className="about-block-heading"><span>{t.aboutMindset}</span><h2>{vi?"Kết nối quy trình vận hành với logic phần mềm":"Connecting operational workflows with software logic"}</h2><p>{vi?"Kinh nghiệm Cơ điện tử giúp tôi chú ý đến thiết bị, dữ liệu và điều kiện vận hành; kinh nghiệm WMS giúp tôi chuyển góc nhìn đó sang yêu cầu và chức năng phần mềm.":"My Mechatronics exposure made me attentive to equipment, data and operating conditions; WMS development extended that perspective to software requirements and application features."}</p></div>
-      <div className="about-mindset-grid">{mindset.map(item=><article key={item[0]}><span>{item[0]}</span><h3>{item[1]}</h3><p>{item[2]}</p></article>)}</div>
-    </section>
-
-    <section className="about-block about-bring">
-      <div className="about-block-heading"><span>{t.aboutBring}</span><h2>{vi?"Nền tảng Cơ điện tử kết hợp kinh nghiệm phát triển phần mềm":"Mechatronics foundation combined with software experience"}</h2><p>{vi?"Tôi có thể làm việc ở giao điểm giữa bối cảnh kỹ thuật nhà máy, dữ liệu thiết bị và ứng dụng nghiệp vụ, với phạm vi kinh nghiệm được nêu rõ theo từng môi trường.":"I bring exposure to factory engineering contexts and equipment data, combined with business-application development. The scope of each experience is stated by its actual work context."}</p></div>
-      <div className="about-bring-grid">{contributions.map(item=><article key={item[0]}><span>{item[0]}</span><h3>{item[1]}</h3><p>{item[2]}</p></article>)}</div>
-    </section>
-
-    <section className="about-block about-direction">
-      <div className="about-block-heading"><span>{t.aboutDirection}</span><h2>{vi?"Kỹ sư phần mềm doanh nghiệp, có hiểu biết về môi trường sản xuất":"Enterprise software engineer with an understanding of manufacturing environments"}</h2></div>
-      <div className="about-direction-content">
-        <p className="about-direction-lead">{vi?"Tôi muốn phát triển theo hướng kỹ sư phần mềm chuyên về ứng dụng doanh nghiệp và hệ thống phục vụ vận hành sản xuất. Điểm khác biệt tôi muốn xây dựng là kết hợp nền tảng Cơ điện tử - hiểu thiết bị, dữ liệu và quy trình nhà máy - với năng lực phát triển hệ thống phía máy chủ bằng Python và tích hợp hệ thống.":"I aim to develop as a software engineer specialising in enterprise applications and systems that support manufacturing operations. I want to combine my Mechatronics foundation—understanding equipment, data and factory workflows—with stronger Python backend and system-integration skills."}</p>
-        <div className="about-direction-stages">
-          <div><span>{vi?"TRỌNG TÂM KỸ THUẬT":"TECHNICAL FOCUS"}</span><p>{vi?"Phát triển hệ thống phía máy chủ bằng Python, thiết kế API, cơ sở dữ liệu quan hệ, xử lý giao dịch, kiểm thử tự động và tích hợp hệ thống.":"Python backend engineering, API design, relational databases, transaction handling, automated testing and system integration."}</p></div>
-          <div><span>{vi?"PHẠM VI PHÁT TRIỂN":"SCOPE TO GROW INTO"}</span><p>{vi?"Thiết kế và phát triển các mô-đun nghiệp vụ có tính liên kết; cải thiện tính nhất quán dữ liệu, khả năng truy vết và độ tin cậy của ứng dụng.":"Design and develop interconnected business modules, improving data consistency, traceability and application reliability."}</p></div>
-          <div><span>{vi?"ĐỊNH HƯỚNG DÀI HẠN":"LONG-TERM DIRECTION"}</span><p>{vi?"Tích hợp AI và thị giác máy tính vào hệ thống doanh nghiệp khi phù hợp với bài toán, chẳng hạn trích xuất chứng từ, kiểm tra dữ liệu và hỗ trợ quy trình sản xuất - kho vận.":"Integrate AI and Computer Vision into enterprise systems where they fit the problem, such as document extraction, data validation and support for manufacturing and warehouse workflows."}</p></div>
-        </div>
+    <PageHeading index="01" kicker={vi?"VỀ TÔI":"ABOUT ME"}
+      title={vi?"Tôi thích xây dựng phần mềm giúp công việc vận hành tốt hơn.":"I enjoy building software that helps everyday work run better."}
+      intro={vi?"Tôi học Cơ điện tử, từng làm việc với dữ liệu thiết bị, Computer Vision và OCR, rồi tập trung vào các ứng dụng nghiệp vụ như WMS và FEMS. Tôi thích kết nối hiểu biết về quy trình với cách phần mềm xử lý dữ liệu và hỗ trợ người dùng.":"I studied Mechatronics, worked with equipment data, Computer Vision and OCR, and then moved toward business applications such as WMS and FEMS. I enjoy connecting the way people work with the way software handles information and supports their day."}/>
+    <section className="about-story-panel">
+      <div className="about-story-mark"><span>{vi?"CÂU CHUYỆN CỦA TÔI":"MY STORY"}</span><strong>MP.</strong></div>
+      <div><h2>{vi?"Từ nền tảng Cơ điện tử đến phát triển ứng dụng.":"From Mechatronics to application development."}</h2>
+        <p>{vi?"Tôi bắt đầu với kỹ thuật cơ điện tử, nơi thiết bị, cảm biến và quy trình sản xuất gắn liền với nhau. Trong quá trình học và làm việc, tôi nhận ra mình hứng thú với phần mềm: cách dữ liệu được thu thập, cách một quy trình được mô hình hóa và cách một chức năng có thể giúp người dùng làm việc thuận tiện hơn.":"My starting point was Mechatronics, where equipment, sensors and production processes come together. Through study and work, I found myself drawn to software: how data is collected, how a process can be modelled, and how a well-built feature can make someone's work easier."}</p>
+        <p>{vi?"Tại Sumida, tôi có cơ hội tham gia phát triển WMS và FEMS trong 1 năm 10 tháng. Đây là giai đoạn giúp tôi kết nối phân tích quy trình, logic ứng dụng, kiểm thử và hỗ trợ vận hành thành một công việc kỹ thuật liền mạch.":"At Sumida, I spent 1 year and 10 months contributing to WMS and FEMS. That experience brought workflow analysis, application logic, testing and operational support together as part of the same engineering job."}</p>
       </div>
     </section>
-    <p className="scope-note"><Icon name="check" size={17}/>{vi?"Kinh nghiệm Modbus RTU chỉ giới hạn ở kỳ thực tập tại Premo. Tôi không trình bày PLC, SCADA hoặc hệ thống điều khiển công nghiệp như kinh nghiệm triển khai chuyên nghiệp.":"Modbus RTU experience is limited to my internship at Premo. I do not present PLC, SCADA or industrial control systems as professional deployment experience."}</p>
+    <section className="about-block about-journey">
+      <div className="about-block-heading"><span>{vi?"HÀNH TRÌNH":"THE JOURNEY"}</span><h2>{vi?"Những nơi tôi đã học hỏi và làm việc.":"The teams and projects I've learned from."}</h2><p>{vi?"Mỗi giai đoạn đem lại cho tôi một góc nhìn khác nhau về kỹ thuật, dữ liệu và phần mềm.":"Each stage has given me a different perspective on engineering, data and software."}</p></div>
+      <div className="about-journey-list">{journey.map(item=><article className="about-journey-item" key={item[0]+item[2]}><div className="about-journey-meta"><time>{item[0]}</time><span>{item[1]}</span></div><div className="about-journey-content"><h3>{item[2]}</h3><p>{item[3]}</p></div></article>)}</div>
+    </section>
+    <section className="about-block about-mindset">
+      <div className="about-block-heading"><span>{vi?"CÁCH TÔI LÀM VIỆC":"HOW I WORK"}</span><h2>{vi?"Lắng nghe, xây dựng và kiểm chứng.":"Listen, build and validate."}</h2><p>{vi?"Cách tôi tiếp cận một yêu cầu phần mềm, từ lúc bắt đầu đến khi chức năng được sử dụng thử.":"How I approach a software requirement, from the first conversation to a feature being tried in practice."}</p></div>
+      <div className="about-mindset-grid">{ways.map(item=><article key={item[0]}><span>{item[0]}</span><h3>{item[1]}</h3><p>{item[2]}</p></article>)}</div>
+    </section>
+    <section className="about-direction"><span>{vi?"ĐỊNH HƯỚNG TIẾP THEO":"WHAT'S NEXT"}</span>
+      <div><h2>{vi?"Tiếp tục phát triển Python và hệ thống nghiệp vụ.":"Going deeper with Python and business systems."}</h2>
+        <p>{vi?"Tôi muốn tiếp tục phát triển các ứng dụng Python, hệ thống ERP/WMS và những chức năng giúp dữ liệu, quy trình và người sử dụng kết nối tốt hơn. Computer Vision và OCR vẫn là những mảng tôi muốn tiếp tục ứng dụng khi bài toán thực tế cần đến.":"I want to keep developing Python applications, ERP/WMS systems and features that connect data, processes and the people who use them. Computer Vision and OCR remain areas I enjoy applying when a practical problem calls for them."}</p>
+        <div className="about-direction-tags"><span>Python</span><span>ERP / WMS</span><span>FEMS</span><span>Computer Vision</span><span>OCR</span></div>
+      </div>
+    </section>
   </div></main>;
 }
-
 
 function NotFound({ lang }) {
   const t=text[lang];
