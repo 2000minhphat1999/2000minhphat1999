@@ -51,7 +51,7 @@ const text = {
     education:"EDUCATION", educationTitle:"Engineering foundation.",
     contactTitle:"Have an operational workflow to improve?",
     contactText:"Interested in IT Staff / ERP support, business application support, Python development, ERP/WMS and backend roles. Computer Vision and OCR remain supporting project experience.",
-    email:"Email", linkedin:"LinkedIn", github:"GitHub profile", footer:"Thanks for taking a look at my work.",
+    email:"Email", linkedin:"LinkedIn", github:"GitHub profile",
     problem:"Problem & objective", role:"My role", approach:"Solution & implementation", scope:"Scope",
     evidence:"Evidence & limitations", next:"Next step", technologies:"TECHNOLOGIES", videoShowcaseLabel:"VIDEO DEMO · YOUTUBE", videoShowcaseTitle:"Model demonstration", videoPlaceholderTitle:"YouTube demo will appear here", videoPlaceholderText:"A 16:9 video space is reserved. Add a YouTube URL to the youtubeUrl field in the fabric project entry to display the video.", videoFrameTitle:"Fabric defect inspection demo", back:"Back to projects",
     noOt:"Industrial OT/IT technologies such as Siemens S7, SCADA, MQTT and OPC UA are not presented as hands-on professional experience.",
@@ -186,7 +186,7 @@ const text = {
     education:"HỌC VẤN", educationTitle:"Nền tảng kỹ thuật.",
     contactTitle:"Bạn có quy trình vận hành cần cải thiện?",
     contactText:"Tôi quan tâm đến các vị trí IT Staff / ERP Support, hỗ trợ ứng dụng doanh nghiệp, phát triển Python, ERP/WMS và backend. Computer Vision và OCR là kinh nghiệm dự án bổ trợ.",
-    email:"Email", linkedin:"LinkedIn", github:"GitHub cá nhân", footer:"Cảm ơn bạn đã ghé xem hồ sơ và các dự án của tôi.",
+    email:"Email", linkedin:"LinkedIn", github:"GitHub cá nhân",
     problem:"Bài toán & mục tiêu", role:"Vai trò cá nhân", approach:"Giải pháp & triển khai", scope:"Phạm vi",
     evidence:"Bằng chứng & giới hạn", next:"Bước tiếp theo", technologies:"CÔNG NGHỆ SỬ DỤNG", videoShowcaseLabel:"VIDEO MINH HỌA · YOUTUBE", videoShowcaseTitle:"Trình diễn mô hình", videoPlaceholderTitle:"Vị trí video YouTube", videoPlaceholderText:"Đã chừa khung video tỷ lệ 16:9. Thêm URL YouTube vào trường youtubeUrl trong mục dự án Fabric để hiển thị video.", videoFrameTitle:"Video trình diễn mô hình phát hiện lỗi vải", back:"Quay lại danh mục dự án",
     noOt:"Các công nghệ OT/IT công nghiệp như Siemens S7, SCADA, MQTT và OPC UA không được trình bày như kinh nghiệm thực chiến chuyên nghiệp.",
@@ -903,7 +903,7 @@ class RenderErrorBoundary extends React.Component {
   }
 }
 
-function App() {
+export function App() {
   const [lang,setLang]=useState(readStoredLanguage);
   const [route,setRoute]=useState(()=>resolvePortfolioLocation().route);
   const [anchor,setAnchor]=useState(()=>resolvePortfolioLocation().anchor);
@@ -973,7 +973,12 @@ function App() {
   else if(route==="contact") content=<ContactSection lang={lang}/>;
   else if(parts[0]==="project") content=<ProjectDetail project={projects.find(p=>p.slug===parts[1])} lang={lang}/>;
   else content=<NotFound lang={lang}/>;
-  return <><a className="skip-link" href={buildPortfolioAnchorHash(route,"main-content")} onClick={event=>scrollToPortfolioAnchor(event,route,"main-content")}>{text[lang].skipToContent}</a><Header lang={lang} setLang={setLang} route={route}/><RenderErrorBoundary lang={lang}>{content}</RenderErrorBoundary><Footer lang={lang}/></>;
+  return <><a className="skip-link" href={buildPortfolioAnchorHash(route,"main-content")} onClick={event=>scrollToPortfolioAnchor(event,route,"main-content")}>{text[lang].skipToContent}</a><Header lang={lang} setLang={setLang} route={route}/><RenderErrorBoundary key={`${route}:${lang}`} lang={lang}>{content}</RenderErrorBoundary><Footer lang={lang}/></>;
 }
 
-createRoot(document.getElementById("root")).render(<React.StrictMode><RenderErrorBoundary><App/></RenderErrorBoundary></React.StrictMode>);
+if (typeof document !== "undefined") {
+  const rootElement = document.getElementById("root");
+  if (rootElement) {
+    createRoot(rootElement).render(<React.StrictMode><RenderErrorBoundary><App/></RenderErrorBoundary></React.StrictMode>);
+  }
+}
