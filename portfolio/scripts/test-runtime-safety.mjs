@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readStoredLanguage, writeStoredLanguage } from "../src/storage.js";
-import { buildPortfolioAnchorHash, isCurrentPortfolioAnchor, isPortfolioRoute, parsePortfolioHash } from "../src/routing.js";
+import { buildPortfolioAnchorHash, isCurrentPortfolioAnchor, isPortfolioRoute, isUnmodifiedPrimaryClick, parsePortfolioHash } from "../src/routing.js";
 
 const values = new Map();
 const memoryStorage = {
@@ -80,5 +80,12 @@ assert.deepEqual(parsePortfolioHash("#project/fabric?anchor=invalid%20anchor"), 
 assert.equal(isCurrentPortfolioAnchor("#project/fabric?anchor=fabric-model", "project/fabric", "fabric-model"), true);
 assert.equal(isCurrentPortfolioAnchor("#project/fabric?anchor=fabric-model", "project/fabric", "fabric-next"), false);
 assert.equal(isCurrentPortfolioAnchor("#project/fabric", "project/fabric", "fabric-model"), false);
+
+assert.equal(isUnmodifiedPrimaryClick({button:0}), true);
+assert.equal(isUnmodifiedPrimaryClick({button:0,metaKey:true}), false);
+assert.equal(isUnmodifiedPrimaryClick({button:0,ctrlKey:true}), false);
+assert.equal(isUnmodifiedPrimaryClick({button:0,shiftKey:true}), false);
+assert.equal(isUnmodifiedPrimaryClick({button:0,altKey:true}), false);
+assert.equal(isUnmodifiedPrimaryClick({button:1}), false);
 
 console.log("PASS: shareable anchors preserve routes and support same-target click detection.");
