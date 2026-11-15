@@ -41,3 +41,13 @@ export function buildPortfolioAnchorHash(route, anchor) {
   }
   return "#" + route + "?anchor=" + encodeURIComponent(anchor);
 }
+
+
+/**
+ * Identifies a click on the anchor already encoded in the current URL.
+ * This lets the UI handle repeat clicks because identical hashes do not emit
+ * another hashchange event.
+ */
+export function isCurrentPortfolioAnchor(currentHash, route, anchor) {
+  return String(currentHash || "") === buildPortfolioAnchorHash(route, anchor);
+}
