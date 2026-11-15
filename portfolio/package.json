@@ -7,7 +7,7 @@
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0",
-    "check": "npm run build && node scripts/check-build.mjs && node scripts/test-runtime-safety.mjs"
+    "check": "npm run build && node scripts/check-build.mjs && node scripts/test-runtime-safety.mjs && node scripts/test-render-smoke.mjs"
   },
   "dependencies": {
     "react": "^19.1.0",
