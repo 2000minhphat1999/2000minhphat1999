@@ -302,7 +302,7 @@ function Icon({ name, size=18 }) {
 
 function Brand({ lang }) {
   const t=text[lang];
-  return <a className="brand" href="#home" aria-label={t.brandHome}><span className="brand-mark">MP<span>.</span></span><span className="brand-name">MINH PHAT<small>{t.brandDescriptor}</small></span></a>;
+  return <a className="brand" href="#home" aria-label={t.brandHome}><span className="brand-name">{t.brandName}<small>{t.brandDescriptor}</small></span></a>;
 }
 
 function Header({ lang, setLang, route }) {
@@ -392,27 +392,79 @@ function ProjectCard({ project,lang,featured=false }) {
 
 function Hero({ lang }) {
   const t=text[lang];
-  return <section className="hero-section" id="top"><div className="hero-grid-bg"/>
+  const facts=[
+    [t.personalFact1Label,t.personalFact1Title,t.personalFact1Meta],
+    [t.personalFact2Label,t.personalFact2Title,t.personalFact2Meta],
+    [t.personalFact3Label,t.personalFact3Title,t.personalFact3Meta]
+  ];
+  return <section className="hero-section" id="top">
     <div className="container hero-container">
       <div className="hero-copy">
-        <div className="availability"><span className="availability-dot"/>{t.availability}</div>
         <div className="hero-kicker">{t.eyebrow}<span>—</span>{t.regionLabel}</div>
         <h1>{t.headlineA}<br/><em>{t.headlineB}</em></h1>
+        <p className="hero-role">{t.heroRole}</p>
         <p className="hero-intro">{t.intro}</p>
-        <div className="hero-actions"><a className="button button-primary" href="#projects">{t.explore}<Icon name="arrow" size={17}/></a><a className="button button-quiet" href="mailto:tranvietminhphat@gmail.com">{t.getInTouch}<Icon name="up" size={15}/></a></div>
-        <div className="hero-socials"><a href="https://github.com/2000minhphat1999" target="_blank" rel="noopener noreferrer"><Icon name="github" size={16}/>GitHub</a><a href="https://www.linkedin.com/in/minhphat-ai/" target="_blank" rel="noopener noreferrer"><Icon name="linkedin" size={16}/>LinkedIn</a><span>{t.heroProfile}</span></div>
+        <div className="hero-actions">
+          <a className="button button-primary" href="#projects">{t.explore}<Icon name="arrow" size={17}/></a>
+          <a className="button button-quiet" href="mailto:tranvietminhphat@gmail.com">{t.getInTouch}<Icon name="up" size={15}/></a>
+        </div>
+        <div className="hero-socials">
+          <a href="https://github.com/2000minhphat1999" target="_blank" rel="noopener noreferrer"><Icon name="github" size={16}/>GitHub</a>
+          <a href="https://www.linkedin.com/in/minhphat-ai/" target="_blank" rel="noopener noreferrer"><Icon name="linkedin" size={16}/>LinkedIn</a>
+          <span>{t.regionLabel}</span>
+        </div>
       </div>
-      <div className="hero-art" aria-label={t.heroArtLabel}>
-        <div className="art-topline"><span>{t.artTopLeft}</span><span>{t.artTopRight}</span></div>
-        <div className="art-title">{t.artTitle1}<br/>{t.artTitle2}</div><div className="art-subtitle">{t.artSubtitle}</div>
-        <div className="art-node node-one"><span className="node-index">01</span><div><small>{t.artNeed}</small><strong>{t.artNeedText}</strong></div><span className="node-symbol">↘</span></div>
-        <div className="art-connector"/><div className="art-node"><span className="node-index">02</span><div><small>{t.artSolution}</small><strong>{t.artSolutionText}</strong></div><span className="node-symbol">⌘</span></div>
-        <div className="art-connector"/><div className="art-node"><span className="node-index">03</span><div><small>{t.artImpact}</small><strong>{t.artImpactText}</strong></div><span className="node-symbol">▤</span></div>
-        <div className="art-foot"><span><i/>{t.artFootLeft}</span><span>{t.artFootRight}</span></div><div className="art-orbit orbit-a"/><div className="art-orbit orbit-b"/>
+      <aside className="personal-note" aria-label={t.personalNoteLabel}>
+        <div className="personal-note-top"><span>{t.personalNoteLabel}</span><span>01 / 03</span></div>
+        <h2>{t.personalNoteTitle}</h2>
+        <p className="personal-note-intro">{t.personalNoteText}</p>
+        <div className="personal-facts">
+          {facts.map(([label,title,detail],index)=><div className="personal-fact" key={label}>
+            <span className="personal-fact-index">0{index+1}</span>
+            <div><small>{label}</small><strong>{title}</strong><span>{detail}</span></div>
+          </div>)}
+        </div>
+      </aside>
+    </div>
+  </section>;
+}
+
+function HomeExperienceStrip({ lang }) {
+  const t=text[lang];
+  const items=[
+    {period:t.sumidaPeriod,company:"Sumida",detail:t.sumidaStripText},
+    {period:t.haloviPeriod,company:"Halovi",detail:t.haloviStripText},
+    {period:t.freelancePeriod,company:lang==="vi"?"Độc lập / Freelance":"Independent",detail:t.freelanceStripText}
+  ];
+  return <section className="personal-experience-strip">
+    <div className="container">
+      <div className="personal-experience-heading">
+        <span>{t.experienceStripLabel}</span>
+        <p>{t.experienceStripIntro}</p>
+      </div>
+      <div className="personal-experience-list">
+        {items.map((item,index)=><article className="personal-experience-item" key={item.company}>
+          <span className="personal-experience-period">{item.period}</span>
+          <strong>{item.company}</strong>
+          <p>{item.detail}</p>
+        </article>)}
       </div>
     </div>
-    <div className="container hero-stats"><div className="stats-label">{t.snapshot}</div>
-      <div className="stat-item"><strong>{t.sumidaDuration}</strong><span>{t.sumida}</span></div><div className="stat-item"><strong>{t.haloviDuration}</strong><span>{t.halovi}</span></div><div className="stat-item"><strong>2</strong><span>{t.freelance}</span></div><div className="stats-end">{lang==="vi"?"PYTHON · ỨNG DỤNG · ERP / WMS":"PYTHON · APPLICATIONS · ERP / WMS"}</div>
+  </section>;
+}
+
+function HomeWorkPreview({ lang }) {
+  const t=text[lang];
+  return <section className="home-work-section">
+    <div className="container">
+      <div className="home-work-heading">
+        <div><div className="section-kicker">{t.homeWorkKicker}</div><h2>{t.homeWorkTitle}</h2></div>
+        <p>{t.homeWorkIntro}</p>
+      </div>
+      <div className="home-work-grid">
+        {projects.map(project=><ProjectCard key={project.slug} project={project} lang={lang}/>)}
+      </div>
+      <div className="home-work-footer"><a className="text-link" href="#projects">{t.homeWorkMore}<Icon name="arrow" size={16}/></a></div>
     </div>
   </section>;
 }
@@ -421,18 +473,21 @@ function HomePage({ lang }) {
   const t=text[lang];
   return <main id="main-content" className="home-page">
     <Hero lang={lang}/>
+    <HomeExperienceStrip lang={lang}/>
+    <HomeWorkPreview lang={lang}/>
     <section className="home-focus">
       <div className="container home-focus-inner">
         <div><div className="section-kicker">{t.homeFocusKicker}</div><h2>{t.homeFocusTitle}</h2><p>{t.homeFocusText}</p></div>
         <div className="home-focus-links">
-          <a href="#projects">{t.projects}<Icon name="arrow" size={16}/></a>
-          <a href="#experience">{t.experience}<Icon name="arrow" size={16}/></a>
-          <a href="#skills">{t.skills}<Icon name="arrow" size={16}/></a>
+          <a href="#about">{t.personalAboutLink}<Icon name="arrow" size={16}/></a>
+          <a href="#experience">{t.personalExperienceLink}<Icon name="arrow" size={16}/></a>
+          <a href="#skills">{t.personalSkillsLink}<Icon name="arrow" size={16}/></a>
         </div>
       </div>
     </section>
   </main>;
 }
+
 function ExperiencePreview({ lang }) {
   const t=text[lang];
   const entries=[
