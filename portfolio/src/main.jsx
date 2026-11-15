@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { readStoredLanguage, writeStoredLanguage } from "./storage.js";
-import { shouldHandleHashAsRoute } from "./routing.js";
+import { buildPortfolioAnchorHash, parsePortfolioHash } from "./routing.js";
 import "./styles.css";
 
 const text = {
@@ -663,7 +663,7 @@ function FabricBlog({ project,lang }) {
       <div className="fabric-blog-metric-foot"><strong>{t.fabricBlogMetricName}</strong><span>{t.fabricBlogMetricNote}</span></div>
     </section>
     <div className="fabric-blog-layout">
-      <aside className="fabric-blog-toc"><span>{t.fabricBlogToc}</span><nav>{sections.map(([id,num,title])=><a key={id} href={"#fabric-"+id}><i>{num}</i>{title}</a>)}</nav></aside>
+      <aside className="fabric-blog-toc"><span>{t.fabricBlogToc}</span><nav>{sections.map(([id,num,title])=><a key={id} href={buildPortfolioAnchorHash("project/fabric","fabric-"+id)}><i>{num}</i>{title}</a>)}</nav></aside>
       <article className="fabric-blog-article">
         <section className="fabric-blog-section" id="fabric-challenge"><div className="fabric-blog-section-kicker">01 / {stageLabels[0]}</div><h2>{sections[0][2]}</h2>{sections[0][3].map((p,i)=><p key={i}>{p}</p>)}</section>
         <section className="fabric-blog-section" id="fabric-model"><div className="fabric-blog-section-kicker">02 / {stageLabels[1]}</div><h2>{sections[1][2]}</h2>{sections[1][3].map((p,i)=><p key={i}>{p}</p>)}
@@ -784,12 +784,12 @@ function Footer({ lang }) {
   </footer>;
 }
 
+function resolvePortfolioLocation() {
+  return parsePortfolioHash(window.location.hash);
+}
+
 function resolvePortfolioRoute() {
-  const hashRoute=window.location.hash
-    .slice(1)
-    .replace(/^\/+|\/+$/g,"")
-    .split("?")[0];
-  return hashRoute || "home";
+  return resolvePortfolioLocation().route;
 }
 
 class RenderErrorBoundary extends React.Component {
@@ -822,20 +822,25 @@ class RenderErrorBoundary extends React.Component {
 
 function App() {
   const [lang,setLang]=useState(readStoredLanguage);
-  const [route,setRoute]=useState(()=>resolvePortfolioRoute());
+  const [route,setRoute]=useState(()=>resolvePortfolioLocation().route);
+  const [anchor,setAnchor]=useState(()=>resolvePortfolioLocation().anchor);
   useEffect(()=>{
     const change=()=>{
-      const nextRoute=resolvePortfolioRoute();
-      const hasAnchorTarget=Boolean(document.getElementById(nextRoute));
-      const projectSlugs=projects.map(project=>project.slug);
-      if(!shouldHandleHashAsRoute(nextRoute,hasAnchorTarget,projectSlugs)) return;
-      setRoute(nextRoute);
-      window.scrollTo({top:0,behavior:"auto"});
+      const next=resolvePortfolioLocation();
+      setRoute(next.route);
+      setAnchor(next.anchor);
     };
     window.addEventListener("hashchange",change);
     if(!window.location.hash) window.location.hash="home";
     return ()=>window.removeEventListener("hashchange",change);
   },[]);
+  useEffect(()=>{
+    if(anchor) {
+      window.requestAnimationFrame(()=>document.getElementById(anchor)?.scrollIntoView({behavior:"auto",block:"start"}));
+    } else {
+      window.scrollTo({top:0,behavior:"auto"});
+    }
+  },[route,anchor]);
   useEffect(()=>{
     writeStoredLanguage(lang);
     document.documentElement.lang=lang;
@@ -885,7 +890,7 @@ function App() {
   else if(route==="contact") content=<ContactSection lang={lang}/>;
   else if(parts[0]==="project") content=<ProjectDetail project={projects.find(p=>p.slug===parts[1])} lang={lang}/>;
   else content=<NotFound lang={lang}/>;
-  return <><a className="skip-link" href="#main-content">{text[lang].skipToContent}</a><Header lang={lang} setLang={setLang} route={route}/><RenderErrorBoundary lang={lang}>{content}</RenderErrorBoundary><Footer lang={lang}/></>;
+  return <><a className="skip-link" href={buildPortfolioAnchorHash(route,"main-content")}>{text[lang].skipToContent}</a><Header lang={lang} setLang={setLang} route={route}/><RenderErrorBoundary lang={lang}>{content}</RenderErrorBoundary><Footer lang={lang}/></>;
 }
 
 createRoot(document.getElementById("root")).render(<React.StrictMode><RenderErrorBoundary><App/></RenderErrorBoundary></React.StrictMode>);
