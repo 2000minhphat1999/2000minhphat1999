@@ -785,6 +785,7 @@ function ProjectDetail({ project,lang }) {
 }
 
 function AboutPage({ lang }) {
+  const t=text[lang];
   const vi=lang==="vi";
   const journey=vi?[
     ["09/2018 – 06/2023","HỌC VẤN · XẾP LOẠI KHÁ","Kỹ sư Công nghệ Kỹ thuật Cơ điện tử","Đại học Sư phạm Kỹ thuật – Đại học Đà Nẵng. Chương trình đào tạo liên ngành là nền tảng để tôi tiếp cận lập trình C, IoT và các hệ thống kết hợp phần cứng với phần mềm."],
