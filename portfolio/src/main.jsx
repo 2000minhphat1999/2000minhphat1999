@@ -75,6 +75,37 @@ const text = {
     fabricApproach:"Faster R-CNN with a MobileNetV3-FPN backbone, trained and evaluated on Google Colab with a T4 GPU. The project uses a reproducible validation workflow and multi-seed experiments.",
     fabricEvidence:"Experimental E1 validation mAP50–95 across three seeds: 0.412 / 0.412 / 0.426. These are validation-split results; external/OOD generalization is not established. Model scores are not calibrated, and no factory deployment or production KPI is claimed.",
     fabricNext:"Evaluate on independent out-of-distribution fabric images, review per-class precision/recall and failure cases, and assess score calibration before considering any factory workflow.",
+    fabricBlogKicker:"ENGINEERING JOURNAL · COMPUTER VISION",
+    fabricBlogLead:"Building a fabric-surface defect detector with Faster R-CNN, then turning model predictions into an image-inference demo. This article documents the engineering decisions, validation experiments and the limits that still matter.",
+    fabricBlogToc:"IN THIS ARTICLE",
+    fabricBlogChallengeTitle:"Starting with the inspection problem",
+    fabricBlogChallengeP1:"Fabric-surface defects can affect the material used in sofa manufacturing. The practical computer-vision task in this project is not simply to label an image as good or bad: the model needs to identify where a visible defect appears and assign it to a defect category.",
+    fabricBlogChallengeP2:"That makes object localization central to the prototype. The intended output is an inspection aid for a human reviewer, not an autonomous quality-release decision or a factory-integrated system.",
+    fabricBlogModelTitle:"Choosing a model that fits the constraints",
+    fabricBlogModelP1:"I chose Faster R-CNN with a MobileNetV3-FPN backbone. The project constraints ruled out the AGPL/Ultralytics/YOLO11n route, so the implementation follows a different object-detection stack.",
+    fabricBlogModelP2:"The choice keeps the work focused on a conventional detection pipeline: prepare the labelled images, train the detector, inspect validation behaviour, and expose predictions in a small inference interface. The model choice is an engineering decision for this experiment, not a claim that one detector is universally best.",
+    fabricBlogSetupTitle:"Setting up repeatable experiments",
+    fabricBlogSetupP1:"Training and evaluation were carried out on Google Colab with a T4 GPU. I used a multi-seed validation check for the E1 experiment rather than relying on a single run.",
+    fabricBlogSetupP2:"The three validation mAP50–95 results were 0.412, 0.412 and 0.426. The runs are close to one another, which is useful as a check on run-to-run variation within this setup; it does not establish performance on unseen factories, cameras or fabric types.",
+    fabricBlogInterfaceTitle:"Turning predictions into something people can inspect",
+    fabricBlogInterfaceP1:"The demo flow is intentionally small: upload a fabric image, run inference, inspect the predicted bounding boxes and defect labels, then access the structured JSON output.",
+    fabricBlogInterfaceP2:"The interface shows one of nine Vietnamese defect labels and a raw model score from 0 to 1 for each prediction. That score is the model output; it has not been calibrated and must not be read as a verified probability that the prediction is correct.",
+    fabricBlogLimitsTitle:"Reading the results without overclaiming",
+    fabricBlogLimitsP1:"The reported values are from the validation split used in the E1 experiment. They are not independent external-test results. Out-of-distribution evaluation remains incomplete, so generalization to different fabric sources, lighting conditions or production cameras is still unknown.",
+    fabricBlogLimitsP2:"The prototype also does not establish line-speed performance, operator acceptance, defect escape rate or measurable production savings. No factory deployment is claimed.",
+    fabricBlogNextTitle:"What I would test next",
+    fabricBlogNextP1:"The next stage is to evaluate independent fabric images outside the current validation distribution, inspect precision and recall by defect class, and document representative false positives and missed defects.",
+    fabricBlogNextP2:"I would also assess score calibration before using confidence thresholds in a human-review workflow. Only after those checks would integration with a real inspection process be worth evaluating.",
+    fabricBlogMetricsLabel:"VALIDATION · E1 · THREE SEEDS",
+    fabricBlogMetricName:"mAP50–95",
+    fabricBlogMetricNote:"Validation split only · not an external test",
+    fabricBlogTechTitle:"Experiment setup",
+    fabricBlogTechModel:"Detector",
+    fabricBlogTechBackbone:"Backbone",
+    fabricBlogTechRuntime:"Training environment",
+    fabricBlogTechTask:"Task",
+    fabricBlogTaskValue:"Object detection · bounding boxes",
+    fabricBlogClosing:"This is an experimental prototype: useful for demonstrating model development and inference, but not yet evidence of production readiness.",
     flow:"WORKFLOW MODEL · ILLUSTRATIVE", receive:"Receive stock", inventory:"Check inventory", reserve:"Reserve stock", trace:"Trace changes",
     video:"Video frames", detection:"YOLOv5 detection", tracking:"DeepSORT tracking", tracks:"Track output",
     document:"Document image", ocr:"Image processing / OCR", fields:"Extracted fields", entry:"Web entry",
@@ -166,6 +197,37 @@ const text = {
     fabricApproach:"Faster R-CNN với backbone MobileNetV3-FPN, huấn luyện và đánh giá trên Google Colab bằng GPU T4. Dự án sử dụng quy trình validation có thể tái lập và thử nghiệm nhiều seed.",
     fabricEvidence:"Kết quả validation E1, mAP50–95 trên ba seed: 0.412 / 0.412 / 0.426. Đây là kết quả trên tập validation; khả năng tổng quát hóa ngoài phân phối (OOD) chưa được xác lập. Model score chưa hiệu chuẩn; chưa có triển khai nhà máy hoặc KPI sản xuất.",
     fabricNext:"Đánh giá trên ảnh vải độc lập ngoài phân phối, xem xét precision/recall theo từng lớp và các trường hợp dự đoán sai; kiểm tra hiệu chuẩn score trước khi cân nhắc đưa vào quy trình nhà máy.",
+    fabricBlogKicker:"NHẬT KÝ KỸ THUẬT · THỊ GIÁC MÁY TÍNH",
+    fabricBlogLead:"Xây dựng bộ phát hiện lỗi bề mặt vải bằng Faster R-CNN, sau đó đưa kết quả dự đoán vào giao diện suy luận ảnh. Bài viết ghi lại các quyết định kỹ thuật, thử nghiệm validation và những giới hạn cần được nhìn nhận đúng.",
+    fabricBlogToc:"NỘI DUNG BÀI VIẾT",
+    fabricBlogChallengeTitle:"Bắt đầu từ bài toán kiểm tra vải",
+    fabricBlogChallengeP1:"Lỗi bề mặt vải có thể ảnh hưởng đến vật liệu dùng trong sản xuất sofa. Bài toán thị giác máy tính ở dự án này không chỉ là phân loại một ảnh tốt hay xấu: mô hình cần xác định vị trí lỗi nhìn thấy được và gán nó vào một nhóm lỗi.",
+    fabricBlogChallengeP2:"Vì vậy, định vị đối tượng là phần cốt lõi của nguyên mẫu. Kết quả hướng đến việc hỗ trợ người kiểm tra, không phải tự động quyết định chất lượng xuất xưởng hoặc một hệ thống đã tích hợp vào nhà máy.",
+    fabricBlogModelTitle:"Chọn mô hình theo các ràng buộc kỹ thuật",
+    fabricBlogModelP1:"Tôi chọn Faster R-CNN với backbone MobileNetV3-FPN. Ràng buộc của dự án loại trừ hướng AGPL/Ultralytics/YOLO11n, do đó phần triển khai sử dụng một stack phát hiện đối tượng khác.",
+    fabricBlogModelP2:"Lựa chọn này giữ phạm vi ở một pipeline detection quen thuộc: chuẩn bị ảnh đã gán nhãn, huấn luyện mô hình, kiểm tra hành vi trên validation và đưa dự đoán ra giao diện suy luận nhỏ. Đây là quyết định phù hợp với thử nghiệm hiện tại, không phải khẳng định một mô hình luôn tốt nhất cho mọi bài toán.",
+    fabricBlogSetupTitle:"Thiết lập thực nghiệm có thể đối chiếu",
+    fabricBlogSetupP1:"Quá trình huấn luyện và đánh giá được thực hiện trên Google Colab với GPU T4. Ở thử nghiệm E1, tôi kiểm tra validation qua nhiều seed thay vì dựa vào một lần chạy duy nhất.",
+    fabricBlogSetupP2:"Ba kết quả validation mAP50–95 lần lượt là 0.412, 0.412 và 0.426. Các lần chạy khá gần nhau, cung cấp một kiểm tra về dao động giữa các lần chạy trong cùng cấu hình; kết quả này không chứng minh hiệu năng trên nhà máy, camera hoặc loại vải chưa xuất hiện trong dữ liệu.",
+    fabricBlogInterfaceTitle:"Đưa kết quả dự đoán thành giao diện có thể kiểm tra",
+    fabricBlogInterfaceP1:"Luồng demo được giữ đơn giản: tải ảnh vải lên, chạy suy luận, xem bounding box và nhãn lỗi dự đoán, sau đó truy cập dữ liệu JSON có cấu trúc.",
+    fabricBlogInterfaceP2:"Giao diện hiển thị một trong chín nhãn lỗi tiếng Việt và raw model score từ 0 đến 1 cho mỗi dự đoán. Đây là điểm số đầu ra của mô hình, chưa được hiệu chuẩn và không được hiểu là xác suất đã xác minh dự đoán đó đúng.",
+    fabricBlogLimitsTitle:"Đọc kết quả mà không suy diễn quá mức",
+    fabricBlogLimitsP1:"Các con số được báo cáo đến từ tập validation của thử nghiệm E1, không phải kết quả trên tập kiểm tra độc lập bên ngoài. Đánh giá ngoài phân phối (OOD) chưa hoàn tất; khả năng tổng quát hóa sang nguồn vải, điều kiện ánh sáng hoặc camera sản xuất khác hiện vẫn chưa rõ.",
+    fabricBlogLimitsP2:"Nguyên mẫu cũng chưa chứng minh được tốc độ xử lý theo dây chuyền, mức độ chấp nhận của người vận hành, tỷ lệ bỏ sót lỗi hay khoản tiết kiệm sản xuất có thể đo lường. Không tuyên bố đã triển khai tại nhà máy.",
+    fabricBlogNextTitle:"Những gì cần kiểm tra tiếp theo",
+    fabricBlogNextP1:"Giai đoạn tiếp theo là đánh giá trên ảnh vải độc lập nằm ngoài phân phối validation hiện tại, xem precision và recall theo từng nhóm lỗi, đồng thời ghi nhận các trường hợp dự đoán nhầm và bỏ sót tiêu biểu.",
+    fabricBlogNextP2:"Tôi cũng sẽ đánh giá calibration của score trước khi sử dụng ngưỡng confidence trong quy trình có người kiểm tra. Chỉ sau các bước đó mới nên đánh giá khả năng tích hợp vào quy trình kiểm tra thực tế.",
+    fabricBlogMetricsLabel:"VALIDATION · E1 · BA SEED",
+    fabricBlogMetricName:"mAP50–95",
+    fabricBlogMetricNote:"Chỉ trên tập validation · không phải external test",
+    fabricBlogTechTitle:"Cấu hình thực nghiệm",
+    fabricBlogTechModel:"Mô hình phát hiện",
+    fabricBlogTechBackbone:"Backbone",
+    fabricBlogTechRuntime:"Môi trường huấn luyện",
+    fabricBlogTechTask:"Bài toán",
+    fabricBlogTaskValue:"Phát hiện đối tượng · bounding box",
+    fabricBlogClosing:"Đây là nguyên mẫu thử nghiệm: đủ để trình bày quá trình phát triển mô hình và suy luận ảnh, nhưng chưa phải bằng chứng về mức độ sẵn sàng cho sản xuất.",
     flow:"MÔ HÌNH QUY TRÌNH · MINH HỌA", receive:"Nhập kho", inventory:"Kiểm tra tồn", reserve:"Giữ tồn", trace:"Truy vết",
     video:"Khung hình video", detection:"YOLOv5 phát hiện", tracking:"Theo dõi đối tượng bằng DeepSORT", tracks:"Kết quả theo dõi",
     document:"Ảnh tài liệu", ocr:"Xử lý ảnh / OCR", fields:"Trường thông tin", entry:"Nhập dữ liệu lên trang web",
@@ -562,9 +624,56 @@ function YouTubeShowcase({ url,lang }) {
   </section>;
 }
 
+function FabricBlog({ project,lang }) {
+  const t=text[lang];
+  const sections=[
+    ["challenge","01",t.fabricBlogChallengeTitle,[t.fabricBlogChallengeP1,t.fabricBlogChallengeP2]],
+    ["model","02",t.fabricBlogModelTitle,[t.fabricBlogModelP1,t.fabricBlogModelP2]],
+    ["setup","03",t.fabricBlogSetupTitle,[t.fabricBlogSetupP1,t.fabricBlogSetupP2]],
+    ["interface","04",t.fabricBlogInterfaceTitle,[t.fabricBlogInterfaceP1,t.fabricBlogInterfaceP2]],
+    ["limits","05",t.fabricBlogLimitsTitle,[t.fabricBlogLimitsP1,t.fabricBlogLimitsP2]],
+    ["next","06",t.fabricBlogNextTitle,[t.fabricBlogNextP1,t.fabricBlogNextP2]]
+  ];
+  return <main id="main-content" className="inner-page fabric-blog-page"><div className="container">
+    <a href="#projects/ai" className="back-link">← {t.back}</a>
+    <header className="fabric-blog-header">
+      <div className="section-kicker">{t.fabricBlogKicker} <span>—</span> {t.projectWord} / {project.number}</div>
+      <div className="fabric-blog-title-row"><h1>{displayProjectTitle(project,lang)}</h1><Status status={project.status} lang={lang}/></div>
+      <p className="fabric-blog-lead">{t.fabricBlogLead}</p>
+      <div className="tag-list">{project.tags.map(tag=><span key={tag}>{displayTag(tag,lang)}</span>)}</div>
+    </header>
+    <section className="fabric-blog-metrics" aria-label={t.fabricBlogMetricsLabel}>
+      <div className="fabric-blog-metric-label">{t.fabricBlogMetricsLabel}</div>
+      <div className="fabric-blog-metric-values">
+        {[["Seed 1","0.412"],["Seed 2","0.412"],["Seed 3","0.426"]].map(([label,value])=><div className="fabric-blog-metric" key={label}><span>{label}</span><strong>{value}</strong></div>)}
+      </div>
+      <div className="fabric-blog-metric-foot"><strong>{t.fabricBlogMetricName}</strong><span>{t.fabricBlogMetricNote}</span></div>
+    </section>
+    <div className="fabric-blog-layout">
+      <aside className="fabric-blog-toc"><span>{t.fabricBlogToc}</span><nav>{sections.map(([id,num,title])=><a key={id} href={"#fabric-"+id}><i>{num}</i>{title}</a>)}</nav></aside>
+      <article className="fabric-blog-article">
+        <section className="fabric-blog-section" id="fabric-challenge"><div className="fabric-blog-section-kicker">01 / CONTEXT</div><h2>{sections[0][2]}</h2>{sections[0][3].map((p,i)=><p key={i}>{p}</p>)}</section>
+        <section className="fabric-blog-section" id="fabric-model"><div className="fabric-blog-section-kicker">02 / MODEL DECISION</div><h2>{sections[1][2]}</h2>{sections[1][3].map((p,i)=><p key={i}>{p}</p>)}
+          <div className="fabric-blog-specs"><div><span>{t.fabricBlogTechModel}</span><strong>Faster R-CNN</strong></div><div><span>{t.fabricBlogTechBackbone}</span><strong>MobileNetV3-FPN</strong></div><div><span>{t.fabricBlogTechRuntime}</span><strong>Google Colab · T4 GPU</strong></div><div><span>{t.fabricBlogTechTask}</span><strong>{t.fabricBlogTaskValue}</strong></div></div>
+        </section>
+        <section className="fabric-blog-section" id="fabric-setup"><div className="fabric-blog-section-kicker">03 / EXPERIMENT</div><h2>{sections[2][2]}</h2>{sections[2][3].map((p,i)=><p key={i}>{p}</p>)}</section>
+        <section className="fabric-blog-section" id="fabric-interface"><div className="fabric-blog-section-kicker">04 / APPLICATION</div><h2>{sections[3][2]}</h2>{sections[3][3].map((p,i)=><p key={i}>{p}</p>)}
+          <div className="fabric-blog-pipeline">{(lang==="vi"?["Ảnh đầu vào","Faster R-CNN","Bounding box + 9 nhãn","JSON đầu ra"]:["Input image","Faster R-CNN","Boxes + 9 labels","JSON output"]).map((item,i)=><React.Fragment key={item}><div><span>0{i+1}</span><strong>{item}</strong></div>{i<3&&<b>→</b>}</React.Fragment>)}</div>
+        </section>
+        <YouTubeShowcase url={project.youtubeUrl} lang={lang}/>
+        <section className="fabric-blog-section" id="fabric-limits"><div className="fabric-blog-section-kicker">05 / LIMITATIONS</div><h2>{sections[4][2]}</h2>{sections[4][3].map((p,i)=><p key={i}>{p}</p>)}</section>
+        <section className="fabric-blog-section fabric-blog-next" id="fabric-next"><div className="fabric-blog-section-kicker">06 / NEXT EXPERIMENTS</div><h2>{sections[5][2]}</h2>{sections[5][3].map((p,i)=><p key={i}>{p}</p>)}</section>
+        <p className="fabric-blog-closing">{t.fabricBlogClosing}</p>
+        <div className="fabric-blog-footer"><div><span>{t.technologies}</span><div className="tag-list">{project.tags.map(tag=><span key={tag}>{displayTag(tag,lang)}</span>)}</div></div><a className="text-link" href="#projects/ai">{t.back}<Icon name="arrow" size={16}/></a></div>
+      </article>
+    </div>
+  </div></main>;
+}
+
 function ProjectDetail({ project,lang }) {
   const t=text[lang];
   if(!project) return <NotFound lang={lang}/>;
+  if(project.slug==="fabric") return <FabricBlog project={project} lang={lang}/>;
   const labels={problem:t.problem,role:t.role,scope:t.scope,approach:t.approach,evidence:t.evidence,next:t.next};
   return <main id="main-content" className="inner-page detail-page"><div className="container">
     <a href={project.category==="backend"?"#projects/backend":"#projects/ai"} className="back-link">← {t.back}</a>
