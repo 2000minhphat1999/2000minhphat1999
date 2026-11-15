@@ -77,6 +77,8 @@ const text = {
     fabricNext:"Evaluate on independent out-of-distribution fabric images, review per-class precision/recall and failure cases, and assess score calibration before considering any factory workflow.",
     fabricBlogKicker:"ENGINEERING JOURNAL · COMPUTER VISION",
     fabricBlogLead:"Building a fabric-surface defect detector with Faster R-CNN, then turning model predictions into an image-inference demo. This article documents the engineering decisions, validation experiments and the limits that still matter.",
+    fabricImageAlt:"Illustrative textile swatches showing a woven surface, yarn irregularity, surface discoloration and a localized opening.",
+    fabricImageCaption:"Illustrative textile surface study. These visuals explain the inspection context; they are not samples from the training dataset and are not model predictions.",
     fabricBlogToc:"IN THIS ARTICLE",
     fabricBlogChallengeTitle:"Starting with the inspection problem",
     fabricBlogChallengeP1:"Fabric-surface defects can affect the material used in sofa manufacturing. The practical computer-vision task in this project is not simply to label an image as good or bad: the model needs to identify where a visible defect appears and assign it to a defect category.",
@@ -199,6 +201,8 @@ const text = {
     fabricNext:"Đánh giá trên ảnh vải độc lập ngoài phân phối, xem xét precision/recall theo từng lớp và các trường hợp dự đoán sai; kiểm tra hiệu chuẩn score trước khi cân nhắc đưa vào quy trình nhà máy.",
     fabricBlogKicker:"NHẬT KÝ KỸ THUẬT · THỊ GIÁC MÁY TÍNH",
     fabricBlogLead:"Xây dựng bộ phát hiện lỗi bề mặt vải bằng Faster R-CNN, sau đó đưa kết quả dự đoán vào giao diện suy luận ảnh. Bài viết ghi lại các quyết định kỹ thuật, thử nghiệm validation và những giới hạn cần được nhìn nhận đúng.",
+    fabricImageAlt:"Bốn mẫu bề mặt vải minh họa gồm kết cấu dệt, sợi bất thường, vùng đổi màu và một lỗ nhỏ cục bộ.",
+    fabricImageCaption:"Hình minh họa bề mặt vải. Hình ảnh giúp giải thích bối cảnh kiểm tra, không phải ảnh từ tập dữ liệu huấn luyện và không phải kết quả dự đoán của mô hình.",
     fabricBlogToc:"NỘI DUNG BÀI VIẾT",
     fabricBlogChallengeTitle:"Bắt đầu từ bài toán kiểm tra vải",
     fabricBlogChallengeP1:"Lỗi bề mặt vải có thể ảnh hưởng đến vật liệu dùng trong sản xuất sofa. Bài toán thị giác máy tính ở dự án này không chỉ là phân loại một ảnh tốt hay xấu: mô hình cần xác định vị trí lỗi nhìn thấy được và gán nó vào một nhóm lỗi.",
@@ -645,6 +649,10 @@ function FabricBlog({ project,lang }) {
       <p className="fabric-blog-lead">{t.fabricBlogLead}</p>
       <div className="tag-list">{project.tags.map(tag=><span key={tag}>{displayTag(tag,lang)}</span>)}</div>
     </header>
+    <figure className="fabric-blog-image">
+      <img src="/fabric-surface-study.svg" alt={t.fabricImageAlt} loading="lazy"/>
+      <figcaption>{t.fabricImageCaption}</figcaption>
+    </figure>
     <section className="fabric-blog-metrics" aria-label={t.fabricBlogMetricsLabel}>
       <div className="fabric-blog-metric-label">{t.fabricBlogMetricsLabel}</div>
       <div className="fabric-blog-metric-values">
