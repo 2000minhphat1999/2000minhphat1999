@@ -9,7 +9,7 @@ const routes = [
   ["projects", "Projects", "Dự án"],
   ["projects/ai", "AI", "AI"],
   ["projects/backend", "Backend", "Backend"],
-  ["experience", "Work, projects and the people behind them.", "Công việc và dự án tôi đã đi qua."],
+  ["experience", "Work and projects that shaped my skills.", "Những công việc và dự án đã tạo nên kinh nghiệm của tôi."],
   ["skills", "The tools I use to turn requirements into working software.", "Công nghệ tôi sử dụng để biến yêu cầu thành phần mềm hoạt động."],
   ["education", "Where my engineering journey began.", "Nơi hành trình kỹ thuật của tôi bắt đầu."],
   ["about", "I enjoy building software that helps everyday work run better.", "Tôi thích xây dựng phần mềm giúp công việc vận hành tốt hơn."],
