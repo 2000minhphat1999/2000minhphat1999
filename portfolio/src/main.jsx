@@ -626,6 +626,9 @@ function YouTubeShowcase({ url,lang }) {
 
 function FabricBlog({ project,lang }) {
   const t=text[lang];
+  const stageLabels=lang==="vi"
+    ? ["BỐI CẢNH","QUYẾT ĐỊNH MÔ HÌNH","THỰC NGHIỆM","ỨNG DỤNG","GIỚI HẠN","THỬ NGHIỆM TIẾP"]
+    : ["CONTEXT","MODEL DECISION","EXPERIMENT","APPLICATION","LIMITATIONS","NEXT EXPERIMENTS"];
   const sections=[
     ["challenge","01",t.fabricBlogChallengeTitle,[t.fabricBlogChallengeP1,t.fabricBlogChallengeP2]],
     ["model","02",t.fabricBlogModelTitle,[t.fabricBlogModelP1,t.fabricBlogModelP2]],
@@ -652,17 +655,17 @@ function FabricBlog({ project,lang }) {
     <div className="fabric-blog-layout">
       <aside className="fabric-blog-toc"><span>{t.fabricBlogToc}</span><nav>{sections.map(([id,num,title])=><a key={id} href={"#fabric-"+id}><i>{num}</i>{title}</a>)}</nav></aside>
       <article className="fabric-blog-article">
-        <section className="fabric-blog-section" id="fabric-challenge"><div className="fabric-blog-section-kicker">01 / CONTEXT</div><h2>{sections[0][2]}</h2>{sections[0][3].map((p,i)=><p key={i}>{p}</p>)}</section>
-        <section className="fabric-blog-section" id="fabric-model"><div className="fabric-blog-section-kicker">02 / MODEL DECISION</div><h2>{sections[1][2]}</h2>{sections[1][3].map((p,i)=><p key={i}>{p}</p>)}
+        <section className="fabric-blog-section" id="fabric-challenge"><div className="fabric-blog-section-kicker">01 / {stageLabels[0]}</div><h2>{sections[0][2]}</h2>{sections[0][3].map((p,i)=><p key={i}>{p}</p>)}</section>
+        <section className="fabric-blog-section" id="fabric-model"><div className="fabric-blog-section-kicker">02 / {stageLabels[1]}</div><h2>{sections[1][2]}</h2>{sections[1][3].map((p,i)=><p key={i}>{p}</p>)}
           <div className="fabric-blog-specs"><div><span>{t.fabricBlogTechModel}</span><strong>Faster R-CNN</strong></div><div><span>{t.fabricBlogTechBackbone}</span><strong>MobileNetV3-FPN</strong></div><div><span>{t.fabricBlogTechRuntime}</span><strong>Google Colab · T4 GPU</strong></div><div><span>{t.fabricBlogTechTask}</span><strong>{t.fabricBlogTaskValue}</strong></div></div>
         </section>
-        <section className="fabric-blog-section" id="fabric-setup"><div className="fabric-blog-section-kicker">03 / EXPERIMENT</div><h2>{sections[2][2]}</h2>{sections[2][3].map((p,i)=><p key={i}>{p}</p>)}</section>
-        <section className="fabric-blog-section" id="fabric-interface"><div className="fabric-blog-section-kicker">04 / APPLICATION</div><h2>{sections[3][2]}</h2>{sections[3][3].map((p,i)=><p key={i}>{p}</p>)}
+        <section className="fabric-blog-section" id="fabric-setup"><div className="fabric-blog-section-kicker">03 / {stageLabels[2]}</div><h2>{sections[2][2]}</h2>{sections[2][3].map((p,i)=><p key={i}>{p}</p>)}</section>
+        <section className="fabric-blog-section" id="fabric-interface"><div className="fabric-blog-section-kicker">04 / {stageLabels[3]}</div><h2>{sections[3][2]}</h2>{sections[3][3].map((p,i)=><p key={i}>{p}</p>)}
           <div className="fabric-blog-pipeline">{(lang==="vi"?["Ảnh đầu vào","Faster R-CNN","Bounding box + 9 nhãn","JSON đầu ra"]:["Input image","Faster R-CNN","Boxes + 9 labels","JSON output"]).map((item,i)=><React.Fragment key={item}><div><span>0{i+1}</span><strong>{item}</strong></div>{i<3&&<b>→</b>}</React.Fragment>)}</div>
         </section>
         <YouTubeShowcase url={project.youtubeUrl} lang={lang}/>
-        <section className="fabric-blog-section" id="fabric-limits"><div className="fabric-blog-section-kicker">05 / LIMITATIONS</div><h2>{sections[4][2]}</h2>{sections[4][3].map((p,i)=><p key={i}>{p}</p>)}</section>
-        <section className="fabric-blog-section fabric-blog-next" id="fabric-next"><div className="fabric-blog-section-kicker">06 / NEXT EXPERIMENTS</div><h2>{sections[5][2]}</h2>{sections[5][3].map((p,i)=><p key={i}>{p}</p>)}</section>
+        <section className="fabric-blog-section" id="fabric-limits"><div className="fabric-blog-section-kicker">05 / {stageLabels[4]}</div><h2>{sections[4][2]}</h2>{sections[4][3].map((p,i)=><p key={i}>{p}</p>)}</section>
+        <section className="fabric-blog-section fabric-blog-next" id="fabric-next"><div className="fabric-blog-section-kicker">06 / {stageLabels[5]}</div><h2>{sections[5][2]}</h2>{sections[5][3].map((p,i)=><p key={i}>{p}</p>)}</section>
         <p className="fabric-blog-closing">{t.fabricBlogClosing}</p>
         <div className="fabric-blog-footer"><div><span>{t.technologies}</span><div className="tag-list">{project.tags.map(tag=><span key={tag}>{displayTag(tag,lang)}</span>)}</div></div><a className="text-link" href="#projects/ai">{t.back}<Icon name="arrow" size={16}/></a></div>
       </article>
