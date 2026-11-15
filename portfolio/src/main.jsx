@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { readStoredLanguage, writeStoredLanguage } from "./storage.js";
-import { buildPortfolioAnchorHash, isCurrentPortfolioAnchor, parsePortfolioHash } from "./routing.js";
+import { buildPortfolioAnchorHash, isCurrentPortfolioAnchor, isUnmodifiedPrimaryClick, parsePortfolioHash } from "./routing.js";
 import "./styles.css";
 
 const text = {
@@ -708,7 +708,7 @@ function YouTubeShowcase({ url,lang }) {
 }
 
 function scrollToPortfolioAnchor(event,route,anchor) {
-  if(!isCurrentPortfolioAnchor(window.location.hash,route,anchor)) return;
+  if(!isUnmodifiedPrimaryClick(event) || !isCurrentPortfolioAnchor(window.location.hash,route,anchor)) return;
   event.preventDefault();
   document.getElementById(anchor)?.scrollIntoView({behavior:"auto",block:"start"});
 }
