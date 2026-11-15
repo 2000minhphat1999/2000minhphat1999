@@ -17,10 +17,27 @@ export function isPortfolioRoute(route, projectSlugs = []) {
 }
 
 /**
- * Route hashes take precedence. Other hashes are treated as in-page anchors
- * when the current document contains a matching id; unknown hashes still
- * fall through to the application's Not Found page.
+ * Parse the app route and an optional in-page anchor from one hash.
+ * Example: #project/fabric?anchor=fabric-model
  */
-export function shouldHandleHashAsRoute(route, elementExists, projectSlugs = []) {
-  return isPortfolioRoute(route, projectSlugs) || !elementExists;
+export function parsePortfolioHash(hash) {
+  const raw = String(hash || "").replace(/^#/, "");
+  const [routePart = "", ...queryParts] = raw.split("?");
+  const params = new URLSearchParams(queryParts.join("?"));
+  const candidate = params.get("anchor");
+  const anchor = candidate && /^[A-Za-z][A-Za-z0-9_-]*$/.test(candidate)
+    ? candidate
+    : null;
+  const route = routePart.replace(/^\/+|\/+$/g, "") || "home";
+  return { route, anchor };
+}
+
+/**
+ * Build a shareable in-app anchor URL while preserving the app route.
+ */
+export function buildPortfolioAnchorHash(route, anchor) {
+  if (!route || !anchor || !/^[A-Za-z][A-Za-z0-9_-]*$/.test(anchor)) {
+    throw new TypeError("A valid portfolio route and anchor are required.");
+  }
+  return "#" + route + "?anchor=" + encodeURIComponent(anchor);
 }
