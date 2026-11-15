@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
+import { readStoredLanguage, writeStoredLanguage } from "./storage.js";
 import "./styles.css";
 
 const text = {
@@ -803,10 +804,10 @@ class RenderErrorBoundary extends React.Component {
   }
   render() {
     if(this.state.hasError) {
-      const vi=this.props.lang==="vi";
+      const vi=this.props.lang==="vi" || (!this.props.lang && typeof document!=="undefined" && document.documentElement.lang==="vi");
       return <main className="inner-page page-error-state" role="alert">
         <div className="container">
-          <div className="section-kicker">{this.props.lang==="vi"?text.vi.pageRenderError:text.en.pageRenderError}</div>
+          <div className="section-kicker">{vi?text.vi.pageRenderError:text.en.pageRenderError}</div>
           <h1>{vi?"Trang này đang gặp lỗi hiển thị.":"This page could not be displayed."}</h1>
           <p>{vi?"Nội dung không tải được do lỗi khi render. Hãy tải lại trang; lỗi đã được ghi nhận trong console để kiểm tra.":"A rendering error prevented this page from loading. Reload the page; technical details are available in the browser console."}</p>
           <button type="button" className="button button-primary" onClick={()=>window.location.reload()}>{vi?text.vi.reloadPage:text.en.reloadPage}</button>
@@ -819,7 +820,7 @@ class RenderErrorBoundary extends React.Component {
 }
 
 function App() {
-  const [lang,setLang]=useState(()=>window.localStorage.getItem("portfolio-language")==="vi"?"vi":"en");
+  const [lang,setLang]=useState(readStoredLanguage);
   const [route,setRoute]=useState(()=>resolvePortfolioRoute());
   useEffect(()=>{
     const change=()=>{setRoute(resolvePortfolioRoute());window.scrollTo({top:0,behavior:"auto"});};
@@ -828,7 +829,7 @@ function App() {
     return ()=>window.removeEventListener("hashchange",change);
   },[]);
   useEffect(()=>{
-    window.localStorage.setItem("portfolio-language",lang);
+    writeStoredLanguage(lang);
     document.documentElement.lang=lang;
     const slug=route.startsWith("project/")?route.split("/")[1]:null;
     const selected=projects.find(p=>p.slug===slug);
@@ -879,4 +880,4 @@ function App() {
   return <><a className="skip-link" href="#main-content">{text[lang].skipToContent}</a><Header lang={lang} setLang={setLang} route={route}/><RenderErrorBoundary lang={lang}>{content}</RenderErrorBoundary><Footer lang={lang}/></>;
 }
 
-createRoot(document.getElementById("root")).render(<React.StrictMode><App/></React.StrictMode>);
+createRoot(document.getElementById("root")).render(<React.StrictMode><RenderErrorBoundary><App/></RenderErrorBoundary></React.StrictMode>);
