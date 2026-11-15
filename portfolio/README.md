@@ -5,9 +5,12 @@ A bilingual (English/Vietnamese) React portfolio for Python application engineer
 ## Structure
 
 - src/main.jsx — React application, hash-based navigation, language switch and project content.
+- src/storage.js — optional, failure-safe language preference persistence.
 - src/styles.css — responsive visual system, page layouts and interaction states.
 - public/favicon.svg — site icon.
+- public/fabric-surface-study.svg — explicitly labelled editorial illustration for the Fabric blog.
 - scripts/check-build.mjs — verifies the generated production output.
+- scripts/test-runtime-safety.mjs — tests normal and denied browser-storage behaviour.
 - vite.config.js — Vite build configuration.
 
 ## Project navigation
