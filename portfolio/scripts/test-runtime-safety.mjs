@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readStoredLanguage, writeStoredLanguage } from "../src/storage.js";
-import { buildPortfolioAnchorHash, isPortfolioRoute, parsePortfolioHash } from "../src/routing.js";
+import { buildPortfolioAnchorHash, isCurrentPortfolioAnchor, isPortfolioRoute, parsePortfolioHash } from "../src/routing.js";
 
 const values = new Map();
 const memoryStorage = {
@@ -77,4 +77,8 @@ assert.deepEqual(parsePortfolioHash("#project/fabric?anchor=invalid%20anchor"), 
   anchor: null
 });
 
-console.log("PASS: shareable in-page links preserve the application route.");
+assert.equal(isCurrentPortfolioAnchor("#project/fabric?anchor=fabric-model", "project/fabric", "fabric-model"), true);
+assert.equal(isCurrentPortfolioAnchor("#project/fabric?anchor=fabric-model", "project/fabric", "fabric-next"), false);
+assert.equal(isCurrentPortfolioAnchor("#project/fabric", "project/fabric", "fabric-model"), false);
+
+console.log("PASS: shareable anchors preserve routes and support same-target click detection.");
