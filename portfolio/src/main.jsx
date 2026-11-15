@@ -6,7 +6,7 @@ import "./styles.css";
 
 const text = {
   en: {
-    home:"Home", projects:"Projects", all:"All projects", ai:"AI", backend:"Backend", experience:"Experience", about:"About", contact:"Contact",
+    home:"Home", projects:"Projects", all:"All projects", ai:"AI", backend:"Backend", experience:"Experience", about:"About me", contact:"Contact",
     projectsPageIntro:"Browse the work by engineering domain, then open an individual case study for scope and evidence.",
     experiencePageIntro:"Employment, a fixed-term contract, intermittent freelance engagements and earlier engineering experience — kept separate by type and duration.",
     skillsPageIntro:"A practical view of the tools and domains used in the work described in this portfolio. No percentage ratings or unsupported proficiency claims.",
@@ -141,7 +141,7 @@ const text = {
     footerStack:"PYTHON APPLICATIONS · ERP / WMS", githubLabel:"GITHUB"
   },
   vi: {
-    home:"Trang chủ", projects:"Dự án", all:"Tất cả dự án", ai:"AI", backend:"Backend", experience:"Kinh nghiệm", about:"Giới thiệu", contact:"Liên hệ",
+    home:"Trang chủ", projects:"Dự án", all:"Tất cả dự án", ai:"AI", backend:"Backend", experience:"Kinh nghiệm", about:"Về tôi", contact:"Liên hệ",
     projectsPageIntro:"Xem các dự án theo lĩnh vực kỹ thuật, sau đó mở trang chi tiết để tìm hiểu phạm vi thực hiện và bằng chứng.",
     experiencePageIntro:"Công việc chính thức, hợp đồng có thời hạn, các dự án tự do thực hiện theo từng đợt và trải nghiệm kỹ thuật trước đó được phân loại riêng.",
     skillsPageIntro:"Tổng quan về công nghệ và lĩnh vực đã được sử dụng trong công việc, hợp đồng và dự án. Không dùng thang điểm phần trăm hoặc tự nhận mức độ thành thạo khi chưa có căn cứ.",
