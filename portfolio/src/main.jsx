@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { readStoredLanguage, writeStoredLanguage } from "./storage.js";
-import { buildPortfolioAnchorHash, parsePortfolioHash } from "./routing.js";
+import { buildPortfolioAnchorHash, isCurrentPortfolioAnchor, parsePortfolioHash } from "./routing.js";
 import "./styles.css";
 
 const text = {
@@ -630,6 +630,12 @@ function YouTubeShowcase({ url,lang }) {
   </section>;
 }
 
+function scrollToPortfolioAnchor(event,route,anchor) {
+  if(!isCurrentPortfolioAnchor(window.location.hash,route,anchor)) return;
+  event.preventDefault();
+  document.getElementById(anchor)?.scrollIntoView({behavior:"auto",block:"start"});
+}
+
 function FabricBlog({ project,lang }) {
   const t=text[lang];
   const stageLabels=lang==="vi"
@@ -663,7 +669,7 @@ function FabricBlog({ project,lang }) {
       <div className="fabric-blog-metric-foot"><strong>{t.fabricBlogMetricName}</strong><span>{t.fabricBlogMetricNote}</span></div>
     </section>
     <div className="fabric-blog-layout">
-      <aside className="fabric-blog-toc"><span>{t.fabricBlogToc}</span><nav>{sections.map(([id,num,title])=><a key={id} href={buildPortfolioAnchorHash("project/fabric","fabric-"+id)}><i>{num}</i>{title}</a>)}</nav></aside>
+      <aside className="fabric-blog-toc"><span>{t.fabricBlogToc}</span><nav>{sections.map(([id,num,title])=><a key={id} href={buildPortfolioAnchorHash("project/fabric","fabric-"+id)} onClick={event=>scrollToPortfolioAnchor(event,"project/fabric","fabric-"+id)}><i>{num}</i>{title}</a>)}</nav></aside>
       <article className="fabric-blog-article">
         <section className="fabric-blog-section" id="fabric-challenge"><div className="fabric-blog-section-kicker">01 / {stageLabels[0]}</div><h2>{sections[0][2]}</h2>{sections[0][3].map((p,i)=><p key={i}>{p}</p>)}</section>
         <section className="fabric-blog-section" id="fabric-model"><div className="fabric-blog-section-kicker">02 / {stageLabels[1]}</div><h2>{sections[1][2]}</h2>{sections[1][3].map((p,i)=><p key={i}>{p}</p>)}
@@ -890,7 +896,7 @@ function App() {
   else if(route==="contact") content=<ContactSection lang={lang}/>;
   else if(parts[0]==="project") content=<ProjectDetail project={projects.find(p=>p.slug===parts[1])} lang={lang}/>;
   else content=<NotFound lang={lang}/>;
-  return <><a className="skip-link" href={buildPortfolioAnchorHash(route,"main-content")}>{text[lang].skipToContent}</a><Header lang={lang} setLang={setLang} route={route}/><RenderErrorBoundary lang={lang}>{content}</RenderErrorBoundary><Footer lang={lang}/></>;
+  return <><a className="skip-link" href={buildPortfolioAnchorHash(route,"main-content")} onClick={event=>scrollToPortfolioAnchor(event,route,"main-content")}>{text[lang].skipToContent}</a><Header lang={lang} setLang={setLang} route={route}/><RenderErrorBoundary lang={lang}>{content}</RenderErrorBoundary><Footer lang={lang}/></>;
 }
 
 createRoot(document.getElementById("root")).render(<React.StrictMode><RenderErrorBoundary><App/></RenderErrorBoundary></React.StrictMode>);
