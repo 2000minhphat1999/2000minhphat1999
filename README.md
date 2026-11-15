@@ -2,9 +2,9 @@
 
 # Tran Viet Minh Phat
 
-### Python Application Engineer · ERP/WMS · Backend Applications
+### IT Staff / ERP Support · Python Applications · ERP/WMS
 
-I build Python applications around operational workflows: requirements, business logic, database-backed features, debugging and validation. My primary direction is Python application engineering for ERP/WMS and operational systems. Computer Vision and OCR are supporting experience from a fixed-term contract and intermittent freelance projects.
+I have 1 year 10 months of experience contributing to WMS and FEMS development at Sumida: clarifying warehouse requirements, analysing workflows, implementing application logic, testing, fixing defects and supporting trial runs. I am targeting IT Staff / ERP Support and factory application roles. RackFlow is a personal ERP/WMS project in development; Computer Vision and OCR are supporting project experience.
 
 [**Live Portfolio**](https://2000minhphat1999-portfolio.vercel.app/) · [**Portfolio Source**](https://github.com/2000minhphat1999/2000minhphat1999/tree/main/portfolio) · [LinkedIn](https://www.linkedin.com/in/minhphat-ai/) · [Email](mailto:tranvietminhphat@gmail.com)
 
