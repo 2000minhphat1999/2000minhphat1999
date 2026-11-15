@@ -540,18 +540,19 @@ function EducationSection({ lang }) {
   try {
     const url=new URL(value);
     if(url.protocol!=="https:") return "";
-    const host=url.hostname.toLowerCase().replace(/^www\\./,"");
+    const host=url.hostname.toLowerCase().startsWith("www.")?url.hostname.slice(4).toLowerCase():url.hostname.toLowerCase();
     let id="";
     if(host==="youtu.be") id=url.pathname.split("/").filter(Boolean)[0]||"";
     else if(host==="youtube.com"||host==="m.youtube.com") {
-      id=url.searchParams.get("v")||url.pathname.match(/^\\/(?:embed|shorts)\\/([^/]+)/)?.[1]||"";
+      const parts=url.pathname.split("/").filter(Boolean);
+      const routeIndex=parts.findIndex(part=>part==="embed"||part==="shorts");
+      id=url.searchParams.get("v")||(routeIndex>=0?parts[routeIndex+1]||"":"");
     }
     return /^[A-Za-z0-9_-]{11}$/.test(id)?`https://www.youtube-nocookie.com/embed/${id}`:"";
   } catch {
     return "";
   }
 }
-
 function YouTubeShowcase({ url,lang }) {
   const t=text[lang];
   const embedUrl=getYouTubeEmbedUrl(url);
