@@ -49,11 +49,17 @@ A workflow that used image processing and OCR to extract information from vehicl
 
 [View the case study](https://2000minhphat1999-portfolio.vercel.app/#project/ocr)
 
-### Planned direction: Fabric Defect Inspection
+### Fabric Defect Inspection
 
-A proposed Computer Vision experiment focused on dataset quality, defect categories, baseline evaluation and reproducible results. This is a planning-stage concept, not a completed model or factory deployment.
+**Status: Experimental prototype · validation ongoing**
 
-[View the planned direction](https://2000minhphat1999-portfolio.vercel.app/#project/fabric)
+A fabric-surface defect detector using Faster R-CNN with a MobileNetV3-FPN backbone. The image-inference interface returns predicted boxes, one of nine Vietnamese defect labels, raw model scores (0–1) and JSON output.
+
+- Three-seed validation mAP50–95: 0.412 / 0.412 / 0.426.
+- Model scores are not calibrated probabilities; external/OOD generalization is not established.
+- No factory deployment or production KPI is claimed.
+
+[View the case study](https://2000minhphat1999-portfolio.vercel.app/#project/fabric)
 
 ## Experience Snapshot
 
