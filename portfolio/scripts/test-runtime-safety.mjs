@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readStoredLanguage, writeStoredLanguage } from "../src/storage.js";
-import { shouldHandleHashAsRoute } from "../src/routing.js";
+import { buildPortfolioAnchorHash, isPortfolioRoute, parsePortfolioHash } from "../src/routing.js";
 
 const values = new Map();
 const memoryStorage = {
@@ -44,17 +44,37 @@ console.log("PASS: language preference works normally and storage denial never a
 
 const projectSlugs = ["rackflow", "supermarket", "ocr", "fabric"];
 
-// App routes must be handled by the hash router.
-assert.equal(shouldHandleHashAsRoute("projects", true, projectSlugs), true);
-assert.equal(shouldHandleHashAsRoute("projects/ai", false, projectSlugs), true);
-assert.equal(shouldHandleHashAsRoute("project/fabric", false, projectSlugs), true);
+// App routes remain explicit, and unknown routes remain invalid.
+assert.equal(isPortfolioRoute("projects", projectSlugs), true);
+assert.equal(isPortfolioRoute("projects/ai", projectSlugs), true);
+assert.equal(isPortfolioRoute("project/fabric", projectSlugs), true);
+assert.equal(isPortfolioRoute("project/unknown", projectSlugs), false);
+assert.equal(isPortfolioRoute("fabric-model", projectSlugs), false);
 
-// Existing in-page targets must not be mistaken for app routes.
-assert.equal(shouldHandleHashAsRoute("main-content", true, projectSlugs), false);
-assert.equal(shouldHandleHashAsRoute("fabric-challenge", true, projectSlugs), false);
-assert.equal(shouldHandleHashAsRoute("fabric-model", true, projectSlugs), false);
+// In-page links preserve the app route as well as the target anchor.
+const anchorHash = buildPortfolioAnchorHash("project/fabric", "fabric-model");
+assert.equal(anchorHash, "#project/fabric?anchor=fabric-model");
+assert.deepEqual(parsePortfolioHash(anchorHash), {
+  route: "project/fabric",
+  anchor: "fabric-model"
+});
+assert.deepEqual(parsePortfolioHash("#projects?anchor=main-content"), {
+  route: "projects",
+  anchor: "main-content"
+});
 
-// Unknown hashes without a matching target still render the app's Not Found page.
-assert.equal(shouldHandleHashAsRoute("not-a-route", false, projectSlugs), true);
+// Direct app URLs, legacy app hashes and malformed anchors parse safely.
+assert.deepEqual(parsePortfolioHash("#project/fabric"), {
+  route: "project/fabric",
+  anchor: null
+});
+assert.deepEqual(parsePortfolioHash(""), {
+  route: "home",
+  anchor: null
+});
+assert.deepEqual(parsePortfolioHash("#project/fabric?anchor=invalid%20anchor"), {
+  route: "project/fabric",
+  anchor: null
+});
 
-console.log("PASS: app routes and in-page anchors are handled separately.");
+console.log("PASS: shareable in-page links preserve the application route.");
