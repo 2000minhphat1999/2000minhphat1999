@@ -2,7 +2,7 @@
 
 # Tran Viet Minh Phat
 
-### IT Staff / ERP Support · Python Applications · ERP/WMS
+### Personal Engineering Portfolio · IT Staff / ERP Support · Python · ERP/WMS
 
 I have 1 year 10 months of experience contributing to WMS and FEMS development at Sumida: clarifying warehouse requirements, analysing workflows, implementing application logic, testing, fixing defects and supporting trial runs. I am targeting IT Staff / ERP Support and factory application roles. RackFlow is a personal ERP/WMS project in development; Computer Vision and OCR are supporting project experience.
 
