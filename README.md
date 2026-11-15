@@ -1,77 +1,74 @@
 <div align="center">
 
-# Tran Viet Minh Phat
+# Trần Việt Minh Phát
 
-### Python Application Engineer · ERP/WMS · Backend Applications
+### IT Staff / ERP Support · Python · Business Applications · WMS / FEMS
 
-I build Python applications around operational workflows: requirements, business logic, database-backed features, debugging and validation. My primary direction is Python application engineering for ERP/WMS and operational systems. Computer Vision and OCR are supporting experience from a fixed-term contract and intermittent freelance projects.
+I am a software developer with 1 year and 10 months of experience contributing to WMS and FEMS development at Sumida. I work across warehouse requirements, workflow analysis, application logic, testing and feature support. My earlier projects include Computer Vision, OCR, industrial data collection and educational applications.
 
-[**Live Portfolio**](https://2000minhphat1999-portfolio.vercel.app/) · [**Portfolio Source**](https://github.com/2000minhphat1999/2000minhphat1999/tree/main/portfolio) · [LinkedIn](https://www.linkedin.com/in/minhphat-ai/) · [Email](mailto:tranvietminhphat@gmail.com)
+[**Personal Portfolio**](https://2000minhphat1999-portfolio.vercel.app/) · [**Portfolio Source**](https://github.com/2000minhphat1999/2000minhphat1999/tree/main/portfolio) · [LinkedIn](https://www.linkedin.com/in/minhphat-ai/) · [Email](mailto:tranvietminhphat@gmail.com)
 
 </div>
 
 ---
 
-## Professional Direction
+## What I Work On
 
-- **Core:** Python, application logic, SQL, debugging and testing
-- **Application stack:** Flask, FastAPI, SQLAlchemy, PostgreSQL
-- **Operational context:** WMS workflows, FEMS data processing and dashboards
-- **Supporting project work:** YOLOv5, DeepSORT, OCR and image processing
+- **Python development:** application logic, Flask, FastAPI, SQLAlchemy and PostgreSQL
+- **Business applications:** warehouse workflows, WMS functions and FEMS data/dashboard features
+- **Applied Computer Vision:** YOLOv5 object detection, DeepSORT tracking and OCR-based document processing
+- **Industrial engineering data:** Python sensor-data collection over Modbus RTU, alongside Mechatronics and assembly-process analysis
 
-## Selected Work
+## Selected Projects
 
-### RackFlow — Mini ERP/WMS
+### RackFlow — Mini ERP / WMS
 
-**Status: In development · Personal portfolio project**
+**Personal project · In development**
 
-A warehouse operations application focused on inbound receiving, inventory lookup, order lookup, stock reservation and event history.
+A warehouse application covering inbound receiving, inventory lookup, order lookup, stock reservation and event history. The current development work is moving into outbound workflows and Gemini-assisted operations.
 
-- Stack: Python, FastAPI, Flask, SQLAlchemy and PostgreSQL.
-- Current limitation: outbound workflows and AI-assisted operations remain under development.
-- Not presented as a deployed customer or production warehouse system.
+**Stack:** Python · FastAPI · Flask · SQLAlchemy · PostgreSQL
 
 [View the RackFlow case study](https://2000minhphat1999-portfolio.vercel.app/#project/rackflow)
 
 ### Supermarket Delivery Monitoring
 
-**Status: Past project-based freelance work**
-
-A video-based Computer Vision workflow using YOLOv5 for object detection and DeepSORT for object tracking. No unverified accuracy, FPS or time-saving metrics are claimed.
+A video-based Computer Vision workflow using YOLOv5 for object detection and DeepSORT to track objects across frames, applied to supermarket delivery monitoring.
 
 [View the case study](https://2000minhphat1999-portfolio.vercel.app/#project/supermarket)
 
 ### OCR-assisted Data Entry
 
-**Status: Past project-based freelance work**
-
-A workflow that used image processing and OCR to extract information from vehicle-inspection records and automate data entry into the Da Nang Port website. Document-level accuracy and time savings are not asserted without evidence.
+An OCR workflow for extracting information from vehicle-registration books, separating document fields and using Selenium to enter the information into the Da Nang Port website.
 
 [View the case study](https://2000minhphat1999-portfolio.vercel.app/#project/ocr)
 
-### Planned direction: Fabric Defect Inspection
+### Fabric Defect Inspection
 
-A proposed Computer Vision experiment focused on dataset quality, defect categories, baseline evaluation and reproducible results. This is a planning-stage concept, not a completed model or factory deployment.
+A fabric-surface detector built with Faster R-CNN and a MobileNetV3-FPN backbone. The image interface returns predicted boxes, one of nine Vietnamese defect labels, model scores and JSON output.
 
-[View the planned direction](https://2000minhphat1999-portfolio.vercel.app/#project/fabric)
+**E1 validation mAP50–95 across three seeds:** 0.412 / 0.412 / 0.426. Further work includes independent-data evaluation and score calibration.
 
-## Experience Snapshot
+[View the case study](https://2000minhphat1999-portfolio.vercel.app/#project/fabric)
 
-- **Sumida:** 1 year 10 months in software development, focused on WMS workflows and FEMS data/dashboard functions.
-- **Halovi:** five-month Computer Vision contract.
-- **Freelance:** project-based engagements from 09/2022 to 12/2024, with gaps between projects; not continuous full-time employment.
-- **Earlier experience:** research/education work at The University of Technology and Education — The University of Danang, and an engineering internship at Premo Vietnam.
+## Experience
 
-## Education
+- **Sumida:** Software Development Technical Team Lead · 02/2025–11/2026 · WMS and FEMS development
+- **Halovi:** Computer Vision Engineer · 11/2023–03/2024 · five-month contract
+- **Independent projects:** 09/2022–12/2024 · two main software projects in Computer Vision and OCR
+- **UTE – The University of Danang:** Research Engineer · 03/2024–08/2024
+- **Premo Vietnam:** Kaizen Engineer Intern · 05/2022–07/2022
+
+## Education & Research
 
 **B.Eng. in Mechatronics Engineering Technology**  
-The University of Technology and Education — The University of Danang · 09/2018–06/2023 · Degree classification: Good
+The University of Technology and Education — The University of Danang · 09/2018–06/2023 · Good classification
 
 Co-author of “Building An IoT-Based Waste Management System for Hazardous Waste,” REC-ECIT 2023, pp. 193–198.
 
-## Portfolio Implementation
+## Portfolio
 
-The portfolio is built with React 19 and Vite 7. Its source and deployment configuration are in the portfolio directory. The Vercel project Root Directory should remain portfolio; Vite builds to portfolio/dist.
+The bilingual English/Vietnamese portfolio is built with React 19 and Vite 7. It includes a personal introduction, experience, skills, education, contact information and project case studies.
 
 Run locally:
 
@@ -79,6 +76,6 @@ Run locally:
     npm install
     npm run dev
 
-Validate the production build:
+Validate the production build and route-render tests:
 
     npm run check
