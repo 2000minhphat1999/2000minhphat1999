@@ -6,6 +6,7 @@ A bilingual (English/Vietnamese) React portfolio for Python application engineer
 
 - src/main.jsx — React application, hash-based navigation, language switch and project content.
 - src/storage.js — optional, failure-safe language preference persistence.
+- src/routing.js — distinguishes application routes from in-page fragment anchors.
 - src/styles.css — responsive visual system, page layouts and interaction states.
 - public/favicon.svg — site icon.
 - public/fabric-surface-study.svg — explicitly labelled editorial illustration for the Fabric blog.
