@@ -44,7 +44,7 @@ try {
 
     for (const [route, expected] of routes) {
       window.location.hash = `#${route}`;
-      const html = renderToStaticMarkup(React.createElement(App));
+      const html = renderToStaticMarkup(React.createElement(App)).replaceAll("&#x27;", "'");
 
       assert.ok(html.includes('id="main-content"'), `Missing main content: ${lang} / ${route}`);
       assert.ok(!html.includes("PAGE RENDER ERROR"), `Render boundary activated: ${lang} / ${route}`);
