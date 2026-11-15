@@ -54,7 +54,7 @@ const text = {
     email:"Email", linkedin:"LinkedIn", github:"GitHub profile",
     problem:"The problem", role:"What I did", approach:"How I built it", scope:"What it covers",
     evidence:"Project status", next:"What's next", technologies:"TECHNOLOGIES", videoShowcaseLabel:"VIDEO DEMO · YOUTUBE", videoShowcaseTitle:"Model demonstration", videoPlaceholderTitle:"YouTube demo will appear here", videoPlaceholderText:"A 16:9 video space is reserved. Add a YouTube URL to the youtubeUrl field in the fabric project entry to display the video.", videoFrameTitle:"Fabric defect inspection demo", back:"Back to projects",
-    noOt:"Industrial OT/IT technologies such as Siemens S7, SCADA, MQTT and OPC UA are not presented as hands-on professional experience.",
+    noOt:"",
     sumidaRole:"Software Development Technical Team Lead",
     sumidaWms:"WMS: clarified requirements with warehouse users, analysed workflows, implemented application logic, tested features, fixed defects and supported trial deployment.",
     sumidaFems:"FEMS: contributed to data-processing functions, an electricity-monitoring dashboard and electricity-cost calculations.",
@@ -110,7 +110,7 @@ const text = {
     fabricBlogInterfaceTitle:"Turning predictions into something people can inspect",
     fabricBlogInterfaceP1:"The demo flow is deliberately straightforward: upload a fabric image, run inference, inspect the predicted boxes and labels, and access the structured JSON output.",
     fabricBlogInterfaceP2:"Each prediction includes one of nine Vietnamese defect labels and a raw model score between 0 and 1. The score is shown as the model output, separate from a calibrated probability.",
-    fabricBlogLimitsTitle:"Reading the results without overclaiming",
+    fabricBlogLimitsTitle:"Validation and further evaluation",
     fabricBlogLimitsP1:"The E1 figures come from the validation split used during development. The next evaluation step is to test on independent fabric sources, lighting conditions and cameras.",
     fabricBlogLimitsP2:"A closer review of per-class precision, recall and missed defects will help show where the model performs well and where the dataset or model needs more work.",
     fabricBlogNextTitle:"What I would test next",
@@ -189,7 +189,7 @@ const text = {
     email:"Email", linkedin:"LinkedIn", github:"GitHub cá nhân",
     problem:"Bài toán", role:"Phần việc của tôi", approach:"Cách triển khai", scope:"Chức năng chính",
     evidence:"Trạng thái dự án", next:"Hướng phát triển tiếp theo", technologies:"CÔNG NGHỆ SỬ DỤNG", videoShowcaseLabel:"VIDEO MINH HỌA · YOUTUBE", videoShowcaseTitle:"Trình diễn mô hình", videoPlaceholderTitle:"Vị trí video YouTube", videoPlaceholderText:"Đã chừa khung video tỷ lệ 16:9. Thêm URL YouTube vào trường youtubeUrl trong mục dự án Fabric để hiển thị video.", videoFrameTitle:"Video trình diễn mô hình phát hiện lỗi vải", back:"Quay lại danh mục dự án",
-    noOt:"Các công nghệ OT/IT công nghiệp như Siemens S7, SCADA, MQTT và OPC UA không được trình bày như kinh nghiệm thực chiến chuyên nghiệp.",
+    noOt:"",
     sumidaRole:"Trưởng nhóm kỹ thuật phát triển phần mềm",
     sumidaWms:"WMS: làm rõ yêu cầu với người dùng kho, phân tích quy trình, triển khai logic ứng dụng, kiểm thử chức năng, sửa lỗi và hỗ trợ chạy thử.",
     sumidaFems:"FEMS: tham gia phát triển chức năng xử lý dữ liệu, bảng điều khiển giám sát điện năng và tính toán chi phí điện.",
@@ -247,7 +247,7 @@ const text = {
     fabricBlogInterfaceP2:"Mỗi dự đoán gồm một trong chín nhãn lỗi tiếng Việt và raw model score từ 0 đến 1. Score được hiển thị như đầu ra mô hình, tách biệt với xác suất đã hiệu chuẩn.",
     fabricBlogLimitsTitle:"Đọc kết quả mà không suy diễn quá mức",
     fabricBlogLimitsP1:"Các số liệu E1 đến từ tập validation sử dụng trong quá trình phát triển. Bước đánh giá tiếp theo là thử nghiệm trên nguồn ảnh vải, điều kiện ánh sáng và camera độc lập.",
-    fabricBlogLimitsP2:"Việc xem xét precision, recall theo từng lớp và các lỗi bỏ sót sẽ giúp xác định rõ hơn điểm mạnh của mô hình cũng như những phần cần cải thiện trong dữ liệu hoặc thuật toán.",
+    fabricBlogLimitsP2:"Việc xem xét precision, recall theo từng lớp, false positive và missed defect sẽ giúp xác định phần dữ liệu và thuật toán cần tiếp tục cải thiện.",
     fabricBlogNextTitle:"Những gì cần kiểm tra tiếp theo",
     fabricBlogNextP1:"Tôi dự định đánh giá detector trên các ảnh vải độc lập và kiểm tra false positive, missed defect tiêu biểu theo từng nhóm lỗi.",
     fabricBlogNextP2:"Tôi cũng sẽ đánh giá score calibration trước khi sử dụng confidence threshold trong quy trình có người kiểm tra.",
@@ -511,104 +511,76 @@ function ExperiencePreview({ lang }) {
     </div>
   </div></main>;
 }function SkillsSection({ lang }) {
-  const t=text[lang];
-  const vi=lang==="vi";
-  const groups=[
-    {
-      n:"01",kind:vi?"NĂNG LỰC CHÍNH":"CORE CAPABILITY",
-      evidence:vi?"Công việc & dự án cá nhân":"Work & personal project",
-      title:vi?"Phát triển ứng dụng Python":"Python application development",
-      desc:vi
-        ?"Python là ngôn ngữ phát triển chính. Tôi đã tham gia triển khai logic ứng dụng và chức năng nghiệp vụ; Flask xuất hiện trong công việc/dự án, còn FastAPI được sử dụng trong RackFlow — dự án cá nhân đang phát triển."
-        :"Python is my primary programming language. I have implemented application logic and business features; Flask has been used in work/project contexts, while FastAPI is used in RackFlow, a personal project in development.",
-      proof:vi
-        ?"Bằng chứng: phát triển chức năng WMS/FEMS tại Sumida; xây dựng RackFlow bằng FastAPI."
-        :"Evidence: WMS/FEMS feature work at Sumida; RackFlow development with FastAPI.",
-      tags:["Python","Flask","FastAPI","REST APIs"]
-    },
-    {
-      n:"02",kind:vi?"ỨNG DỤNG DOANH NGHIỆP":"ENTERPRISE APPLICATIONS",
-      evidence:vi?"Kinh nghiệm công việc":"Professional work",
-      title:vi?"Quy trình ERP / WMS / FEMS":"ERP / WMS / FEMS workflows",
-      desc:vi
-        ?"Làm rõ yêu cầu với người dùng kho, phân tích các bước nghiệp vụ, triển khai logic xử lý, kiểm thử chức năng và hỗ trợ chạy thử. Với FEMS, tham gia chức năng xử lý dữ liệu, bảng điều khiển điện năng và tính toán chi phí điện."
-        :"Clarified requirements with warehouse users, analysed operational steps, implemented application logic, tested features and supported trial deployment. FEMS work included data-processing features, an electricity dashboard and cost calculations.",
-      proof:vi
-        ?"Bằng chứng: tham gia phát triển WMS và FEMS tại Sumida; mô tả giới hạn theo phần việc đã thực hiện."
-         :"Evidence: WMS and FEMS features developed at Sumida.",
-      tags:["ERP","WMS","FEMS","Workflow analysis","Business logic"]
-    },
-    {
-      n:"03",kind:vi?"DỮ LIỆU & LƯU TRỮ":"DATA & PERSISTENCE",
-      evidence:vi?"Công việc & dự án cá nhân":"Work & personal project",
-      title:vi?"SQL và cơ sở dữ liệu quan hệ":"SQL & relational databases",
-      desc:vi
-        ?"Sử dụng SQL và PostgreSQL trong ứng dụng nghiệp vụ; làm việc với SQLAlchemy trong RackFlow. Trọng tâm là tổ chức dữ liệu phục vụ quy trình, tra cứu, kiểm tra và ghi nhận thay đổi."
-        :"Used SQL and PostgreSQL in business applications, and SQLAlchemy in RackFlow. The focus is structuring application data for workflows, lookups, validation and recorded changes.",
-      proof:vi
-        ?"Bằng chứng: PostgreSQL trong ứng dụng nghiệp vụ; SQLAlchemy và PostgreSQL trong RackFlow đang phát triển."
-        :"Evidence: PostgreSQL in business-application work; SQLAlchemy and PostgreSQL in the RackFlow project under development.",
-      tags:["SQL","PostgreSQL","SQLAlchemy","Data validation"]
-    },
-    {
-      n:"04",kind:vi?"KINH NGHIỆM BỔ TRỢ":"SUPPORTING EXPERIENCE",
-      evidence:vi?"Hợp đồng & dự án theo đợt":"Contract & project engagements",
-      title:vi?"Thị giác máy tính và OCR":"Computer Vision & OCR",
-      desc:vi
-        ?"YOLOv5 và DeepSORT được sử dụng trong dự án theo dõi giao nhận qua video. OCR được áp dụng để trích xuất dữ liệu từ hồ sơ kiểm định phương tiện và hỗ trợ nhập liệu lên trang web. Riêng Halovi là hợp đồng thị giác máy tính 5 tháng."
-        :"YOLOv5 and DeepSORT were used in a video-based delivery-monitoring project. OCR was applied to extract information from vehicle-inspection documents and support website data entry. The Halovi engagement was a separate five-month Computer Vision contract.",
-      proof:vi
-        ?"Bằng chứng: dự án theo dõi giao nhận, dự án OCR và hợp đồng 5 tháng tại Halovi. Chưa công bố chỉ số độ chính xác đã xác minh."
-         :"Evidence: a delivery-monitoring application, an OCR data-entry tool and a five-month Computer Vision contract at Halovi.",
-      tags:["YOLOv5","DeepSORT","OCR","Image processing"]
-    },
-    {
-      n:"05",kind:vi?"NỀN TẢNG KỸ THUẬT":"ENGINEERING FOUNDATION",
-      evidence:vi?"Thực tập & đào tạo":"Internship & education",
-      title:vi?"Cơ điện tử & giao tiếp thiết bị công nghiệp":"Mechatronics & industrial device communication",
-      desc:vi
-        ?"Nền tảng Cơ điện tử, lập trình C, IoT và robot STEAM giúp tôi hiểu bối cảnh thiết bị và sản xuất. Trong kỳ thực tập tại Premo, tôi sử dụng Python thu thập dữ liệu cảm biến qua Modbus RTU. Tôi có thể khảo sát thiết bị Modbus RTU trên RS-485, dò địa chỉ thiết bị (Slave ID), xác định địa chỉ thanh ghi (Register) và đọc/đối chiếu giá trị dữ liệu."
-        :"My Mechatronics background, C programming, IoT and STEAM robotics provide context for equipment and manufacturing. During my Premo internship, I used Python to collect sensor data over Modbus RTU. I can also investigate Modbus RTU devices over RS-485 by discovering device addresses (slave IDs), identifying register addresses and reading/checking register values.",
-      proof:vi
-        ?"Bằng chứng: kỳ thực tập Premo 05/2022–07/2022 có sử dụng Python thu thập dữ liệu qua Modbus RTU; kỹ năng khảo sát địa chỉ và thanh ghi được nêu ở phạm vi thiết bị, không phải triển khai PLC/SCADA."
-         :"Evidence: Python-based sensor data acquisition over Modbus RTU at Premo, in an industrial engineering environment.",
-      tags:["Mechatronics","C","IoT","Modbus RTU","RS-485","Slave ID discovery","Register mapping"]
-    },
-    {
-      n:"06",kind:vi?"CÁCH THỨC TRIỂN KHAI":"DELIVERY PRACTICE",
-      evidence:vi?"Xuyên suốt công việc":"Across work contexts",
-      title:vi?"Phân tích, kiểm thử và cải tiến":"Analysis, testing & refinement",
-      desc:vi
-        ?"Tiếp cận chức năng từ yêu cầu và luồng nghiệp vụ; xác định dữ liệu đầu vào/đầu ra, triển khai logic, kiểm thử kết quả, xử lý lỗi và hỗ trợ chạy thử. Đây là cách làm hình thành qua công việc phát triển ứng dụng doanh nghiệp."
-        :"Approach features through requirements and business workflows; identify inputs and outputs, implement logic, test results, resolve defects and support trial deployment. This practice comes from enterprise-application development work.",
-      proof:vi
-        ?"Bằng chứng: các phần việc WMS/FEMS tại Sumida và quá trình phát triển RackFlow."
-        :"Evidence: WMS/FEMS work at Sumida and the ongoing development of RackFlow.",
-      tags:vi?["Phân tích yêu cầu","Mô hình hóa quy trình","Kiểm thử chức năng","Gỡ lỗi"]:["Requirements analysis","Workflow modelling","Functional testing","Debugging"]
-    }
+  const t=text[lang], vi=lang==="vi";
+  const groups=vi?[
+    {n:"01",kind:"PHÁT TRIỂN ỨNG DỤNG",title:"Python và backend",desc:"Python là ngôn ngữ tôi dùng chính. Tôi đã phát triển logic ứng dụng và chức năng nghiệp vụ bằng Flask; trong RackFlow, tôi sử dụng FastAPI và SQLAlchemy để xây dựng các luồng xử lý kho.",proof:"Công việc WMS/FEMS tại Sumida · Dự án RackFlow",tags:["Python","Flask","FastAPI","REST API","SQLAlchemy"]},
+    {n:"02",kind:"HỆ THỐNG DOANH NGHIỆP",title:"ERP · WMS · FEMS",desc:"Làm việc với người dùng kho để làm rõ yêu cầu, phân tích luồng nghiệp vụ và chuyển thành logic xử lý. Với FEMS, tôi phát triển chức năng xử lý dữ liệu, dashboard điện năng và tính toán chi phí điện.",proof:"Phát triển phần mềm tại Sumida · 1 năm 10 tháng",tags:["ERP","WMS","FEMS","Workflow analysis","Business logic"]},
+    {n:"03",kind:"DỮ LIỆU & LƯU TRỮ",title:"SQL và cơ sở dữ liệu quan hệ",desc:"Sử dụng SQL và PostgreSQL trong ứng dụng nghiệp vụ; tổ chức dữ liệu, tra cứu, kiểm tra và ghi nhận thay đổi. RackFlow sử dụng SQLAlchemy để kết nối logic nghiệp vụ với dữ liệu.",proof:"PostgreSQL trong công việc và dự án · SQLAlchemy trong RackFlow",tags:["SQL","PostgreSQL","SQLAlchemy","Data validation"]},
+    {n:"04",kind:"THỊ GIÁC MÁY TÍNH",title:"Computer Vision và theo dõi đối tượng",desc:"Phát triển luồng xử lý video dùng YOLOv5 để phát hiện đối tượng và DeepSORT để theo dõi qua các khung hình. Tôi cũng có 5 tháng làm Computer Vision Engineer tại Halovi.",proof:"Dự án giám sát giao nhận tại siêu thị · Hợp đồng Halovi",tags:["YOLOv5","DeepSORT","Object detection","Video tracking"]},
+    {n:"05",kind:"XỬ LÝ TÀI LIỆU",title:"OCR và tự động hóa nhập liệu",desc:"Kết hợp tiền xử lý ảnh và OCR để trích xuất thông tin từ sổ đăng kiểm, tách trường dữ liệu và dùng Selenium nhập thông tin lên website Cảng Đà Nẵng.",proof:"Dự án OCR nhập liệu cho Cảng Đà Nẵng",tags:["OCR","Image processing","Field extraction","Selenium"]},
+    {n:"06",kind:"DỮ LIỆU THIẾT BỊ",title:"Cơ điện tử và Modbus RTU",desc:"Nền tảng Cơ điện tử, lập trình C, IoT và robot STEAM. Tại Premo, tôi dùng Python thu thập dữ liệu cảm biến qua Modbus RTU; làm việc với RS-485, Slave ID, địa chỉ thanh ghi và đọc/đối chiếu giá trị.",proof:"Phân tích dữ liệu cảm biến và quy trình lắp ráp tại Premo",tags:["Mechatronics","C","IoT","Modbus RTU","RS-485","Register mapping"]}
+  ]:[
+    {n:"01",kind:"APPLICATION DEVELOPMENT",title:"Python and backend",desc:"Python is my primary language. I have built application logic and business features with Flask. In RackFlow, I use FastAPI and SQLAlchemy to implement warehouse workflows.",proof:"WMS/FEMS development at Sumida · RackFlow project",tags:["Python","Flask","FastAPI","REST APIs","SQLAlchemy"]},
+    {n:"02",kind:"BUSINESS SYSTEMS",title:"ERP · WMS · FEMS",desc:"Worked with warehouse users to clarify requirements, analyse operational flows and turn them into application logic. For FEMS, I developed data-processing features, an electricity dashboard and cost calculations.",proof:"Software development at Sumida · 1 year 10 months",tags:["ERP","WMS","FEMS","Workflow analysis","Business logic"]},
+    {n:"03",kind:"DATA & PERSISTENCE",title:"SQL and relational databases",desc:"Used SQL and PostgreSQL in business applications for data organisation, lookups, validation and recorded changes. RackFlow uses SQLAlchemy to connect application logic with its data layer.",proof:"PostgreSQL in work and projects · SQLAlchemy in RackFlow",tags:["SQL","PostgreSQL","SQLAlchemy","Data validation"]},
+    {n:"04",kind:"COMPUTER VISION",title:"Object detection and tracking",desc:"Built a video workflow using YOLOv5 for object detection and DeepSORT to track objects across frames. I also worked as a Computer Vision Engineer at Halovi on a five-month contract.",proof:"Supermarket delivery-monitoring project · Halovi contract",tags:["YOLOv5","DeepSORT","Object detection","Video tracking"]},
+    {n:"05",kind:"DOCUMENT PROCESSING",title:"OCR and data-entry automation",desc:"Combined image pre-processing and OCR to extract information from vehicle-registration books, split the fields and use Selenium to enter the data into the Da Nang Port website.",proof:"OCR-assisted data-entry project for Da Nang Port",tags:["OCR","Image processing","Field extraction","Selenium"]},
+    {n:"06",kind:"INDUSTRIAL DATA",title:"Mechatronics and Modbus RTU",desc:"My background includes Mechatronics, C programming, IoT and STEAM robotics. At Premo, I used Python to collect sensor data over Modbus RTU and worked with RS-485, slave IDs, register addresses and reading/checking values.",proof:"Sensor-data collection and assembly-process analysis at Premo",tags:["Mechatronics","C","IoT","Modbus RTU","RS-485","Register mapping"]}
   ];
   const steps=vi?[
-    ["01","Làm rõ bài toán","Hiểu người dùng, mục tiêu nghiệp vụ, các bước xử lý và điều kiện ngoại lệ."],
-    ["02","Xác định dữ liệu và logic","Làm rõ đầu vào/đầu ra, trạng thái nghiệp vụ và cách ứng dụng cần phản hồi."],
-    ["03","Triển khai chức năng","Xây dựng logic bằng Python và kết nối với lớp dữ liệu/API phù hợp."],
-    ["04","Kiểm thử và hoàn thiện","Kiểm tra luồng chính, xử lý lỗi và xác nhận hành vi trước khi hỗ trợ chạy thử."]
+    ["01","Làm rõ yêu cầu","Trao đổi với người sử dụng, hiểu mục tiêu và các bước công việc cần hỗ trợ."],
+    ["02","Mô hình hóa dữ liệu và quy trình","Xác định đầu vào, đầu ra, trạng thái nghiệp vụ và các tình huống cần xử lý."],
+    ["03","Xây dựng chức năng","Chuyển quy trình thành logic ứng dụng, API và thao tác dữ liệu bằng Python."],
+    ["04","Kiểm thử và hoàn thiện","Kiểm tra luồng chính, xử lý lỗi và điều chỉnh theo kết quả chạy thử."]
   ]:[
-    ["01","Clarify the problem","Understand users, business objectives, process steps and exception conditions."],
-    ["02","Define data and logic","Identify inputs/outputs, business states and expected application behaviour."],
-    ["03","Implement the feature","Build application logic with Python and connect it to the appropriate data/API layer."],
-    ["04","Test and refine","Validate the main workflow, resolve defects and confirm behaviour before supporting trial use."]
+    ["01","Understand the requirement","Talk with the people using the system and learn what the work needs to achieve."],
+    ["02","Model the data and workflow","Define inputs, outputs, business states and the situations the application needs to handle."],
+    ["03","Build the feature","Translate the workflow into application logic, APIs and data operations with Python."],
+    ["04","Test and refine","Check the main flows, fix issues and improve the feature through trial use."]
   ];
-  const boundaries=vi
-    ?"Python, Flask, FastAPI, SQL và PostgreSQL là nền tảng tôi sử dụng trong công việc và các dự án. Computer Vision, OCR và Modbus RTU bổ sung góc nhìn về hình ảnh, tài liệu và dữ liệu thiết bị."
-    :"Python, Flask, FastAPI, SQL and PostgreSQL are central to my work and projects. Computer Vision, OCR and Modbus RTU add experience with images, documents and equipment data."
+  return <main id="main-content" className="inner-page page-section-page skills-page"><div className="container">
+    <PageHeading index="01" kicker={t.skills} title={t.skillsTitle} intro={t.skillsPageIntro}/>
+    <section className="skills-profile-strip" aria-label={vi?"Tóm tắt năng lực":"Skills overview"}>
+      <div><span>{vi?"TRỌNG TÂM":"MAIN FOCUS"}</span><strong>Python · ERP / WMS</strong></div>
+      <div><span>{vi?"ỨNG DỤNG":"APPLIED WORK"}</span><strong>FEMS · Computer Vision · OCR</strong></div>
+      <div><span>{vi?"NỀN TẢNG":"FOUNDATION"}</span><strong>{vi?"Cơ điện tử · Dữ liệu thiết bị":"Mechatronics · Industrial data"}</strong></div>
+    </section>
+    <section className="skills-capabilities" aria-labelledby="skills-capabilities-title">
+      <div className="skills-section-heading"><div><span>{vi?"01 / NĂNG LỰC":"01 / CAPABILITIES"}</span><h2 id="skills-capabilities-title">{vi?"Những việc tôi đã trực tiếp làm":"What I have worked on"}</h2></div><p>{vi?"Mỗi nhóm gắn với công việc, hợp đồng hoặc dự án cụ thể.":"Each area is connected to a role, contract or project."}</p></div>
+      <div className="skills-detail-grid">{groups.map(g=><article className={"skills-detail-card"+(g.n==="01"||g.n==="02"?" skills-detail-primary":"")} key={g.n}>
+        <div className="skills-detail-top"><span className="skills-detail-number">{g.n}</span><span className="skills-detail-kind">{g.kind}</span></div>
+        <h3>{g.title}</h3><p>{g.desc}</p><div className="skills-proof">{g.proof}</div>
+        <div className="tag-list">{g.tags.map(tag=><span key={tag}>{displayTag(tag,lang)}</span>)}</div>
+      </article>)}</div>
+    </section>
+    <section className="skills-method" aria-labelledby="skills-method-title">
+      <div className="skills-section-heading"><div><span>{vi?"02 / CÁCH LÀM VIỆC":"02 / HOW I WORK"}</span><h2 id="skills-method-title">{vi?"Từ yêu cầu đến chức năng có thể sử dụng":"From requirements to working features"}</h2></div><p>{vi?"Quy trình tôi thường áp dụng khi phát triển một chức năng nghiệp vụ.":"The approach I use when developing a business feature."}</p></div>
+      <div className="skills-method-grid">{steps.map(step=><article key={step[0]}><span>{step[0]}</span><h3>{step[1]}</h3><p>{step[2]}</p></article>)}</div>
+    </section>
+    <section className="skills-stack" aria-labelledby="skills-stack-title">
+      <div className="skills-section-heading"><div><span>{vi?"03 / CÔNG NGHỆ":"03 / TECHNOLOGIES"}</span><h2 id="skills-stack-title">{vi?"Công nghệ theo từng bối cảnh":"Technologies by context"}</h2></div></div>
+      <div className="skills-stack-list">
+        <div><strong>{vi?"Ứng dụng và API":"Applications and APIs"}</strong><p>Python · Flask · FastAPI · REST APIs</p><small>{vi?"Flask trong công việc và dự án; FastAPI trong RackFlow.":"Flask in work and projects; FastAPI in RackFlow."}</small></div>
+        <div><strong>{vi?"Dữ liệu và cơ sở dữ liệu":"Data and databases"}</strong><p>SQL · PostgreSQL · SQLAlchemy</p><small>{vi?"PostgreSQL trong ứng dụng; SQLAlchemy trong RackFlow.":"PostgreSQL in applications; SQLAlchemy in RackFlow."}</small></div>
+        <div><strong>{vi?"Thị giác máy tính và tài liệu":"Computer Vision and documents"}</strong><p>YOLOv5 · DeepSORT · OCR · Selenium</p><small>{vi?"Theo dõi video và tự động hóa nhập liệu hồ sơ.":"Video tracking and document data-entry automation."}</small></div>
+        <div><strong>{vi?"Kỹ thuật và dữ liệu thiết bị":"Engineering and industrial data"}</strong><p>C · IoT · Modbus RTU · RS-485</p><small>{vi?"Robot STEAM, thu thập dữ liệu cảm biến và phân tích quy trình lắp ráp.":"STEAM robotics, sensor data collection and assembly-process analysis."}</small></div>
+      </div>
+    </section>
+  </div></main>;
+}
+
+function EducationSection({ lang }) {
+  const t=text[lang], vi=lang==="vi";
   return <main id="main-content" className="inner-page page-section-page education-page"><div className="container">
     <PageHeading index="01" kicker={t.education} title={t.educationTitle} intro={t.educationPageIntro}/>
     <div className="education-grid">
-      <article className="education-card"><div className="education-symbol">ED / 01</div><span className="history-type">{t.education}</span><h3>{t.degree}</h3><p>{lang==="vi"?"Trường Đại học Sư phạm Kỹ thuật – Đại học Đà Nẵng":"The University of Technology and Education — The University of Danang"}</p><div className="education-meta">09/2018 – 06/2023 <b>·</b> {t.viDegree}</div></article>
+      <article className="education-card"><div className="education-symbol">ED / 01</div><span className="history-type">{t.education}</span><h3>{t.degree}</h3><p>{vi?"Trường Đại học Sư phạm Kỹ thuật – Đại học Đà Nẵng":"The University of Technology and Education — The University of Danang"}</p><div className="education-meta">09/2018 – 06/2023 <b>·</b> {t.viDegree}</div></article>
       <article className="education-card"><div className="education-symbol">RE / 02</div><span className="history-type">{t.researchLabel}</span><h3>IoT-Based Waste Management System for Hazardous Waste</h3><p>{t.publication}</p><div className="education-meta">{t.award}</div></article>
     </div>
   </div></main>;
-}function ContactSection({ lang }) {
+}
+
+function ContactSection({ lang }) {
   const t=text[lang];
   return <main id="main-content" className="inner-page page-section-page contact-page"><div className="container">
     <PageHeading index="01" kicker={t.contact} title={t.contactTitle} intro={t.contactPageIntro}/>
@@ -667,8 +639,8 @@ function scrollToPortfolioAnchor(event,route,anchor) {
 function FabricBlog({ project,lang }) {
   const t=text[lang];
   const stageLabels=lang==="vi"
-    ? ["BỐI CẢNH","QUYẾT ĐỊNH MÔ HÌNH","THỰC NGHIỆM","ỨNG DỤNG","GIỚI HẠN","THỬ NGHIỆM TIẾP"]
-    : ["CONTEXT","MODEL DECISION","EXPERIMENT","APPLICATION","LIMITATIONS","NEXT EXPERIMENTS"];
+    ? ["BỐI CẢNH","QUYẾT ĐỊNH MÔ HÌNH","THỰC NGHIỆM","ỨNG DỤNG","ĐÁNH GIÁ","BƯỚC TIẾP THEO"]
+    : ["CONTEXT","MODEL DECISION","EXPERIMENT","APPLICATION","EVALUATION","NEXT STEPS"];
   const sections=[
     ["challenge","01",t.fabricBlogChallengeTitle,[t.fabricBlogChallengeP1,t.fabricBlogChallengeP2]],
     ["model","02",t.fabricBlogModelTitle,[t.fabricBlogModelP1,t.fabricBlogModelP2]],
