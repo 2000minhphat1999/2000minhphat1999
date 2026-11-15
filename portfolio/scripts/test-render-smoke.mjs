@@ -89,7 +89,7 @@ try {
     }
   }
 
-  const css = await readFile(new URL("./src/styles.css", import.meta.url), "utf8");
+  const css = await readFile(new URL("../src/styles.css", import.meta.url), "utf8");
   assert.ok(css.includes("@media(max-width:760px)"), "Mobile layout breakpoint missing");
   assert.ok(css.includes("@media(max-width:480px)"), "Small-screen layout breakpoint missing");
   assert.ok(css.includes("prefers-reduced-motion"), "Reduced-motion support missing");
