@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { readStoredLanguage, writeStoredLanguage } from "./storage.js";
+import { shouldHandleHashAsRoute } from "./routing.js";
 import "./styles.css";
 
 const text = {
@@ -823,7 +824,14 @@ function App() {
   const [lang,setLang]=useState(readStoredLanguage);
   const [route,setRoute]=useState(()=>resolvePortfolioRoute());
   useEffect(()=>{
-    const change=()=>{setRoute(resolvePortfolioRoute());window.scrollTo({top:0,behavior:"auto"});};
+    const change=()=>{
+      const nextRoute=resolvePortfolioRoute();
+      const hasAnchorTarget=Boolean(document.getElementById(nextRoute));
+      const projectSlugs=projects.map(project=>project.slug);
+      if(!shouldHandleHashAsRoute(nextRoute,hasAnchorTarget,projectSlugs)) return;
+      setRoute(nextRoute);
+      window.scrollTo({top:0,behavior:"auto"});
+    };
     window.addEventListener("hashchange",change);
     if(!window.location.hash) window.location.hash="home";
     return ()=>window.removeEventListener("hashchange",change);
