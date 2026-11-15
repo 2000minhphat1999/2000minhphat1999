@@ -51,3 +51,16 @@ export function buildPortfolioAnchorHash(route, anchor) {
 export function isCurrentPortfolioAnchor(currentHash, route, anchor) {
   return String(currentHash || "") === buildPortfolioAnchorHash(route, anchor);
 }
+
+
+/**
+ * Only intercept an ordinary left click. Keep browser behaviours such as
+ * Ctrl/Cmd-click, Shift-click, Alt-click and middle-click intact.
+ */
+export function isUnmodifiedPrimaryClick(eventLike = {}) {
+  return eventLike.button === 0
+    && !eventLike.metaKey
+    && !eventLike.ctrlKey
+    && !eventLike.shiftKey
+    && !eventLike.altKey;
+}
