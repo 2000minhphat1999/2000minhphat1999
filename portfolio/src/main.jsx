@@ -851,7 +851,7 @@ function App() {
       about:lang==="vi"?"Giới thiệu | Minh Phat":"About | Minh Phat",
       contact:lang==="vi"?"Liên hệ | Minh Phat":"Contact | Minh Phat"
     };
-    document.title=selected?displayProjectTitle(selected,lang)+" | Minh Phat":(sectionTitles[route]||(lang==="vi"?"Minh Phat | Kỹ sư ứng dụng Python":"Tran Viet Minh Phat | Python Application Engineer"));
+    document.title=selected?displayProjectTitle(selected,lang)+" | Minh Phat":(sectionTitles[route]||(lang==="vi"?"Minh Phat | IT Staff / Hỗ trợ ERP":"Tran Viet Minh Phat | IT Staff / ERP Support"));
     const pageDescriptions={
       home:text[lang].intro,
       projects:text[lang].projectsPageIntro,
