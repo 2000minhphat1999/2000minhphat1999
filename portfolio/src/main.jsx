@@ -19,11 +19,11 @@ const text = {
     explore:"Explore projects", getInTouch:"Get in touch", snapshot:"PROFESSIONAL SNAPSHOT", sumida:"at Sumida", halovi:"contract at Halovi", freelance:"main freelance projects",
     selected:"SELECTED WORK", featuredTitle:"Projects with a clear problem, scope and status.",
     featuredIntro:"Professional experience, past project engagements and work still in development are clearly separated.",
-    seeCase:"View case study", viewAll:"View all projects", inProgress:"In development", past:"Past project", planned:"Planned experiment",
+    seeCase:"View case study", viewAll:"View all projects", inProgress:"In development", past:"Past project", prototype:"Experimental prototype", planned:"Planned experiment",
     domains:"PROJECT AREAS", domainsTitle:"One primary direction. Two supporting domains.",
     domainsIntro:"Projects is the parent section; AI and Backend are its two branches.",
     backendDesc:"Python services, business rules, persistence and warehouse workflows. RackFlow is a personal project in development.",
-    aiDesc:"Past work in video-based detection and tracking, OCR-assisted document entry, and a separately labelled future experiment.",
+    aiDesc:"Past work in video-based detection and tracking, OCR-assisted document entry, plus an experimental fabric-defect detector evaluated with Faster R-CNN.",
     experienceTitle:"Experience grounded in actual scope.",
     experienceIntro:"Employment, fixed-term contract, intermittent freelance work, research/education and internship are listed separately.",
     employment:"EMPLOYMENT & CONTRACT", earlier:"PROJECT-BASED & EARLIER EXPERIENCE",
@@ -35,7 +35,7 @@ const text = {
     contactText:"Interested in Python business applications, ERP/WMS and backend roles that can grow toward AI-integrated workflows and measurable operational improvements. Computer Vision remains a supporting project domain.",
     email:"Email", linkedin:"LinkedIn", github:"GitHub profile", footer:"Practical systems. Clear scope. Verifiable work.",
     problem:"Problem & objective", role:"My role", approach:"Solution & implementation", scope:"Scope",
-    evidence:"Evidence & limitations", next:"Next step", technologies:"TECHNOLOGIES", back:"Back to projects",
+    evidence:"Evidence & limitations", next:"Next step", technologies:"TECHNOLOGIES", videoShowcaseLabel:"VIDEO DEMO · YOUTUBE", videoShowcaseTitle:"Model demonstration", videoPlaceholderTitle:"YouTube demo will appear here", videoPlaceholderText:"A 16:9 video space is reserved. Add a YouTube URL to the youtubeUrl field in the fabric project entry to display the video.", videoFrameTitle:"Fabric defect inspection demo", back:"Back to projects",
     noOt:"Industrial OT/IT technologies such as Siemens S7, SCADA, MQTT and OPC UA are not presented as hands-on professional experience.",
     sumidaRole:"Software Development Technical Team Lead",
     sumidaWms:"WMS: clarified requirements with warehouse users, analysed workflows, implemented application logic, tested features, fixed defects and supported trial deployment.",
@@ -54,7 +54,7 @@ const text = {
     rackSummary:"A warehouse operations application focused on inbound receiving, inventory lookup, order lookup, stock reservation and traceable state changes.",
     cvSummary:"A project-based freelance Computer Vision workflow using video to detect and track activity related to supermarket deliveries.",
     ocrSummary:"A project-based workflow for extracting information from vehicle-inspection documents and entering data into a website.",
-    fabricSummary:"A proposed Computer Vision experiment for fabric inspection. No dataset, implementation, trained model or evaluation result is claimed.",
+    fabricSummary:"An experimental fabric-defect detector built with Faster R-CNN and a MobileNetV3-FPN backbone, with validation experiments and an image-inference interface. Factory deployment is outside the current scope.",
     rackProblem:"Warehouse workflows need consistent stock information and clear records of operational actions. RackFlow models these flows in a small ERP/WMS portfolio application.",
     rackRole:"Personal project. I define the scope and implement the application incrementally; this is not a deployed customer system or production warehouse platform.",
     rackScope:"Inbound receiving and inventory lookup; order lookup and stock reservation; event history for operational traceability.",
@@ -69,14 +69,16 @@ const text = {
     ocrRole:"Used image processing and OCR in a workflow that extracted document information and automated website data entry.",
     ocrEvidence:"Past project-based freelance work. Document samples, field-level accuracy and time-saved measurements are not published as verified evidence here.",
     ocrNext:"For a reproducible demo, measure field-level exact match, correction rate and failure handling on labelled documents.",
-    fabricProblem:"Fabric defects can affect material quality in sofa manufacturing. The proposed goal is to test whether visible defects can be detected consistently before considering factory integration.",
-    fabricApproach:"Inspect the dataset and annotations first; then select a reproducible baseline suited to the label format. Choose detection, segmentation or classical image processing only after examining the data.",
-    fabricEvidence:"Planning-stage proposal only. No dataset has been selected, and no implementation, training, model evaluation or factory integration has been completed or verified.",
-    fabricNext:"Confirm dataset licensing and inspect sample images before choosing a model or claiming results.",
+    fabricProblem:"Build a repeatable detector that localizes visible defects in fabric images as an inspection-support prototype, not as an automated production quality-release system.",
+    fabricRole:"Independently developed the experiment from model selection through training, validation and an image-inference interface. The implementation uses a Faster R-CNN path rather than an Ultralytics/YOLO stack.",
+    fabricScope:"Upload a fabric image and return predicted bounding boxes, one of nine Vietnamese defect labels, a raw model score (0–1) and JSON output. Scores are presented as model outputs, not calibrated probabilities.",
+    fabricApproach:"Faster R-CNN with a MobileNetV3-FPN backbone, trained and evaluated on Google Colab with a T4 GPU. The project uses a reproducible validation workflow and multi-seed experiments.",
+    fabricEvidence:"Experimental E1 validation mAP50–95 across three seeds: 0.412 / 0.412 / 0.426. These are validation-split results; external/OOD generalization is not established. Model scores are not calibrated, and no factory deployment or production KPI is claimed.",
+    fabricNext:"Evaluate on independent out-of-distribution fabric images, review per-class precision/recall and failure cases, and assess score calibration before considering any factory workflow.",
     flow:"WORKFLOW MODEL · ILLUSTRATIVE", receive:"Receive stock", inventory:"Check inventory", reserve:"Reserve stock", trace:"Trace changes",
     video:"Video frames", detection:"YOLOv5 detection", tracking:"DeepSORT tracking", tracks:"Track output",
     document:"Document image", ocr:"Image processing / OCR", fields:"Extracted fields", entry:"Web entry",
-    dataset:"Dataset", baseline:"Baseline", evaluation:"Evaluation", notFound:"This portfolio page could not be found.", homeAction:"Back to home",
+    dataset:"Fabric images", training:"Faster R-CNN training", inference:"Image inference", evaluation:"Validation & review", notFound:"This portfolio page could not be found.", homeAction:"Back to home",
     backTop:"Back to top", viDegree:"Degree classification: Good",
     skipToContent:"Skip to content", brandHome:"Minh Phat — home", toggleNavigation:"Toggle navigation", mainNavigation:"Main navigation", language:"Language",
     projectWord:"PROJECT", projectIndex:"INDEX", regionLabel:"VIETNAM", brandDescriptor:"PYTHON · ERP / WMS", categoryBackend:"PYTHON BACKEND · ERP / WMS", categoryAi:"COMPUTER VISION · OCR", categoryPlanned:"PROPOSED COMPUTER VISION",
@@ -108,11 +110,11 @@ const text = {
     explore:"Khám phá dự án", getInTouch:"Liên hệ", snapshot:"TÓM TẮT KINH NGHIỆM", sumida:"tại Sumida", halovi:"hợp đồng tại Halovi", freelance:"dự án tự do chính",
     selected:"DỰ ÁN TIÊU BIỂU", featuredTitle:"Dự án có bài toán, phạm vi và trạng thái rõ ràng.",
     featuredIntro:"Hồ sơ năng lực phân biệt kinh nghiệm công việc, dự án đã thực hiện theo từng đợt và phần đang phát triển.",
-    seeCase:"Xem chi tiết dự án", viewAll:"Xem tất cả dự án", inProgress:"Đang phát triển", past:"Dự án đã thực hiện", planned:"Dự kiến thử nghiệm",
+    seeCase:"Xem chi tiết dự án", viewAll:"Xem tất cả dự án", inProgress:"Đang phát triển", past:"Dự án đã thực hiện", prototype:"Nguyên mẫu thử nghiệm", planned:"Dự kiến thử nghiệm",
     domains:"NHÓM DỰ ÁN", domainsTitle:"Một hướng chính, hai nhánh chuyên môn.",
     domainsIntro:"Dự án là danh mục chính, gồm hai nhánh chuyên môn: AI và Backend.",
     backendDesc:"Dịch vụ Python, quy tắc nghiệp vụ, lưu trữ dữ liệu và quy trình kho. RackFlow là dự án cá nhân đang phát triển.",
-    aiDesc:"Các dự án đã thực hiện về phát hiện và theo dõi đối tượng qua video, OCR hỗ trợ nhập liệu tài liệu, cùng một thử nghiệm dự kiến được ghi rõ trạng thái.",
+    aiDesc:"Các dự án về phát hiện và theo dõi đối tượng qua video, OCR hỗ trợ nhập liệu tài liệu, cùng nguyên mẫu phát hiện lỗi vải được đánh giá bằng Faster R-CNN.",
     experienceTitle:"Kinh nghiệm với phạm vi thực tế được phân định.",
     experienceIntro:"Công việc chính thức, hợp đồng có thời hạn, dự án tự do không liên tục, hoạt động nghiên cứu – giáo dục và kỳ thực tập được trình bày riêng.",
     employment:"CÔNG VIỆC & HỢP ĐỒNG", earlier:"DỰ ÁN TỰ DO & KINH NGHIỆM TRƯỚC ĐÓ",
@@ -124,7 +126,7 @@ const text = {
     contactText:"Tôi quan tâm đến các vị trí Python, ERP/WMS và phát triển hệ thống phía máy chủ, có cơ hội mở rộng sang tích hợp AI vào quy trình nghiệp vụ và cải thiện hiệu quả vận hành. Thị giác máy tính là lĩnh vực dự án bổ trợ.",
     email:"Email", linkedin:"LinkedIn", github:"GitHub cá nhân", footer:"Hệ thống thực tế. Phạm vi rõ ràng. Công việc có thể kiểm chứng.",
     problem:"Bài toán & mục tiêu", role:"Vai trò cá nhân", approach:"Giải pháp & triển khai", scope:"Phạm vi",
-    evidence:"Bằng chứng & giới hạn", next:"Bước tiếp theo", technologies:"CÔNG NGHỆ SỬ DỤNG", back:"Quay lại danh mục dự án",
+    evidence:"Bằng chứng & giới hạn", next:"Bước tiếp theo", technologies:"CÔNG NGHỆ SỬ DỤNG", videoShowcaseLabel:"VIDEO MINH HỌA · YOUTUBE", videoShowcaseTitle:"Trình diễn mô hình", videoPlaceholderTitle:"Vị trí video YouTube", videoPlaceholderText:"Đã chừa khung video tỷ lệ 16:9. Thêm URL YouTube vào trường youtubeUrl trong mục dự án Fabric để hiển thị video.", videoFrameTitle:"Video trình diễn mô hình phát hiện lỗi vải", back:"Quay lại danh mục dự án",
     noOt:"Các công nghệ OT/IT công nghiệp như Siemens S7, SCADA, MQTT và OPC UA không được trình bày như kinh nghiệm thực chiến chuyên nghiệp.",
     sumidaRole:"Trưởng nhóm kỹ thuật phát triển phần mềm",
     sumidaWms:"WMS: làm rõ yêu cầu với người dùng kho, phân tích quy trình, triển khai logic ứng dụng, kiểm thử chức năng, sửa lỗi và hỗ trợ chạy thử.",
@@ -143,7 +145,7 @@ const text = {
     rackSummary:"Ứng dụng vận hành kho tập trung vào nhập kho, tra cứu tồn, tra cứu đơn, giữ tồn và lịch sử thay đổi có thể truy vết.",
     cvSummary:"Quy trình thị giác máy tính thực hiện theo dự án, sử dụng video để phát hiện và theo dõi hoạt động giao nhận tại siêu thị.",
     ocrSummary:"Quy trình thực hiện theo dự án, trích xuất thông tin từ hồ sơ kiểm định phương tiện và nhập dữ liệu vào trang web.",
-    fabricSummary:"Đề xuất thử nghiệm thị giác máy tính để kiểm tra bề mặt vải. Chưa chọn tập dữ liệu, chưa triển khai mã nguồn, huấn luyện mô hình hoặc có kết quả đánh giá được xác minh.",
+    fabricSummary:"Nguyên mẫu phát hiện lỗi bề mặt vải sử dụng Faster R-CNN với backbone MobileNetV3-FPN, có thử nghiệm validation và giao diện suy luận ảnh. Chưa nằm trong phạm vi triển khai tại nhà máy.",
     rackProblem:"Quy trình kho cần dữ liệu tồn nhất quán và lịch sử rõ ràng cho từng thao tác. RackFlow mô hình hóa các luồng này trong một ứng dụng ERP/WMS thuộc hồ sơ năng lực cá nhân.",
     rackRole:"Dự án cá nhân. Tôi xác định phạm vi và triển khai ứng dụng theo từng bước; đây chưa phải hệ thống bàn giao cho khách hàng hoặc nền tảng đang được sử dụng tại nhà kho thực tế.",
     rackScope:"Nhập kho và tra cứu tồn; tra cứu đơn và giữ tồn; lịch sử sự kiện phục vụ truy vết vận hành.",
@@ -158,14 +160,16 @@ const text = {
     ocrRole:"Sử dụng xử lý ảnh và OCR để trích xuất thông tin tài liệu, sau đó tự động nhập dữ liệu lên trang web.",
     ocrEvidence:"Dự án tự do được thực hiện theo từng đợt. Chưa có bộ tài liệu mẫu, độ chính xác trích xuất theo từng trường hoặc số liệu thời gian tiết kiệm đã được xác minh để công bố.",
     ocrNext:"Để có bản minh họa có thể tái lập, cần đo tỷ lệ trích xuất khớp hoàn toàn ở từng trường, tỷ lệ phải sửa và khả năng xử lý lỗi trên bộ tài liệu đã được gán nhãn.",
-    fabricProblem:"Lỗi bề mặt vải có thể ảnh hưởng chất lượng vật liệu trong sản xuất sofa. Mục tiêu đề xuất là kiểm tra khả năng phát hiện lỗi ổn định trước khi cân nhắc tích hợp vào quy trình nhà máy.",
-    fabricApproach:"Kiểm tra tập dữ liệu và nhãn chú thích trước; sau đó chọn mô hình nền có thể tái lập, phù hợp với định dạng nhãn. Chỉ quyết định dùng phương pháp phát hiện, phân đoạn hay xử lý ảnh truyền thống sau khi đã xem dữ liệu.",
-    fabricEvidence:"Mới ở giai đoạn đề xuất. Chưa chọn tập dữ liệu, chưa triển khai mã nguồn, huấn luyện, đánh giá mô hình hay xác minh việc tích hợp vào nhà máy.",
-    fabricNext:"Xác nhận giấy phép sử dụng tập dữ liệu và kiểm tra ảnh mẫu trước khi chọn mô hình hoặc công bố kết quả.",
+    fabricProblem:"Xây dựng bộ phát hiện có thể tái lập để định vị lỗi nhìn thấy trên ảnh vải, ở phạm vi nguyên mẫu hỗ trợ kiểm tra chứ không tự động quyết định chất lượng xuất xưởng.",
+    fabricRole:"Tự phát triển thử nghiệm từ lựa chọn mô hình đến huấn luyện, validation và giao diện suy luận ảnh. Triển khai theo hướng Faster R-CNN, không sử dụng stack Ultralytics/YOLO.",
+    fabricScope:"Tải ảnh vải lên và nhận về bounding box dự đoán, một trong chín nhãn lỗi tiếng Việt, model score (0–1) và dữ liệu JSON. Score được ghi rõ là đầu ra của mô hình, chưa phải xác suất đã hiệu chuẩn.",
+    fabricApproach:"Faster R-CNN với backbone MobileNetV3-FPN, huấn luyện và đánh giá trên Google Colab bằng GPU T4. Dự án sử dụng quy trình validation có thể tái lập và thử nghiệm nhiều seed.",
+    fabricEvidence:"Kết quả validation E1, mAP50–95 trên ba seed: 0.412 / 0.412 / 0.426. Đây là kết quả trên tập validation; khả năng tổng quát hóa ngoài phân phối (OOD) chưa được xác lập. Model score chưa hiệu chuẩn; chưa có triển khai nhà máy hoặc KPI sản xuất.",
+    fabricNext:"Đánh giá trên ảnh vải độc lập ngoài phân phối, xem xét precision/recall theo từng lớp và các trường hợp dự đoán sai; kiểm tra hiệu chuẩn score trước khi cân nhắc đưa vào quy trình nhà máy.",
     flow:"MÔ HÌNH QUY TRÌNH · MINH HỌA", receive:"Nhập kho", inventory:"Kiểm tra tồn", reserve:"Giữ tồn", trace:"Truy vết",
     video:"Khung hình video", detection:"YOLOv5 phát hiện", tracking:"Theo dõi đối tượng bằng DeepSORT", tracks:"Kết quả theo dõi",
     document:"Ảnh tài liệu", ocr:"Xử lý ảnh / OCR", fields:"Trường thông tin", entry:"Nhập dữ liệu lên trang web",
-    dataset:"Tập dữ liệu", baseline:"Mô hình cơ sở", evaluation:"Đánh giá", notFound:"Không tìm thấy trang này.", homeAction:"Về trang chủ",
+    dataset:"Ảnh vải", training:"Huấn luyện Faster R-CNN", inference:"Suy luận ảnh", evaluation:"Validation & rà soát", notFound:"Không tìm thấy trang này.", homeAction:"Về trang chủ",
     backTop:"Lên đầu trang", viDegree:"Xếp loại Khá",
     skipToContent:"Chuyển đến nội dung chính", brandHome:"Minh Phát — trang chủ", toggleNavigation:"Mở hoặc đóng điều hướng", mainNavigation:"Điều hướng chính", language:"Ngôn ngữ",
     projectWord:"DỰ ÁN", projectIndex:"DANH MỤC", regionLabel:"VIỆT NAM", brandDescriptor:"ỨNG DỤNG PYTHON · ERP / WMS", categoryBackend:"PYTHON BACKEND · ERP / WMS", categoryAi:"THỊ GIÁC MÁY TÍNH · OCR", categoryPlanned:"ĐỀ XUẤT THỬ NGHIỆM THỊ GIÁC MÁY TÍNH",
@@ -187,7 +191,7 @@ const projects = [
   { slug:"rackflow", category:"backend", number:"01", title:"RackFlow — Mini ERP / WMS", status:"progress", tags:["Python","FastAPI","Flask","SQLAlchemy","PostgreSQL"], summaryKey:"rackSummary", fields:[["problem","rackProblem"],["role","rackRole"],["scope","rackScope"],["approach","rackApproach"],["evidence","rackEvidence"],["next","rackNext"]], flow:["receive","inventory","reserve","trace"] },
   { slug:"supermarket", category:"ai", number:"02", title:"Supermarket Delivery Monitoring", status:"past", tags:["Python","YOLOv5","DeepSORT","Video tracking"], summaryKey:"cvSummary", fields:[["problem","cvProblem"],["role","cvRole"],["evidence","cvEvidence"],["next","cvNext"]], flow:["video","detection","tracking","tracks"] },
   { slug:"ocr", category:"ai", number:"03", title:"OCR-assisted Data Entry", status:"past", tags:["Python","OCR","Image processing","Automation"], summaryKey:"ocrSummary", fields:[["problem","ocrProblem"],["role","ocrRole"],["evidence","ocrEvidence"],["next","ocrNext"]], flow:["document","ocr","fields","entry"] },
-  { slug:"fabric", category:"ai", number:"04", title:"Fabric Defect Inspection", status:"planned", tags:["Computer Vision","Dataset design","Model evaluation"], summaryKey:"fabricSummary", fields:[["problem","fabricProblem"],["approach","fabricApproach"],["evidence","fabricEvidence"],["next","fabricNext"]], flow:["dataset","baseline","evaluation"] }
+  { slug:"fabric", category:"ai", number:"04", title:"Fabric Defect Inspection", status:"prototype", tags:["PyTorch","Faster R-CNN","MobileNetV3-FPN","Object Detection","Google Colab"], summaryKey:"fabricSummary", youtubeUrl:"", fields:[["problem","fabricProblem"],["role","fabricRole"],["scope","fabricScope"],["approach","fabricApproach"],["evidence","fabricEvidence"],["next","fabricNext"]], flow:["dataset","training","inference","evaluation"] }
 ];
 
 function Icon({ name, size=18 }) {
@@ -256,7 +260,7 @@ function SectionHeading({ index,kicker,title,intro }) {
 
 function Status({ status,lang }) {
   const t=text[lang];
-  const label=status==="progress"?t.inProgress:status==="planned"?t.planned:t.past;
+  const label=status==="progress"?t.inProgress:status==="prototype"?t.prototype:status==="planned"?t.planned:t.past;
   return <span className={"status status-"+status}><i/>{label}</span>;
 }
 
@@ -531,7 +535,33 @@ function EducationSection({ lang }) {
     <div className="page-branch-links"><a className={!category?"selected":""} href="#projects">{t.all}</a><a className={category==="ai"?"selected":""} href="#projects/ai">{t.ai}</a><a className={category==="backend"?"selected":""} href="#projects/backend">{t.backend}</a></div>
     <div className="project-list">{list.map(project=><ProjectCard key={project.slug} project={project} lang={lang} featured={project.slug==="rackflow"}/>)}</div>
   </div></main>;
-}function ProjectDetail({ project,lang }) {
+}function getYouTubeEmbedUrl(value) {
+  if(!value) return "";
+  try {
+    const url=new URL(value);
+    if(url.protocol!=="https:") return "";
+    const host=url.hostname.toLowerCase().replace(/^www\\./,"");
+    let id="";
+    if(host==="youtu.be") id=url.pathname.split("/").filter(Boolean)[0]||"";
+    else if(host==="youtube.com"||host==="m.youtube.com") {
+      id=url.searchParams.get("v")||url.pathname.match(/^\\/(?:embed|shorts)\\/([^/]+)/)?.[1]||"";
+    }
+    return /^[A-Za-z0-9_-]{11}$/.test(id)?`https://www.youtube-nocookie.com/embed/${id}`:"";
+  } catch {
+    return "";
+  }
+}
+
+function YouTubeShowcase({ url,lang }) {
+  const t=text[lang];
+  const embedUrl=getYouTubeEmbedUrl(url);
+  return <section className="video-showcase" aria-label={t.videoShowcaseTitle}>
+    <div className="video-showcase-heading"><span>{t.videoShowcaseLabel}</span><h2>{t.videoShowcaseTitle}</h2></div>
+    {embedUrl?<div className="video-frame"><iframe src={embedUrl} title={t.videoFrameTitle} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen/></div>:<div className="video-placeholder"><span className="video-placeholder-mark">YT</span><div><strong>{t.videoPlaceholderTitle}</strong><p>{t.videoPlaceholderText}</p></div></div>}
+  </section>;
+}
+
+function ProjectDetail({ project,lang }) {
   const t=text[lang];
   if(!project) return <NotFound lang={lang}/>;
   const labels={problem:t.problem,role:t.role,scope:t.scope,approach:t.approach,evidence:t.evidence,next:t.next};
@@ -542,6 +572,7 @@ function EducationSection({ lang }) {
       <div className="tag-list">{project.tags.map(tag=><span key={tag}>{displayTag(tag,lang)}</span>)}</div>
     </div>
     <Flow project={project} lang={lang}/>
+    {project.youtubeUrl!==undefined&&<YouTubeShowcase url={project.youtubeUrl} lang={lang}/>}
     <div className="case-grid">{project.fields.map(([label,key])=><article className={"case-panel case-"+label} key={key}><span>{labels[label]}</span><p>{t[key]}</p></article>)}</div>
     <div className="detail-footer"><span>{t.technologies}</span><div className="tag-list">{project.tags.map(tag=><span key={tag}>{displayTag(tag,lang)}</span>)}</div><a className="text-link" href="#projects">{t.viewAll}<Icon name="arrow" size={16}/></a></div>
   </div></main>;
