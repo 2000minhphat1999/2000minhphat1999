@@ -1,6 +1,6 @@
-# Minh Phat — React Portfolio
+# Trần Việt Minh Phát — Personal Engineering Portfolio
 
-A bilingual (English/Vietnamese) React portfolio for Python application engineering, ERP/WMS workflows and applied AI project work.
+A bilingual (English/Vietnamese) personal portfolio introducing one engineer, his IT Staff / ERP Support direction, WMS/FEMS experience, Python application work and selected project case studies.
 
 ## Structure
 
